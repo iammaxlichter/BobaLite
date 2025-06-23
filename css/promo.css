@@ -1,0 +1,235 @@
+ /* Reset and base styles */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Arial', sans-serif;
+     background: #f8f9fa;
+ }
+
+ /* 1. Full-width wrapper */
+ .promo-wrapper {
+     width: 100%;
+     background-color: #fff;
+     padding: 2rem 0;
+ }
+
+ /* 2. Centered container */
+ .container.promo {
+     max-width: 1200px;
+     width: 100%;
+     margin: 0 auto;
+     padding: 0 1rem;
+     position: relative;
+     overflow: hidden;
+ }
+
+ /* 3. Slide handling */
+ .slides-container {
+     position: relative;
+     height: 400px;
+     /* Fixed height for consistent animation */
+ }
+
+ /* Base slide: positioned absolutely for smooth transitions */
+ .promo-slide {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     gap: 2rem;
+     align-items: stretch;
+     opacity: 0;
+     transform: translateX(100%);
+     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+         opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ /* Active slide: visible and centered */
+ .promo-slide.active {
+     opacity: 1;
+     transform: translateX(0);
+ }
+
+ /* Slide out animations */
+ .promo-slide.slide-out-left {
+     opacity: 0;
+     transform: translateX(-100%);
+ }
+
+ .promo-slide.slide-out-right {
+     opacity: 0;
+     transform: translateX(100%);
+ }
+
+ /* Slide in animations */
+ .promo-slide.slide-in-left {
+     opacity: 1;
+     transform: translateX(0);
+     animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+ }
+
+ .promo-slide.slide-in-right {
+     opacity: 1;
+     transform: translateX(0);
+     animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+ }
+
+ @keyframes slideInLeft {
+     from {
+         opacity: 0;
+         transform: translateX(-100%);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+
+ @keyframes slideInRight {
+     from {
+         opacity: 0;
+         transform: translateX(100%);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+
+ /* 4. Text column */
+ .promo-text {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding: 1rem 0;
+ }
+
+ /* 5. Copy block */
+ .promo-copy h2 {
+     font-size: 2.5rem;
+     line-height: 1.2;
+     margin-bottom: 1rem;
+     font-weight: bold;
+     color: #1a1a1a;
+ }
+
+ .promo-copy p {
+     color: #444;
+     margin-bottom: 1.5rem;
+     font-size: 1.1rem;
+     line-height: 1.6;
+ }
+
+ /* 6. Button */
+ .promo-btn {
+     display: inline-block;
+     padding: 0.875rem 2rem;
+     background: linear-gradient(135deg, #7C3AED, #A855F7);
+     color: #fff;
+     border-radius: 999px;
+     text-decoration: none;
+     font-weight: bold;
+     font-size: 0.9rem;
+     letter-spacing: 0.5px;
+     transition: all 0.3s ease;
+     box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+     text-transform: uppercase;
+     max-width: fit-content;
+ }
+
+ .promo-btn:hover {
+     background: linear-gradient(135deg, #6D28D9, #9333EA);
+     transform: translateY(-2px);
+     box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+ }
+
+ /* 7. Nav */
+ .promo-nav {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     font-size: 1rem;
+     margin-top: 1rem;
+ }
+
+ .promo-nav button {
+     background: #f1f3f4;
+     border: none;
+     font-size: 1.8rem;
+     cursor: pointer;
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: all 0.3s ease;
+     color: #333;
+ }
+
+ .promo-nav button:hover {
+     background: #7C3AED;
+     color: white;
+     transform: scale(1.1);
+ }
+
+ .promo-nav button:disabled {
+     opacity: 0.5;
+     cursor: not-allowed;
+     transform: none;
+ }
+
+ .promo-counter {
+     min-width: 3ch;
+     text-align: center;
+     font-weight: 500;
+     color: #666;
+ }
+
+ /* 8. Image column */
+ .promo-image {
+     flex: 1;
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .promo-image img {
+     display: block;
+     width: 100%;
+     max-width: 300px;
+     height: auto;
+     object-fit: contain;
+     border-radius: 10px;
+ }
+
+ /* Responsive design */
+ @media (max-width: 768px) {
+     .promo-slide {
+         flex-direction: column;
+         gap: 1rem;
+     }
+
+     .slides-container {
+         height: auto;
+         min-height: 500px;
+     }
+
+     .promo-copy h2 {
+         font-size: 2rem;
+     }
+
+     .promo-text {
+         padding: 0.5rem 0;
+     }
+ }
