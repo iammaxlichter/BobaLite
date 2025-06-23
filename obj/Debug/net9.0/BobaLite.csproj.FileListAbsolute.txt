@@ -27,4 +27,14 @@ C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\ref\BobaLite.dll
 C:\Users\semiu\Documents\VS Code\BobaLite\bin\Debug\net9.0\Properties\appsettings.Development.json
 C:\Users\semiu\Documents\VS Code\BobaLite\bin\Debug\net9.0\Properties\appsettings.json
 C:\Users\semiu\Documents\VS Code\BobaLite\bin\Debug\net9.0\BobaLite.staticwebassets.runtime.json
-C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\y47zaht8i9-2h5q2ylae6.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\BobaLite.sourcelink.json
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\vzjb09lruo-eqr8y91uxs.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\bhirk35742-s2j1n6a9b3.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\x5ts3y9vfl-fbc3eympfn.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\zgham7xwe0-00imdbe9d1.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\jn2xaghoii-pfz8horzxo.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\r8b8a550hj-6c6n4czxsq.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\y47zaht8i9-g1hnjdhhxb.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\8x1sd9133j-papgooe2qk.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\x91d0ncjru-gfioebalp3.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\9423pqgjzm-zqueqml50s.gz
