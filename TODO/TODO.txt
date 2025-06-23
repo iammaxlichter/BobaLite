@@ -1,0 +1,6 @@
+- Add links for insta, facebook, twitter
+- have little popups when you hover over "Shop" "About" and "Sale"  that kind of look like navbarupdates.png
+- route navbar
+- route hamburger navbar
+- route all the links in the footer to actual pages
+- finish the rest of the homepage so that the width of the page is the same width of the hero banner
