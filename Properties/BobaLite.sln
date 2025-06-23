@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BobaLite", "BobaLite.csproj", "{35E979B0-6CB6-7449-2FC5-49D3AAAF8B2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35E979B0-6CB6-7449-2FC5-49D3AAAF8B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35E979B0-6CB6-7449-2FC5-49D3AAAF8B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35E979B0-6CB6-7449-2FC5-49D3AAAF8B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35E979B0-6CB6-7449-2FC5-49D3AAAF8B2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {809787CF-D9D7-449A-94CE-23D25242A2C4}
+	EndGlobalSection
+EndGlobal
