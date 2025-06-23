@@ -1,0 +1,38 @@
+:root {
+  --feature-img-max-width: 60%;  
+}
+
+.features-wrapper {
+  width: 100%;
+  background-color: #3C3C3C;
+  padding: 4rem 0;    
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.feature-item {
+  flex: 1 1 150px;
+  max-width: 200px;      
+  text-align: center;
+  color:white;
+}
+
+.feature-item img {
+  display: block;
+  max-width: var(--feature-img-max-width);
+  width: 100%;          
+  margin: 0 auto 0.5rem;
+}
