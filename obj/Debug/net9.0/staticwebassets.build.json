@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IZ7lgR7onyBrYCAE0zVbM1YQ9YANOwzMcFQJEOI9P4U=",
+  "Hash": "qRCbUjjHTrnLGw3ZvRB5RcSm6vU9l9Dg3OL/k6HRiPM=",
   "Source": "BobaLite",
   "BasePath": "_content/BobaLite",
   "Mode": "Default",
@@ -17,12 +17,180 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\y47zaht8i9-2h5q2ylae6.gz",
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\8x1sd9133j-papgooe2qk.gz",
       "SourceId": "BobaLite",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BobaLite",
-      "RelativePath": "index#[.{fingerprint=2h5q2ylae6}]?.html.gz",
+      "RelativePath": "js/app#[.{fingerprint=papgooe2qk}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\app.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "a0yj9vg2wu",
+      "Integrity": "6jcUeubuJi8EB3JamP+Mgu5S/b8alCtw2TNy8qSNGV8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\app.js"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\9423pqgjzm-zqueqml50s.gz",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "partials/navbar#[.{fingerprint=zqueqml50s}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\navbar.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "w5eg33r245",
+      "Integrity": "TFUM7w62yaTNzycafIw4ZDizwnV27fXH2xoEiJ8mYIg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\navbar.html"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\bhirk35742-s2j1n6a9b3.gz",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "css/base#[.{fingerprint=s2j1n6a9b3}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\base.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "6t1zjfct5v",
+      "Integrity": "6oJyNoaK+XwUIe3vvYSATxfoTaLksWEOm6kg54nOMxI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\base.css"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\jn2xaghoii-pfz8horzxo.gz",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "css/main#[.{fingerprint=pfz8horzxo}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\main.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "0597kzx99x",
+      "Integrity": "/IVHyUTZoZOG+C5WWXoILrcWgG1QXEO78+4epy/avMg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\main.css"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\r8b8a550hj-6c6n4czxsq.gz",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "css/navbar#[.{fingerprint=6c6n4czxsq}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\navbar.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "qnfwb9vyoa",
+      "Integrity": "Rjb4QQMZHdkd4VuRgG+3LJO0lelIq23tSZizm48eyRE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\navbar.css"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\vzjb09lruo-eqr8y91uxs.gz",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "css/banner#[.{fingerprint=eqr8y91uxs}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\banner.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "8p7nki2eim",
+      "Integrity": "vELgyBDILoN0IzZlZff4BRWYSEggYPTiVxQC9hcTRj8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\banner.css"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\x5ts3y9vfl-fbc3eympfn.gz",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "css/footer#[.{fingerprint=fbc3eympfn}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\footer.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "k1pz77p2xk",
+      "Integrity": "eKOCShzl50+gToJt83rk2PbmykI6k//dFIjbtaUvbSA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\footer.css"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\x91d0ncjru-gfioebalp3.gz",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "partials/footer#[.{fingerprint=gfioebalp3}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\footer.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "4t6w74lyod",
+      "Integrity": "eLEByA/ZCrRN/F7O073OFEunpBFrY//QJJLX68ZUuyY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\footer.html"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\y47zaht8i9-g1hnjdhhxb.gz",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "index#[.{fingerprint=g1hnjdhhxb}]?.html.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -31,11 +199,158 @@
       "RelatedAsset": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\index.html",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "smtbzowhld",
-      "Integrity": "PPJpt3iAMBXF32rqcO9WXUcBvGWQxH3oeMHskTvaqrg=",
+      "Fingerprint": "yfi2qru3pz",
+      "Integrity": "IvCgnDPdYfCdpjZrCTGgye+k9r/V95ZlRWf3B+X9X8M=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\zgham7xwe0-00imdbe9d1.gz",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "css/hero#[.{fingerprint=00imdbe9d1}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\hero.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "ogiqyy0jai",
+      "Integrity": "CDZbPelYRGOXeCDoclMxB5saeZUzS32zOCje/Irfa5Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\hero.css"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\banner.css",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "css/banner#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "eqr8y91uxs",
+      "Integrity": "ZvQoEDzBnxZpoLSntQ+3gKh5yF1Sooggc1gt6hhYXYk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\banner.css"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\base.css",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "css/base#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s2j1n6a9b3",
+      "Integrity": "LLpDBf+thkDabKRNVlGe0c9KLZopQtMvkNXn0RDvn0A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\base.css"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\footer.css",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "css/footer#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fbc3eympfn",
+      "Integrity": "G5cNkuMzXaVRG37xpFm7IJ61krBVzQO39/FtFMXp3FE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\footer.css"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\hero.css",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "css/hero#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "00imdbe9d1",
+      "Integrity": "oF32hXoYB1NZTLZDx4D+lU+VgX1dq2ycoziinFAlUok=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\hero.css"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\main.css",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "css/main#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pfz8horzxo",
+      "Integrity": "ZeaDbm7AzIAQtpAOt6h/fIvxCdhFr7jYWrqRJfGiF04=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\main.css"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\navbar.css",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "css/navbar#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6c6n4czxsq",
+      "Integrity": "Ktyvp+XDF8PnB8gzSN3SZr7K4B+/Q6cSeaexa1l59Bo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\navbar.css"
     },
     {
       "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-homepage.png",
@@ -59,6 +374,132 @@
       "OriginalItemSpec": "wwwroot\\images\\bobalite-homepage.png"
     },
     {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-logo.png",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "images/bobalite-logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gdvyp869hc",
+      "Integrity": "VEyKbkUrmdgJ9jIhJsc1ONflS9ppTcstT/5bjrGj05g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\bobalite-logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\facebook.png",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "images/icons/facebook#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mo3mrix201",
+      "Integrity": "Js808vjib2QEfxf4hrq4dEuaA5tdDgI0yd+6M79MYvM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\icons\\facebook.png"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\instagram.png",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "images/icons/instagram#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pleffzp3ii",
+      "Integrity": "rSJdnNLtneF70XhjdtW0o7JxEtSkHoSCEyxLvL22rzs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\icons\\instagram.png"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\magnifying-glass.png",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "images/icons/magnifying-glass#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "13j9wsn95s",
+      "Integrity": "I3drzxBdRf7PhE5Okj7N5Xhds534Go5g2AwdIaNG4QA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\icons\\magnifying-glass.png"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\shopping-cart.png",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "images/icons/shopping-cart#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1vr5lfq5ws",
+      "Integrity": "Tc3c8eI5pltoD3HOx3CgHQJEcvW6kSeAoe3I5TIkvyQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\icons\\shopping-cart.png"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\twitter.png",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "images/icons/twitter#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "huhgjygwy1",
+      "Integrity": "WXnLLGE9AEUs4VSQ5F4pDtk+1lhxQmAxxUqiam6FOXk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\icons\\twitter.png"
+    },
+    {
       "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\index.html",
       "SourceId": "BobaLite",
       "SourceType": "Discovered",
@@ -73,14 +514,1865 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "2h5q2ylae6",
-      "Integrity": "NniAIyDo3VBgDJK5WFMoFOao4wRigI+Yz5GrWqw3798=",
+      "Fingerprint": "g1hnjdhhxb",
+      "Integrity": "/LJeIZBUkouUtBsr8s8iGoM4VciQX/RLhoiWmqW/8aY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\app.js",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "js/app#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "papgooe2qk",
+      "Integrity": "70MUfh+JgkL/n/9aLkXcY+bnRwv+oCJ16lHvbEH3HIs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\app.js"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\footer.html",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "partials/footer#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gfioebalp3",
+      "Integrity": "tNLLbtLFanH/GSNgEuTKKHKVyBEYGBblJ77KDZvuZEQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\partials\\footer.html"
+    },
+    {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\navbar.html",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "partials/navbar#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zqueqml50s",
+      "Integrity": "K5WCiKmJ7PY0TzfI0DHlIG5oQjoKxClXmCKwwAcapuI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\partials\\navbar.html"
     }
   ],
   "Endpoints": [
+    {
+      "Route": "css/banner.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\vzjb09lruo-eqr8y91uxs.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.004405286344"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "226"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vELgyBDILoN0IzZlZff4BRWYSEggYPTiVxQC9hcTRj8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:10:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ZvQoEDzBnxZpoLSntQ+3gKh5yF1Sooggc1gt6hhYXYk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZvQoEDzBnxZpoLSntQ+3gKh5yF1Sooggc1gt6hhYXYk="
+        }
+      ]
+    },
+    {
+      "Route": "css/banner.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\banner.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "370"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZvQoEDzBnxZpoLSntQ+3gKh5yF1Sooggc1gt6hhYXYk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:10:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZvQoEDzBnxZpoLSntQ+3gKh5yF1Sooggc1gt6hhYXYk="
+        }
+      ]
+    },
+    {
+      "Route": "css/banner.css.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\vzjb09lruo-eqr8y91uxs.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "226"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vELgyBDILoN0IzZlZff4BRWYSEggYPTiVxQC9hcTRj8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:10:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vELgyBDILoN0IzZlZff4BRWYSEggYPTiVxQC9hcTRj8="
+        }
+      ]
+    },
+    {
+      "Route": "css/banner.eqr8y91uxs.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\vzjb09lruo-eqr8y91uxs.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.004405286344"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "226"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vELgyBDILoN0IzZlZff4BRWYSEggYPTiVxQC9hcTRj8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:10:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ZvQoEDzBnxZpoLSntQ+3gKh5yF1Sooggc1gt6hhYXYk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "eqr8y91uxs"
+        },
+        {
+          "Name": "label",
+          "Value": "css/banner.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZvQoEDzBnxZpoLSntQ+3gKh5yF1Sooggc1gt6hhYXYk="
+        }
+      ]
+    },
+    {
+      "Route": "css/banner.eqr8y91uxs.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\banner.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "370"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZvQoEDzBnxZpoLSntQ+3gKh5yF1Sooggc1gt6hhYXYk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:10:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "eqr8y91uxs"
+        },
+        {
+          "Name": "label",
+          "Value": "css/banner.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZvQoEDzBnxZpoLSntQ+3gKh5yF1Sooggc1gt6hhYXYk="
+        }
+      ]
+    },
+    {
+      "Route": "css/banner.eqr8y91uxs.css.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\vzjb09lruo-eqr8y91uxs.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "226"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vELgyBDILoN0IzZlZff4BRWYSEggYPTiVxQC9hcTRj8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:10:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "eqr8y91uxs"
+        },
+        {
+          "Name": "label",
+          "Value": "css/banner.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vELgyBDILoN0IzZlZff4BRWYSEggYPTiVxQC9hcTRj8="
+        }
+      ]
+    },
+    {
+      "Route": "css/base.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\bhirk35742-s2j1n6a9b3.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.008130081301"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "122"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6oJyNoaK+XwUIe3vvYSATxfoTaLksWEOm6kg54nOMxI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:55:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"LLpDBf+thkDabKRNVlGe0c9KLZopQtMvkNXn0RDvn0A=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LLpDBf+thkDabKRNVlGe0c9KLZopQtMvkNXn0RDvn0A="
+        }
+      ]
+    },
+    {
+      "Route": "css/base.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\base.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "112"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LLpDBf+thkDabKRNVlGe0c9KLZopQtMvkNXn0RDvn0A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:55:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LLpDBf+thkDabKRNVlGe0c9KLZopQtMvkNXn0RDvn0A="
+        }
+      ]
+    },
+    {
+      "Route": "css/base.css.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\bhirk35742-s2j1n6a9b3.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "122"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6oJyNoaK+XwUIe3vvYSATxfoTaLksWEOm6kg54nOMxI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:55:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6oJyNoaK+XwUIe3vvYSATxfoTaLksWEOm6kg54nOMxI="
+        }
+      ]
+    },
+    {
+      "Route": "css/base.s2j1n6a9b3.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\bhirk35742-s2j1n6a9b3.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.008130081301"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "122"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6oJyNoaK+XwUIe3vvYSATxfoTaLksWEOm6kg54nOMxI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:55:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"LLpDBf+thkDabKRNVlGe0c9KLZopQtMvkNXn0RDvn0A=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s2j1n6a9b3"
+        },
+        {
+          "Name": "label",
+          "Value": "css/base.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LLpDBf+thkDabKRNVlGe0c9KLZopQtMvkNXn0RDvn0A="
+        }
+      ]
+    },
+    {
+      "Route": "css/base.s2j1n6a9b3.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\base.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "112"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LLpDBf+thkDabKRNVlGe0c9KLZopQtMvkNXn0RDvn0A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:55:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s2j1n6a9b3"
+        },
+        {
+          "Name": "label",
+          "Value": "css/base.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LLpDBf+thkDabKRNVlGe0c9KLZopQtMvkNXn0RDvn0A="
+        }
+      ]
+    },
+    {
+      "Route": "css/base.s2j1n6a9b3.css.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\bhirk35742-s2j1n6a9b3.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "122"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6oJyNoaK+XwUIe3vvYSATxfoTaLksWEOm6kg54nOMxI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:55:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s2j1n6a9b3"
+        },
+        {
+          "Name": "label",
+          "Value": "css/base.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6oJyNoaK+XwUIe3vvYSATxfoTaLksWEOm6kg54nOMxI="
+        }
+      ]
+    },
+    {
+      "Route": "css/footer.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\x5ts3y9vfl-fbc3eympfn.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001865671642"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "535"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eKOCShzl50+gToJt83rk2PbmykI6k//dFIjbtaUvbSA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:35:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"G5cNkuMzXaVRG37xpFm7IJ61krBVzQO39/FtFMXp3FE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G5cNkuMzXaVRG37xpFm7IJ61krBVzQO39/FtFMXp3FE="
+        }
+      ]
+    },
+    {
+      "Route": "css/footer.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\footer.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1253"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G5cNkuMzXaVRG37xpFm7IJ61krBVzQO39/FtFMXp3FE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:35:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G5cNkuMzXaVRG37xpFm7IJ61krBVzQO39/FtFMXp3FE="
+        }
+      ]
+    },
+    {
+      "Route": "css/footer.css.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\x5ts3y9vfl-fbc3eympfn.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "535"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eKOCShzl50+gToJt83rk2PbmykI6k//dFIjbtaUvbSA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:35:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eKOCShzl50+gToJt83rk2PbmykI6k//dFIjbtaUvbSA="
+        }
+      ]
+    },
+    {
+      "Route": "css/footer.fbc3eympfn.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\x5ts3y9vfl-fbc3eympfn.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001865671642"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "535"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eKOCShzl50+gToJt83rk2PbmykI6k//dFIjbtaUvbSA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:35:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"G5cNkuMzXaVRG37xpFm7IJ61krBVzQO39/FtFMXp3FE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fbc3eympfn"
+        },
+        {
+          "Name": "label",
+          "Value": "css/footer.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-G5cNkuMzXaVRG37xpFm7IJ61krBVzQO39/FtFMXp3FE="
+        }
+      ]
+    },
+    {
+      "Route": "css/footer.fbc3eympfn.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\footer.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1253"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G5cNkuMzXaVRG37xpFm7IJ61krBVzQO39/FtFMXp3FE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:35:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fbc3eympfn"
+        },
+        {
+          "Name": "label",
+          "Value": "css/footer.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-G5cNkuMzXaVRG37xpFm7IJ61krBVzQO39/FtFMXp3FE="
+        }
+      ]
+    },
+    {
+      "Route": "css/footer.fbc3eympfn.css.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\x5ts3y9vfl-fbc3eympfn.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "535"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eKOCShzl50+gToJt83rk2PbmykI6k//dFIjbtaUvbSA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:35:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fbc3eympfn"
+        },
+        {
+          "Name": "label",
+          "Value": "css/footer.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eKOCShzl50+gToJt83rk2PbmykI6k//dFIjbtaUvbSA="
+        }
+      ]
+    },
+    {
+      "Route": "css/hero.00imdbe9d1.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\zgham7xwe0-00imdbe9d1.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.006535947712"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "152"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CDZbPelYRGOXeCDoclMxB5saeZUzS32zOCje/Irfa5Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:12:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"oF32hXoYB1NZTLZDx4D+lU+VgX1dq2ycoziinFAlUok=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "00imdbe9d1"
+        },
+        {
+          "Name": "label",
+          "Value": "css/hero.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oF32hXoYB1NZTLZDx4D+lU+VgX1dq2ycoziinFAlUok="
+        }
+      ]
+    },
+    {
+      "Route": "css/hero.00imdbe9d1.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\hero.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "175"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oF32hXoYB1NZTLZDx4D+lU+VgX1dq2ycoziinFAlUok=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:12:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "00imdbe9d1"
+        },
+        {
+          "Name": "label",
+          "Value": "css/hero.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oF32hXoYB1NZTLZDx4D+lU+VgX1dq2ycoziinFAlUok="
+        }
+      ]
+    },
+    {
+      "Route": "css/hero.00imdbe9d1.css.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\zgham7xwe0-00imdbe9d1.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "152"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CDZbPelYRGOXeCDoclMxB5saeZUzS32zOCje/Irfa5Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:12:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "00imdbe9d1"
+        },
+        {
+          "Name": "label",
+          "Value": "css/hero.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CDZbPelYRGOXeCDoclMxB5saeZUzS32zOCje/Irfa5Q="
+        }
+      ]
+    },
+    {
+      "Route": "css/hero.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\zgham7xwe0-00imdbe9d1.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.006535947712"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "152"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CDZbPelYRGOXeCDoclMxB5saeZUzS32zOCje/Irfa5Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:12:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"oF32hXoYB1NZTLZDx4D+lU+VgX1dq2ycoziinFAlUok=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oF32hXoYB1NZTLZDx4D+lU+VgX1dq2ycoziinFAlUok="
+        }
+      ]
+    },
+    {
+      "Route": "css/hero.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\hero.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "175"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oF32hXoYB1NZTLZDx4D+lU+VgX1dq2ycoziinFAlUok=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:12:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oF32hXoYB1NZTLZDx4D+lU+VgX1dq2ycoziinFAlUok="
+        }
+      ]
+    },
+    {
+      "Route": "css/hero.css.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\zgham7xwe0-00imdbe9d1.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "152"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CDZbPelYRGOXeCDoclMxB5saeZUzS32zOCje/Irfa5Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:12:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CDZbPelYRGOXeCDoclMxB5saeZUzS32zOCje/Irfa5Q="
+        }
+      ]
+    },
+    {
+      "Route": "css/main.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\jn2xaghoii-pfz8horzxo.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.009900990099"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "100"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/IVHyUTZoZOG+C5WWXoILrcWgG1QXEO78+4epy/avMg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:18:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ZeaDbm7AzIAQtpAOt6h/fIvxCdhFr7jYWrqRJfGiF04=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZeaDbm7AzIAQtpAOt6h/fIvxCdhFr7jYWrqRJfGiF04="
+        }
+      ]
+    },
+    {
+      "Route": "css/main.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\main.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "161"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZeaDbm7AzIAQtpAOt6h/fIvxCdhFr7jYWrqRJfGiF04=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:18:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZeaDbm7AzIAQtpAOt6h/fIvxCdhFr7jYWrqRJfGiF04="
+        }
+      ]
+    },
+    {
+      "Route": "css/main.css.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\jn2xaghoii-pfz8horzxo.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "100"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/IVHyUTZoZOG+C5WWXoILrcWgG1QXEO78+4epy/avMg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:18:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/IVHyUTZoZOG+C5WWXoILrcWgG1QXEO78+4epy/avMg="
+        }
+      ]
+    },
+    {
+      "Route": "css/main.pfz8horzxo.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\jn2xaghoii-pfz8horzxo.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.009900990099"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "100"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/IVHyUTZoZOG+C5WWXoILrcWgG1QXEO78+4epy/avMg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:18:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ZeaDbm7AzIAQtpAOt6h/fIvxCdhFr7jYWrqRJfGiF04=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pfz8horzxo"
+        },
+        {
+          "Name": "label",
+          "Value": "css/main.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZeaDbm7AzIAQtpAOt6h/fIvxCdhFr7jYWrqRJfGiF04="
+        }
+      ]
+    },
+    {
+      "Route": "css/main.pfz8horzxo.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\main.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "161"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZeaDbm7AzIAQtpAOt6h/fIvxCdhFr7jYWrqRJfGiF04=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:18:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pfz8horzxo"
+        },
+        {
+          "Name": "label",
+          "Value": "css/main.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZeaDbm7AzIAQtpAOt6h/fIvxCdhFr7jYWrqRJfGiF04="
+        }
+      ]
+    },
+    {
+      "Route": "css/main.pfz8horzxo.css.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\jn2xaghoii-pfz8horzxo.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "100"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/IVHyUTZoZOG+C5WWXoILrcWgG1QXEO78+4epy/avMg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:18:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pfz8horzxo"
+        },
+        {
+          "Name": "label",
+          "Value": "css/main.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/IVHyUTZoZOG+C5WWXoILrcWgG1QXEO78+4epy/avMg="
+        }
+      ]
+    },
+    {
+      "Route": "css/navbar.6c6n4czxsq.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\r8b8a550hj-6c6n4czxsq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000663129973"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1507"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Rjb4QQMZHdkd4VuRgG+3LJO0lelIq23tSZizm48eyRE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:16:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Ktyvp+XDF8PnB8gzSN3SZr7K4B+/Q6cSeaexa1l59Bo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6c6n4czxsq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/navbar.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ktyvp+XDF8PnB8gzSN3SZr7K4B+/Q6cSeaexa1l59Bo="
+        }
+      ]
+    },
+    {
+      "Route": "css/navbar.6c6n4czxsq.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\navbar.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ktyvp+XDF8PnB8gzSN3SZr7K4B+/Q6cSeaexa1l59Bo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:16:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6c6n4czxsq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/navbar.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ktyvp+XDF8PnB8gzSN3SZr7K4B+/Q6cSeaexa1l59Bo="
+        }
+      ]
+    },
+    {
+      "Route": "css/navbar.6c6n4czxsq.css.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\r8b8a550hj-6c6n4czxsq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1507"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Rjb4QQMZHdkd4VuRgG+3LJO0lelIq23tSZizm48eyRE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:16:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6c6n4czxsq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/navbar.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rjb4QQMZHdkd4VuRgG+3LJO0lelIq23tSZizm48eyRE="
+        }
+      ]
+    },
+    {
+      "Route": "css/navbar.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\r8b8a550hj-6c6n4czxsq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000663129973"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1507"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Rjb4QQMZHdkd4VuRgG+3LJO0lelIq23tSZizm48eyRE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:16:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Ktyvp+XDF8PnB8gzSN3SZr7K4B+/Q6cSeaexa1l59Bo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ktyvp+XDF8PnB8gzSN3SZr7K4B+/Q6cSeaexa1l59Bo="
+        }
+      ]
+    },
+    {
+      "Route": "css/navbar.css",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\navbar.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ktyvp+XDF8PnB8gzSN3SZr7K4B+/Q6cSeaexa1l59Bo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:16:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ktyvp+XDF8PnB8gzSN3SZr7K4B+/Q6cSeaexa1l59Bo="
+        }
+      ]
+    },
+    {
+      "Route": "css/navbar.css.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\r8b8a550hj-6c6n4czxsq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1507"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Rjb4QQMZHdkd4VuRgG+3LJO0lelIq23tSZizm48eyRE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:16:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rjb4QQMZHdkd4VuRgG+3LJO0lelIq23tSZizm48eyRE="
+        }
+      ]
+    },
     {
       "Route": "images/bobalite-homepage.i4wpqeu7x0.png",
       "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-homepage.png",
@@ -164,13 +2456,505 @@
       ]
     },
     {
-      "Route": "index.2h5q2ylae6.html",
-      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\y47zaht8i9-2h5q2ylae6.gz",
+      "Route": "images/bobalite-logo.gdvyp869hc.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "105872"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VEyKbkUrmdgJ9jIhJsc1ONflS9ppTcstT/5bjrGj05g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 19:33:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gdvyp869hc"
+        },
+        {
+          "Name": "label",
+          "Value": "images/bobalite-logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VEyKbkUrmdgJ9jIhJsc1ONflS9ppTcstT/5bjrGj05g="
+        }
+      ]
+    },
+    {
+      "Route": "images/bobalite-logo.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "105872"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VEyKbkUrmdgJ9jIhJsc1ONflS9ppTcstT/5bjrGj05g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 19:33:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VEyKbkUrmdgJ9jIhJsc1ONflS9ppTcstT/5bjrGj05g="
+        }
+      ]
+    },
+    {
+      "Route": "images/icons/facebook.mo3mrix201.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\facebook.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "507"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Js808vjib2QEfxf4hrq4dEuaA5tdDgI0yd+6M79MYvM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:33:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mo3mrix201"
+        },
+        {
+          "Name": "label",
+          "Value": "images/icons/facebook.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Js808vjib2QEfxf4hrq4dEuaA5tdDgI0yd+6M79MYvM="
+        }
+      ]
+    },
+    {
+      "Route": "images/icons/facebook.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\facebook.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "507"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Js808vjib2QEfxf4hrq4dEuaA5tdDgI0yd+6M79MYvM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:33:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Js808vjib2QEfxf4hrq4dEuaA5tdDgI0yd+6M79MYvM="
+        }
+      ]
+    },
+    {
+      "Route": "images/icons/instagram.pleffzp3ii.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\instagram.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "944"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rSJdnNLtneF70XhjdtW0o7JxEtSkHoSCEyxLvL22rzs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:33:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pleffzp3ii"
+        },
+        {
+          "Name": "label",
+          "Value": "images/icons/instagram.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rSJdnNLtneF70XhjdtW0o7JxEtSkHoSCEyxLvL22rzs="
+        }
+      ]
+    },
+    {
+      "Route": "images/icons/instagram.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\instagram.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "944"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rSJdnNLtneF70XhjdtW0o7JxEtSkHoSCEyxLvL22rzs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:33:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rSJdnNLtneF70XhjdtW0o7JxEtSkHoSCEyxLvL22rzs="
+        }
+      ]
+    },
+    {
+      "Route": "images/icons/magnifying-glass.13j9wsn95s.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\magnifying-glass.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20473"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I3drzxBdRf7PhE5Okj7N5Xhds534Go5g2AwdIaNG4QA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 19:50:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "13j9wsn95s"
+        },
+        {
+          "Name": "label",
+          "Value": "images/icons/magnifying-glass.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-I3drzxBdRf7PhE5Okj7N5Xhds534Go5g2AwdIaNG4QA="
+        }
+      ]
+    },
+    {
+      "Route": "images/icons/magnifying-glass.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\magnifying-glass.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20473"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I3drzxBdRf7PhE5Okj7N5Xhds534Go5g2AwdIaNG4QA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 19:50:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-I3drzxBdRf7PhE5Okj7N5Xhds534Go5g2AwdIaNG4QA="
+        }
+      ]
+    },
+    {
+      "Route": "images/icons/shopping-cart.1vr5lfq5ws.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\shopping-cart.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15280"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Tc3c8eI5pltoD3HOx3CgHQJEcvW6kSeAoe3I5TIkvyQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 19:50:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1vr5lfq5ws"
+        },
+        {
+          "Name": "label",
+          "Value": "images/icons/shopping-cart.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Tc3c8eI5pltoD3HOx3CgHQJEcvW6kSeAoe3I5TIkvyQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/icons/shopping-cart.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\shopping-cart.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15280"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Tc3c8eI5pltoD3HOx3CgHQJEcvW6kSeAoe3I5TIkvyQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 19:50:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Tc3c8eI5pltoD3HOx3CgHQJEcvW6kSeAoe3I5TIkvyQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/icons/twitter.huhgjygwy1.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\twitter.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "915"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WXnLLGE9AEUs4VSQ5F4pDtk+1lhxQmAxxUqiam6FOXk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:33:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "huhgjygwy1"
+        },
+        {
+          "Name": "label",
+          "Value": "images/icons/twitter.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WXnLLGE9AEUs4VSQ5F4pDtk+1lhxQmAxxUqiam6FOXk="
+        }
+      ]
+    },
+    {
+      "Route": "images/icons/twitter.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\twitter.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "915"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WXnLLGE9AEUs4VSQ5F4pDtk+1lhxQmAxxUqiam6FOXk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:33:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WXnLLGE9AEUs4VSQ5F4pDtk+1lhxQmAxxUqiam6FOXk="
+        }
+      ]
+    },
+    {
+      "Route": "index.g1hnjdhhxb.html",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\y47zaht8i9-g1hnjdhhxb.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002873563218"
+          "Quality": "0.002617801047"
         }
       ],
       "ResponseHeaders": [
@@ -180,15 +2964,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "347"
+          "Value": "381"
         },
         {
           "Name": "ETag",
-          "Value": "\"PPJpt3iAMBXF32rqcO9WXUcBvGWQxH3oeMHskTvaqrg=\""
+          "Value": "\"IvCgnDPdYfCdpjZrCTGgye+k9r/V95ZlRWf3B+X9X8M=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Jun 2025 03:19:39 GMT"
+          "Value": "Mon, 23 Jun 2025 21:19:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -208,13 +2992,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"NniAIyDo3VBgDJK5WFMoFOao4wRigI+Yz5GrWqw3798=\""
+          "Value": "W/\"/LJeIZBUkouUtBsr8s8iGoM4VciQX/RLhoiWmqW/8aY=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "2h5q2ylae6"
+          "Value": "g1hnjdhhxb"
         },
         {
           "Name": "label",
@@ -222,12 +3006,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-NniAIyDo3VBgDJK5WFMoFOao4wRigI+Yz5GrWqw3798="
+          "Value": "sha256-/LJeIZBUkouUtBsr8s8iGoM4VciQX/RLhoiWmqW/8aY="
         }
       ]
     },
     {
-      "Route": "index.2h5q2ylae6.html",
+      "Route": "index.g1hnjdhhxb.html",
       "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -237,7 +3021,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "691"
+          "Value": "665"
         },
         {
           "Name": "Content-Type",
@@ -245,11 +3029,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NniAIyDo3VBgDJK5WFMoFOao4wRigI+Yz5GrWqw3798=\""
+          "Value": "\"/LJeIZBUkouUtBsr8s8iGoM4VciQX/RLhoiWmqW/8aY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Jun 2025 03:19:39 GMT"
+          "Value": "Mon, 23 Jun 2025 21:19:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -259,7 +3043,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "2h5q2ylae6"
+          "Value": "g1hnjdhhxb"
         },
         {
           "Name": "label",
@@ -267,13 +3051,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-NniAIyDo3VBgDJK5WFMoFOao4wRigI+Yz5GrWqw3798="
+          "Value": "sha256-/LJeIZBUkouUtBsr8s8iGoM4VciQX/RLhoiWmqW/8aY="
         }
       ]
     },
     {
-      "Route": "index.2h5q2ylae6.html.gz",
-      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\y47zaht8i9-2h5q2ylae6.gz",
+      "Route": "index.g1hnjdhhxb.html.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\y47zaht8i9-g1hnjdhhxb.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -282,7 +3066,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "347"
+          "Value": "381"
         },
         {
           "Name": "Content-Type",
@@ -290,11 +3074,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"PPJpt3iAMBXF32rqcO9WXUcBvGWQxH3oeMHskTvaqrg=\""
+          "Value": "\"IvCgnDPdYfCdpjZrCTGgye+k9r/V95ZlRWf3B+X9X8M=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Jun 2025 03:19:39 GMT"
+          "Value": "Mon, 23 Jun 2025 21:19:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -312,7 +3096,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "2h5q2ylae6"
+          "Value": "g1hnjdhhxb"
         },
         {
           "Name": "label",
@@ -320,18 +3104,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-PPJpt3iAMBXF32rqcO9WXUcBvGWQxH3oeMHskTvaqrg="
+          "Value": "sha256-IvCgnDPdYfCdpjZrCTGgye+k9r/V95ZlRWf3B+X9X8M="
         }
       ]
     },
     {
       "Route": "index.html",
-      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\y47zaht8i9-2h5q2ylae6.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\y47zaht8i9-g1hnjdhhxb.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002873563218"
+          "Quality": "0.002617801047"
         }
       ],
       "ResponseHeaders": [
@@ -341,15 +3125,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "347"
+          "Value": "381"
         },
         {
           "Name": "ETag",
-          "Value": "\"PPJpt3iAMBXF32rqcO9WXUcBvGWQxH3oeMHskTvaqrg=\""
+          "Value": "\"IvCgnDPdYfCdpjZrCTGgye+k9r/V95ZlRWf3B+X9X8M=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Jun 2025 03:19:39 GMT"
+          "Value": "Mon, 23 Jun 2025 21:19:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -369,13 +3153,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"NniAIyDo3VBgDJK5WFMoFOao4wRigI+Yz5GrWqw3798=\""
+          "Value": "W/\"/LJeIZBUkouUtBsr8s8iGoM4VciQX/RLhoiWmqW/8aY=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NniAIyDo3VBgDJK5WFMoFOao4wRigI+Yz5GrWqw3798="
+          "Value": "sha256-/LJeIZBUkouUtBsr8s8iGoM4VciQX/RLhoiWmqW/8aY="
         }
       ]
     },
@@ -390,7 +3174,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "691"
+          "Value": "665"
         },
         {
           "Name": "Content-Type",
@@ -398,11 +3182,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NniAIyDo3VBgDJK5WFMoFOao4wRigI+Yz5GrWqw3798=\""
+          "Value": "\"/LJeIZBUkouUtBsr8s8iGoM4VciQX/RLhoiWmqW/8aY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Jun 2025 03:19:39 GMT"
+          "Value": "Mon, 23 Jun 2025 21:19:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -412,13 +3196,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NniAIyDo3VBgDJK5WFMoFOao4wRigI+Yz5GrWqw3798="
+          "Value": "sha256-/LJeIZBUkouUtBsr8s8iGoM4VciQX/RLhoiWmqW/8aY="
         }
       ]
     },
     {
       "Route": "index.html.gz",
-      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\y47zaht8i9-2h5q2ylae6.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\y47zaht8i9-g1hnjdhhxb.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -427,7 +3211,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "347"
+          "Value": "381"
         },
         {
           "Name": "Content-Type",
@@ -435,11 +3219,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"PPJpt3iAMBXF32rqcO9WXUcBvGWQxH3oeMHskTvaqrg=\""
+          "Value": "\"IvCgnDPdYfCdpjZrCTGgye+k9r/V95ZlRWf3B+X9X8M=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Jun 2025 03:19:39 GMT"
+          "Value": "Mon, 23 Jun 2025 21:19:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -457,7 +3241,901 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-PPJpt3iAMBXF32rqcO9WXUcBvGWQxH3oeMHskTvaqrg="
+          "Value": "sha256-IvCgnDPdYfCdpjZrCTGgye+k9r/V95ZlRWf3B+X9X8M="
+        }
+      ]
+    },
+    {
+      "Route": "js/app.js",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\8x1sd9133j-papgooe2qk.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001375515818"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "726"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6jcUeubuJi8EB3JamP+Mgu5S/b8alCtw2TNy8qSNGV8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:19:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"70MUfh+JgkL/n/9aLkXcY+bnRwv+oCJ16lHvbEH3HIs=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-70MUfh+JgkL/n/9aLkXcY+bnRwv+oCJ16lHvbEH3HIs="
+        }
+      ]
+    },
+    {
+      "Route": "js/app.js",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\app.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3528"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"70MUfh+JgkL/n/9aLkXcY+bnRwv+oCJ16lHvbEH3HIs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:19:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-70MUfh+JgkL/n/9aLkXcY+bnRwv+oCJ16lHvbEH3HIs="
+        }
+      ]
+    },
+    {
+      "Route": "js/app.js.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\8x1sd9133j-papgooe2qk.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6jcUeubuJi8EB3JamP+Mgu5S/b8alCtw2TNy8qSNGV8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:19:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6jcUeubuJi8EB3JamP+Mgu5S/b8alCtw2TNy8qSNGV8="
+        }
+      ]
+    },
+    {
+      "Route": "js/app.papgooe2qk.js",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\8x1sd9133j-papgooe2qk.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001375515818"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "726"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6jcUeubuJi8EB3JamP+Mgu5S/b8alCtw2TNy8qSNGV8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:19:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"70MUfh+JgkL/n/9aLkXcY+bnRwv+oCJ16lHvbEH3HIs=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "papgooe2qk"
+        },
+        {
+          "Name": "label",
+          "Value": "js/app.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-70MUfh+JgkL/n/9aLkXcY+bnRwv+oCJ16lHvbEH3HIs="
+        }
+      ]
+    },
+    {
+      "Route": "js/app.papgooe2qk.js",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\app.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3528"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"70MUfh+JgkL/n/9aLkXcY+bnRwv+oCJ16lHvbEH3HIs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:19:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "papgooe2qk"
+        },
+        {
+          "Name": "label",
+          "Value": "js/app.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-70MUfh+JgkL/n/9aLkXcY+bnRwv+oCJ16lHvbEH3HIs="
+        }
+      ]
+    },
+    {
+      "Route": "js/app.papgooe2qk.js.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\8x1sd9133j-papgooe2qk.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6jcUeubuJi8EB3JamP+Mgu5S/b8alCtw2TNy8qSNGV8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:19:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "papgooe2qk"
+        },
+        {
+          "Name": "label",
+          "Value": "js/app.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6jcUeubuJi8EB3JamP+Mgu5S/b8alCtw2TNy8qSNGV8="
+        }
+      ]
+    },
+    {
+      "Route": "partials/footer.gfioebalp3.html",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\x91d0ncjru-gfioebalp3.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002949852507"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "338"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eLEByA/ZCrRN/F7O073OFEunpBFrY//QJJLX68ZUuyY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:34:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"tNLLbtLFanH/GSNgEuTKKHKVyBEYGBblJ77KDZvuZEQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gfioebalp3"
+        },
+        {
+          "Name": "label",
+          "Value": "partials/footer.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tNLLbtLFanH/GSNgEuTKKHKVyBEYGBblJ77KDZvuZEQ="
+        }
+      ]
+    },
+    {
+      "Route": "partials/footer.gfioebalp3.html",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\footer.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1063"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tNLLbtLFanH/GSNgEuTKKHKVyBEYGBblJ77KDZvuZEQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:34:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gfioebalp3"
+        },
+        {
+          "Name": "label",
+          "Value": "partials/footer.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tNLLbtLFanH/GSNgEuTKKHKVyBEYGBblJ77KDZvuZEQ="
+        }
+      ]
+    },
+    {
+      "Route": "partials/footer.gfioebalp3.html.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\x91d0ncjru-gfioebalp3.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "338"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eLEByA/ZCrRN/F7O073OFEunpBFrY//QJJLX68ZUuyY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:34:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gfioebalp3"
+        },
+        {
+          "Name": "label",
+          "Value": "partials/footer.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eLEByA/ZCrRN/F7O073OFEunpBFrY//QJJLX68ZUuyY="
+        }
+      ]
+    },
+    {
+      "Route": "partials/footer.html",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\x91d0ncjru-gfioebalp3.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002949852507"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "338"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eLEByA/ZCrRN/F7O073OFEunpBFrY//QJJLX68ZUuyY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:34:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"tNLLbtLFanH/GSNgEuTKKHKVyBEYGBblJ77KDZvuZEQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tNLLbtLFanH/GSNgEuTKKHKVyBEYGBblJ77KDZvuZEQ="
+        }
+      ]
+    },
+    {
+      "Route": "partials/footer.html",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\footer.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1063"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tNLLbtLFanH/GSNgEuTKKHKVyBEYGBblJ77KDZvuZEQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:34:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tNLLbtLFanH/GSNgEuTKKHKVyBEYGBblJ77KDZvuZEQ="
+        }
+      ]
+    },
+    {
+      "Route": "partials/footer.html.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\x91d0ncjru-gfioebalp3.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "338"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eLEByA/ZCrRN/F7O073OFEunpBFrY//QJJLX68ZUuyY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 20:34:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eLEByA/ZCrRN/F7O073OFEunpBFrY//QJJLX68ZUuyY="
+        }
+      ]
+    },
+    {
+      "Route": "partials/navbar.html",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\9423pqgjzm-zqueqml50s.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002083333333"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "479"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TFUM7w62yaTNzycafIw4ZDizwnV27fXH2xoEiJ8mYIg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:18:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"K5WCiKmJ7PY0TzfI0DHlIG5oQjoKxClXmCKwwAcapuI=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-K5WCiKmJ7PY0TzfI0DHlIG5oQjoKxClXmCKwwAcapuI="
+        }
+      ]
+    },
+    {
+      "Route": "partials/navbar.html",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\navbar.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1631"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"K5WCiKmJ7PY0TzfI0DHlIG5oQjoKxClXmCKwwAcapuI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:18:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-K5WCiKmJ7PY0TzfI0DHlIG5oQjoKxClXmCKwwAcapuI="
+        }
+      ]
+    },
+    {
+      "Route": "partials/navbar.html.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\9423pqgjzm-zqueqml50s.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "479"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TFUM7w62yaTNzycafIw4ZDizwnV27fXH2xoEiJ8mYIg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:18:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TFUM7w62yaTNzycafIw4ZDizwnV27fXH2xoEiJ8mYIg="
+        }
+      ]
+    },
+    {
+      "Route": "partials/navbar.zqueqml50s.html",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\9423pqgjzm-zqueqml50s.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002083333333"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "479"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TFUM7w62yaTNzycafIw4ZDizwnV27fXH2xoEiJ8mYIg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:18:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"K5WCiKmJ7PY0TzfI0DHlIG5oQjoKxClXmCKwwAcapuI=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zqueqml50s"
+        },
+        {
+          "Name": "label",
+          "Value": "partials/navbar.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-K5WCiKmJ7PY0TzfI0DHlIG5oQjoKxClXmCKwwAcapuI="
+        }
+      ]
+    },
+    {
+      "Route": "partials/navbar.zqueqml50s.html",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\navbar.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1631"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"K5WCiKmJ7PY0TzfI0DHlIG5oQjoKxClXmCKwwAcapuI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:18:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zqueqml50s"
+        },
+        {
+          "Name": "label",
+          "Value": "partials/navbar.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-K5WCiKmJ7PY0TzfI0DHlIG5oQjoKxClXmCKwwAcapuI="
+        }
+      ]
+    },
+    {
+      "Route": "partials/navbar.zqueqml50s.html.gz",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\Debug\\net9.0\\compressed\\9423pqgjzm-zqueqml50s.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "479"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TFUM7w62yaTNzycafIw4ZDizwnV27fXH2xoEiJ8mYIg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 21:18:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zqueqml50s"
+        },
+        {
+          "Name": "label",
+          "Value": "partials/navbar.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TFUM7w62yaTNzycafIw4ZDizwnV27fXH2xoEiJ8mYIg="
         }
       ]
     }

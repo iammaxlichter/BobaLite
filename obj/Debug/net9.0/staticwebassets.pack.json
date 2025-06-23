@@ -1,12 +1,72 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\banner.css",
+      "PackagePath": "staticwebassets\\css\\banner.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\base.css",
+      "PackagePath": "staticwebassets\\css\\base.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\footer.css",
+      "PackagePath": "staticwebassets\\css\\footer.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\hero.css",
+      "PackagePath": "staticwebassets\\css\\hero.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\main.css",
+      "PackagePath": "staticwebassets\\css\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\navbar.css",
+      "PackagePath": "staticwebassets\\css\\navbar.css"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-homepage.png",
       "PackagePath": "staticwebassets\\images\\bobalite-homepage.png"
     },
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-logo.png",
+      "PackagePath": "staticwebassets\\images\\bobalite-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\facebook.png",
+      "PackagePath": "staticwebassets\\images\\icons\\facebook.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\instagram.png",
+      "PackagePath": "staticwebassets\\images\\icons\\instagram.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\magnifying-glass.png",
+      "PackagePath": "staticwebassets\\images\\icons\\magnifying-glass.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\shopping-cart.png",
+      "PackagePath": "staticwebassets\\images\\icons\\shopping-cart.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\twitter.png",
+      "PackagePath": "staticwebassets\\images\\icons\\twitter.png"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\app.js",
+      "PackagePath": "staticwebassets\\js\\app.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\footer.html",
+      "PackagePath": "staticwebassets\\partials\\footer.html"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\navbar.html",
+      "PackagePath": "staticwebassets\\partials\\navbar.html"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BobaLite.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
