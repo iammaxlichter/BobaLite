@@ -1,32 +1,20 @@
 /* Main customize section */
 .customize-wrapper {
     width: 100%;
-    background: linear-gradient(135deg, #74A12E 0%, #8BC34A 100%);
+    background: #76C043;
     padding: 5rem 0;
     position: relative;
-    overflow: hidden;
+    /* Remove overflow: hidden to prevent content cutoff */
 }
 
-/* Decorative elements */
-.customize-wrapper::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 300px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 50%;
-    z-index: 1;
-}
 
 .customize-wrapper::after {
     content: '';
     position: absolute;
-    bottom: -30%;
-    left: -5%;
-    width: 200px;
-    height: 200px;
+    bottom: -20%; /* Reduced from -30% */
+    left: -3%; /* Reduced from -5% */
+    width: 150px; /* Reduced from 200px */
+    height: 150px; /* Reduced from 200px */
     background: rgba(255, 255, 255, 0.03);
     border-radius: 50%;
     z-index: 1;
@@ -40,30 +28,19 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 4rem;
     position: relative;
     z-index: 2;
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 /* Image column */
 .customize-image {
-    flex: 1 1 350px;
+    flex: 1 1 300px;
     text-align: center;
     position: relative;
+    min-width: 0; /* Prevent flex item from overflowing */
 }
 
-.customize-image::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    z-index: -1;
-}
 
 .customize-image img {
     max-width: 100%;
@@ -82,6 +59,7 @@
     flex: 1 1 400px;
     color: #fff;
     margin-bottom: 40px;
+    min-width: 0; /* Prevent flex item from overflowing */
 }
 
 .customize-text h2 {
@@ -90,6 +68,7 @@
     margin-bottom: 1rem;
     line-height: 1.2;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word; /* Prevent text overflow */
 }
 
 .customize-text .subtitle {
@@ -98,12 +77,15 @@
     opacity: 0.9;
     font-weight: 300;
     line-height: 1.5;
+    word-wrap: break-word; /* Prevent text overflow */
 }
 
 /* Input container */
 .input-container {
     position: relative;
     margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .customize-input {
@@ -119,6 +101,7 @@
     outline: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Include padding and border in width */
 }
 
 .customize-input::placeholder {
@@ -151,6 +134,7 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
+    white-space: nowrap; /* Prevent button text from wrapping */
 }
 
 .customize-btn::before {
@@ -212,6 +196,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 0 1.5rem; /* Increased padding for mobile */
     }
 
     .customize-image,
@@ -265,11 +250,28 @@
         flex-direction: column;
         align-items: center;
     }
+
+    /* Ensure input doesn't overflow on very small screens */
+    .customize-input {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .customize-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+    .container.customize {
+        padding: 0 0.75rem;
+    }
 }
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-
     .customize-image img,
     .customize-input,
     .customize-btn {
