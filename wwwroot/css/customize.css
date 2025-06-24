@@ -77,7 +77,8 @@
     opacity: 0.9;
     font-weight: 300;
     line-height: 1.5;
-    word-wrap: break-word; /* Prevent text overflow */
+    word-wrap: break-word; 
+    font-weight:bold;
 }
 
 /* Input container */
