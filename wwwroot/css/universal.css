@@ -1,6 +1,5 @@
 /* full-bleed white band */
 .universal-wrapper {
-    width: 100vw;
     background-color: #fff;
     padding: 4rem 0;
 }
@@ -17,7 +16,7 @@
 .universal-items {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: .5rem;
     justify-content: space-between;
     margin-top: 2rem;
 }

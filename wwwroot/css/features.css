@@ -19,13 +19,13 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 5rem;
     padding: 0;
 }
 
 .feature-item {
     flex: 1 1 150px;
-    max-width: 200px;
+    max-width: 150px;
     text-align: center;
     color: white;
     display: flex;
