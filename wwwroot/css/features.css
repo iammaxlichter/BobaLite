@@ -1,38 +1,49 @@
 :root {
-  --feature-img-max-width: 60%;  
+    --feature-img-max-width: 80%;
 }
 
 .features-wrapper {
-  width: 100%;
-  background-color: #3C3C3C;
-  padding: 4rem 0;    
+    width: 100%;
+    background-color: #3C3C3C;
+    padding: 4rem 0;
 }
 
 .container {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;  
-  align-items: flex-start;
-  gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 0;
 }
 
 .feature-item {
-  flex: 1 1 150px;
-  max-width: 200px;      
-  text-align: center;
-  color:white;
+    flex: 1 1 150px;
+    max-width: 200px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .feature-item img {
-  display: block;
-  max-width: var(--feature-img-max-width);
-  width: 100%;          
-  margin: 0 auto 0.5rem;
+    display: block;
+    max-width: var(--feature-img-max-width);
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
 }

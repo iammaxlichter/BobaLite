@@ -1,0 +1,61 @@
+/* full-bleed white band */
+.universal-wrapper {
+    width: 100vw;
+    background-color: #fff;
+    padding: 4rem 0;
+}
+
+/* center & constrain */
+.container.universal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+/* two-column grid */
+.universal-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.universal-item {
+    flex: 1 1 45%;
+    /* two per row, wrap on small screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.universal-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem;
+}
+
+.universal-item p {
+    margin: 1rem 0 0.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.universal-link {
+    color: #7C3AED;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.universal-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .universal-item {
+        flex: 1 1 100%;
+    }
+}
