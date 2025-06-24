@@ -1,6 +1,9 @@
-/* Compose all modules */
 @import url("base.css");
 @import url("navbar.css");
 @import url("hero.css");
 @import url("banner.css");
+@import url("features.css");
+@import url("promo.css"); 
+@import url("customize.css");
+@import url("universal.css");
 @import url("footer.css");
