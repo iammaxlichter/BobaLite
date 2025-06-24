@@ -4,3 +4,4 @@
 - route hamburger navbar
 - route all the links in the footer to actual pages
 - add promo pictures
+- navbar drawer on mobile on gh-pages branch. The words under home are not bolded when they should be
