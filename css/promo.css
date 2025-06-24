@@ -18,7 +18,7 @@
 /* Slide handling */
 .slides-container {
     position: relative;
-    height: 400px;
+    height: 500px;
 }
 
 /* Base slide: positioned absolutely for smooth transitions */
@@ -35,6 +35,65 @@
     transform: translateX(100%);
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
         opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* Button Styles for Specific Slides */
+.low-cal {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    color: #fff;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    max-width: fit-content;
+    background: linear-gradient(135deg, #555555, #777777);
+}
+
+.low-cal:hover {
+    background: linear-gradient(135deg, #444444, #666666);
+}
+
+.taro-twist {
+        display: inline-block;
+    padding: 0.875rem 2rem;
+    color: #fff;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    max-width: fit-content;
+    background: linear-gradient(135deg, #7C3AED, #A855F7);
+}
+
+.taro-twist:hover {
+    background: linear-gradient(135deg, #6D28D9, #9333EA);
+}
+
+.green-tea {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    color: #fff;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    max-width: fit-content;
+    background: linear-gradient(135deg, #16A34A, #22C55E);
+}
+
+.green-tea:hover {
+    background: linear-gradient(135deg, #15803D, #16A34A);
 }
 
 /* Active slide: visible and centered */
@@ -116,22 +175,7 @@
     line-height: 1.6;
 }
 
-/* Button */
-.promo-btn {
-    display: inline-block;
-    padding: 0.875rem 2rem;
-    background: linear-gradient(135deg, #7C3AED, #A855F7);
-    color: #fff;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
-    text-transform: uppercase;
-    max-width: fit-content;
-}
+
 
 .promo-btn:hover {
     background: linear-gradient(135deg, #6D28D9, #9333EA);
@@ -187,17 +231,18 @@
     flex: 1;
     text-align: center;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
 }
 
 .promo-image img {
     display: block;
     width: 100%;
-    max-width: 300px;
-    height: auto;
+    max-width: 700px;
+    height: 100%;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: 20px;
+
 }
 
 /* Responsive design */
@@ -211,8 +256,8 @@
     }
 
     .slides-container {
-        height: auto;
-        min-height: 450px;
+        height: 550px;
+        min-height: 550px;
     }
 }
 
@@ -235,7 +280,7 @@
 
     .slides-container {
         height: auto;
-        min-height: 700px;
+        min-height: 750px;
     }
 
     .promo-text {
@@ -276,7 +321,7 @@
     }
 
     .promo-image img {
-        max-width: 280px;
+        max-width: 340px;
         height: auto;
     }
 
@@ -307,7 +352,7 @@
     }
 
     .slides-container {
-        min-height: 600px;
+        min-height: 650px;
     }
 
     .promo-copy h2 {
@@ -329,7 +374,7 @@
     }
 
     .promo-image img {
-        max-width: 220px;
+        max-width: 280px;
     }
 
     .promo-nav button {
@@ -350,11 +395,11 @@
     }
 
     .promo-image img {
-        max-width: 200px;
+        max-width: 260px;
     }
 
     .slides-container {
-        min-height: 550px;
+        min-height: 600px;
     }
 }
 
@@ -381,10 +426,10 @@
     }
 
     .promo-image img {
-        max-width: 180px;
+        max-width: 240px;
     }
 
     .slides-container {
-        min-height: 500px;
+        min-height: 550px;
     }
 }
