@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\css\\base.css"
     },
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\customize.css",
+      "PackagePath": "staticwebassets\\css\\customize.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\features.css",
+      "PackagePath": "staticwebassets\\css\\features.css"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\footer.css",
       "PackagePath": "staticwebassets\\css\\footer.css"
     },
@@ -25,12 +33,52 @@
       "PackagePath": "staticwebassets\\css\\navbar.css"
     },
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\promo.css",
+      "PackagePath": "staticwebassets\\css\\promo.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\universal.css",
+      "PackagePath": "staticwebassets\\css\\universal.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-brown-sugar-bliss.png",
+      "PackagePath": "staticwebassets\\images\\bobalite-brown-sugar-bliss.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-classic-creamy-milk.png",
+      "PackagePath": "staticwebassets\\images\\bobalite-classic-creamy-milk.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-customize.png",
+      "PackagePath": "staticwebassets\\images\\bobalite-customize.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-green-tea-groove.png",
+      "PackagePath": "staticwebassets\\images\\bobalite-green-tea-groove.png"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-homepage.png",
       "PackagePath": "staticwebassets\\images\\bobalite-homepage.png"
     },
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-logo.png",
       "PackagePath": "staticwebassets\\images\\bobalite-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-mango-mania.png",
+      "PackagePath": "staticwebassets\\images\\bobalite-mango-mania.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-taro-twist-tea.png",
+      "PackagePath": "staticwebassets\\images\\bobalite-taro-twist-tea.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-trendy-group.png",
+      "PackagePath": "staticwebassets\\images\\bobalite-trendy-group.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-trendy-man.png",
+      "PackagePath": "staticwebassets\\images\\bobalite-trendy-man.png"
     },
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\facebook.png",
@@ -57,8 +105,44 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\app.js",
-      "PackagePath": "staticwebassets\\js\\app.js"
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\banner.js",
+      "PackagePath": "staticwebassets\\js\\banner.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\customize.js",
+      "PackagePath": "staticwebassets\\js\\customize.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\features.js",
+      "PackagePath": "staticwebassets\\js\\features.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\footer.js",
+      "PackagePath": "staticwebassets\\js\\footer.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\index.js",
+      "PackagePath": "staticwebassets\\js\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\navbar.js",
+      "PackagePath": "staticwebassets\\js\\navbar.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\promo.js",
+      "PackagePath": "staticwebassets\\js\\promo.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\universal.js",
+      "PackagePath": "staticwebassets\\js\\universal.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\customize.html",
+      "PackagePath": "staticwebassets\\partials\\customize.html"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\features.html",
+      "PackagePath": "staticwebassets\\partials\\features.html"
     },
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\footer.html",
@@ -67,6 +151,14 @@
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\navbar.html",
       "PackagePath": "staticwebassets\\partials\\navbar.html"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\promo.html",
+      "PackagePath": "staticwebassets\\partials\\promo.html"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\universal.html",
+      "PackagePath": "staticwebassets\\partials\\universal.html"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BobaLite.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

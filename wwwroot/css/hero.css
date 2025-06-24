@@ -1,7 +1,18 @@
-/* Hero Section */
+:root {
+  --hero-image-max-width: 1200px; 
+}
+
 .hero {
-  height: calc(100vh );
-  background: url("/images/bobalite-homepage.png")
-              no-repeat center top;
-  background-size: contain;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  max-width: var(--hero-image-max-width);
+  height: auto;
 }

@@ -1,9 +1,9 @@
 .footer {
-  background: #111;
+  background: #2E2E2E;
   color: #ddd;
-  /* ensure it sits under everything */
   position: relative;
   z-index: 10;
+  
 }
 
 .footer-container {
@@ -25,9 +25,10 @@
 
 .footer-col ul {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
   margin: 0;
   font-size:.9rem;
+  font-weight: normal;
 }
 
 .footer-col li {
