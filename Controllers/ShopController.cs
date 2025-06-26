@@ -19,6 +19,10 @@ namespace BobaLite.Controllers
             var drinks = _context.Drinks
                 .Include(d => d.Variants)
                 .ToList();
+
+                
+                Console.WriteLine($"Found {drinks.Count} drinks");
+                
             return View(drinks);
         }
     }
