@@ -1,10 +1,14 @@
-/* full-bleed white band */
+/* ==========================================================
+   UNIVERSAL WRAPPER
+========================================================== */
 .universal-wrapper {
     background-color: #fff;
     padding: 4rem 0;
 }
 
-/* center & constrain */
+/* ==========================================================
+   UNIVERSAL CONTAINER
+========================================================== */
 .container.universal {
     max-width: 1200px;
     margin: 0 auto;
@@ -12,50 +16,59 @@
     text-align: center;
 }
 
-/* two-column grid */
+/* ==========================================================
+   UNIVERSAL ITEMS LAYOUT
+========================================================== */
 .universal-items {
     display: flex;
     flex-wrap: wrap;
-    gap: .5rem;
     justify-content: space-between;
+    gap: 0.5rem;
     margin-top: 2rem;
 }
 
+/* ==========================================================
+   INDIVIDUAL ITEM
+========================================================== */
 .universal-item {
-    flex: 1 1 45%;
-    /* two per row, wrap on small screens */
+    flex: 1 1 45%; /* Two per row by default */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .universal-item img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
     border-radius: 0.5rem;
 }
 
 .universal-item p {
     margin: 1rem 0 0.5rem;
     font-size: 1rem;
+    font-weight: bold;
     color: #333;
-    font-weight:bold;
 }
 
+/* ==========================================================
+   LINKS
+========================================================== */
 .universal-link {
     color: #7C3AED;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .universal-link:hover {
     text-decoration: underline;
 }
 
-/* Responsive tweaks */
+/* ==========================================================
+   RESPONSIVE STYLES
+========================================================== */
 @media (max-width: 768px) {
     .universal-item {
-        flex: 1 1 100%;
+        flex: 1 1 100%; /* Stack items on smaller screens */
     }
 }
