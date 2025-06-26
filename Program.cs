@@ -14,6 +14,12 @@ builder.Services.AddDbContext<BobaLite.Data.AppDbContext>(options =>
 // Build the app
 var app = builder.Build();
 
+// 👇 Add this block AFTER app is built, BEFORE using static files
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();  
+    dbContext.Database.Migrate();
+}
 
 // Serve static files
 app.UseDefaultFiles();
@@ -30,7 +36,6 @@ app.UseEndpoints(endpoints =>
         pattern: "{controller=Home}/{action=Index}/{id?}"
     );
 });
-
 
 // Run the app
 app.Run();
