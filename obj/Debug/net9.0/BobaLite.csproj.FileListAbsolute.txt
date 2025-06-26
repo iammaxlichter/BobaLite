@@ -28,10 +28,8 @@ C:\Users\semiu\Documents\VS Code\BobaLite\bin\Debug\net9.0\Properties\appsetting
 C:\Users\semiu\Documents\VS Code\BobaLite\bin\Debug\net9.0\Properties\appsettings.json
 C:\Users\semiu\Documents\VS Code\BobaLite\bin\Debug\net9.0\BobaLite.staticwebassets.runtime.json
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\BobaLite.sourcelink.json
-C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\r8b8a550hj-6c6n4czxsq.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\x91d0ncjru-gfioebalp3.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\9423pqgjzm-zqueqml50s.gz
-C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\zgham7xwe0-88o0ovnygf.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\yrchcz9ee4-u591livd4s.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\3aeev2uhwi-z8bvncnd4a.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\i2p07ycr13-7s2v75hy8y.gz
@@ -48,9 +46,11 @@ C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\e3ghachky1
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\pbucvnl3s8-us1gq0kiuy.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\vzjb09lruo-7ioyhf0iql.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\bhirk35742-qg9frowapl.gz
-C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\rsgl9k8yt7-9nfrchs5rc.gz
-C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\u0mkrnnf8p-r5avfpt5fg.gz
-C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\dn8svsicyr-1ubky6k5cg.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\mqus1mczp5-wybli07has.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\c4xs02nob2-x4ypqvaxoj.gz
-C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\vo5gyqvf1j-mi670o4kr4.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\rsgl9k8yt7-y07mczzs0x.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\u0mkrnnf8p-mjpjc8u63m.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\zgham7xwe0-uvosta74vj.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\r8b8a550hj-e9mnlx4opq.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\dn8svsicyr-7510zypob5.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\vo5gyqvf1j-lg5ktn81s7.gz
