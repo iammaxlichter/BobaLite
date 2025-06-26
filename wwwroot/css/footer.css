@@ -1,34 +1,41 @@
+/* ==========================================================
+   FOOTER BASE
+========================================================== */
 .footer {
-  background: #2E2E2E;
-  color: #ddd;
   position: relative;
   z-index: 10;
-  
+  background: #2E2E2E;
+  color: #ddd;
 }
 
+/* ==========================================================
+   FOOTER CONTAINER
+========================================================== */
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem 2rem;
+  padding: 2rem 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
 }
 
+/* ==========================================================
+   FOOTER COLUMNS
+========================================================== */
 .footer-col h4 {
-  margin-bottom: 1rem;
   color: #fff;
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  margin-bottom: 1rem;
 }
 
 .footer-col ul {
   list-style: none;
-  padding-left: 0;
   margin: 0;
-  font-size:.9rem;
-  font-weight: normal;
+  padding-left: 0;
+  font-size: 0.9rem;
 }
 
 .footer-col li {
@@ -38,18 +45,21 @@
 .footer-col a {
   color: #ccc;
   text-decoration: none;
+  font-weight:bold;
   transition: color 0.2s, transform 0.2s;
 }
-
 .footer-col a:hover {
   color: #fff;
   transform: translateY(-2px);
 }
 
+/* ==========================================================
+   SOCIAL LINKS
+========================================================== */
 .footer-col--social .social-icons {
   display: flex;
-  gap: 1rem;
   align-items: center;
+  gap: 1rem;
 }
 
 .footer-col--social .social-icons img {
@@ -63,10 +73,13 @@
   filter: brightness(0.5) invert(1);
 }
 
+/* ==========================================================
+   FOOTER BOTTOM
+========================================================== */
 .footer-bottom {
-  border-top: 1px solid #222;
   text-align: center;
   padding: 1rem;
   font-size: 0.8rem;
   color: #666;
+  border-top: 1px solid #222;
 }
