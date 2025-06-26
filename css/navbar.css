@@ -24,36 +24,138 @@
 /* ==========================================================
    Desktop Links
 ========================================================== */
+.desktop-links {
+  display: flex;
+  position: relative;
+}
+
+.desktop-links .nav-item {
+  position: relative;
+}
+
 .desktop-links a {
   position: relative;
   color: #333;
   font-size: 1.1rem;
   font-weight: bold;
   text-decoration: none;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1.25rem;
   transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.desktop-links a:hover,
-.desktop-links a:focus {
-  color: #7C3AED;
-}
-
-.desktop-links a::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -2px;
-  width: 0;
-  height: 2px;
-  background: #7C3AED;
-  transition: width 0.2s ease, left 0.2s ease;
-}
 
 .desktop-links a:hover::after,
 .desktop-links a:focus::after {
   left: 0;
   width: 100%;
+}
+
+/* Add arrow for dropdown items */
+.desktop-links .nav-item.has-dropdown > a::after {
+  content: "▼";
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when dropdown is hovered */
+.desktop-links .nav-item.has-dropdown:hover > a::after {
+  transform: rotate(180deg);
+}
+
+/* Add upward pointing arrow to dropdown */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 16px solid #fff;
+  z-index: 2001;
+}
+
+/* Add border for the arrow */
+.dropdown::after {
+  content: "";
+  position: absolute;
+  top: -17px;
+  left: 19px;
+  width: 0;
+  height: 0;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+  border-bottom: 17px solid #e5e5e5;
+  z-index: 2000;
+}
+/* ==========================================================
+   Desktop Dropdown Menus
+========================================================== */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 2000;
+}
+
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.dropdown li {
+  margin: 0;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.dropdown a::after {
+  display: none; /* Remove the underline effect for dropdown items */
+}
+
+.dropdown a:hover {
+  background: rgba(124, 58, 237, 0.1);
+  color: #7C3AED;
+  padding-left: 1.25rem;
+}
+
+/* Special styling for Sale dropdown */
+.nav-item.sale-item .dropdown a {
+  color: #7C3AED;
+}
+
+.nav-item.sale-item .dropdown a:hover {
+  background: rgba(124, 58, 237, 0.15);
+  color: #6D28D9;
 }
 
 /* ==========================================================
@@ -68,6 +170,8 @@
   display: block;
   cursor: pointer;
 }
+
+
 
 /* ==========================================================
    Mobile Menu Toggle
