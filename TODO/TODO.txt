@@ -1,7 +1,0 @@
-- Add links for insta, facebook, twitter
-- have little popups when you hover over "Shop" "About" and "Sale"  that kind of look like navbarupdates.png
-- route navbar
-- route hamburger navbar
-- route all the links in the footer to actual pages
-- add promo pictures
-- navbar drawer on mobile on gh-pages branch. The words under home are not bolded when they should be
