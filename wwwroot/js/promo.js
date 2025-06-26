@@ -3,7 +3,7 @@ export function loadPromo() {
   const container = document.getElementById('promo');
   if (!container) return;
 
-  fetch('/partials/promo.html')
+  fetch('partials/promo.html')
     .then(r => r.text())
     .then(html => {
       container.innerHTML = html;
