@@ -65,33 +65,6 @@
   transform: rotate(180deg);
 }
 
-/* Add upward pointing arrow to dropdown */
-.dropdown::before {
-  content: "";
-  position: absolute;
-  top: -16px;
-  left: 20px;
-  width: 0;
-  height: 0;
-  border-left: 16px solid transparent;
-  border-right: 16px solid transparent;
-  border-bottom: 16px solid #fff;
-  z-index: 2001;
-}
-
-/* Add border for the arrow */
-.dropdown::after {
-  content: "";
-  position: absolute;
-  top: -17px;
-  left: 19px;
-  width: 0;
-  height: 0;
-  border-left: 17px solid transparent;
-  border-right: 17px solid transparent;
-  border-bottom: 17px solid #e5e5e5;
-  z-index: 2000;
-}
 /* ==========================================================
    Desktop Dropdown Menus
 ========================================================== */
@@ -132,7 +105,7 @@
   padding: 0.75rem 1rem;
   color: #555;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: bold;
   text-decoration: none;
   transition: all 0.2s ease;
   border-radius: 0;
@@ -146,6 +119,34 @@
   background: rgba(124, 58, 237, 0.1);
   color: #7C3AED;
   padding-left: 1.25rem;
+}
+
+/* Add upward pointing arrow to dropdown */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 16px solid #fff;
+  z-index: 2001;
+}
+
+/* Add border for the arrow */
+.dropdown::after {
+  content: "";
+  position: absolute;
+  top: -17px;
+  left: 19px;
+  width: 0;
+  height: 0;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+  border-bottom: 17px solid #e5e5e5;
+  z-index: 2000;
 }
 
 /* Special styling for Sale dropdown */
