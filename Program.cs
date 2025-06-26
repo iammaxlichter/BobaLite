@@ -17,8 +17,10 @@ var app = builder.Build();
 // 👇 Add this block AFTER app is built, BEFORE using static files
 using (var scope = app.Services.CreateScope())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();  
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     dbContext.Database.Migrate();
+    
+    DataSeeder.Seed(dbContext);
 }
 
 // Serve static files
