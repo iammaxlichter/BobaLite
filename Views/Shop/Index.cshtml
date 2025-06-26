@@ -1,0 +1,19 @@
+@model List<BobaLite.Models.Drink>
+
+
+@{
+    Layout = "_Layout";
+}
+
+<h1>Our Drinks</h1>
+
+@foreach (var drink in Model)
+{
+    <h2>@drink.Name</h2>
+    <ul>
+    @foreach (var variant in drink.Variants)
+    {
+        <li>@variant.Name — $@variant.Price (@variant.Quantity cans)</li>
+    }
+    </ul>
+}
