@@ -15,8 +15,8 @@
     width: 100%;
     background: radial-gradient(
         circle,
-        #e5d1ff 30%, /* Lighter Center */
-        #d1aaff 100% /* Darker Edges */
+        #d8aaff  30%, /* Lighter Center */
+        #b478ff  100% /* Darker Edges */
     );
 }
 
