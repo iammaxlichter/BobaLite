@@ -40,7 +40,6 @@ appsettings.Production.json
 logs/
 
 # Database files
-*.db
 *.sqlite
 *.sqlite3
 *.mdf
