@@ -1,6 +1,6 @@
 // navbar.js
 export function loadNavbar() {
-  fetch('/partials/navbar.html')
+  fetch('partials/navbar.html')
     .then(r => r.text())
     .then(html => {
       document.getElementById('navbar').innerHTML = html;
