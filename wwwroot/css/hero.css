@@ -1,18 +1,31 @@
+/* ==========================================================
+   VARIABLES
+========================================================== */
 :root {
-  --hero-image-max-width: 1200px; 
+    --hero-image-max-width: 1200px;
 }
 
+/* ==========================================================
+   HERO WRAPPER
+========================================================== */
 .hero {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: radial-gradient(
+        circle,
+        #e5d1ff 30%, /* Lighter Center */
+        #d1aaff 100% /* Darker Edges */
+    );
 }
 
+/* ==========================================================
+   HERO IMAGE
+========================================================== */
 .hero img {
-  display: block;
-  width: 100%;
-  max-width: var(--hero-image-max-width);
-  height: auto;
+    display: block;
+    width: 100%;
+    max-width: var(--hero-image-max-width);
+    height: auto;
 }

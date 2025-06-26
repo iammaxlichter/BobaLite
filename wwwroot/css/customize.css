@@ -1,170 +1,169 @@
-/* Main customize section */
+/* ==========================================================
+   CUSTOMIZE WRAPPER
+========================================================== */
 .customize-wrapper {
-    width: 100%;
-    background: #76C043;
-    padding: 5rem 0;
     position: relative;
-    /* Remove overflow: hidden to prevent content cutoff */
+    width: 100%;
+    padding: 5rem 0;
+    background: #76C043;
 }
 
-
+/* Decorative Element */
 .customize-wrapper::after {
     content: '';
     position: absolute;
-    bottom: -20%; /* Reduced from -30% */
-    left: -3%; /* Reduced from -5% */
-    width: 150px; /* Reduced from 200px */
-    height: 150px; /* Reduced from 200px */
+    bottom: -20%; 
+    left: -3%;  
+    width: 150px;
+    height: 150px;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 50%;
     z-index: 1;
 }
 
+/* ==========================================================
+   CONTAINER
+========================================================== */
 .container.customize {
+    position: relative;
+    z-index: 2;
     max-width: 1200px;
-    width: 100%;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    position: relative;
-    z-index: 2;
-    box-sizing: border-box; /* Ensure padding is included in width */
+    box-sizing: border-box;
 }
 
-/* Image column */
+/* ==========================================================
+   IMAGE COLUMN
+========================================================== */
 .customize-image {
     flex: 1 1 300px;
     text-align: center;
     position: relative;
-    min-width: 0; /* Prevent flex item from overflowing */
+    min-width: 0;
 }
 
-
 .customize-image img {
+    display: inline-block;
     max-width: 100%;
     height: auto;
-    display: inline-block;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
     transition: transform 0.3s ease;
 }
-
 .customize-image:hover img {
     transform: scale(1.05);
 }
 
-/* Text column */
+/* ==========================================================
+   TEXT COLUMN
+========================================================== */
 .customize-text {
     flex: 1 1 400px;
     color: #fff;
     margin-bottom: 40px;
-    min-width: 0; /* Prevent flex item from overflowing */
+    min-width: 0;
 }
-
 .customize-text h2 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    word-wrap: break-word; /* Prevent text overflow */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    word-wrap: break-word;
 }
-
 .customize-text .subtitle {
     font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.5;
     margin-bottom: 2rem;
     opacity: 0.9;
-    font-weight: 300;
-    line-height: 1.5;
-    word-wrap: break-word; 
-    font-weight:bold;
+    word-wrap: break-word;
 }
 
-/* Input container */
+/* ==========================================================
+   INPUT STYLES
+========================================================== */
 .input-container {
     position: relative;
     margin-bottom: 2rem;
     width: 100%;
     box-sizing: border-box;
 }
-
 .customize-input {
     width: 100%;
     max-width: 100%;
     padding: 1rem 1.5rem;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: #fff;
     font-size: 1.1rem;
-    outline: none;
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Include padding and border in width */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-
 .customize-input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255,255,255,0.7);
 }
-
 .customize-input:focus {
-    border-color: rgba(255, 255, 255, 0.8);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     transform: translateY(-2px);
+    outline: none;
 }
 
-/* Button */
+/* ==========================================================
+   BUTTON STYLES
+========================================================== */
 .customize-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    background: #fff;
-    color: #74A12E;
-    border-radius: 50px;
-    text-transform: uppercase;
-    font-weight: 700;
     font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
     letter-spacing: 0.5px;
+    color: #74A12E;
+    background: #fff;
     border: none;
+    border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
-    white-space: nowrap; /* Prevent button text from wrapping */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    white-space: nowrap;
+    transition: all 0.3s ease;
 }
-
 .customize-btn::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
     transition: left 0.5s;
 }
-
 .customize-btn:hover::before {
     left: 100%;
 }
-
 .customize-btn:hover,
 .customize-btn:focus {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-    outline: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
-
 .customize-btn:active {
     transform: translateY(-1px);
 }
 
-/* Features list */
+/* ==========================================================
+   FEATURES LIST
+========================================================== */
 .features-list {
     display: flex;
     flex-wrap: wrap;
@@ -172,63 +171,55 @@
     margin-top: 2rem;
     opacity: 0.9;
 }
-
 .feature-item {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255,255,255,0.9);
 }
-
 .feature-icon {
     width: 16px;
     height: 16px;
     fill: currentColor;
 }
 
-/* Mobile optimizations */
+/* ==========================================================
+   RESPONSIVE STYLES
+========================================================== */
 @media (max-width: 768px) {
     .customize-wrapper {
         padding: 3rem 0;
     }
-
     .container.customize {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 0 1.5rem; /* Increased padding for mobile */
+        padding: 0 1.5rem;
     }
-
     .customize-image,
     .customize-text {
         width: 100%;
-        max-width: 500px;
+        max-width: 700px;
     }
-
     .customize-text h2 {
         font-size: 2rem;
     }
-
     .customize-text .subtitle {
         font-size: 1rem;
     }
-
     .customize-input {
         font-size: 1rem;
         padding: 0.875rem 1.25rem;
     }
-
     .customize-btn {
-        padding: 0.875rem 1.75rem;
         font-size: 0.9rem;
+        padding: 0.875rem 1.75rem;
     }
-
     .features-list {
         justify-content: center;
         margin-top: 1.5rem;
     }
-
     .feature-item {
         font-size: 0.85rem;
     }
@@ -238,64 +229,55 @@
     .customize-wrapper {
         padding: 2.5rem 0;
     }
-
     .container.customize {
         padding: 0 1rem;
     }
-
     .customize-text h2 {
         font-size: 1.75rem;
     }
-
     .features-list {
         flex-direction: column;
         align-items: center;
     }
-
-    /* Ensure input doesn't overflow on very small screens */
     .customize-input {
         font-size: 0.9rem;
         padding: 0.75rem 1rem;
     }
-
     .customize-btn {
-        padding: 0.75rem 1.5rem;
         font-size: 0.85rem;
+        padding: 0.75rem 1.5rem;
     }
 }
 
-/* Extra small screens */
 @media (max-width: 320px) {
     .container.customize {
         padding: 0 0.75rem;
     }
 }
 
-/* Accessibility */
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
 @media (prefers-reduced-motion: reduce) {
     .customize-image img,
     .customize-input,
     .customize-btn {
         transition: none;
     }
-
     .customize-wrapper::before,
     .customize-wrapper::after {
         display: none;
     }
 }
 
-/* High contrast mode */
 @media (prefers-contrast: high) {
     .customize-wrapper {
         background: #2d5016;
     }
-
     .customize-input {
         border-color: #fff;
-        background: rgba(0, 0, 0, 0.3);
+        background: rgba(0,0,0,0.3);
     }
-
     .customize-btn {
         background: #fff;
         color: #000;

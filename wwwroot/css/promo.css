@@ -1,11 +1,12 @@
-/* Full-width wrapper */
+/* ===========================================================
+   BASE STYLES
+=========================================================== */
 .promo-wrapper {
     width: 100%;
     background-color: #fff;
     padding: 2rem 0;
 }
 
-/* Centered container */
 .container.promo {
     max-width: 80vw;
     width: 100%;
@@ -15,13 +16,11 @@
     overflow: hidden;
 }
 
-/* Slide handling */
 .slides-container {
     position: relative;
     height: 500px;
 }
 
-/* Base slide: positioned absolutely for smooth transitions */
 .promo-slide {
     position: absolute;
     top: 0;
@@ -33,50 +32,14 @@
     align-items: stretch;
     opacity: 0;
     transform: translateX(100%);
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-        opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-/* Button Styles for Specific Slides */
-.low-cal {
-    display: inline-block;
-    padding: 0.875rem 2rem;
-    color: #fff;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    max-width: fit-content;
-    background: linear-gradient(135deg, #555555, #777777);
-}
-
-.low-cal:hover {
-    background: linear-gradient(135deg, #444444, #666666);
-}
-
-.taro-twist {
-        display: inline-block;
-    padding: 0.875rem 2rem;
-    color: #fff;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    max-width: fit-content;
-    background: linear-gradient(135deg, #7C3AED, #A855F7);
-}
-
-.taro-twist:hover {
-    background: linear-gradient(135deg, #6D28D9, #9333EA);
-}
-
+/* ===========================================================
+   BUTTON STYLES
+=========================================================== */
+.low-cal,
+.taro-twist,
 .green-tea {
     display: inline-block;
     padding: 0.875rem 2rem;
@@ -89,68 +52,86 @@
     transition: all 0.3s ease;
     text-transform: uppercase;
     max-width: fit-content;
-    background: linear-gradient(135deg, #16A34A, #22C55E);
 }
 
+.promo-next{
+    color:black;
+}
+
+.low-cal {
+    background: linear-gradient(135deg, #555555, #777777);
+}
+.low-cal:hover {
+    background: linear-gradient(135deg, #444444, #666666);
+}
+
+.taro-twist {
+    background: linear-gradient(135deg, #7C3AED, #A855F7);
+}
+.taro-twist:hover {
+    background: linear-gradient(135deg, #6D28D9, #9333EA);
+}
+
+.green-tea {
+    background: linear-gradient(135deg, #16A34A, #22C55E);
+}
 .green-tea:hover {
     background: linear-gradient(135deg, #15803D, #16A34A);
 }
 
-/* Active slide: visible and centered */
+/* ===========================================================
+   SLIDE ACTIVE STATES
+=========================================================== */
 .promo-slide.active {
     opacity: 1;
     transform: translateX(0);
 }
-
-/* Slide out animations */
 .promo-slide.slide-out-left {
     opacity: 0;
     transform: translateX(-100%);
 }
-
 .promo-slide.slide-out-right {
     opacity: 0;
     transform: translateX(100%);
 }
-
-/* Slide in animations */
 .promo-slide.slide-in-left {
     opacity: 1;
     transform: translateX(0);
     animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
-
 .promo-slide.slide-in-right {
     opacity: 1;
     transform: translateX(0);
     animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* ===========================================================
+   KEYFRAMES
+=========================================================== */
 @keyframes slideInLeft {
     from {
         opacity: 0;
         transform: translateX(-100%);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
     }
 }
-
 @keyframes slideInRight {
     from {
         opacity: 0;
         transform: translateX(100%);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-/* Text column */
+/* ===========================================================
+   TEXT COLUMN
+=========================================================== */
 .promo-text {
     flex: 1;
     display: flex;
@@ -158,8 +139,6 @@
     justify-content: space-between;
     padding: 1rem 0;
 }
-
-/* Copy block */
 .promo-copy h2 {
     font-size: 2.5rem;
     line-height: 1.2;
@@ -167,24 +146,25 @@
     font-weight: bold;
     color: #1a1a1a;
 }
-
 .promo-copy p {
     color: #444;
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
     line-height: 1.6;
-    font-weight:bold;
+    font-weight: bold;
 }
 
-
-
+/* ===========================================================
+   BUTTON HOVER
+=========================================================== */
 .promo-btn:hover {
-    background: linear-gradient(135deg, #6D28D9, #9333EA);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Nav */
+/* ===========================================================
+   NAVIGATION BUTTONS
+=========================================================== */
 .promo-nav {
     display: flex;
     align-items: center;
@@ -192,7 +172,6 @@
     font-size: 1rem;
     margin-bottom: 40px;
 }
-
 .promo-nav button {
     background: #f1f3f4;
     border: none;
@@ -207,10 +186,21 @@
     transition: all 0.3s ease;
     color: #333;
 }
+.low-cal-nav:hover {
+    background: #555555;
+    color: #fff;
+    transform: scale(1.1);
+}
 
-.promo-nav button:hover {
+.taro-twist-nav:hover {
     background: #7C3AED;
-    color: white;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.green-tea-groove-nav:hover {
+    background: #16A34A;
+    color: #fff;
     transform: scale(1.1);
 }
 
@@ -219,7 +209,6 @@
     cursor: not-allowed;
     transform: none;
 }
-
 .promo-counter {
     min-width: 3ch;
     text-align: center;
@@ -227,7 +216,9 @@
     color: #666;
 }
 
-/* Image column */
+/* ===========================================================
+   IMAGE COLUMN
+=========================================================== */
 .promo-image {
     flex: 1;
     text-align: center;
@@ -235,7 +226,6 @@
     align-items: stretch;
     justify-content: center;
 }
-
 .promo-image img {
     display: block;
     width: 100%;
@@ -243,25 +233,29 @@
     height: 100%;
     object-fit: contain;
     border-radius: 20px;
-
 }
 
-/* Responsive design */
+/* ===========================================================
+   RESPONSIVE STYLES
+=========================================================== */
+
+/* Large screens */
 @media (max-width: 992px) {
     .container.promo {
         padding: 0 2rem;
     }
-
     .promo-copy h2 {
         font-size: 2.2rem;
     }
-
     .slides-container {
         height: 550px;
         min-height: 550px;
     }
 }
 
+/* ===========================================================
+   MOBILE SCALING (Main request!)
+=========================================================== */
 @media (max-width: 768px) {
     .promo-wrapper {
         padding: 3rem 0;
@@ -321,8 +315,9 @@
         margin-bottom: 1rem;
     }
 
+    /* Specific request: Large images for mobile */
     .promo-image img {
-        max-width: 340px;
+        max-width: 90vw;
         height: auto;
     }
 
@@ -338,46 +333,39 @@
     }
 }
 
+/* Medium-sized mobile screens */
 @media (max-width: 480px) {
     .promo-wrapper {
         padding: 2rem 0;
     }
-
     .container.promo {
         padding: 0 1rem;
     }
-
     .promo-slide {
         gap: 2rem;
         padding: 1.5rem 0;
     }
-
     .slides-container {
         min-height: 650px;
     }
-
     .promo-copy h2 {
         font-size: 1.8rem;
         margin-bottom: 1rem;
         line-height: 1.2;
     }
-
     .promo-copy p {
         font-size: 1rem;
         margin-bottom: 1.5rem;
         line-height: 1.5;
         max-width: 320px;
     }
-
     .promo-btn {
         padding: 0.875rem 2rem;
         font-size: 0.85rem;
     }
-
     .promo-image img {
-        max-width: 280px;
+        max-width: 90vw;
     }
-
     .promo-nav button {
         width: 40px;
         height: 40px;
@@ -385,51 +373,45 @@
     }
 }
 
+/* Small mobile screens */
 @media (max-width: 375px) {
     .promo-copy h2 {
         font-size: 1.6rem;
     }
-
     .promo-copy p {
         font-size: 0.95rem;
         max-width: 280px;
     }
-
     .promo-image img {
-        max-width: 260px;
+        max-width: 90vw;
     }
-
     .slides-container {
         min-height: 600px;
     }
 }
 
+/* Very tiny screens */
 @media (max-width: 320px) {
     .promo-slide {
         gap: 1.5rem;
         padding: 1rem 0;
     }
-
     .promo-copy h2 {
         font-size: 1.4rem;
         margin-bottom: 0.75rem;
     }
-
     .promo-copy p {
         font-size: 0.9rem;
         margin-bottom: 1.25rem;
         max-width: 260px;
     }
-
     .promo-btn {
         padding: 0.75rem 1.75rem;
         font-size: 0.8rem;
     }
-
     .promo-image img {
-        max-width: 240px;
+        max-width: 90vw;
     }
-
     .slides-container {
         min-height: 550px;
     }
