@@ -1,0 +1,15 @@
+.shop-hero {
+    background-color: #f7e6ff; /* soft pastel or brand color */
+    height: 250px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.shop-hero img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
