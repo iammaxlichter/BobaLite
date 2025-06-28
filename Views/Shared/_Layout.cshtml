@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>BobaLite</title>
 
-    <link rel="icon" type="image/png"href="/images/bobalite-logo.png">
+    <link rel="icon" href="/Home" type="image/png"href="/images/Shared/bobalite-logo.png">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="~/css/Shared/layout.css" />
+    <link rel="stylesheet" href="~/css/Shared/main.css" />
+     @RenderSection("Styles", required: false)
     
 </head>
+
 <body>
-    <!-- Navbar partial goes here -->
+
+    <!-- Navbar partial -->
     @await Html.PartialAsync("_Navbar") 
 
-    <!-- Main page content goes here -->
+    <!-- Main page -->
     <main>
         @RenderBody()
     </main>
 
-    <!-- Footer partial goes here -->
+    <!-- Footer partial -->
     @await Html.PartialAsync("_Footer") 
 
     <!-- Scripts -->
-    <script type="module" src="~/js/Shared/layout.js"></script>
+    @RenderSection("Scripts", required: false)
+    <script type="module" src="~/js/Shared/main.js"></script>
 
-    <!-- Add other site-wide scripts here -->
 </body>
 </html>
