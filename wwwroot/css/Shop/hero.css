@@ -1,6 +1,17 @@
+.shop-hero::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent);
+    border-radius: 50%;
+    z-index: 0;
+}
+
 .shop-hero {
-    background-color: #f7e6ff; /* soft pastel or brand color */
+    background: linear-gradient(to right, #fceabb, #f8b500);
     height: 250px;
+    padding: 1rem 0;
     position: relative;
     display: flex;
     align-items: center;
@@ -12,4 +23,5 @@
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.25));
 }
