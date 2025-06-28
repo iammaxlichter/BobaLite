@@ -1,0 +1,65 @@
+@model List<BobaLite.Models.Drink>
+
+<section class="product-grid">
+  @foreach (var drink in Model)
+  {
+    var slug = drink.Name
+      .ToLowerInvariant()
+      .Replace(" ", "-")
+      .Replace("--","-");
+
+    var v1  = drink.Variants.First(v => v.Quantity == 1);
+    var v6  = drink.Variants.FirstOrDefault(v => v.Quantity == 6);
+    var v12 = drink.Variants.FirstOrDefault(v => v.Quantity == 12);
+
+    <div class="product-card" data-slug="@slug">
+      <!-- cart icon with resolved URLs -->
+      <button class="add-cart-icon" aria-label="Add to Cart" data-pack="@v1.Quantity">
+        <img
+          src="@Url.Content($"~/images/Shop/shopping-cart-plus.png")"
+          data-plus="@Url.Content($"~/images/Shop/shopping-cart-plus.png")"
+          data-check="@Url.Content($"~/images/Shop/shopping-cart-check.png")"
+          alt="Add to cart"
+        />
+      </button>
+
+      <!-- main can image also must use Url.Content -->
+      <img
+        class="can-image"
+        src="@Url.Content($"~/images/Shop/{slug}-1-pack.png")"
+        alt="@drink.Name"
+      />
+
+      <h3>@drink.Name</h3>
+      <p class="price">@v1.Quantity Pack – $@v1.Price.ToString("F2")</p>
+
+      <div class="pack-options">
+        <button
+          class="pack-btn active"
+          data-pack="1"
+          data-price="@v1.Price.ToString("F2")"
+        >1</button>
+        @if (v6 != null)
+        {
+          <button
+            class="pack-btn"
+            data-pack="6"
+            data-price="@v6.Price.ToString("F2")"
+          >6</button>
+        }
+        @if (v12 != null)
+        {
+          <button
+            class="pack-btn"
+            data-pack="12"
+            data-price="@v12.Price.ToString("F2")"
+          >12</button>
+        }
+      </div>
+    </div>
+  }
+</section>
+
+@section Scripts {
+  <script type="module" src="~/js/Shop/pack-switcher.js"></script>
+}
