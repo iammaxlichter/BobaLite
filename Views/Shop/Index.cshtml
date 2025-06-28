@@ -1,10 +1,20 @@
-@model List<BobaLite.Models.Drink>
+@model List<BobaLite.Models.Product>
 
 
 @{
     Layout = "_Layout";
 }
 
+@section Styles {
+    <link rel="stylesheet" href="~/css/Shop/main.css" />
+}
+
 <div class="shop-hero">
-    <img src="/images/boba-hero.png" alt="Hero Image">
+    <img src="/images/Shop/bobalite-hero.png" alt="Hero Image">
 </div>
+
+@await Html.PartialAsync("_Grid") 
+
+@section Scripts {
+    <script type="module" src="~/js/Shop/main.js"></script>
+}

@@ -1,10 +1,11 @@
+@model List<BobaLite.Models.Product>
 @{
     Layout = "_Layout"; 
 }
 
-<head>
+@section Styles {
     <link rel="stylesheet" href="~/css/Homepage/main.css" />
-</head>
+}
 
 <div id="banner" class="banner">
     <span class="banner-text">FREE SHIPPING on orders $25!</span>
@@ -20,4 +21,6 @@
 @await Html.PartialAsync("_Customize")   
 @await Html.PartialAsync("_Universal") 
 
-<script type="module" src="~/js/Homepage/index.js"></script>
+@section Scripts {
+    <script type="module" src="~/js/Homepage/main.js"></script>
+}

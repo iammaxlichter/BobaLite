@@ -1,0 +1,420 @@
+/* ==========================================
+   Global Reset
+========================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================
+   Product Grid Container
+========================================== */
+.product-grid {
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  /* fluid columns: min 200px, max 1fr */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  /* responsive gap */
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+/* ==========================================
+   MOBILE: Force 2 columns on screens ≤600px
+========================================== */
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+/* ==========================================
+   Product Card with Hover Animation
+========================================== */
+.product-card {
+  position: relative;  /* for the cart icon */
+  width: 100%;         /* fill the grid cell */
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow: hidden;
+  
+  /* Smooth transitions for hover effects */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.3s ease;
+  
+  /* Subtle gradient background */
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* Card Hover Effects */
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f2f5 100%);
+}
+
+/* Smooth hover transition for inner elements */
+.product-card:hover .can-image {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.product-card:hover h3 {
+  color: #2c3e50;
+  transform: translateY(-2px);
+}
+
+/* Title always two lines tall with smooth transitions */
+.product-card h3 {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  min-height: calc(2 * 1.2em);
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* ==========================================
+   Cart Icon Button with Success States
+========================================== */
+.add-cart-icon {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.2s, opacity 0.2s, background-color 0.3s;
+}
+
+.add-cart-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.add-cart-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Success state for cart icon */
+.add-cart-icon.success {
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3);
+}
+
+/* ==========================================
+   Cart Icon Animations
+========================================== */
+
+/* Pop animation for cart interaction */
+@keyframes cart-pop {
+  0%   { transform: scale(1);   opacity: 1; }
+  50%  { transform: scale(1.4); opacity: 0.8; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+.add-cart-icon.pop {
+  animation: cart-pop 0.4s ease-out;
+}
+
+/* Success pulse animation */
+@keyframes success-pulse {
+  0% { 
+    background-color: #22c55e;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+    transform: scale(1);
+  }
+  50% { 
+    background-color: #16a34a;
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+    transform: scale(1.05);
+  }
+  100% { 
+    background-color: #22c55e;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    transform: scale(1);
+  }
+}
+
+.add-cart-icon.success-pulse {
+  animation: success-pulse 0.8s ease-out;
+}
+
+/* ==========================================
+   Product Image with Improved Transitions
+========================================== */
+.can-image {
+  display: block;
+  margin: 0 auto 1rem;
+  
+  /* scale to 80% of the card's width */
+  width: 100%;
+  
+  /* allow it to grow up to 300px tall, but maintain aspect ratio */
+  max-height: 300px;
+  padding-top: 1.5rem;
+  object-fit: contain;
+  object-position: center;
+  
+  /* Smooth transitions for all transform changes */
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.3s ease;
+}
+
+/* ==========================================
+   Improved Image Switching Animation
+========================================== */
+
+/* When switching, keep image visible but slightly fade */
+.can-image.switching {
+  opacity: 0.7;
+  transform: scale(0.95);
+  filter: blur(1px);
+}
+
+/* Smooth fade-in animation for new image that doesn't wait for full load */
+@keyframes smoothImageTransition {
+  0% { 
+    opacity: 0.7; 
+    transform: scale(0.95);
+    filter: blur(1px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.can-image.transitioning {
+  animation: smoothImageTransition 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ==========================================
+   Price Text with Smoother Updates
+========================================== */
+.price {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Improved price animation - no red flash */
+@keyframes priceUpdate {
+  0% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.price.updating {
+  animation: priceUpdate 0.3s ease-out;
+}
+
+/* ==========================================
+   Pack Options with Enhanced Interactions
+========================================== */
+.pack-options {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.pack-btn {
+  background-color: #eee;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+  /* Enhanced transitions */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ripple effect background */
+.pack-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.pack-btn:hover::before {
+  width: 100px;
+  height: 100px;
+}
+
+.pack-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.pack-btn.active {
+  background-color: #3c3c3c;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.pack-btn.active::before {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Button click animation */
+@keyframes buttonPress {
+  0% { transform: translateY(-1px) scale(1); }
+  50% { transform: translateY(0) scale(0.98); }
+  100% { transform: translateY(-1px) scale(1); }
+}
+
+.pack-btn:active {
+  animation: buttonPress 0.15s ease-out;
+}
+
+/* ==========================================
+   Mobile Optimizations
+========================================== */
+@media (max-width: 600px) {
+  /* Reduce hover effects on mobile for better performance */
+  .product-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .product-card:hover .can-image {
+    transform: scale(1.02);
+  }
+}
+
+/* ==========================================
+   Scroll Animation Classes
+========================================== */
+.product-card.scroll-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.product-card.scroll-hidden.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   Enhanced Responsive Stock Labels
+========================================== */
+.stock-label {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+  right: 4.5rem; /* Leave space for cart button (40px + 0.75rem + buffer) */
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-align: center;
+  z-index: 15;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Low stock styling with amber gradient */
+.product-card.low-stock .stock-label {
+  background: linear-gradient(
+    to right,
+    #ffece3,   /* extremely pale peach */
+    #f8b500    /* your original mustard */
+  );
+  color: #3c3c3c;
+}
+
+/* Low stock image effect */
+.product-card.low-stock .can-image {
+  filter: saturate(0.8);
+}
+
+/* Out of stock styling */
+.product-card.out-of-stock .stock-label {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  color: #e5e7eb;
+}
+
+.product-card.out-of-stock .can-image {
+  filter: grayscale(100%) brightness(0.6);
+}
+
+.product-card.out-of-stock .add-cart-icon,
+.product-card.out-of-stock .pack-btn {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Responsive stock label adjustments */
+@media (max-width: 768px) {
+  .stock-label {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+    top: 1.25rem;
+    left: 0.375rem;
+    right: 4rem; /* Adjust for smaller cart button */
+    border-radius: 0.375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stock-label {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.4rem;
+    top: 1.25rem;
+    left: 0.25rem;
+    right: 3.75rem; /* Further adjust for mobile */
+    border-radius: 0.25rem;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 320px) {
+  .stock-label {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.3rem;
+    right: 3.5rem; /* Minimal space for very small screens */
+  }
+}
