@@ -1,41 +1,95 @@
 // wwwroot/js/grid.js
 
+// Function to format price to 2 decimal places
+function formatPrice(price) {
+  return parseFloat(price).toFixed(2);
+}
+
+// Initialize all cards on page load to ensure proper price formatting
+export function initPriceFormatting() {
+  document.querySelectorAll('.product-card').forEach(card => {
+    const priceElement = card.querySelector('.price');
+    const activeButton = card.querySelector('.pack-btn.active');
+    
+    // Ensure initial price is properly formatted
+    if (activeButton && priceElement) {
+      const price = activeButton.dataset.price;
+      const pack = activeButton.dataset.pack;
+      
+      // Format the initial price display
+      priceElement.textContent = `${pack} Pack – $${formatPrice(price)}`;
+    }
+  });
+}
+
 // Handles the 1/6/12 pack switching
 export function initPackSwitcher() {
   document.addEventListener('click', function(e) {
     if (!e.target.classList.contains('pack-btn')) return;
 
-    const clickedBtn   = e.target;
-    const card         = clickedBtn.closest('.product-card');
-    const packOptions  = card.querySelector('.pack-options');
-    const priceElement = card.querySelector('.price');
-    const canImage     = card.querySelector('.can-image');
-    const cartIcon     = card.querySelector('.add-cart-icon');
+    const btn        = e.target;
+    const card       = btn.closest('.product-card');
+    const packBtns   = card.querySelectorAll('.pack-btn');
+    const priceEl    = card.querySelector('.price');
+    const canImage   = card.querySelector('.can-image');
+    const cartIcon   = card.querySelector('.add-cart-icon');
 
-    if (clickedBtn.classList.contains('active')) return;
+    const newPack   = btn.dataset.pack;
+    const newPrice  = btn.dataset.price;
+    const newStock  = Number(btn.dataset.stock);
+    const slug      = card.dataset.slug;
 
-    const newPack  = clickedBtn.dataset.pack;
-    const newPrice = clickedBtn.dataset.price;
-    const slug     = card.dataset.slug;
+    // 1) toggle active class
+    packBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-    // toggle active state
-    packOptions.querySelectorAll('.pack-btn').forEach(b => b.classList.remove('active'));
-    clickedBtn.classList.add('active');
-
-    // animate price change
-    priceElement.classList.add('updating');
+    // 2) animate price
+    priceEl.classList.add('updating');
     setTimeout(() => {
-      priceElement.textContent = `${newPack} Pack – $${newPrice}`;
-      priceElement.classList.remove('updating');
+      priceEl.textContent = `${newPack} Pack – $${parseFloat(newPrice).toFixed(2)}`;
+      priceEl.classList.remove('updating');
     }, 150);
 
-    // animate image change with improved loading
+    // 3) animate image
     animateImageChangeImproved(canImage, slug, newPack);
 
-    // update cart-icon pack data
+    // 4) update cart button
     cartIcon.dataset.pack = newPack;
+
+    // 5) stock banner
+    const lowThreshold = 10;
+    let label = card.querySelector('.stock-label');
+    if (!label) {
+      label = document.createElement('div');
+      label.className = 'stock-label';
+      card.prepend(label);
+    }
+
+    if (newStock === 0) {
+      card.classList.add('out-of-stock');
+      card.classList.remove('low-stock');
+      label.textContent = 'Out of Stock';
+      cartIcon.disabled = true;
+    } else {
+      cartIcon.disabled = false;
+      if (newStock <= lowThreshold) {
+        card.classList.add('low-stock');
+        card.classList.remove('out-of-stock');
+        label.textContent = `Low stock: ${newStock} left`;
+      } else {
+        card.classList.remove('low-stock','out-of-stock');
+        label.remove();
+      }
+    }
+
+    // 6) *per-button* disabling* — never re-enable a sold-out pack
+    packBtns.forEach(b => {
+      const stock = Number(b.dataset.stock);
+      b.disabled = stock === 0;
+    });
   });
 }
+
 
 // Handles the cart-icon click with green success animation
 export function initAddToCartAnimations() {

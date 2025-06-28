@@ -16,14 +16,12 @@ namespace BobaLite.Controllers
 
         public IActionResult Index()
         {
-            var drinks = _context.Drinks
-                .Include(d => d.Variants)
-                .ToList();
+            // pull products and their variants
+            var products = _context.Products
+                                   .Include(p => p.Variants)
+                                   .ToList();
 
-                
-                Console.WriteLine($"Found {drinks.Count} drinks");
-                
-            return View(drinks);
+            return View(products);
         }
     }
 }

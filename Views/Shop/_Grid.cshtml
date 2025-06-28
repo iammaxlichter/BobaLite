@@ -1,62 +1,92 @@
-@model List<BobaLite.Models.Drink>
+@model List<BobaLite.Models.Product>
+@{
+    const int lowThreshold = 10;
+}
 
 <section class="product-grid">
-  @foreach (var drink in Model)
+  @foreach (var product in Model)
   {
-    var slug = drink.Name
+    // slug for image URLs
+    var slug = product.Name
       .ToLowerInvariant()
       .Replace(" ", "-")
-      .Replace("--","-");
+      .Replace("--", "-");
 
-    var v1  = drink.Variants.First(v => v.Quantity == 1);
-    var v6  = drink.Variants.FirstOrDefault(v => v.Quantity == 6);
-    var v12 = drink.Variants.FirstOrDefault(v => v.Quantity == 12);
+    // build a list of (variant, packSize) and order by packSize
+    var packs = product.Variants
+      .Select(v => new {
+        Variant = v,
+        PackSize = int.Parse(v.Attributes.Split('-')[0])
+      })
+      .OrderBy(x => x.PackSize)
+      .ToList();
 
-    <div class="product-card" data-slug="@slug">
-      <!-- cart icon with resolved URLs -->
-      <button class="add-cart-icon" aria-label="Add to Cart" data-pack="@v1.Quantity">
-        <img
-          src="@Url.Content($"~/images/Shop/shopping-cart-plus.png")"
-          data-plus="@Url.Content($"~/images/Shop/shopping-cart-plus.png")"
-          data-check="@Url.Content($"~/images/Shop/shopping-cart-check.png")"
-          alt="Add to cart"
-        />
-      </button>
+    // use the 1-pack as initial state (or first if no 1-pack)
+    var first = packs.FirstOrDefault(x => x.PackSize == 1) ?? packs.First();
+    var stock1 = first.Variant.Stock;
 
-      <!-- main can image also must use Url.Content -->
+    // decide card-level classes/text
+    var cardClass = stock1 == 0
+      ? "out-of-stock"
+      : (stock1 <= lowThreshold ? "low-stock" : "");
+
+    var labelText = stock1 == 0
+      ? "Out of Stock"
+      : (stock1 <= lowThreshold 
+         ? $"Low stock: {stock1} left"
+         : "");
+  <div class="product-card @cardClass" data-slug="@slug">
+    @* banner *@
+    @if (!string.IsNullOrEmpty(labelText))
+    {
+      <div class="stock-label">@labelText</div>
+    }
+
+    @* cart button *@
+    <button
+      class="add-cart-icon"
+      aria-label="Add to Cart"
+      data-pack="@first.PackSize"
+      disabled="@(stock1 == 0 ? "disabled" : null)"
+    >
       <img
-        class="can-image"
-        src="@Url.Content($"~/images/Shop/{slug}-1-pack.png")"
-        alt="@drink.Name"
+        src="@Url.Content($"~/images/Shop/shopping-cart-plus.png")"
+        data-plus="@Url.Content($"~/images/Shop/shopping-cart-plus.png")"
+        data-check="@Url.Content($"~/images/Shop/shopping-cart-check.png")"
+        alt="Add to cart"
       />
+    </button>
 
-      <h3>@drink.Name</h3>
-      <p class="price">@v1.Quantity Pack – $@v1.Price.ToString("F2")</p>
+    @* main image *@
+    <img
+      class="can-image"
+      src="@Url.Content($"~/images/Shop/{slug}-{first.PackSize}-pack.png")"
+      alt="@product.Name"
+    />
 
-      <div class="pack-options">
+    <h3>@product.Name</h3>
+    <p class="price">
+      @first.PackSize Pack – $@first.Variant.Price.ToString("F2")
+    </p>
+
+    <div class="pack-options">
+      @foreach (var entry in packs)
+      {
+        var v    = entry.Variant;
+        var ps   = entry.PackSize;
+        var is0  = v.Stock == 0;
         <button
-          class="pack-btn active"
-          data-pack="1"
-          data-price="@v1.Price.ToString("F2")"
-        >1</button>
-        @if (v6 != null)
-        {
-          <button
-            class="pack-btn"
-            data-pack="6"
-            data-price="@v6.Price.ToString("F2")"
-          >6</button>
-        }
-        @if (v12 != null)
-        {
-          <button
-            class="pack-btn"
-            data-pack="12"
-            data-price="@v12.Price.ToString("F2")"
-          >12</button>
-        }
-      </div>
+          class="pack-btn @(ps == first.PackSize ? "active" : "")"
+          data-pack="@ps"
+          data-price="@v.Price.ToString("F2")"
+          data-stock="@v.Stock"
+          disabled="@(is0 ? "disabled" : null)"
+        >
+          @ps
+        </button>
+      }
     </div>
+  </div>
   }
 </section>
 
