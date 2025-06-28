@@ -6,83 +6,72 @@
 <section class="product-grid">
   @foreach (var product in Model)
   {
-    // slug for image URLs
-    var slug = product.Name
-      .ToLowerInvariant()
-      .Replace(" ", "-")
-      .Replace("--", "-");
+    var slug     = product.Name.ToLowerInvariant().Replace(" ", "-");
+    bool isApparel = product.Type == "Apparel";
 
-    // build a list of (variant, packSize) and order by packSize
-    var packs = product.Variants
+    // build + sort variants exactly as before...
+    var variants = product.Variants
       .Select(v => new {
-        Variant = v,
-        PackSize = int.Parse(v.Attributes.Split('-')[0])
+        V        = v,
+        RawLabel = v.Attributes,
+        Label    = v.Attributes.Contains("-")
+                     ? v.Attributes.Split('-')[0]
+                     : v.Attributes
       })
-      .OrderBy(x => x.PackSize)
+      .OrderBy(x => {
+         if (int.TryParse(x.Label, out var n)) return n;
+         return x.Label switch {
+           "S"  => 100,
+           "M"  => 101,
+           "L"  => 102,
+           "XL" => 103,
+           _    => 999
+         };
+      })
       .ToList();
 
-    // use the 1-pack as initial state (or first if no 1-pack)
-    var first = packs.FirstOrDefault(x => x.PackSize == 1) ?? packs.First();
-    var stock1 = first.Variant.Stock;
+    var firstE = variants.FirstOrDefault(x => x.RawLabel.StartsWith("1-"))
+                 ?? variants.First();
+    var stock1 = firstE.V.Stock;
 
-    // decide card-level classes/text
     var cardClass = stock1 == 0
-      ? "out-of-stock"
-      : (stock1 <= lowThreshold ? "low-stock" : "");
-
+         ? "out-of-stock"
+         : (stock1 < lowThreshold ? "low-stock" : "");
     var labelText = stock1 == 0
-      ? "Out of Stock"
-      : (stock1 <= lowThreshold 
-         ? $"Low stock: {stock1} left"
-         : "");
-  <div class="product-card @cardClass" data-slug="@slug">
-    @* banner *@
-    @if (!string.IsNullOrEmpty(labelText))
-    {
-      <div class="stock-label">@labelText</div>
+         ? "Out of Stock"
+         : (stock1 < lowThreshold
+             ? $"Low stock: {stock1} left"
+             : "");
+  <div class="product-card @cardClass" data-slug="@slug" data-type="@product.Type">
+    @* banner... *@
+
+    @* cart button... *@
+
+    @* image: choose plain slug for apparel *@
+    @{
+      var fileName = isApparel
+        ? $"{slug}.png"
+        : $"{slug}-{firstE.RawLabel}.png";
     }
-
-    @* cart button *@
-    <button
-      class="add-cart-icon"
-      aria-label="Add to Cart"
-      data-pack="@first.PackSize"
-      disabled="@(stock1 == 0 ? "disabled" : null)"
-    >
-      <img
-        src="@Url.Content($"~/images/Shop/shopping-cart-plus.png")"
-        data-plus="@Url.Content($"~/images/Shop/shopping-cart-plus.png")"
-        data-check="@Url.Content($"~/images/Shop/shopping-cart-check.png")"
-        alt="Add to cart"
-      />
-    </button>
-
-    @* main image *@
     <img
       class="can-image"
-      src="@Url.Content($"~/images/Shop/{slug}-{first.PackSize}-pack.png")"
-      alt="@product.Name"
-    />
+      src="@Url.Content($"~/images/Shop/{fileName}")"
+      alt="@product.Name" />
 
     <h3>@product.Name</h3>
-    <p class="price">
-      @first.PackSize Pack – $@first.Variant.Price.ToString("F2")
-    </p>
+    <p class="price">@firstE.V.Price.ToString("C")</p>
 
     <div class="pack-options">
-      @foreach (var entry in packs)
+      @foreach (var e in variants)
       {
-        var v    = entry.Variant;
-        var ps   = entry.PackSize;
-        var is0  = v.Stock == 0;
+        var is0 = e.V.Stock == 0;
         <button
-          class="pack-btn @(ps == first.PackSize ? "active" : "")"
-          data-pack="@ps"
-          data-price="@v.Price.ToString("F2")"
-          data-stock="@v.Stock"
-          disabled="@(is0 ? "disabled" : null)"
-        >
-          @ps
+          class="pack-btn @(e.Label == firstE.Label ? "active" : "")"
+          data-pack="@e.RawLabel"
+          data-price="@e.V.Price.ToString("F2")"
+          data-stock="@e.V.Stock"
+          disabled="@(is0 ? "disabled" : null)">
+          @e.Label
         </button>
       }
     </div>
