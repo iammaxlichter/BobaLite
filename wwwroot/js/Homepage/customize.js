@@ -2,13 +2,7 @@ export function loadCustomize() {
   const container = document.getElementById('customize');
   if (!container) return;
 
-  fetch('partials/customize.html')
-    .then(res => res.text())
-    .then(html => {
-      container.innerHTML = html;
-      initCustomize();
-    })
-    .catch(console.error);
+  initCustomize();
 }
 
 function initCustomize() {
