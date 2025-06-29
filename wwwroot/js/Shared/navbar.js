@@ -1,12 +1,9 @@
 // navbar.js
 export function loadNavbar() {
-  fetch('partials/navbar.html')
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById('navbar').innerHTML = html;
-      initDrawer();
-    })
-    .catch(console.error);
+  const container = document.getElementById('navbar');
+  if (!container) return;
+
+  initDrawer();
 }
 
 export function initDrawer() {

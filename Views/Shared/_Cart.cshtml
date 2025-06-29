@@ -1,0 +1,16 @@
+@* Views/Shared/_Cart.cshtml *@
+<div id="cart-drawer" class="cart-drawer">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button id="cart-close" class="cart-close" aria-label="Close cart">✕</button>
+  </div>
+
+  <ul id="cart-items" class="cart-items">
+    @* JavaScript will inject <li class="cart-item">…</li> here *@
+  </ul>
+
+  <div class="cart-footer">
+    <div>Total: <span id="cart-total">$0.00</span></div>
+    <button class="checkout-btn" disabled>Checkout</button>
+  </div>
+</div>

@@ -1,34 +1,53 @@
 using Microsoft.EntityFrameworkCore;
 using BobaLite.Data;
+using BobaLite.Services;
 using BobaLite.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add MVC Services
+// MVC + Controllers
 builder.Services.AddControllersWithViews();
 
-// Add EF Core
-builder.Services.AddDbContext<BobaLite.Data.AppDbContext>(options =>
+// EF Core + SQLite
+builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=drinks.db"));
 
-// Build the app
+// Repositories & Services
+builder.Services.AddScoped<IProductRepository, EfProductRepository>();
+builder.Services.AddScoped<ICartService, CartService>();
+
+// Session (in-memory, backed by a cookie)
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.Cookie.Name      = ".BobaLite.Cart";
+    options.Cookie.HttpOnly  = true;
+    options.IdleTimeout       = TimeSpan.FromHours(1);
+});
+
+// HttpContextAccessor (needed by CartService)
+builder.Services.AddHttpContextAccessor();
+
 var app = builder.Build();
 
-// 👇 Add this block AFTER app is built, BEFORE using static files
+// ──────────────────────────────────────────────────
+// Apply any pending EF migrations automatically
 using (var scope = app.Services.CreateScope())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    dbContext.Database.Migrate();
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
 }
+// ──────────────────────────────────────────────────
 
-// Serve static files
+// Static files
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-// Enable Routing
-app.UseRouting();
+// Session middleware (must come before routing/controllers)
+app.UseSession();
 
-// Enable Controller Endpoints
+// Routing & Controllers
+app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
@@ -37,5 +56,4 @@ app.UseEndpoints(endpoints =>
     );
 });
 
-// Run the app
 app.Run();
