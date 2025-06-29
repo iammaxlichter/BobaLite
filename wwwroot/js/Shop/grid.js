@@ -1,5 +1,8 @@
 // wwwroot/js/grid.js
 
+// Import addItem from the cart module
+import { addItemApi, refreshCart } from '../Shared/cart.js';
+
 function formatPrice(price) {
   return parseFloat(price).toFixed(2);
 }
@@ -7,7 +10,7 @@ function formatPrice(price) {
 export function initPriceFormatting() {
   document.querySelectorAll('.product-card').forEach(card => {
     const priceElement = card.querySelector('.price');
-    const activeButton = card.querySelector('.pack-btn.active');
+    const activeButton = card.querySelector('.attribute-btn.active');
 
     if (activeButton && priceElement) {
       const price = activeButton.dataset.price;
@@ -16,23 +19,23 @@ export function initPriceFormatting() {
   });
 }
 
-export function initPackSwitcher() {
+export function initAttributeSwitcher() {
   document.addEventListener('click', function (e) {
-    if (!e.target.classList.contains('pack-btn')) return;
+    if (!e.target.classList.contains('attribute-btn')) return;
 
     const btn = e.target;
     const card = btn.closest('.product-card');
-    const packBtns = card.querySelectorAll('.pack-btn');
+    const attributeBtns = card.querySelectorAll('.attribute-btn');
     const priceEl = card.querySelector('.price');
     const canImage = card.querySelector('.can-image');
     const cartIcon = card.querySelector('.add-cart-icon');
     const newPrice = btn.dataset.price;
     const newStock = Number(btn.dataset.stock);
     const slug = card.dataset.slug;
-    const newPack = btn.dataset.pack.split('-')[0];
+    const newAttribute = btn.dataset.attribute;
 
     // Toggle active state
-    packBtns.forEach(b => b.classList.remove('active'));
+    attributeBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
     // Animate price change
@@ -43,14 +46,15 @@ export function initPackSwitcher() {
     }, 150);
 
     // Update image and cart button
-    animateImageChange(canImage, slug, newPack);
-    cartIcon.dataset.pack = btn.dataset.pack;
+    animateImageChange(canImage, slug, newAttribute);
+    cartIcon.dataset.attribute = btn.dataset.attribute;
+    cartIcon.dataset.price = newPrice; // Update cart button price
 
     // Handle stock status
     updateStockStatus(card, newStock, cartIcon);
 
-    // Disable sold-out pack buttons
-    packBtns.forEach(b => {
+    // Disable sold-out attribute buttons
+    attributeBtns.forEach(b => {
       b.disabled = Number(b.dataset.stock) === 0;
     });
   });
@@ -103,28 +107,56 @@ function updateStockState(card, label, stockClass, labelText) {
 }
 
 export function initAddToCartAnimations() {
-  document.addEventListener('click', function (e) {
+  document.addEventListener('click', async function (e) {
     const btn = e.target.closest('.add-cart-icon');
-    if (!btn) return;
+    if (!btn || btn.disabled) return;
 
     const img = btn.querySelector('img');
+    const card = btn.closest('.product-card');
 
+    // Get current active attribute button to get the right price
+    const activeAttributeBtn = card.querySelector('.attribute-btn.active');
+    const currentPrice = activeAttributeBtn ? activeAttributeBtn.dataset.price : btn.dataset.price;
+    const currentAttribute = activeAttributeBtn ? activeAttributeBtn.dataset.attribute : btn.dataset.attribute;
+    const currentStock = activeAttributeBtn ? activeAttributeBtn.dataset.stock : '0';
+
+    console.log('Adding to cart:', {
+      id: card.dataset.id,
+      name: card.dataset.name,
+      attribute: currentAttribute,
+      price: currentPrice,
+      stock: currentStock,
+      img: card.querySelector('.can-image').src
+    });
+
+    // 1) animate icon
     btn.classList.add('pop');
-
     setTimeout(() => {
-      img.src = img.dataset.check;
+      if (img.dataset.check) {
+        img.src = img.dataset.check;
+      }
       btn.classList.remove('pop');
       btn.classList.add('success', 'success-pulse');
 
       setTimeout(() => {
         btn.classList.remove('success', 'success-pulse');
-        img.src = img.dataset.plus;
+        if (img.dataset.plus) {
+          img.src = img.dataset.plus;
+        }
       }, 1500);
     }, 200);
+
+    // 2) add to cart state
+    await addItemApi({
+      id:        Number(card.dataset.id),
+      attribute: currentAttribute
+    });
+    await refreshCart();
+
   });
 }
 
-function animateImageChange(imgEl, slug, packNumber) {
+function animateImageChange(imgEl, slug, attributeNumber) {
   const card = imgEl.closest('.product-card');
   const isApparel = card.dataset.type === 'Apparel';
 
@@ -136,12 +168,10 @@ function animateImageChange(imgEl, slug, packNumber) {
     );
   } else {
     newSrc = imgEl.src.replace(
-      /\/([^\/]+)-\d+-pack\.png$/,
-      `/${slug}-${packNumber}-pack.png`
+      /\/([^\/]+)-[^-]+-pack\.png$/,
+      `/${slug}-${attributeNumber}.png`
     );
   }
-
-  imgEl.classList.add('switching');
 
   imgEl.classList.add('switching');
 

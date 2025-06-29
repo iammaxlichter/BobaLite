@@ -1,15 +1,9 @@
 // promo.js
 export function loadPromo() {
-  const container = document.getElementById('promo');
-  if (!container) return;
+  const wrapper = document.querySelector('.promo-wrapper');
+  if (!wrapper) return;
 
-  fetch('partials/promo.html')
-    .then(r => r.text())
-    .then(html => {
-      container.innerHTML = html;
-      initPromo();
-    })
-    .catch(console.error);
+  initPromo();
 }
 
 function initPromo() {
@@ -19,7 +13,7 @@ function initPromo() {
   const slides = Array.from(wrapper.querySelectorAll('.promo-slide'));
   let current = 0;
   const total = slides.length;
-  const AUTO_MS = 5000;
+  const AUTO_MS = 7500;
   let autoTimer;
 
   function showSlide(idx) {

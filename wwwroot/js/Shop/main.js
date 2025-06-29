@@ -1,13 +1,15 @@
-// wwwroot/js/main.js
+// wwwroot/js/Shop/main.js
 
 import {
-  initPackSwitcher,
+  initAttributeSwitcher,
   initAddToCartAnimations,
-  initShopEnhancements
+  initShopEnhancements,
+  initPriceFormatting
 } from './grid.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  initPackSwitcher();
+  initPriceFormatting();  
+  initAttributeSwitcher();
   initAddToCartAnimations();
   initShopEnhancements();
 });
