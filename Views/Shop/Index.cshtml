@@ -1,5 +1,4 @@
-@model List<BobaLite.Models.Product>
-
+@model BobaLite.ViewModels.ShopViewModel
 
 @{
     Layout = "_Layout";
@@ -13,7 +12,11 @@
     <img src="/images/Shop/bobalite-hero.png" alt="Hero Image">
 </div>
 
-@await Html.PartialAsync("_Grid") 
+<!-- render your filter UI (checkboxes + pills) -->
+@await Html.PartialAsync("_Filters", Model)
+
+<!-- now render the grid, passing in the filtered Products -->
+@await Html.PartialAsync("_Grid", Model.Products)
 
 @section Scripts {
     <script type="module" src="~/js/Shop/main.js"></script>
