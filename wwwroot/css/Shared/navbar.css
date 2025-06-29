@@ -5,7 +5,6 @@
   position: sticky;
   top: 0;
   height: 70px;
-  line-height: 70px; /* Vertically centers inline elements */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -347,4 +346,55 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+/* Position the badge over the top‐right of the button */
+.cart-icon img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.cart-icon {
+  position: relative;
+  right: 10px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.magnifying-glass img  {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.magnifying-glass {
+  position: relative;
+  border: none;
+  background: white;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  display: inline-block;
+  min-width: 18px;
+  padding: 2px 5px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+  background: #3c3c3c;
+  border-radius: 12px;
+  line-height: 1;
+  text-align: center;
+}
+
+.cart-badge:empty {
+  display: none;
 }
