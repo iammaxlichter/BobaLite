@@ -358,12 +358,8 @@
 
 /* Low stock styling with amber gradient */
 .product-card.low-stock .stock-label {
-  background: linear-gradient(
-    to right,
-    #ffece3,   /* extremely pale peach */
-    #f8b500    /* your original mustard */
-  );
-  color: #3c3c3c;
+  background: linear-gradient(135deg, #555555, #777777);
+  color: white;
 }
 
 /* Low stock image effect */

@@ -21,6 +21,7 @@ async function refreshCart() {
       stock:     i.stock ?? Infinity, // if you return stock
       img:       i.imageUrl
     }));
+    updateCartBadge(cart);
     renderCart();
   } catch (err) {
     console.error('refreshCart:', err);
@@ -166,6 +167,12 @@ function renderCart() {
   totalEl.textContent = `$${grandTotal.toFixed(2)}`;
 }
 
+function updateCartBadge(cartItems) {
+  const badge = document.getElementById('cart-badge');
+  if (!badge) return;
+  const totalQty = cartItems.reduce((sum, item) => sum + item.qty, 0);
+  badge.textContent = totalQty > 0 ? totalQty : '';
+}
 
 export { refreshCart, addItemApi, updateQtyApi, removeItemApi };
 
