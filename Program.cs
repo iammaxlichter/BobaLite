@@ -15,6 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Repositories & Services
 builder.Services.AddScoped<IProductRepository, EfProductRepository>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 // Session (in-memory, backed by a cookie)
 builder.Services.AddDistributedMemoryCache();
