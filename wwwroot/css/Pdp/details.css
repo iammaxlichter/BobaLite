@@ -1,0 +1,103 @@
+/* ---------- PDP Layout ---------- */
+.product-pdp .pdp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* on narrow screens, stack */
+@media (max-width: 768px) {
+  .product-pdp .pdp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Image Gallery ---------- */
+.pdp-images {
+  position: relative;
+}
+
+.pdp-images #main-image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.pdp-images .thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  overflow-x: auto;
+}
+
+.pdp-images .thumb {
+  width: 60px;
+  height: 60px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.pdp-images .thumb:hover,
+.pdp-images .thumb.active {
+  border-color: #7C3AED; /* match your apply-btn gradient */
+}
+
+/* ---------- Info Panel ---------- */
+.pdp-info h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.pdp-info .description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.pdp-info .variant-selector,
+.pdp-info .quantity {
+  margin-bottom: 1rem;
+}
+
+.pdp-info select,
+.pdp-info input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.pdp-info .price-stock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.pdp-info #pdp-add-to-cart {
+  display: inline-block;
+  background: linear-gradient(135deg, #7C3AED, #A855F7);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.pdp-info #pdp-add-to-cart:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pdp-info #pdp-add-to-cart:not(:disabled):hover {
+  transform: scale(1.02);
+}

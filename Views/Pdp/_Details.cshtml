@@ -1,0 +1,92 @@
+@model BobaLite.Models.Product
+
+@if (Model?.Variants == null || !Model.Variants.Any())
+{
+    <div class="alert alert-warning">
+        Sorry, we couldn't find any variants for this product.
+    </div>
+}
+else
+{
+    <section id="pdp-container"
+             class="product-pdp container"
+             data-product-id="@Model.Id">
+      <div class="pdp-grid">
+        <!-- LEFT: image gallery -->
+        <div class="pdp-images">
+          @{
+            var firstVariant = Model.Variants.OrderBy(v => v.Id).First();
+          }
+          <img id="main-image"
+               src="@firstVariant.PrimaryImageUrl"
+               alt="@Model.Name" />
+
+          <div class="thumbnails">
+            @foreach (var variant in Model.Variants)
+            {
+              foreach (var img in variant.Images.OrderBy(i => i.SortOrder))
+              {
+                <img 
+                  class="thumb" 
+                  src="@img.Url" 
+                  alt="@Model.Name" 
+                  data-variant-id="@variant.Id" 
+                  data-url="@img.Url" />
+              }
+            }
+          </div>
+        </div>
+
+        <!-- RIGHT: product info & purchase -->
+        <div class="pdp-info">
+          <h1>@Model.Name</h1>
+
+          <div class="description">
+            <p>@Html.Raw(Model.Description?.Replace("\n","<br/>") ?? "")</p>
+          </div>
+
+          <div class="variant-selector">
+            <label for="variant-select">Choose option:</label>
+            <select id="variant-select">
+              @foreach (var variant in Model.Variants)
+              {
+                <option 
+                  value="@variant.Id"
+                  data-attribute="@variant.Attributes"
+                  data-price="@variant.Price"
+                  data-stock="@variant.Stock">
+                  @variant.Attributes (@variant.Price.ToString("C"))
+                </option>
+              }
+            </select>
+          </div>
+
+          <div class="price-stock">
+            <span id="pdp-price">
+              @Model.Variants.First().Price.ToString("C")
+            </span>
+            <span id="pdp-stock">
+              @{
+                var stock = Model.Variants.First().Stock;
+                @((stock>0)? $"{stock} in stock" : "Out of stock");
+              }
+            </span>
+          </div>
+
+          <div class="quantity">
+            <label for="pdp-quantity">Qty:</label>
+            <input type="number"
+                   id="pdp-quantity"
+                   value="1"
+                   min="1"
+                   max="@Model.Variants.First().Stock" />
+          </div>
+
+          <button id="pdp-add-to-cart"
+                  @(Model.Variants.First().Stock==0 ? "disabled" : "")>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </section>
+}
