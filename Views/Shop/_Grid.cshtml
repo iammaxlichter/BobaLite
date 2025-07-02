@@ -9,7 +9,6 @@
     var slug = product.Name.ToLowerInvariant().Replace(" ", "-");
     bool isApparel = product.Type == "Apparel";
 
-    // build + sort variants exactly as before...
     var variants = product.Variants
     .Select(v => new
     {
@@ -33,21 +32,14 @@
     })
     .ToList();
 
-    var firstE = variants.FirstOrDefault(x => x.RawLabel.StartsWith("1-"))
-    ?? variants.First();
+    var firstE = variants.FirstOrDefault(x => x.RawLabel.StartsWith("1-")) ?? variants.First();
     var stock1 = firstE.V.Stock;
+    var cardClass = stock1 == 0 ? "out-of-stock" : (stock1 < lowThreshold ? "low-stock" : "");
 
-    var cardClass = stock1 == 0
-    ? "out-of-stock"
-    : (stock1 < lowThreshold ? "low-stock" : "");
+    <div class="product-card @cardClass" data-id="@product.Id" data-name="@product.Name" data-slug="@slug"
+      data-type="@product.Type">
 
-    <div class="product-card @cardClass" 
-         data-id="@product.Id" 
-         data-name="@product.Name" 
-         data-slug="@slug"
-         data-type="@product.Type">
-
-      @* Stock label for out-of-stock or low stock *@
+      @* Stock label *@
       @if (stock1 == 0)
       {
         <div class="stock-label">Out of Stock</div>
@@ -63,33 +55,30 @@
         ? $"{slug}.png"
         : $"{slug}-{firstE.RawLabel}.png";
       }
-      <img class="can-image" src="@Url.Content($"~/images/Shop/{fileName}")" alt="@product.Name" />
 
-      @* Title & Price *@
+      <a class="image-wrapper" href="/Product/Details/@product.Id">
+        <img class="can-image" src="@Url.Content($"~/images/Shop/{fileName}")" alt="@product.Name" />
+      </a>
+
+
       <h3>@product.Name</h3>
       <p class="price">@firstE.V.Price.ToString("C")</p>
 
-      @* Attribute options *@
+      @* Attribute buttons *@
       <div class="attribute-options">
         @foreach (var e in variants)
         {
           var is0 = e.V.Stock == 0;
-          <button class="attribute-btn @(e.Label == firstE.Label ? "active" : "")" 
-                  data-attribute="@e.RawLabel"
-                  data-price="@e.V.Price.ToString("F2")" 
-                  data-stock="@e.V.Stock" 
-                  @(is0 ? "disabled" : "")>
+          <button class="attribute-btn @(e.Label == firstE.Label ? "active" : "")" data-attribute="@e.RawLabel"
+            data-price="@e.V.Price.ToString("F2")" data-stock="@e.V.Stock" @(is0 ? "disabled" : "")>
             @e.Label
           </button>
         }
       </div>
 
-      @* Add-to-Cart button *@
-      <button class="add-cart-icon"
-              data-attribute="@firstE.RawLabel"
-              data-price="@firstE.V.Price.ToString("F2")"
-              aria-label="Add to cart"
-              @(stock1 == 0 ? "disabled" : "")>
+      @* Add to cart button *@
+      <button class="add-cart-icon" data-attribute="@firstE.RawLabel" data-price="@firstE.V.Price.ToString("F2")"
+        aria-label="Add to cart" @(stock1 == 0 ? "disabled" : "")>
         <img src="@Url.Content("~/images/Shop/shopping-cart-plus.png")"
           data-plus="@Url.Content("~/images/Shop/shopping-cart-plus.png")"
           data-check="@Url.Content("~/images/Shop/shopping-cart-check.png")" alt="" />

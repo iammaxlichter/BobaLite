@@ -14,6 +14,7 @@ namespace BobaLite.Data
         {
             return _db.Products
                       .Include(p => p.Variants)
+                        .ThenInclude(v => v.Images)
                       .ToList();
         }
 
@@ -21,6 +22,7 @@ namespace BobaLite.Data
         {
             return _db.Products
                       .Include(p => p.Variants)
+                        .ThenInclude(v => v.Images)
                       .Where(p => p.ProductCategories
                                    .Any(pc => slugs.Contains(pc.Category.Slug)))
                       .ToList();
@@ -30,12 +32,14 @@ namespace BobaLite.Data
         {
             return _db.Products
                       .Include(p => p.Variants)
+                        .ThenInclude(v => v.Images)
                       .FirstOrDefault(p => p.Id == productId);
         }
 
         public ProductVariant? GetVariant(int productId, string attribute)
         {
             return _db.Variants
+                      .Include(v => v.Images)
                       .AsNoTracking()
                       .FirstOrDefault(v =>
                           v.ProductId == productId &&
