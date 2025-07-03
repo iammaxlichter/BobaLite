@@ -60,8 +60,9 @@
         <img class="can-image" src="@Url.Content($"~/images/Shop/{fileName}")" alt="@product.Name" />
       </a>
 
-
-      <h3>@product.Name</h3>
+      <a href="/Product/Details/@product.Id">
+        <h3>@product.Name</h3>
+      </a>
       <p class="price">@firstE.V.Price.ToString("C")</p>
 
       @* Attribute buttons *@
