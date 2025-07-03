@@ -1,6 +1,6 @@
-import { initAttributeSwitcher, initAddToCartAnimations, initShopEnhancements, initPriceFormatting } from './grid.js';
-import { initFilters } from './filters.js';
-import { initPdp } from '../Pdp/details.js';
+import { initAttributeSwitcher, initAddToCartAnimations, initShopEnhancements, initPriceFormatting } from '../Shop/grid.js';
+import { initFilters } from '../Shop/filters.js';
+import { initPdp, zoomLens } from '../Pdp/details.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initPriceFormatting();
@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAddToCartAnimations();
   initShopEnhancements();
   initFilters();
-
-  // <-- and this:
   initPdp();
+  zoomLens();
 });
