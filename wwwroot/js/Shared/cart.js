@@ -10,16 +10,16 @@ async function refreshCart() {
   try {
     const resp = await fetch(API_BASE, { method: 'GET' });
     if (!resp.ok) throw new Error('Failed to fetch cart');
-    const dto = await resp.json(); 
+    const dto = await resp.json();
     // Map server DTO → our internal shape
     cart = dto.items.map(i => ({
-      id:        i.productId,
-      name:      i.productName,
+      id: i.productId,
+      name: i.productName,
       attribute: i.attribute,
-      qty:       i.quantity,
-      price:     i.unitPrice,
-      stock:     i.stock ?? Infinity, // if you return stock
-      img:       i.imageUrl
+      qty: i.quantity,
+      price: i.unitPrice,
+      stock: i.stock ?? Infinity, // if you return stock
+      img: i.imageUrl
     }));
     updateCartBadge(cart);
     renderCart();
@@ -29,14 +29,15 @@ async function refreshCart() {
 }
 
 /** Tell server to add 1 of this variant */
-async function addItemApi({ id, attribute }) {
+async function addItemApi({ id, attribute, quantity = 1 }) {
   const resp = await fetch(`${API_BASE}/add`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ productId: id, attribute, quantity: 1 })
+    body: JSON.stringify({ productId: id, attribute, quantity })
   });
   if (!resp.ok) throw new Error('Failed to add item');
 }
+
 
 /** Tell server to update quantity */
 async function updateQtyApi({ id, attribute, qty }) {
@@ -62,12 +63,12 @@ async function removeItemApi({ id, attribute }) {
 // ─── DRAWER INITIALIZATION ─────────────────────────────────
 
 export function initCartDrawer({
-  drawerSelector   = '#cart-drawer',
-  openBtnSelector  = '#cart-toggle',
+  drawerSelector = '#cart-drawer',
+  openBtnSelector = '#cart-toggle',
   closeBtnSelector = '#cart-close'
 } = {}) {
-  const drawer   = document.querySelector(drawerSelector);
-  const openBtn  = document.querySelector(openBtnSelector);
+  const drawer = document.querySelector(drawerSelector);
+  const openBtn = document.querySelector(openBtnSelector);
   const closeBtn = document.querySelector(closeBtnSelector);
   if (!drawer || !openBtn || !closeBtn) return;
 
@@ -92,8 +93,8 @@ export function initCartDrawer({
 // ─── RENDERING ──────────────────────────────────────────────
 
 function renderCart() {
-  const list     = document.getElementById('cart-items');
-  const totalEl  = document.getElementById('cart-total');
+  const list = document.getElementById('cart-items');
+  const totalEl = document.getElementById('cart-total');
   const checkout = document.querySelector('.checkout-btn');
   if (!list || !totalEl || !checkout) return;
 
@@ -101,9 +102,9 @@ function renderCart() {
   let grandTotal = 0;
 
   if (cart.length === 0) {
-    list.innerHTML      = '<li class="empty-cart">Your cart is empty</li>';
+    list.innerHTML = '<li class="empty-cart">Your cart is empty</li>';
     totalEl.textContent = '$0.00';
-    checkout.disabled   = true;
+    checkout.disabled = true;
     return;
   }
 
@@ -111,7 +112,7 @@ function renderCart() {
 
   cart.forEach(item => {
     const lineTotal = item.price * item.qty;
-    grandTotal     += lineTotal;
+    grandTotal += lineTotal;
 
     const li = document.createElement('li');
     li.className = 'cart-item';
