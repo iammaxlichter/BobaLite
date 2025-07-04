@@ -1,7 +1,7 @@
-import { addItemApi } from '/js/Shared/cart.js';
+import { addItemApi, refreshCart } from '/js/Shared/cart.js';
 
 export function zoomLens() {
-  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return; // mobile/touch check
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
 
   const mainImage = document.getElementById('main-image');
   const lens = document.getElementById('zoom-lens');
@@ -55,9 +55,12 @@ export function initPdp() {
   const addBtn = container.querySelector('#pdp-add-to-cart');
   const lens = container.querySelector('#zoom-lens');
 
-  if (!variantSelect || !mainImage || !priceEl || !qtyInput || !addBtn) {
-    return;
-  }
+  if (!variantSelect || !mainImage || !priceEl || !qtyInput || !addBtn) return;
+
+  qtyInput.addEventListener('keydown', e => {
+    const invalidKeys = ['e', 'E', '+', '-', '.'];
+    if (invalidKeys.includes(e.key)) e.preventDefault();
+  });
 
   function updatePdp() {
     const opt = variantSelect.selectedOptions[0];
@@ -74,51 +77,81 @@ export function initPdp() {
     qtyInput.value = Math.min(parseInt(qtyInput.value) || 1, stock);
     addBtn.disabled = stock <= 0;
 
-    // Update image based on variant
-    const imageElement = container.querySelector(
-      `.thumb[data-variant-id="${variantId}"][data-url]`
-    );
+    const imageElement = container.querySelector(`.thumb[data-variant-id="${variantId}"][data-url]`);
     if (imageElement && imageElement.dataset.url) {
-      mainImage.src = imageElement.dataset.url;
-      if (lens) lens.style.backgroundImage = `url(${mainImage.src})`;
+      const newSrc = imageElement.dataset.url;
+      mainImage.src = newSrc;
+      if (lens) lens.style.backgroundImage = `url(${newSrc})`;
+
+      // Re-highlight the matching thumbnail
+      container.querySelectorAll('.thumb-wrapper').forEach(wrapper => {
+        wrapper.classList.remove('active');
+      });
+
+      const allThumbs = container.querySelectorAll(`.thumb[data-variant-id="${variantId}"]`);
+      for (const thumb of allThumbs) {
+        if (thumb.dataset.url === newSrc) {
+          thumb.closest('.thumb-wrapper')?.classList.add('active');
+          break;
+        }
+      }
     }
+
   }
 
   variantSelect.addEventListener('change', updatePdp);
 
   addBtn.addEventListener('click', async () => {
-    const attribute = variantSelect.selectedOptions[0].dataset.attribute || '';
+    const opt = variantSelect.selectedOptions[0];
+    const attribute = opt.dataset.attribute || '';
     const quantity = parseInt(qtyInput.value, 10) || 1;
-    await addItemApi({ id: productId, attribute, quantity });
+
+    // Visual feedback
+    addBtn.disabled = true;
+    const originalText = addBtn.textContent;
+    addBtn.textContent = 'Adding...';
+
+    try {
+      await addItemApi({ id: productId, attribute, quantity });
+      await refreshCart();
+
+      // Success pulse animation
+      addBtn.classList.add('success');
+      addBtn.textContent = 'Added!';
+      setTimeout(() => {
+        addBtn.textContent = originalText;
+        addBtn.classList.remove('success');
+        addBtn.disabled = false;
+      }, 1200);
+    } catch (err) {
+      console.error('Failed to add to cart:', err);
+      addBtn.textContent = 'Error!';
+      setTimeout(() => {
+        addBtn.textContent = originalText;
+        addBtn.disabled = false;
+      }, 2000);
+    }
   });
 
-  // Bind click events to all thumbnails
   container.querySelectorAll('.thumb').forEach(thumb => {
     thumb.addEventListener('click', () => {
       const variantId = thumb.dataset.variantId;
       const imgUrl = thumb.dataset.url;
 
-      console.log('Thumbnail clicked:', { variantId, imgUrl }); // Debug log
-
-      // Always update the main image first
       if (imgUrl) {
         mainImage.src = imgUrl;
         if (lens) lens.style.backgroundImage = `url(${imgUrl})`;
       }
 
-      // Update select dropdown to match - convert both to strings for comparison
       const optionToSelect = Array.from(variantSelect.options).find(
         opt => String(opt.value) === String(variantId)
       );
-      
-      console.log('Found option:', optionToSelect); // Debug log
-      
+
       if (optionToSelect) {
         variantSelect.value = variantId;
         updatePdp();
       }
 
-      // Update active thumbnail styling
       container.querySelectorAll('.thumb-wrapper').forEach(wrapper => {
         wrapper.classList.remove('active');
       });
@@ -126,11 +159,8 @@ export function initPdp() {
     });
   });
 
-  // Initialize first thumbnail as active
   const firstThumb = container.querySelector('.thumb-wrapper');
-  if (firstThumb) {
-    firstThumb.classList.add('active');
-  }
+  if (firstThumb) firstThumb.classList.add('active');
 
   updatePdp();
 }
