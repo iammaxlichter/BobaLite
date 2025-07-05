@@ -2,12 +2,11 @@
 .filter-bar {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
+    flex-wrap: wrap; 
+    padding: 20px 20px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
 }
 
 .filter-toggle-btn {
@@ -38,9 +37,17 @@
 
 /* Active Filter Pills */
 .active-filters {
+    flex: 1 1 100%;        
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top:0;
+}
+.active-filters:has(.filter-pill) {
+  margin-top: 20px;
+}
+.active-filters:empty {
+    display: none;
 }
 
 .filter-pill {

@@ -1,5 +1,4 @@
 @model BobaLite.ViewModels.ShopViewModel
-
 @{
     Layout = "_Layout";
 }
@@ -9,13 +8,13 @@
 }
 
 <div class="shop-hero">
-    <img src="/images/Shop/bobalite-hero.png" alt="Hero Image">
+    <img src="/images/Shop/bobalite-hero.png" alt="Hero Image" />
 </div>
 
-<!-- render your filter UI (checkboxes + pills) -->
+@* ── Filters (needs the full ViewModel) ── *@
 @await Html.PartialAsync("_Filters", Model)
 
-<!-- now render the grid, passing in the filtered Products -->
+@* ── Product grid (needs only the list of Products) ── *@
 @await Html.PartialAsync("_Grid", Model.Products)
 
 @section Scripts {

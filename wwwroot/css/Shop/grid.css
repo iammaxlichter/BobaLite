@@ -14,6 +14,7 @@
 ========================================== */
 .product-grid {
   display: grid;
+  margin-top:20px;
   width: 100%;
   margin: 0 auto;
   padding: 4rem 1.5rem;
@@ -22,6 +23,7 @@
 
   /* responsive gap */
   gap: clamp(1rem, 2vw, 2rem);
+  background-color: #fdfdfd;
 }
 
 /* ==========================================
@@ -81,6 +83,11 @@
   min-height: calc(2 * 1.2em);
   margin-bottom: 0.75rem;
   transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* ==========================================
