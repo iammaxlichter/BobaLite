@@ -8,6 +8,9 @@
         </svg>
         Filter & Sort
     </button>
+    <div class="product-count">
+        @Model.Products.Count() product(s)
+    </div>
     <div class="active-filters">
         @foreach (var slug in Model.ActiveCategories)
         {
@@ -22,15 +25,13 @@
                            })">×</a>
             </div>
         }
+        @if (Model.ActiveCategories.Any())
+        {
+            <a href="@Url.Action("Index", "Shop")" class="clear-all-btn">Clear all</a>
+        }
     </div>
+
     
-    @if (Model.ActiveCategories.Any())
-    {
-        <a href="@Url.Action("Index", "Shop")" class="clear-all-btn">Clear all</a>
-    }
-    <div class="product-count">
-        @Model.Products.Count() product(s)
-    </div>
 
 </div>
 

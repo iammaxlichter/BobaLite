@@ -34,7 +34,7 @@ namespace BobaLite.Services
                 var v = _repo.GetVariant(item.ProductId, item.Attribute)
                           ?? throw new Exception("Variant not found");
                 item.UnitPrice = v.Price;
-                item.ImageUrl = v.ImageUrl;
+                item.ImageUrl = v.PrimaryImageUrl;
             }
             dto.Items = dto.Items
                         .Select(i =>
@@ -69,9 +69,9 @@ namespace BobaLite.Services
                                 ?? throw new Exception("Product not found");
             var maxStock = variant.Stock;
             var unitPrice = variant.Price;
-            var imgUrl = variant.ImageUrl;    // now variant has ImageUrl property
-            var productName = product.Name;        // grab the name
-
+            var imgUrl = variant.PrimaryImageUrl;    
+            var productName = product.Name;       
+            
             if (existing == null)
             {
                 var qtyToAdd = Math.Min(quantity, maxStock);

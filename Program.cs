@@ -44,6 +44,9 @@ using (var scope = app.Services.CreateScope())
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
+// Routing needs to be established before you consume session in routed middleware
+app.UseRouting();
+
 // Session middleware (must come before routing/controllers)
 app.UseSession();
 
