@@ -36,15 +36,16 @@
       </div>
     </div>
   </div>
-<div class="icons">
-  <button id="cart-toggle" class="cart-icon" type="button">
-    <img src="/images/icons/shopping-cart.png" alt="Cart" />
-    <span id="cart-badge" class="cart-badge">0</span>
-  </button>
-    <button id="" class="magnifying-glass" type="button">
-    <img src="/images/icons/magnifying-glass.png" alt="" />
-  </button>
-</div>
+  <div class="icons">
+    <button id="cart-toggle" class="cart-icon" type="button">
+      <img src="/images/icons/shopping-cart.png" alt="Cart" />
+      <span id="cart-badge" class="cart-badge">0</span>
+    </button>
+    <button id="search-toggle" class="magnifying-glass" type="button">
+      <img src="/images/icons/magnifying-glass.png" alt="Search" />
+    </button>
+  </div>
+  </div>
 
   <div class="drawer-backdrop" id="drawer-backdrop"></div>
 
@@ -83,3 +84,7 @@
     </ul>
   </aside>
 </nav>
+<div id="search-drawer" class="search-drawer">
+<input type="text" id="search-input" class="search-input" placeholder="Search products…" autocomplete="off" />
+<ul id="search-results" class="search-results"></ul>
+</div>

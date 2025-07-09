@@ -11,14 +11,28 @@ namespace BobaLite.Controllers
         [HttpGet]
         public IActionResult Details(int? id)
         {
-            if (id == null) 
+            if (id == null)
                 return NotFound();
 
             var product = _repo.GetProduct(id.Value);
-            if (product == null) 
+            if (product == null)
                 return NotFound();
 
             return View("Views/Pdp/Index.cshtml", product);
         }
+
+        [HttpGet("/api/products/search")]
+        public IActionResult GetAllProductNames()
+        {
+            var products = _repo.GetAllBasic()
+                .Select(p => new
+                {
+                    id = p.Id,
+                    name = p.Name
+                }).ToList();
+
+            return Ok(products);
+        }
+
     }
 }
