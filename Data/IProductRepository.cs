@@ -16,5 +16,11 @@ namespace BobaLite.Data
 
         /// <summary>Load a specific variant by product ID & attribute.</summary>
         ProductVariant? GetVariant(int productId, string attribute);
+
+        /// <summary>
+        /// Get basic info (Id and Name) for all products.
+        /// </summary>
+        IEnumerable<Product> GetAllBasic();
+
     }
 }
