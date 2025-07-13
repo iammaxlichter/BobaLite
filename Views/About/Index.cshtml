@@ -1,0 +1,18 @@
+@{
+    Layout = "_Layout"; 
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/About/main.css" />
+}
+
+<div class="about-hero">
+    <img src="/images/About/bobalite-about-hero.png" alt="Hero Image" />
+</div>
+
+@await Html.PartialAsync("_WhatWeDo") 
+@await Html.PartialAsync("_Team") 
+
+@section Scripts {
+    <script  type="module" src="~/js/About/main.js"></script> 
+}
