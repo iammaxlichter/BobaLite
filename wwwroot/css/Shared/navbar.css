@@ -45,6 +45,11 @@
   gap: 0.5rem;
 }
 
+.sales-link{
+  
+  cursor: default;
+}
+
 
 .desktop-links a:hover::after,
 .desktop-links a:focus::after {
