@@ -22,5 +22,8 @@ namespace BobaLite.Data
         /// </summary>
         IEnumerable<Product> GetAllBasic();
 
+        IEnumerable<object> GetSearchResults();
+
+
     }
 }

@@ -41,7 +41,19 @@ export function initSearch() {
   const searchDrawer = document.getElementById('search-drawer');
   const searchInput = document.getElementById('search-input');
   const resultsList = document.getElementById('search-results');
+  document.addEventListener('click', (e) => {
+    const drawer = document.getElementById('search-drawer');
+    const toggle = document.getElementById('search-toggle');
 
+    // Close if click is outside both the drawer and the toggle button
+    if (
+      drawer.classList.contains('active') &&
+      !drawer.contains(e.target) &&
+      !toggle.contains(e.target)
+    ) {
+      drawer.classList.remove('active');
+    }
+  });
   if (!(searchToggle && searchDrawer && searchInput && resultsList)) return;
 
   searchToggle.addEventListener('click', () => {
@@ -75,7 +87,11 @@ export function initSearch() {
 
     matches.forEach(product => {
       const li = document.createElement('li');
-      li.textContent = product.name;
+      li.classList.add('search-result-item');
+      li.innerHTML = `
+        <img src="${product.primaryImageUrl}" alt="${product.name}" class="search-result-thumb" />
+        <span class="search-result-text">${product.name}</span>
+      `;
       li.addEventListener('click', () => {
         window.location.href = `/Product/Details/${product.id}`;
       });
@@ -83,3 +99,4 @@ export function initSearch() {
     });
   });
 }
+

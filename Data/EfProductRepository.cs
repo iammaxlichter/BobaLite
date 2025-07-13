@@ -58,5 +58,24 @@ namespace BobaLite.Data
           .ToList();
     }
 
+  
+
+  public IEnumerable<object> GetSearchResults()
+    {
+      return _db.Products
+                .Include(p => p.Variants)
+                  .ThenInclude(v => v.Images)
+                .Select(p => new
+                {
+                  id = p.Id,
+                  name = p.Name,
+                  primaryImageUrl = p.Variants
+                                      .SelectMany(v => v.Images)
+                                      .OrderBy(img => img.SortOrder)
+                                      .Select(img => img.Url)
+                                      .FirstOrDefault()
+                })
+                .ToList();
+    }
   }
 }
