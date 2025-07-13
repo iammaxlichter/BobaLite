@@ -59,17 +59,38 @@
     transition: transform 0.3s ease;
     will-change: transform;
 }
+.feature-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none; 
+    color: inherit; 
+    width: 100%;
+    height: 100%;
+}
 
-.feature-item:hover img {
+.feature-item a:hover img {
     transform: scale(1.1);
     z-index: 1;
 }
+
+
+
 
 /* ==========================================================
    FEATURE TEXT
 ========================================================== */
 .feature-item p {
     margin: 0;
+    margin-top:10px;
     font-size: var(--feature-item-text-size);
     font-weight: bold;
+    color:white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+.feature-item a:hover p {
+    transform: scale(1.1);
+    color: #A855F7; /* optional: add a gold tint on hover */
 }
