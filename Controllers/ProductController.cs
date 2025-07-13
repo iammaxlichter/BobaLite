@@ -24,14 +24,8 @@ namespace BobaLite.Controllers
         [HttpGet("/api/products/search")]
         public IActionResult GetAllProductNames()
         {
-            var products = _repo.GetAllBasic()
-                .Select(p => new
-                {
-                    id = p.Id,
-                    name = p.Name
-                }).ToList();
-
-            return Ok(products);
+            var results = _repo.GetSearchResults();
+            return Ok(results);
         }
 
     }
