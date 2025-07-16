@@ -92,5 +92,4 @@
 
 .feature-item a:hover p {
     transform: scale(1.1);
-    color: #A855F7; /* optional: add a gold tint on hover */
 }
