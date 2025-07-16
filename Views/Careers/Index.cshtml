@@ -1,0 +1,17 @@
+@{
+    Layout = "_Layout"; 
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Careers/main.css" />
+}
+
+<div class="careers-hero">
+    <img src="/images/Careers/bobalite-careers-hero.png" alt="Hero Image" />
+</div>
+
+@await Html.PartialAsync("_Search") 
+
+@section Scripts {
+    <script  type="module" src="~/js/Careers/main.js"></script> 
+}

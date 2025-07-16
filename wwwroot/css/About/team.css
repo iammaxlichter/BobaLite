@@ -1,8 +1,8 @@
 .team-section {
-    padding: 4rem 2rem;
-    background-color: #fff;
+    padding: 3rem 2rem;
+    background-color: #3C3C3C;
     text-align: center;
-    color: #333;
+    color: #ffffff;
 }
 
 .team-section h2 {
@@ -15,7 +15,7 @@
     max-width: 600px;
     margin: 0 auto 2.5rem auto;
     font-size: 1rem;
-    color: #666;
+    color: #e7e7e7;
 }
 
 .team-grid {
@@ -56,21 +56,26 @@
 
 .team-member p {
     font-size: 0.95rem;
-    color: #777;
+    color: #e9e9e9;
 }
 
-.social-icons {
-    margin-top: 0.5rem;
+.join-team-cta{
+    padding-bottom:4rem;
+}
+.btn-join-team {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #555555, #777777);
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.social-icons a {
-    margin: 0 0.4rem;
-    color: #555;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.social-icons a:hover {
-    color: #7e57c2;
+.btn-join-team:hover {
+  background-color: #e86546;
 }
