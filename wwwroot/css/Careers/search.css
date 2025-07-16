@@ -1,0 +1,74 @@
+.careers-search {
+  padding-top: 4rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  background-color: #fdfdfd;
+  text-align: center;
+}
+
+.careers-search h1 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.job-search-form {
+  display: inline-flex;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.job-search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  font-size: 1rem;
+}
+
+.job-search-input:focus {
+  outline: none;
+}
+
+.job-search-btn {
+  background-color: #1e3a8a;
+  border: none;
+  padding: 0 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.job-search-btn i {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+
+.job-search-input::placeholder {
+  font-weight: bold;
+}
+
+.no-jobs {
+  min-height: 50vh;               /* takes up a big chunk of the viewport */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdfdfd;      /* light neutral to contrast the hero */
+  text-align: center;
+  padding: 2rem 2rem;
+}
+
+.no-jobs h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.no-jobs p {
+  font-size: .9rem;
+  color: #666;
+}
