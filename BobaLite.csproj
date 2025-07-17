@@ -17,6 +17,8 @@
     <None Update="drinks.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+
+    <PackageReference Include="SendGrid" Version="9.29.3" />
     
   </ItemGroup>
 
