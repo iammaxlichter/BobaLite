@@ -7,3 +7,4 @@ SQLite – Local data storage
 HTML, CSS, JavaScript – Frontend
 Docker – Containerization
 Render – Cloud hosting & CI/CD
+Email Sending - Twilio Send Grid
