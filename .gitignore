@@ -31,6 +31,7 @@ project.fragment.lock.json
 # Configuration files with secrets
 appsettings.Development.json
 appsettings.Production.json
+appsettings.Local.json
 *.secrets.json
 .env
 .env.local
