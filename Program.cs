@@ -59,9 +59,9 @@ using (var scope = app.Services.CreateScope())
 }
 
 // ──────────────────────────────────────────────────
-// Static files
+// Static files (no DefaultFiles, so "/" goes to MVC)
 // ──────────────────────────────────────────────────
-app.UseDefaultFiles();
+//app.UseDefaultFiles();  // ← removed
 app.UseStaticFiles();
 
 // ──────────────────────────────────────────────────
