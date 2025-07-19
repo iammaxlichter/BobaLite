@@ -1,0 +1,20 @@
+@model BobaLite.Models.ContactForm
+
+@{
+    Layout = "_Layout"; 
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Contact/main.css" />
+}
+
+<div class="contact-hero">
+    <img src="/images/Contact/bobalite-contact-hero.png" alt="Hero Image" />
+</div>
+
+@await Html.PartialAsync("_Form", Model ?? new ContactForm())
+
+@section Scripts {
+    <partial name="_ViewImports" />
+    <script  type="module" src="~/js/Contact/main.js"></script> 
+}

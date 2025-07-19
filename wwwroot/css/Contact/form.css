@@ -1,0 +1,125 @@
+.contact-body {
+    background-color: #fdfdfd;
+}
+
+.contact-header {
+    text-align: center;
+    padding-top: 1rem;
+
+    font-size: 32px;
+}
+
+/* Contact Form Card */
+.contact-form-wrapper {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+}
+
+.contact-form-wrapper h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333333;
+}
+
+/* Form Groups */
+.contact-form-wrapper .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form-wrapper label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555555;
+}
+
+/* Inputs & Textarea */
+.contact-form-wrapper .form-control {
+    width: 92%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form-wrapper .form-control:focus {
+    outline: none;
+    border-color: #007acc;
+    box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.2);
+}
+
+/* Validation Messages */
+.contact-form-wrapper .text-danger {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #d9534f;
+}
+
+/* Button */
+.contact-form-wrapper .btn-primary {
+  background: linear-gradient(135deg, #555, #777);
+  color: #fff;
+  padding: .75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* Animate the filter property */
+  filter: brightness(1);
+  transition: filter 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.contact-form-wrapper .form-control {
+  font-family: 'Poppins', sans-serif;  /* or whatever your site’s base font is */
+}
+
+.contact-form-wrapper .btn-primary:hover {
+  /* Smoothly lightens the button */
+  filter: brightness(1.15);
+  /* Optional “lift” on hover */
+  transform: translateY(-2px);
+}
+
+
+/* Alerts */
+.contact-form-wrapper .alert {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.contact-form-wrapper .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.contact-form-wrapper .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@media (max-width: 640px) {
+    .contact-header {
+        font-size: 24px;
+        padding: 0 2rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .contact-form-wrapper h2 {
+        font-size: 1.75rem;
+    }
+}

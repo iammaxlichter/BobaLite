@@ -6,4 +6,5 @@ Entity Framework Core – Database access
 SQLite – Local data storage
 HTML, CSS, JavaScript – Frontend
 Docker – Containerization
-Render – Cloud hosting & CI/CD 
+Render – Cloud hosting & CI/CD
+Email Sending - Twilio Send Grid
