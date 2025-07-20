@@ -1,12 +1,592 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\About\\hero.css",
+      "PackagePath": "staticwebassets\\css\\About\\hero.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\About\\main.css",
+      "PackagePath": "staticwebassets\\css\\About\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\About\\team.css",
+      "PackagePath": "staticwebassets\\css\\About\\team.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\About\\whatwedo.css",
+      "PackagePath": "staticwebassets\\css\\About\\whatwedo.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Careers\\hero.css",
+      "PackagePath": "staticwebassets\\css\\Careers\\hero.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Careers\\main.css",
+      "PackagePath": "staticwebassets\\css\\Careers\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Careers\\search.css",
+      "PackagePath": "staticwebassets\\css\\Careers\\search.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Checkout\\cart-review.css",
+      "PackagePath": "staticwebassets\\css\\Checkout\\cart-review.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Checkout\\confirmation.css",
+      "PackagePath": "staticwebassets\\css\\Checkout\\confirmation.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Checkout\\forms.css",
+      "PackagePath": "staticwebassets\\css\\Checkout\\forms.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Checkout\\hero.css",
+      "PackagePath": "staticwebassets\\css\\Checkout\\hero.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Checkout\\main.css",
+      "PackagePath": "staticwebassets\\css\\Checkout\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Checkout\\navigation.css",
+      "PackagePath": "staticwebassets\\css\\Checkout\\navigation.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Checkout\\responsive.css",
+      "PackagePath": "staticwebassets\\css\\Checkout\\responsive.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Checkout\\stepper.css",
+      "PackagePath": "staticwebassets\\css\\Checkout\\stepper.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Contact\\form.css",
+      "PackagePath": "staticwebassets\\css\\Contact\\form.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Contact\\hero.css",
+      "PackagePath": "staticwebassets\\css\\Contact\\hero.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Contact\\main.css",
+      "PackagePath": "staticwebassets\\css\\Contact\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\FAQ\\hero.css",
+      "PackagePath": "staticwebassets\\css\\FAQ\\hero.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\FAQ\\main.css",
+      "PackagePath": "staticwebassets\\css\\FAQ\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\FAQ\\questions.css",
+      "PackagePath": "staticwebassets\\css\\FAQ\\questions.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Homepage\\banner.css",
+      "PackagePath": "staticwebassets\\css\\Homepage\\banner.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Homepage\\customize.css",
+      "PackagePath": "staticwebassets\\css\\Homepage\\customize.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Homepage\\features.css",
+      "PackagePath": "staticwebassets\\css\\Homepage\\features.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Homepage\\hero.css",
+      "PackagePath": "staticwebassets\\css\\Homepage\\hero.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Homepage\\main.css",
+      "PackagePath": "staticwebassets\\css\\Homepage\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Homepage\\promo.css",
+      "PackagePath": "staticwebassets\\css\\Homepage\\promo.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Homepage\\universal.css",
+      "PackagePath": "staticwebassets\\css\\Homepage\\universal.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Pdp\\details.css",
+      "PackagePath": "staticwebassets\\css\\Pdp\\details.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Pdp\\main.css",
+      "PackagePath": "staticwebassets\\css\\Pdp\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shared\\base.css",
+      "PackagePath": "staticwebassets\\css\\Shared\\base.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shared\\cart.css",
+      "PackagePath": "staticwebassets\\css\\Shared\\cart.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shared\\footer.css",
+      "PackagePath": "staticwebassets\\css\\Shared\\footer.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shared\\main.css",
+      "PackagePath": "staticwebassets\\css\\Shared\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shared\\navbar.css",
+      "PackagePath": "staticwebassets\\css\\Shared\\navbar.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shop\\filters.css",
+      "PackagePath": "staticwebassets\\css\\Shop\\filters.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shop\\grid.css",
+      "PackagePath": "staticwebassets\\css\\Shop\\grid.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shop\\hero.css",
+      "PackagePath": "staticwebassets\\css\\Shop\\hero.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shop\\main.css",
+      "PackagePath": "staticwebassets\\css\\Shop\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\banner.css",
+      "PackagePath": "staticwebassets\\css\\banner.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\base.css",
+      "PackagePath": "staticwebassets\\css\\base.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\footer.css",
+      "PackagePath": "staticwebassets\\css\\footer.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\hero.css",
+      "PackagePath": "staticwebassets\\css\\hero.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\main.css",
+      "PackagePath": "staticwebassets\\css\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\navbar.css",
+      "PackagePath": "staticwebassets\\css\\navbar.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\OFL.txt",
+      "PackagePath": "staticwebassets\\fonts\\OFL.txt"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-Black.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-BlackItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-BlackItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-Bold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-BoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-ExtraBold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-ExtraBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-ExtraBoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-ExtraLight.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-ExtraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-ExtraLightItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-ExtraLightItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-Italic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-Italic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-Light.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-LightItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-LightItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-Medium.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-MediumItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-MediumItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-SemiBold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-SemiBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-SemiBoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-Thin.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-Thin.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\Poppins-ThinItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-ThinItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\About\\about-us.mp4",
+      "PackagePath": "staticwebassets\\images\\About\\about-us.mp4"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\About\\adi-hazan.png",
+      "PackagePath": "staticwebassets\\images\\About\\adi-hazan.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\About\\anders-liesse.png",
+      "PackagePath": "staticwebassets\\images\\About\\anders-liesse.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\About\\bobalite-about-hero.png",
+      "PackagePath": "staticwebassets\\images\\About\\bobalite-about-hero.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\About\\max-lichter.png",
+      "PackagePath": "staticwebassets\\images\\About\\max-lichter.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\About\\signatures.png",
+      "PackagePath": "staticwebassets\\images\\About\\signatures.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Careers\\bobalite-careers-hero.png",
+      "PackagePath": "staticwebassets\\images\\Careers\\bobalite-careers-hero.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Checkout\\bobalite-checkout-hero.png",
+      "PackagePath": "staticwebassets\\images\\Checkout\\bobalite-checkout-hero.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Contact\\bobalite-contact-hero.png",
+      "PackagePath": "staticwebassets\\images\\Contact\\bobalite-contact-hero.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\FAQ\\bobalite-faq-hero.png",
+      "PackagePath": "staticwebassets\\images\\FAQ\\bobalite-faq-hero.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Homepage\\bobalite-classic-creamy-milk-promo.png",
+      "PackagePath": "staticwebassets\\images\\Homepage\\bobalite-classic-creamy-milk-promo.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Homepage\\bobalite-customize.png",
+      "PackagePath": "staticwebassets\\images\\Homepage\\bobalite-customize.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Homepage\\bobalite-green-tea-promo.png",
+      "PackagePath": "staticwebassets\\images\\Homepage\\bobalite-green-tea-promo.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Homepage\\bobalite-homepage.png",
+      "PackagePath": "staticwebassets\\images\\Homepage\\bobalite-homepage.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Homepage\\bobalite-taro-twist-tea-promo.png",
+      "PackagePath": "staticwebassets\\images\\Homepage\\bobalite-taro-twist-tea-promo.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Homepage\\bobalite-trendy-group.png",
+      "PackagePath": "staticwebassets\\images\\Homepage\\bobalite-trendy-group.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Homepage\\bobalite-trendy-man.png",
+      "PackagePath": "staticwebassets\\images\\Homepage\\bobalite-trendy-man.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shared\\bobalite-brown-sugar-bliss.png",
+      "PackagePath": "staticwebassets\\images\\Shared\\bobalite-brown-sugar-bliss.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shared\\bobalite-classic-creamy-milk.png",
+      "PackagePath": "staticwebassets\\images\\Shared\\bobalite-classic-creamy-milk.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shared\\bobalite-green-tea-groove.png",
+      "PackagePath": "staticwebassets\\images\\Shared\\bobalite-green-tea-groove.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shared\\bobalite-logo.png",
+      "PackagePath": "staticwebassets\\images\\Shared\\bobalite-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shared\\bobalite-mango-mania.png",
+      "PackagePath": "staticwebassets\\images\\Shared\\bobalite-mango-mania.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shared\\bobalite-taro-twist-tea.png",
+      "PackagePath": "staticwebassets\\images\\Shared\\bobalite-taro-twist-tea.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\bobalite-basic-tee.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\bobalite-basic-tee.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\bobalite-cozy-hoodie.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\bobalite-cozy-hoodie.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\bobalite-hero.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\bobalite-hero.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\bobalite-hero2.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\bobalite-hero2.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\brown-sugar-bliss-1-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\brown-sugar-bliss-1-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\brown-sugar-bliss-12-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\brown-sugar-bliss-12-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\brown-sugar-bliss-6-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\brown-sugar-bliss-6-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\classic-creamy-milk-1-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\classic-creamy-milk-1-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\classic-creamy-milk-12-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\classic-creamy-milk-12-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\classic-creamy-milk-6-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\classic-creamy-milk-6-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\green-tea-groove-1-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\green-tea-groove-1-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\green-tea-groove-12-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\green-tea-groove-12-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\green-tea-groove-6-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\green-tea-groove-6-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\mango-mania-1-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\mango-mania-1-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\mango-mania-12-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\mango-mania-12-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\mango-mania-6-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\mango-mania-6-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\shopping-cart-check.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\shopping-cart-check.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\shopping-cart-plus.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\shopping-cart-plus.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea-1-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\taro-twist-tea-1-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea-12-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\taro-twist-tea-12-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea-6-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\taro-twist-tea-6-pack.png"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-homepage.png",
       "PackagePath": "staticwebassets\\images\\bobalite-homepage.png"
     },
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-logo.png",
+      "PackagePath": "staticwebassets\\images\\bobalite-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\facebook.png",
+      "PackagePath": "staticwebassets\\images\\icons\\facebook.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\instagram.png",
+      "PackagePath": "staticwebassets\\images\\icons\\instagram.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\magnifying-glass.png",
+      "PackagePath": "staticwebassets\\images\\icons\\magnifying-glass.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\shopping-cart.png",
+      "PackagePath": "staticwebassets\\images\\icons\\shopping-cart.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\twitter.png",
+      "PackagePath": "staticwebassets\\images\\icons\\twitter.png"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\About\\main.js",
+      "PackagePath": "staticwebassets\\js\\About\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\About\\whatwedo.js",
+      "PackagePath": "staticwebassets\\js\\About\\whatwedo.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Careers\\main.js",
+      "PackagePath": "staticwebassets\\js\\Careers\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Careers\\search.js",
+      "PackagePath": "staticwebassets\\js\\Careers\\search.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Checkout\\billingForm.js",
+      "PackagePath": "staticwebassets\\js\\Checkout\\billingForm.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Checkout\\cartReview.js",
+      "PackagePath": "staticwebassets\\js\\Checkout\\cartReview.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Checkout\\confirmation.js",
+      "PackagePath": "staticwebassets\\js\\Checkout\\confirmation.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Checkout\\main.js",
+      "PackagePath": "staticwebassets\\js\\Checkout\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Checkout\\paymentForm.js",
+      "PackagePath": "staticwebassets\\js\\Checkout\\paymentForm.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Checkout\\stepper.js",
+      "PackagePath": "staticwebassets\\js\\Checkout\\stepper.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Contact\\form.js",
+      "PackagePath": "staticwebassets\\js\\Contact\\form.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Contact\\main.js",
+      "PackagePath": "staticwebassets\\js\\Contact\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\FAQ\\main.js",
+      "PackagePath": "staticwebassets\\js\\FAQ\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Homepage\\banner.js",
+      "PackagePath": "staticwebassets\\js\\Homepage\\banner.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Homepage\\customize.js",
+      "PackagePath": "staticwebassets\\js\\Homepage\\customize.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Homepage\\features.js",
+      "PackagePath": "staticwebassets\\js\\Homepage\\features.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Homepage\\main.js",
+      "PackagePath": "staticwebassets\\js\\Homepage\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Homepage\\promo.js",
+      "PackagePath": "staticwebassets\\js\\Homepage\\promo.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Homepage\\universal.js",
+      "PackagePath": "staticwebassets\\js\\Homepage\\universal.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Pdp\\details.js",
+      "PackagePath": "staticwebassets\\js\\Pdp\\details.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Pdp\\main.js",
+      "PackagePath": "staticwebassets\\js\\Pdp\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Shared\\cart.js",
+      "PackagePath": "staticwebassets\\js\\Shared\\cart.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Shared\\footer.js",
+      "PackagePath": "staticwebassets\\js\\Shared\\footer.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Shared\\main.js",
+      "PackagePath": "staticwebassets\\js\\Shared\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Shared\\navbar.js",
+      "PackagePath": "staticwebassets\\js\\Shared\\navbar.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Shop\\filters.js",
+      "PackagePath": "staticwebassets\\js\\Shop\\filters.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Shop\\grid.js",
+      "PackagePath": "staticwebassets\\js\\Shop\\grid.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Shop\\main.js",
+      "PackagePath": "staticwebassets\\js\\Shop\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\app.js",
+      "PackagePath": "staticwebassets\\js\\app.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\footer.html",
+      "PackagePath": "staticwebassets\\partials\\footer.html"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\navbar.html",
+      "PackagePath": "staticwebassets\\partials\\navbar.html"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BobaLite.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

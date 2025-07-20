@@ -17,113 +17,137 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BobaLite
 build_property.RootNamespace = BobaLite
-build_property.ProjectDir = C:\Users\semiu\Documents\VS_Code\BobaLite\
+build_property.ProjectDir = C:\Users\semiu\Documents\VS Code\BobaLite\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\semiu\Documents\VS_Code\BobaLite
+build_property.MSBuildProjectDirectory = C:\Users\semiu\Documents\VS Code\BobaLite
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/About/Index.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/About/_Team.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/About/_Team.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcX1RlYW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/About/_WhatWeDo.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/About/_WhatWeDo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcX1doYXRXZURvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Careers/Index.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Careers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZWVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Careers/_Search.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Careers/_Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZWVyc1xfU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Contact/Index.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Checkout/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Checkout/_CartReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcX0NhcnRSZXZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Checkout/_Confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcX0NvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Checkout/_Flow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcX0Zsb3cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Checkout/_PaymentForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcX1BheW1lbnRGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Checkout/_ShippingForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcX1NoaXBwaW5nRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Contact/_Form.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Contact/_Form.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxfRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Contact/_ViewImports.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Contact/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/FAQ/Index.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/FAQ/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFRXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/FAQ/_Questions.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/FAQ/_Questions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRkFRXF9RdWVzdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Home/Index.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Home/_Customize.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Home/_Customize.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQ3VzdG9taXplLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Home/_Features.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Home/_Features.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRmVhdHVyZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Home/_Promo.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Home/_Promo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUHJvbW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Home/_Universal.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Home/_Universal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVW5pdmVyc2FsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Pdp/Index.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Pdp/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGRwXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Pdp/_Details.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Pdp/_Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGRwXF9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Shared/_Cart.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Shared/_Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Shared/_Footer.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Shared/_Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Shared/_Layout.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Shared/_Navbar.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Shared/_Navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Shared/_ViewStart.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Shared/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Shop/Index.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Shop/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Shop/_Filters.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Shop/_Filters.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxfRmlsdGVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/semiu/Documents/VS_Code/BobaLite/Views/Shop/_Grid.cshtml]
+[C:/Users/semiu/Documents/VS Code/BobaLite/Views/Shop/_Grid.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxfR3JpZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,30 @@
+@* Views/Checkout/_Flow.cshtml *@
+<div class="checkout-flow">
+  <!-- 1) Step indicator -->
+  <ul class="checkout-steps">
+    <li class="active">Review Cart</li>
+    <li>Shipping </li>
+    <li>Payment</li>
+    <li>Confirmation</li>
+  </ul>
+
+  <!-- 2) Panels for each step (we’ll show/hide via JS) -->
+  <div class="checkout-panel" data-step="0">
+    @await Html.PartialAsync("_CartReview")
+  </div>
+  <div class="checkout-panel" data-step="1" style="display:none">
+    @await Html.PartialAsync("_ShippingForm")
+  </div>
+  <div class="checkout-panel" data-step="2" style="display:none">
+    @await Html.PartialAsync("_PaymentForm")
+  </div>
+  <div class="checkout-panel" data-step="3" style="display:none">
+    @await Html.PartialAsync("_Confirmation")
+  </div>
+
+  <!-- 3) Prev/Next buttons -->
+  <div class="checkout-nav">
+    <button id="prev-step" disabled>Previous</button>
+    <button id="next-step">Next</button>
+  </div>
+</div>

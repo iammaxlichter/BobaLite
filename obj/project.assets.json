@@ -3222,11 +3222,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\semiu\\Documents\\VS_Code\\BobaLite\\BobaLite.csproj",
+      "projectUniqueName": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\BobaLite.csproj",
       "projectName": "BobaLite",
-      "projectPath": "C:\\Users\\semiu\\Documents\\VS_Code\\BobaLite\\BobaLite.csproj",
+      "projectPath": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\BobaLite.csproj",
       "packagesPath": "C:\\Users\\semiu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\semiu\\Documents\\VS_Code\\BobaLite\\obj\\",
+      "outputPath": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\semiu\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -3253,7 +3253,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net9.0": {
@@ -3297,7 +3297,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,85 @@
+/* Confirmation Summary Card */
+#confirmation-summary {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Section wrapper */
+.confirm-section {
+  margin: 2rem 0;      /* ↑ from 1.5rem to 2rem on top/bottom */
+}
+.confirm-section:first-child {
+  margin-top: 0;       /* no extra gap before the first section */
+}
+
+.confirm-section h4 {
+  margin: 0 0 0.75rem; /* more space under the heading */
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.25rem;
+}
+
+.confirm-section-content p {
+  margin: 0.5rem 0;    /* slightly larger vertical gap between lines */
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Items list layout */
+.confirm-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;        /* a little more space between each item */
+  margin-bottom: 1rem; /* gap after items before next section */
+}
+.confirm-item {
+  display: flex;
+  align-items: center;
+}
+.confirm-item-img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+.confirm-item-details .item-name {
+  margin: 0;
+  font-weight: normal;
+  font-size: 0.95rem;
+}
+.confirm-item-details .item-qty-price {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Masked card styling */
+.masked {
+  font-family: monospace;
+}
+
+/* Total styling */
+.total-section {
+  text-align: right;
+  margin-top: 2rem;    /* extra gap before total */
+}
+.total-section h4 {
+  margin-bottom: 0.5rem;
+}
+.total-amount {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+h4{
+    margin-top:2rem;
+}

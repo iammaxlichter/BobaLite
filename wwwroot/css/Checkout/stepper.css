@@ -1,0 +1,54 @@
+/* Checkout Stepper */
+.checkout-flow {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem 2rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 6px;
+}
+
+.checkout-steps {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0 0 2rem;
+  counter-reset: step;
+}
+.checkout-steps li {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ddd;
+  transition: color 0.2s, border-color 0.2s;
+}
+.checkout-steps li.active {
+  color: #333;
+  font-weight: bold;
+  border-bottom-color: #f25c54;
+}
+.checkout-steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  top: -1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-weight: bold;
+  background: #ddd;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+}
+.checkout-steps li.active::before {
+  background: #f25c54;
+}

@@ -35,6 +35,13 @@ namespace BobaLite.Controllers
             _cart.RemoveItem(dto.ProductId, dto.Attribute);
             return NoContent();
         }
+
+        [HttpPost("clear")]
+        public IActionResult Clear()
+        {
+            _cart.ClearCart();
+            return NoContent();
+        }
     }
 
     // incoming-payload DTOs

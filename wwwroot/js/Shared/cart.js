@@ -38,7 +38,6 @@ async function addItemApi({ id, attribute, quantity = 1 }) {
   if (!resp.ok) throw new Error('Failed to add item');
 }
 
-
 /** Tell server to update quantity */
 async function updateQtyApi({ id, attribute, qty }) {
   const resp = await fetch(`${API_BASE}/update`, {
@@ -59,6 +58,34 @@ async function removeItemApi({ id, attribute }) {
   if (!resp.ok) throw new Error('Failed to remove item');
 }
 
+/** Clear cart on server and immediately update local state */
+async function clearCartApi() {
+  try {
+    const resp = await fetch('/api/cart/clear', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    });
+    if (!resp.ok) {
+      console.warn('Failed to clear cart on server:', resp.status);
+    }
+    // Immediately clear local cart regardless of server response
+    clearCartLocal();
+  } catch (err) {
+    console.warn('Error clearing cart:', err);
+    // Still clear local cart even if server request fails
+    clearCartLocal();
+  }
+}
+
+/** Immediately clear local cart state and update UI */
+function clearCartLocal() {
+  cart = [];
+  updateCartBadge(cart);
+  renderCart();
+}
 
 // ─── DRAWER INITIALIZATION ─────────────────────────────────
 
@@ -88,7 +115,6 @@ export function initCartDrawer({
   // bootstrap on page load
   refreshCart();
 }
-
 
 // ─── RENDERING ──────────────────────────────────────────────
 
@@ -159,13 +185,17 @@ function renderCart() {
       await refreshCart();
     };
 
-    // optionally disable “+” if at stock cap
+    // optionally disable "+" if at stock cap
     if (item.qty >= item.stock) {
       incBtn.disabled = true;
     }
   });
 
   totalEl.textContent = `$${grandTotal.toFixed(2)}`;
+
+  checkout.onclick = () => {
+    window.location.href = '/Checkout';
+  };
 }
 
 function updateCartBadge(cartItems) {
@@ -175,5 +205,4 @@ function updateCartBadge(cartItems) {
   badge.textContent = totalQty > 0 ? totalQty : '';
 }
 
-export { refreshCart, addItemApi, updateQtyApi, removeItemApi };
-
+export { refreshCart, addItemApi, updateQtyApi, removeItemApi, clearCartApi, clearCartLocal };

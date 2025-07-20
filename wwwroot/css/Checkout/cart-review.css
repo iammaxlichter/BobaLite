@@ -1,0 +1,47 @@
+/* Cart Review Panel */
+#checkout-cart-items {
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background: #fafafa;
+  font-weight: bold;
+}
+#checkout-cart-items div {
+  margin-bottom: 0.5rem;
+}
+#checkout-cart-total {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+#checkout-cart-items .empty-msg {
+  font-weight: bold;
+}
+/* wwwroot/css/Checkout/cart-review.css */
+.checkout-review-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0.75rem;            /* extra breathing room */
+  margin-bottom: 0.5rem;       /* space between items */
+  background: #fafafa;         /* subtle off‑white */
+  border: 1px solid #ddd;      /* light grey border */
+  border-radius: 6px;          /* soften the corners */
+}
+
+
+.review-img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.review-details {
+  font-weight: bold;
+  color: #333;
+}

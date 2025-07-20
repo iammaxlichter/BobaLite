@@ -1,0 +1,17 @@
+@{
+    Layout = "_Layout"; 
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Checkout/main.css" />
+}
+
+<div class="checkout-hero">
+    <img src="/images/Checkout/bobalite-checkout-hero.png" alt="Hero Image" />
+</div>
+
+@await Html.PartialAsync("_Flow") 
+
+@section Scripts {
+    <script  type="module" src="~/js/Checkout/main.js"></script> 
+}

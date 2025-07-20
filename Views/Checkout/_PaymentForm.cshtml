@@ -1,0 +1,60 @@
+<h2>Payment Details</h2>
+<form id="payment-form">
+    <label>
+        Card Number<span class="required">*</span>
+        <input name="cardNumber" placeholder="1234 5678 9012 3456" required />
+    </label>
+    <label>
+        Expiry (MM/YY)<span class="required">*</span>
+        <input name="expiry" placeholder="MM/YY" required />
+    </label>
+    <label>
+        CVC<span class="required">*</span>
+        <input name="cvc" placeholder="123" required />
+    </label>
+
+    <label class="billing-same">
+        <input type="checkbox" id="billing-same" checked>
+        Same address as Shipping
+    </label>
+
+    <div id="billing-address-fields" style="display:none; margin-top:1rem;">
+        <label>
+            First Name<span class="required">*</span>
+            <input name="billingFirstName" placeholder="e.g. Jane" />
+        </label>
+        <label>
+            Last Name<span class="required">*</span>
+            <input name="billingLastName" placeholder="e.g. Doe" />
+        </label>
+        <label>
+            Address Line 1<span class="required">*</span>
+            <input name="billingAddress1" placeholder="123 Main St" />
+        </label>
+        <label>
+            Address Line 2
+            <input name="billingAddress2" placeholder="Apt, suite, etc." />
+        </label>
+        <label>
+            City<span class="required">*</span>
+            <input name="billingCity" placeholder="Austin" />
+        </label>
+        <label>
+            State<span class="required">*</span>
+            <input name="billingState" placeholder="TX" />
+        </label>
+        <label>
+            ZIP Code<span class="required">*</span>
+            <input name="billingZipCode" placeholder="78701" />
+        </label>
+        <label>
+            Phone<span class="required">*</span>
+            <input type="tel" name="billingPhone" placeholder="(555) 123-4567" />
+        </label>
+        <label>
+            Email<span class="required">*</span>
+            <input type="email" name="billingEmail" placeholder="you@example.com" />
+        </label>
+    </div>
+
+</form>
