@@ -18,8 +18,9 @@ async function refreshCart() {
       attribute: i.attribute,
       qty: i.quantity,
       price: i.unitPrice,
-      stock: i.stock ?? Infinity, // if you return stock
-      img: i.imageUrl
+      stock: i.stock ?? Infinity, 
+      img: i.imageUrl,
+      customText: i.customText || null
     }));
     updateCartBadge(cart);
     renderCart();
@@ -29,12 +30,23 @@ async function refreshCart() {
 }
 
 /** Tell server to add 1 of this variant */
-async function addItemApi({ id, attribute, quantity = 1 }) {
+async function addItemApi({ id, attribute, quantity = 1, customText = null }) {
+  const body = {
+    ProductId: id,        // ✅ Changed to PascalCase
+    Attribute: attribute, // ✅ Changed to PascalCase
+    Quantity: quantity,   // ✅ Changed to PascalCase
+  };
+
+  if (customText) {
+    body.CustomText = customText; // ✅ Changed to PascalCase
+  }
+
   const resp = await fetch(`${API_BASE}/add`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ productId: id, attribute, quantity })
+    body: JSON.stringify(body)
   });
+
   if (!resp.ok) throw new Error('Failed to add item');
 }
 
@@ -47,6 +59,7 @@ async function updateQtyApi({ id, attribute, qty }) {
   });
   if (!resp.ok) throw new Error('Failed to update quantity');
 }
+
 
 /** Tell server to remove this variant entirely */
 async function removeItemApi({ id, attribute }) {
@@ -148,6 +161,7 @@ function renderCart() {
         <div class="cart-item-name">${item.name}</div>
         <div class="cart-item-variant">(${item.attribute})</div>
         <div class="cart-item-price">$${lineTotal.toFixed(2)}</div>
+        ${item.customText ? `<div class="cart-item-custom">"${item.customText}"</div>` : ''}
         <div class="cart-item-actions">
           <div class="cart-item-qty">
             <button class="qty-decrease">−</button>

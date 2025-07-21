@@ -14,25 +14,46 @@ export function initCheckoutStepper() {
 
     /** Enable/disable Next based on which step we're on */
     function updateNextState() {
+        console.log(`Updating next state for step ${currentStep}`); // Debug log
+        
         if (currentStep === 1) {
             // On Shipping & Billing, disable until form is valid
-            next.disabled = !(billingForm && billingForm.checkValidity());
+            const isValid = billingForm && billingForm.checkValidity();
+            console.log(`Billing form valid: ${isValid}`); // Debug log
+            next.disabled = !isValid;
         } else if (currentStep === 2) {
             // On Payment, disable until form is valid with custom validation
-            next.disabled = !(paymentForm && isPaymentFormValid());
+            const isValid = paymentForm && isPaymentFormValid();
+            console.log(`Payment form valid: ${isValid}`); // Debug log
+            next.disabled = !isValid;
         } else {
-            // Otherwise always enabled
+            // Otherwise always enabled (cart review and confirmation)
+            console.log(`Step ${currentStep}: Next enabled by default`); // Debug log
             next.disabled = false;
         }
+        
+        console.log(`Next button disabled: ${next.disabled}`); // Debug log
     }
 
     /** Show the panel at `idx`, update buttons, step indicator, and broadcast event */
     function showStep(idx) {
+        console.log(`Showing step ${idx}`); // Debug log
         currentStep = idx;
-        panels.forEach((p, i) => p.style.display = i === idx ? '' : 'none');
-        steps.forEach((s, i) => s.classList.toggle('active', i === idx));
+        
+        // Hide all panels, show current one
+        panels.forEach((p, i) => {
+            p.style.display = i === idx ? 'block' : 'none';
+        });
+        
+        // Update step indicators
+        steps.forEach((s, i) => {
+            s.classList.toggle('active', i === idx);
+        });
+        
+        // Update Previous button
         prev.disabled = idx === 0;
         
+        // Update Next/Place Order button
         if (idx === panels.length - 1) {
             next.textContent = 'Place Order';
             next.id = 'place-order';
@@ -49,30 +70,54 @@ export function initCheckoutStepper() {
         }));
     }
 
+    // Previous button handler
     if (prev) {
         prev.addEventListener('click', () => {
+            console.log('Previous button clicked');
             if (currentStep > 0) {
                 showStep(currentStep - 1);
             }
         });
     }
 
+    // Next button handler
     if (next) {
-        next.addEventListener('click', async () => {
+        next.addEventListener('click', async (e) => {
+            console.log(`Next button clicked on step ${currentStep}`);
+            e.preventDefault(); // Prevent any default form submission
+            
             // If we're on the final step (confirmation), place the order
             if (currentStep === panels.length - 1) {
+                console.log('Placing order...');
                 await submitOrder();
                 return;
             }
 
-            // Prevent advancing if the current form is invalid
-            if (currentStep === 1 && billingForm && !billingForm.checkValidity()) {
-                billingForm.reportValidity();
-                return;
+            // Validate current step before advancing
+            if (currentStep === 1) {
+                if (!billingForm) {
+                    console.error('Billing form not found!');
+                    return;
+                }
+                if (!billingForm.checkValidity()) {
+                    console.log('Billing form invalid, showing validation errors');
+                    billingForm.reportValidity();
+                    return;
+                }
+                console.log('Billing form valid, advancing...');
             }
-            if (currentStep === 2 && paymentForm && !isPaymentFormValid()) {
-                paymentForm.reportValidity();
-                return;
+            
+            if (currentStep === 2) {
+                if (!paymentForm) {
+                    console.error('Payment form not found!');
+                    return;
+                }
+                if (!isPaymentFormValid()) {
+                    console.log('Payment form invalid, showing validation errors');
+                    paymentForm.reportValidity();
+                    return;
+                }
+                console.log('Payment form valid, advancing...');
             }
 
             // Advance to next step
@@ -83,23 +128,50 @@ export function initCheckoutStepper() {
     }
 
     // Listen for form validation changes
-    document.addEventListener('formValidationChange', updateNextState);
+    document.addEventListener('formValidationChange', () => {
+        console.log('Form validation change event received');
+        updateNextState();
+    });
 
     // Re‑check validity on input so Next toggles live
     if (billingForm) {
-        billingForm.addEventListener('input', updateNextState);
+        billingForm.addEventListener('input', (e) => {
+            console.log('Billing form input changed:', e.target.name);
+            updateNextState();
+        });
+        
+        // Also listen for change events (for dropdowns, etc.)
+        billingForm.addEventListener('change', (e) => {
+            console.log('Billing form change:', e.target.name);
+            updateNextState();
+        });
     }
+    
     if (paymentForm) {
         // Use a more frequent check for payment form since we have custom validation
-        paymentForm.addEventListener('input', () => {
+        paymentForm.addEventListener('input', (e) => {
+            console.log('Payment form input changed:', e.target.name);
             // Small delay to allow formatting to complete
             setTimeout(updateNextState, 10);
         });
-        paymentForm.addEventListener('keyup', () => {
+        
+        paymentForm.addEventListener('keyup', (e) => {
+            console.log('Payment form keyup:', e.target.name);
+            setTimeout(updateNextState, 10);
+        });
+        
+        paymentForm.addEventListener('change', (e) => {
+            console.log('Payment form change:', e.target.name);
             setTimeout(updateNextState, 10);
         });
     }
 
-    // Kick it off
+    // Initialize - show first step
+    console.log('Initializing stepper...');
     showStep(0);
+    
+    // Log some debug info
+    console.log(`Found ${panels.length} panels and ${steps.length} steps`);
+    console.log('Billing form:', billingForm);
+    console.log('Payment form:', paymentForm);
 }

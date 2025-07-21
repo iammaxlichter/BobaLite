@@ -30,7 +30,6 @@ else
           <img id="main-image" src="@firstVariant.PrimaryImageUrl" alt="@Model.Name" />
           <div id="zoom-lens"></div>
         </div>
-
       </div>
 
       <!-- RIGHT: product info & purchase -->
@@ -47,7 +46,7 @@ else
             @foreach (var variant in Model.Variants)
             {
               <option value="@variant.Id" data-attribute="@variant.Attributes" data-price="@variant.Price"
-                data-stock="@variant.Stock">
+                      data-stock="@variant.Stock">
                 @variant.Attributes (@variant.Price.ToString("C"))
               </option>
             }
@@ -63,9 +62,22 @@ else
         <div class="quantity">
           <label for="pdp-quantity">Qty:</label>
           <input type="number" id="pdp-quantity" value="1" min="1" max="@Model.Variants.First().Stock" step="1"
-            inputmode="numeric" pattern="[0-9]*" />
-
+                 inputmode="numeric" pattern="[0-9]*" />
         </div>
+
+        @* Custom text input for "Create My Cans" category *@
+        @if (ViewData["ShowCustomText"] as bool? == true)
+        {
+          <div class="custom-message">
+            <label for="pdp-custom-text">Custom Message:</label>
+            <input type="text"
+                   id="pdp-custom-text"
+                   name="customText"
+                   class="custom-text-input"
+                   maxlength="25"
+                   placeholder="Enter your custom message" />
+          </div>
+        }
 
         <button id="pdp-add-to-cart" @(Model.Variants.First().Stock == 0 ? "disabled" : "")>
           Add to Cart

@@ -116,7 +116,10 @@
 .cart-item-price{
     font-size:14px;
 }
-
+.cart-item-custom{
+  font-size: 14px; 
+  overflow: hidden;
+}
 .cart-item-details > div:first-child {
   font-weight: 600;
   font-size: 16px;

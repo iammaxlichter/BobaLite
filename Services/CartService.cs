@@ -49,7 +49,7 @@ namespace BobaLite.Services
             return dto;
         }
 
-        public void AddItem(int productId, string attribute, int quantity = 1)
+        public void AddItem(int productId, string attribute, int quantity = 1, string? customText = null)
         {
             var cart     = GetCart();
             var existing = cart.Items
@@ -71,12 +71,13 @@ namespace BobaLite.Services
                 var qtyToAdd = Math.Min(quantity, maxStock);
                 cart.Items.Add(new CartItemDto
                 {
-                    ProductId   = productId,
-                    Attribute   = attribute,
-                    Quantity    = qtyToAdd,
-                    UnitPrice   = unitPrice,
-                    ImageUrl    = imgUrl,
-                    ProductName = productName
+                    ProductId = productId,
+                    Attribute = attribute,
+                    Quantity = qtyToAdd,
+                    UnitPrice = unitPrice,
+                    ImageUrl = imgUrl,
+                    ProductName = productName,
+                    CustomText  = customText
                 });
             }
             else

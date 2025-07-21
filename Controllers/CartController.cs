@@ -18,7 +18,7 @@ namespace BobaLite.Controllers
         [HttpPost("add")]
         public IActionResult Add([FromBody] AddToCartRequest dto)
         {
-            _cart.AddItem(dto.ProductId, dto.Attribute, dto.Quantity);
+            _cart.AddItem(dto.ProductId, dto.Attribute, dto.Quantity, dto.CustomText);
             return NoContent();
         }
 
@@ -45,7 +45,7 @@ namespace BobaLite.Controllers
     }
 
     // incoming-payload DTOs
-    public record AddToCartRequest(int ProductId, string Attribute, int Quantity);
+    public record AddToCartRequest(int ProductId, string Attribute, int Quantity, string? CustomText);
     public record UpdateCartRequest(int ProductId, string Attribute, int Quantity);
     public record RemoveCartRequest(int ProductId, string Attribute);
 }

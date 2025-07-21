@@ -72,11 +72,13 @@ export async function submitOrder() {
         }
 
         // ─── Build Order Payload ───────────────────────────
+        const cartItems = getCartItems();
         const order = {
-            items: getCartItems().map(i => ({
+            items: cartItems.map(i => ({
                 variantId: i.productId || i.id,
                 attribute: i.attribute || '',
-                quantity: i.quantity || 1
+                quantity: i.quantity || 1,
+                customText: i.customText || null // Fixed: ensure customText is properly handled
             })),
             ShippingAddress: {
                 FullName: `${shippingAddress.firstName} ${shippingAddress.lastName}`,
@@ -182,8 +184,9 @@ function renderSummary() {
               ${i.name || 'Product'}${i.attribute ? ` (${i.attribute})` : ''}
             </p>
             <p class="item-qty-price">
-              × ${i.quantity || 1} — $${((i.price || 0) * (i.quantity || 1)).toFixed(2)}
+              x ${i.quantity || 1} — $${((i.price || 0) * (i.quantity || 1)).toFixed(2)}
             </p>
+            ${(i.customText && i.customText.trim()) ? `<p class="item-custom">Message: ${i.customText}</p>` : ''}
           </div>
         </div>`;
         });

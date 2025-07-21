@@ -120,13 +120,18 @@ export function initAddToCartAnimations() {
     const currentAttribute = activeAttributeBtn ? activeAttributeBtn.dataset.attribute : btn.dataset.attribute;
     const currentStock = activeAttributeBtn ? activeAttributeBtn.dataset.stock : '0';
 
+    // Check if there's a custom text input in this card (if applicable)
+    const customTextInput = card.querySelector('input[name="custom-text"]');
+    const customText = customTextInput?.value || null;
+
     console.log('Adding to cart:', {
       id: card.dataset.id,
       name: card.dataset.name,
       attribute: currentAttribute,
       price: currentPrice,
       stock: currentStock,
-      img: card.querySelector('.can-image').src
+      img: card.querySelector('.can-image').src,
+      customText: customText  // Log to verify it's captured
     });
 
     // 1) animate icon
@@ -146,13 +151,14 @@ export function initAddToCartAnimations() {
       }, 1500);
     }, 200);
 
-    // 2) add to cart state
+    // 2) add to cart with customText
     await addItemApi({
-      id:        Number(card.dataset.id),
-      attribute: currentAttribute
+      id: Number(card.dataset.id),
+      attribute: currentAttribute,
+      quantity: 1,  // Add explicit quantity
+      customText: customText  // Pass the custom text
     });
     await refreshCart();
-
   });
 }
 

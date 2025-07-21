@@ -105,17 +105,17 @@ export function initPdp() {
     const opt = variantSelect.selectedOptions[0];
     const attribute = opt.dataset.attribute || '';
     const quantity = parseInt(qtyInput.value, 10) || 1;
+    const customTextInput = container.querySelector('input[name="customText"]');
+    const customText = customTextInput?.value ?? null;
 
-    // Visual feedback
     addBtn.disabled = true;
     const originalText = addBtn.textContent;
     addBtn.textContent = 'Adding...';
 
     try {
-      await addItemApi({ id: productId, attribute, quantity });
+      await addItemApi({ id: productId, attribute, quantity, customText });
       await refreshCart();
 
-      // Success pulse animation
       addBtn.classList.add('success');
       addBtn.textContent = 'Added!';
       setTimeout(() => {
@@ -132,6 +132,7 @@ export function initPdp() {
       }, 2000);
     }
   });
+
 
   container.querySelectorAll('.thumb').forEach(thumb => {
     thumb.addEventListener('click', () => {
