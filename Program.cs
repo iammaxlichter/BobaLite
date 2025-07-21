@@ -11,7 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 // ──────────────────────────────────────────────────
 builder.Configuration
        // default loads appsettings.json & appsettings.{Environment}.json
-       .AddJsonFile("appsettings.Local.json", optional: true, reloadOnChange: true);
+       .AddJsonFile("appsettings.Local.json", optional: true, reloadOnChange: true)
+       // make sure this is *after* all your JSON files:
+       .AddEnvironmentVariables();
 
 // ──────────────────────────────────────────────────
 // MVC + Controllers
