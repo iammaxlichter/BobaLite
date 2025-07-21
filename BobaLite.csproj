@@ -17,8 +17,9 @@
     <None Update="drinks.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="appsettings.Local.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="appsettings.Local.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
     <PackageReference Include="SendGrid" Version="9.29.3" />
     
