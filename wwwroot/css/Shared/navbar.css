@@ -442,23 +442,28 @@
 }
 
 #search-drawer {
+  display: none; /* ← hides it when inactive */
   position: fixed;
   background: linear-gradient(to bottom, #ffffff, #fdfdfd);
-    width: 100vw; /* Force to match the viewport width */
+  width: 100vw;
   max-width: 100%;
-  box-sizing: border-box; /* ← critical: includes padding in total width */
+  box-sizing: border-box;
   padding: 2rem 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 999;
   border-bottom: 1px solid #eee;
   transition: all 0.3s ease;
-
 }
+
 
 #search-drawer.active {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
-
+#search-drawer:not(.active) {
+  pointer-events: none;
+}
 /* Search Input Container */
 .search-input-container {
   position: relative;

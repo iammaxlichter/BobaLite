@@ -119,6 +119,10 @@
   margin-bottom: 1rem;
   background-color: #fff;
 }
+.pdp-info select,
+.pdp-info select option {
+  color: black; /* or any other text color you want */
+}
 
 .pdp-info .price {
   display: flex;
@@ -239,9 +243,6 @@
   animation: success-pulse 0.8s ease-out;
 }
 
-.cart-item-custom{
-  font-size: .9rem; 
-}
 
 /* Reuse your grid success pulse animation */
 @keyframes success-pulse {
