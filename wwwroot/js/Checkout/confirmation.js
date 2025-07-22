@@ -101,6 +101,8 @@ export async function submitOrder() {
                 Email: billingAddress.email
             },
             payment: {
+                cardFirstName: payData.cardFirstName,
+                cardLastName: payData.cardLastName,
                 cardNumber: payData.cardNumber.replace(/\s/g, ''),
                 expiry: payData.expiry,
                 cvc: payData.cvc
@@ -217,9 +219,11 @@ function renderSummary() {
         // Payment
         const digits = pay.cardNumber.replace(/\D/g, '').slice(-4);
         html += '<div class="confirm-section"><h4>Payment</h4><div class="confirm-section-content">';
+        html += `<p>Name: ${pay.cardFirstName} ${pay.cardLastName}</p>`;
         html += `<p>Card: <span class="masked">•••• •••• •••• ${digits}</span></p>`;
         html += `<p>Expires: ${pay.expiry}</p>`;
         html += '</div></div>';
+
 
         // Total
         const total = cart.reduce((sum, i) => sum + ((i.price || 0) * (i.quantity || 1)), 0);

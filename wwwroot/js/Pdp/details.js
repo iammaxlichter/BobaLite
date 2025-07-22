@@ -136,6 +136,8 @@ export function initPdp() {
 
   container.querySelectorAll('.thumb').forEach(thumb => {
     thumb.addEventListener('click', () => {
+      if (thumb.dataset.disabled === 'true') return; 
+
       const variantId = thumb.dataset.variantId;
       const imgUrl = thumb.dataset.url;
 
@@ -148,17 +150,13 @@ export function initPdp() {
         opt => String(opt.value) === String(variantId)
       );
 
-      if (optionToSelect) {
+      if (optionToSelect && !optionToSelect.disabled) {
         variantSelect.value = variantId;
         updatePdp();
       }
-
-      container.querySelectorAll('.thumb-wrapper').forEach(wrapper => {
-        wrapper.classList.remove('active');
-      });
-      thumb.closest('.thumb-wrapper')?.classList.add('active');
     });
   });
+
 
   const firstThumb = container.querySelector('.thumb-wrapper');
   if (firstThumb) firstThumb.classList.add('active');
