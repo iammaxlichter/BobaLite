@@ -68,8 +68,8 @@
 
 /* Total styling */
 .total-section {
-  text-align: right;
-  margin-top: 2rem;    /* extra gap before total */
+  text-align: left;
+  margin-top: 4rem;    /* extra gap before total */
 }
 .total-section h4 {
   margin-bottom: 0.5rem;

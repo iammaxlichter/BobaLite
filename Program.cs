@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using BobaLite.Data;
 using BobaLite.Services;
 using BobaLite.Models;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,6 +49,10 @@ builder.Services.AddSession(options =>
 // HttpContextAccessor (needed by CartService)
 // ──────────────────────────────────────────────────
 builder.Services.AddHttpContextAccessor();
+
+// Set default culture to en-US for currency and formatting
+CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
+CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en-US");
 
 var app = builder.Build();
 

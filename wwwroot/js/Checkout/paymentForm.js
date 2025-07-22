@@ -104,7 +104,6 @@ export function getPaymentData() {
 
     const useBillingAsShipping = f.querySelector('#billing-same')?.checked || false;
 
-    // billing fields from the payment panel
     const billing = {
         firstName: f.querySelector('input[name="billingFirstName"]')?.value.trim() || '',
         lastName: f.querySelector('input[name="billingLastName"]')?.value.trim() || '',
@@ -118,6 +117,8 @@ export function getPaymentData() {
     };
 
     return {
+        cardFirstName: f.querySelector('input[name="cardFirstName"]')?.value.trim() || '',
+        cardLastName: f.querySelector('input[name="cardLastName"]')?.value.trim() || '',
         cardNumber: f.querySelector('[name="cardNumber"]')?.value.trim() || '',
         expiry: f.querySelector('[name="expiry"]')?.value.trim() || '',
         cvc: f.querySelector('[name="cvc"]')?.value.trim() || '',
@@ -125,6 +126,7 @@ export function getPaymentData() {
         billing
     };
 }
+
 
 export function isPaymentFormValid() {
     const form = document.getElementById('payment-form');

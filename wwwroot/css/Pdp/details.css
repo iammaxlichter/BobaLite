@@ -119,6 +119,10 @@
   margin-bottom: 1rem;
   background-color: #fff;
 }
+.pdp-info select,
+.pdp-info select option {
+  color: black; /* or any other text color you want */
+}
 
 .pdp-info .price {
   display: flex;
@@ -168,6 +172,25 @@
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
+}
+.thumb-wrapper.disabled-thumb {
+  opacity: 0.5;
+  pointer-events: none;
+  position: relative;
+}
+
+.thumb-wrapper.disabled-thumb::after {
+  content: "Sold Out";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.85);
+  color: #b91c1c;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
 }
 
 .custom-message label {
@@ -239,9 +262,6 @@
   animation: success-pulse 0.8s ease-out;
 }
 
-.cart-item-custom{
-  font-size: .9rem; 
-}
 
 /* Reuse your grid success pulse animation */
 @keyframes success-pulse {
