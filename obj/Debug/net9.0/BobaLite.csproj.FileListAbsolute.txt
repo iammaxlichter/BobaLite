@@ -441,7 +441,6 @@ C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\j3xyrw1cv1
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\co0sx3pbrz-i9hekvo5xc.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\ugkeeptj0m-qzd8h0wq55.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\1sv1jtjkwd-hgprkrj93c.gz
-C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\6ubsvu4p34-uqsr075d9d.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\eqw3a09pga-hcpliszrzz.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\e33gnfygwy-08qgl2a7o0.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\e4de898qj0-xg8nhw8q0v.gz
@@ -457,4 +456,8 @@ C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\zgh7do1qhx
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\ofmiy1x1kr-wsd6fcr3z2.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\wj1g117xvw-w0aeefovkq.gz
 C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\4dcrds0ihd-uedo55ksq5.gz
-C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\gv6t2k92j0-63sy9lcm74.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\6ubsvu4p34-qs39gouh56.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\obj\Debug\net9.0\compressed\gv6t2k92j0-tlewqqwf7i.gz
+C:\Users\semiu\Documents\VS Code\BobaLite\bin\Debug\net9.0\appsettings.Production.json
+C:\Users\semiu\Documents\VS Code\BobaLite\bin\Debug\net9.0\Npgsql.dll
+C:\Users\semiu\Documents\VS Code\BobaLite\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

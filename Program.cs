@@ -33,6 +33,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IProductRepository, EfProductRepository>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 // ──────────────────────────────────────────────────
 // Session (in-memory, backed by a cookie)

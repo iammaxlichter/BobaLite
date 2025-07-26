@@ -78,6 +78,9 @@ export async function submitOrder() {
                 variantId: i.productId || i.id,
                 attribute: i.attribute || '',
                 quantity: i.quantity || 1,
+                price: i.price,
+                productName: i.name,
+                imageUrl: `https://bobalite.onrender.com${i.img}`,
                 customText: i.customText || null // Fixed: ensure customText is properly handled
             })),
             ShippingAddress: {

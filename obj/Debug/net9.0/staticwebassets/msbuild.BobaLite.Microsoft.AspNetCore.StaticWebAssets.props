@@ -192,8 +192,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>uqsr075d9d</Fingerprint>
-      <Integrity>RtbP4n8T7atSbuI+KR/OOsCUxvXCYujpACoMNU10+WI=</Integrity>
+      <Fingerprint>qs39gouh56</Fingerprint>
+      <Integrity>hvSsO+9Kd+H+KaKb4zDHFBGRzG7iIlJtkFAYGAlrNTA=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Checkout\confirmation.css'))</OriginalItemSpec>
@@ -1224,6 +1224,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\About\bobalite-about-hero.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\About\karim-khan.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>BobaLite</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/BobaLite</BasePath>
+      <RelativePath>images/About/karim-khan.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ffbskxllb8</Fingerprint>
+      <Integrity>23BGL4JVioVTy7jTEa5+Bck0piK8Y6hZetr/1sg/aPg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\About\karim-khan.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\About\max-lichter.png'))">
       <SourceType>Package</SourceType>
       <SourceId>BobaLite</SourceId>
@@ -2226,8 +2244,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>63sy9lcm74</Fingerprint>
-      <Integrity>TuAbhPkqJIqnywycjrcSTglP9FnoaThGp8yBJyDPb6w=</Integrity>
+      <Fingerprint>tlewqqwf7i</Fingerprint>
+      <Integrity>DyzDI32PHTn9roG73PTt48oPW+Tw2TP2ei/9bMP/RM8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Checkout\confirmation.js'))</OriginalItemSpec>

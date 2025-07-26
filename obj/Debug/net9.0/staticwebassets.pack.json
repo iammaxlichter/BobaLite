@@ -273,6 +273,10 @@
       "PackagePath": "staticwebassets\\images\\About\\bobalite-about-hero.png"
     },
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\About\\karim-khan.png",
+      "PackagePath": "staticwebassets\\images\\About\\karim-khan.png"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\About\\max-lichter.png",
       "PackagePath": "staticwebassets\\images\\About\\max-lichter.png"
     },

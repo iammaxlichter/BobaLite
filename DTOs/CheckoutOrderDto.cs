@@ -10,9 +10,12 @@ namespace BobaLite.DTOs
 
     public class CheckoutCartItemDto
     {
-        public int    VariantId { get; set; }
+        public int VariantId { get; set; }
         public string Attribute { get; set; }
-        public int    Quantity  { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
+        public string? ProductName { get; set; }
+        public string? ImageUrl { get; set; }
     }
 
     public class CheckoutAddressDto
@@ -20,7 +23,8 @@ namespace BobaLite.DTOs
         public string FullName   { get; set; }
         public string Address1   { get; set; }
         public string Address2   { get; set; }
-        public string City       { get; set; }
+        public string Phone { get; set; }       
+         public string City { get; set; }
         public string State      { get; set; }
         public string PostalCode { get; set; }
         public string Email      { get; set; }
