@@ -108,7 +108,14 @@ namespace BobaLite.Controllers
                 string recipient = order.ShippingAddress.Email;
                 string name = order.ShippingAddress.FullName;
 
+                // Send to customer
                 await _email.SendOrderConfirmationEmailAsync(recipient, name, sb.ToString(), subject);
+                _logger.LogInformation("Order confirmation email sent to {Email}", recipient);
+
+                // Send a copy to admin
+                await _email.SendOrderConfirmationEmailAsync("iammaxlichter@gmail.com", "BobaLite Admin", sb.ToString(), $"[Copy] {subject}");
+                _logger.LogInformation("Order copy email sent to admin");
+
                 _logger.LogInformation("Order confirmation email sent to {Email}", recipient);
             }
             catch (Exception ex)

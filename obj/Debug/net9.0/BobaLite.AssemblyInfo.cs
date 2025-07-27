@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BobaLite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b91c155176ac02fdd80a0cbe4033b89c2de2207b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1952cb5dd837cc04dcd1707ebd3199f43cf3cafc")]
 [assembly: System.Reflection.AssemblyProductAttribute("BobaLite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BobaLite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
