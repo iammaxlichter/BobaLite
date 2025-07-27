@@ -11,12 +11,12 @@ namespace BobaLite.Data
         { }
 
         // 2) DbSets → these become your tables in the database
-        public DbSet<Product>               Products               { get; set; } = null!;
-        public DbSet<ProductVariant>        Variants               { get; set; } = null!;
-        public DbSet<ProductVariantImage>   ProductVariantImages   { get; set; } = null!;
-        public DbSet<Category>              Categories             { get; set; } = null!;
-        public DbSet<ProductCategory>       ProductCategories      { get; set; } = null!;
-
+        public DbSet<Product> Products { get; set; } = null!;
+        public DbSet<ProductVariant> Variants { get; set; } = null!;
+        public DbSet<ProductVariantImage> ProductVariantImages { get; set; } = null!;
+        public DbSet<Category> Categories { get; set; } = null!;
+        public DbSet<ProductCategory> ProductCategories { get; set; } = null!;
+        public DbSet<AdminUser> AdminUsers { get; set; }
         // 3) Fluent API configuration
         protected override void OnModelCreating(ModelBuilder mb)
         {

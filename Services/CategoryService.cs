@@ -19,8 +19,11 @@ namespace BobaLite.Services
                             .ToList();
 
             var productCats = _db.ProductCategories
-                                 .Include(pc => pc.Category)
-                                 .ToList();
+                                .Include(pc => pc.Category)
+                                .Include(pc => pc.Product)
+                                .Where(pc => pc.Product.IsActive)
+                                .ToList();
+
 
             return groups
               .Select(g =>

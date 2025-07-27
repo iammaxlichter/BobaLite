@@ -1,0 +1,33 @@
+/* dashboard.css */
+
+.admin-dashboard {
+    padding: 2rem 1rem;
+    overflow-x: hidden;
+}
+
+.admin-dashboard h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.logout-btn {
+    float: right;
+    background: linear-gradient(135deg, #555555, #777777);
+    padding: 0.875rem 2rem;
+    color: #fff;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    max-width: fit-content;
+}
+
+.logout-btn:hover {
+    background: linear-gradient(135deg, #444444, #666666);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}

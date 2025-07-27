@@ -1,7 +1,0 @@
-/* Hero Section */
-.hero {
-  height: calc(100vh );
-  background: url("/images/bobalite-homepage.png")
-              no-repeat center top;
-  background-size: contain;
-}

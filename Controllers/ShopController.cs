@@ -29,9 +29,12 @@ namespace BobaLite.Controllers
             var groups = _cats.GetFilterGroups();
 
             // 2. If any leaf slugs were passed, filter; otherwise return all
-            var items = (categories?.Any() == true)
-                      ? _products.GetByCategorySlugs(categories)
-                      : _products.GetAll();
+            var allItems = (categories?.Any() == true)
+                        ? _products.GetByCategorySlugs(categories)
+                        : _products.GetAll();
+
+            var items = allItems.Where(p => p.IsActive).ToList();
+
 
             // 3. Pack into a ViewModel
             var vm = new ShopViewModel

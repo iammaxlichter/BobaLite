@@ -1,0 +1,37 @@
+@model IEnumerable<BobaLite.Models.Product>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Admin/main.css" />
+}
+
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <section class="admin-dashboard">
+        <div class="container">
+            <form action="/Admin/Logout" method="post">
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
+            
+            <h2>Welcome, @User.Identity.Name!</h2>
+
+            <!-- Inject other partials here -->
+            @await Html.PartialAsync("_ManageProducts", Model)
+            @await Html.PartialAsync("_CategoryManager", (List<BobaLite.Models.Category>)ViewBag.AllCategories)
+
+        
+        </div>
+    </section>
+}
+else
+{
+    @await Html.PartialAsync("_Login")
+}
+
+@section Scripts {
+    <script type="module" src="~/js/Admin/main.js"></script>
+}

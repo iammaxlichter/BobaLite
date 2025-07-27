@@ -94,3 +94,11 @@
     transform: scale(1.1);
     color: #A855F7; /* optional: add a gold tint on hover */
 }
+@media (max-width: 768px) {
+    :root {
+    --feature-img-max-width: 89%;
+    --feature-item-max-width: 90px;
+    --feature-item-gap: 4.5rem;
+    --feature-item-text-size: 1.rem;
+    }
+}

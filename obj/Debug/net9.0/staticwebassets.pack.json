@@ -17,6 +17,30 @@
       "PackagePath": "staticwebassets\\css\\About\\whatwedo.css"
     },
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Admin\\categories.css",
+      "PackagePath": "staticwebassets\\css\\Admin\\categories.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Admin\\dashboard.css",
+      "PackagePath": "staticwebassets\\css\\Admin\\dashboard.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Admin\\layout.css",
+      "PackagePath": "staticwebassets\\css\\Admin\\layout.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Admin\\login.css",
+      "PackagePath": "staticwebassets\\css\\Admin\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Admin\\main.css",
+      "PackagePath": "staticwebassets\\css\\Admin\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Admin\\products.css",
+      "PackagePath": "staticwebassets\\css\\Admin\\products.css"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Careers\\hero.css",
       "PackagePath": "staticwebassets\\css\\Careers\\hero.css"
     },
@@ -155,30 +179,6 @@
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shop\\main.css",
       "PackagePath": "staticwebassets\\css\\Shop\\main.css"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\banner.css",
-      "PackagePath": "staticwebassets\\css\\banner.css"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\base.css",
-      "PackagePath": "staticwebassets\\css\\base.css"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\footer.css",
-      "PackagePath": "staticwebassets\\css\\footer.css"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\hero.css",
-      "PackagePath": "staticwebassets\\css\\hero.css"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\main.css",
-      "PackagePath": "staticwebassets\\css\\main.css"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\navbar.css",
-      "PackagePath": "staticwebassets\\css\\navbar.css"
     },
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\fonts\\OFL.txt",
@@ -329,6 +329,10 @@
       "PackagePath": "staticwebassets\\images\\Homepage\\bobalite-trendy-man.png"
     },
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shared\\bobalite-berry-blast.png",
+      "PackagePath": "staticwebassets\\images\\Shared\\bobalite-berry-blast.png"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shared\\bobalite-brown-sugar-bliss.png",
       "PackagePath": "staticwebassets\\images\\Shared\\bobalite-brown-sugar-bliss.png"
     },
@@ -425,16 +429,28 @@
       "PackagePath": "staticwebassets\\images\\Shop\\shopping-cart-plus.png"
     },
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\super-berry-blast-1-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\super-berry-blast-1-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\super-berry-blast-12-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\super-berry-blast-12-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\super-berry-blast-6-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\super-berry-blast-6-pack.png"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea-1-pack.png",
       "PackagePath": "staticwebassets\\images\\Shop\\taro-twist-tea-1-pack.png"
     },
     {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea-12-pack.png",
-      "PackagePath": "staticwebassets\\images\\Shop\\taro-twist-tea-12-pack.png"
-    },
-    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea-6-pack.png",
       "PackagePath": "staticwebassets\\images\\Shop\\taro-twist-tea-6-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\taro-twist-tea.png"
     },
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-homepage.png",
@@ -475,6 +491,14 @@
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\About\\whatwedo.js",
       "PackagePath": "staticwebassets\\js\\About\\whatwedo.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Admin\\main.js",
+      "PackagePath": "staticwebassets\\js\\Admin\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Admin\\newProduct.js",
+      "PackagePath": "staticwebassets\\js\\Admin\\newProduct.js"
     },
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Careers\\main.js",

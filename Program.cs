@@ -3,6 +3,7 @@ using BobaLite.Data;
 using BobaLite.Services;
 using BobaLite.Models;
 using System.Globalization;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,15 +12,14 @@ var builder = WebApplication.CreateBuilder(args);
 // (gitignored, so it’s only on your machine)
 // ──────────────────────────────────────────────────
 builder.Configuration
-       // default loads appsettings.json & appsettings.{Environment}.json
        .AddJsonFile("appsettings.Local.json", optional: true, reloadOnChange: true)
-       // make sure this is *after* all your JSON files:
        .AddEnvironmentVariables();
 
 // ──────────────────────────────────────────────────
 // MVC + Controllers
 // ──────────────────────────────────────────────────
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages(); // Needed for /Admin/Login.cshtml
 
 // ──────────────────────────────────────────────────
 // EF Core + SQLite
@@ -36,14 +36,25 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 
 // ──────────────────────────────────────────────────
+// Cookie Auth (for Admin login)
+// ──────────────────────────────────────────────────
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Admin/Login";
+        options.Cookie.Name = ".BobaLite.AdminAuth";
+        options.ExpireTimeSpan = TimeSpan.FromHours(2);
+    });
+
+// ──────────────────────────────────────────────────
 // Session (in-memory, backed by a cookie)
 // ──────────────────────────────────────────────────
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
-    options.Cookie.Name     = ".BobaLite.Cart";
+    options.Cookie.Name = ".BobaLite.Cart";
     options.Cookie.HttpOnly = true;
-    options.IdleTimeout     = TimeSpan.FromHours(1);
+    options.IdleTimeout = TimeSpan.FromHours(1);
 });
 
 // ──────────────────────────────────────────────────
@@ -51,14 +62,16 @@ builder.Services.AddSession(options =>
 // ──────────────────────────────────────────────────
 builder.Services.AddHttpContextAccessor();
 
-// Set default culture to en-US for currency and formatting
+// ──────────────────────────────────────────────────
+// Culture (for currency formatting, etc.)
+// ──────────────────────────────────────────────────
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en-US");
 
 var app = builder.Build();
 
 // ──────────────────────────────────────────────────
-// Apply any pending EF migrations automatically
+// Migrations
 // ──────────────────────────────────────────────────
 using (var scope = app.Services.CreateScope())
 {
@@ -67,22 +80,19 @@ using (var scope = app.Services.CreateScope())
 }
 
 // ──────────────────────────────────────────────────
-// Static files (no DefaultFiles, so "/" goes to MVC)
+// Middleware pipeline
 // ──────────────────────────────────────────────────
-//app.UseDefaultFiles();  // ← removed
 app.UseStaticFiles();
-
-// ──────────────────────────────────────────────────
-// Routing & Session
-// ──────────────────────────────────────────────────
 app.UseRouting();
+
+app.UseAuthentication(); 
+app.UseAuthorization();
+app.UseStatusCodePages(); 
 app.UseSession();
 
-// ──────────────────────────────────────────────────
-// Map controllers and default route
-// ──────────────────────────────────────────────────
 app.UseEndpoints(endpoints =>
 {
+    endpoints.MapRazorPages();
     endpoints.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");

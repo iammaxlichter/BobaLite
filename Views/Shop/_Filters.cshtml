@@ -15,15 +15,20 @@
         @foreach (var slug in Model.ActiveCategories)
         {
             var option = Model.FilterGroups
-                     .SelectMany(g => g.Options)
-                     .First(o => o.Slug == slug);
-            var name = option.Name;
-            <div class="filter-pill">
-                @name
-                <a class="remove-btn" href="@Url.Action("Index","Shop", new {
-                             categories = Model.ActiveCategories.Where(s => s != slug)
-                           })">×</a>
-            </div>
+                    .SelectMany(g => g.Options)
+                    .FirstOrDefault(o => o.Slug == slug);
+
+            if (option != null)
+                {
+                    var name = option.Name;
+                    <div class="filter-pill">
+                        @name
+                        <a class="remove-btn" href="@Url.Action("Index","Shop", new {
+                            categories = Model.ActiveCategories.Where(s => s != slug)
+                        })">x</a>
+                    </div>
+                }
+
         }
         @if (Model.ActiveCategories.Any())
         {
@@ -65,12 +70,12 @@
                                     <label for="@group.Slug">
                                         @group.Name
                                         <span class="filter-count">
-                                        (@Model.FilterGroups
-                                            .First(g => g.Slug==group.Slug)
-                                            .Options
-                                            .Where(o => o.Slug==group.Slug)
-                                            .Select(o=>o.Count)
-                                            .First())
+                                            @{
+                                                var gMatch = Model.FilterGroups.FirstOrDefault(g => g.Slug == group.Slug);
+                                                var oMatch = gMatch?.Options.FirstOrDefault(o => o.Slug == group.Slug);
+                                                var count = oMatch?.Count ?? 0;
+                                            }
+                                            (@count)
                                         </span>
                                     </label>
                                     </div>

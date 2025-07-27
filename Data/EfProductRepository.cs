@@ -13,30 +13,33 @@ namespace BobaLite.Data
     public IEnumerable<Product> GetAll()
     {
       return _db.Products
+                .Where(p => p.IsActive)
                 .Include(p => p.Variants)
                   .ThenInclude(v => v.Images)
                 .ToList();
     }
+
 
     public IEnumerable<Product> GetByCategorySlugs(IEnumerable<string> slugs)
     {
       return _db.Products
+                .Where(p => p.IsActive &&
+                            p.ProductCategories.Any(pc => slugs.Contains(pc.Category.Slug)))
                 .Include(p => p.Variants)
                   .ThenInclude(v => v.Images)
-                .Where(p => p.ProductCategories
-                             .Any(pc => slugs.Contains(pc.Category.Slug)))
                 .ToList();
+
     }
 
-public Product? GetProduct(int productId)
-{
-    return _db.Products
-              .Include(p => p.Variants)
-                  .ThenInclude(v => v.Images)
-              .Include(p => p.ProductCategories)
-                  .ThenInclude(pc => pc.Category) 
-              .FirstOrDefault(p => p.Id == productId);
-}
+    public Product? GetProduct(int productId)
+    {
+      return _db.Products
+                .Include(p => p.Variants)
+                    .ThenInclude(v => v.Images)
+                .Include(p => p.ProductCategories)
+                    .ThenInclude(pc => pc.Category)
+                .FirstOrDefault(p => p.Id == productId);
+    }
 
     public ProductVariant? GetVariant(int productId, string attribute)
     {
@@ -60,9 +63,9 @@ public Product? GetProduct(int productId)
           .ToList();
     }
 
-  
 
-  public IEnumerable<object> GetSearchResults()
+
+    public IEnumerable<object> GetSearchResults()
     {
       return _db.Products
                 .Include(p => p.Variants)
