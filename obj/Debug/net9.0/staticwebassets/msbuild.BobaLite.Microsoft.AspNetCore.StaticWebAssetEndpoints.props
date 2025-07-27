@@ -1416,6 +1416,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-lYxHhEBm6qPGTQ0cnCQdQ1nm3txu1oTG8JE\u002BfXGp0Zs="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"2244151"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022lYxHhEBm6qPGTQ0cnCQdQ1nm3txu1oTG8JE\u002BfXGp0Zs=\u0022"},{"Name":"Last-Modified","Value":"Sun, 27 Jul 2025 21:24:55 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/BobaLite/images/Shop/taro-twist-tea-12-pack.cu2xmj2scm.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Shop\taro-twist-tea-12-pack.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"cu2xmj2scm"},{"Name":"integrity","Value":"sha256-XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc="},{"Name":"label","Value":"_content/BobaLite/images/Shop/taro-twist-tea-12-pack.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2485937"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc=\u0022"},{"Name":"Last-Modified","Value":"Sun, 20 Jul 2025 17:22:07 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/BobaLite/images/Shop/taro-twist-tea-12-pack.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Shop\taro-twist-tea-12-pack.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"2485937"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc=\u0022"},{"Name":"Last-Modified","Value":"Sun, 20 Jul 2025 17:22:07 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BobaLite/images/Shop/taro-twist-tea-6-pack.20qbxgtizo.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Shop\taro-twist-tea-6-pack.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -1427,18 +1439,6 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-nlY3KvcIflK8ooV9W13y33YRoh\u002BGXLid5thlpBR6ETE="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"2571522"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022nlY3KvcIflK8ooV9W13y33YRoh\u002BGXLid5thlpBR6ETE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 27 Jul 2025 21:25:02 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/BobaLite/images/Shop/taro-twist-tea.cu2xmj2scm.png">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Shop\taro-twist-tea.png'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"cu2xmj2scm"},{"Name":"integrity","Value":"sha256-XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc="},{"Name":"label","Value":"_content/BobaLite/images/Shop/taro-twist-tea.png"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2485937"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc=\u0022"},{"Name":"Last-Modified","Value":"Sun, 20 Jul 2025 17:22:07 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/BobaLite/images/Shop/taro-twist-tea.png">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Shop\taro-twist-tea.png'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"2485937"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc=\u0022"},{"Name":"Last-Modified","Value":"Sun, 20 Jul 2025 17:22:07 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BobaLite/index.g1hnjdhhxb.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>

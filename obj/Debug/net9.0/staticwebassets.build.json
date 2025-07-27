@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Rdt3WGZkDwQM6nUlKBvywqPnS8gbXSnikZDpmmurEzk=",
+  "Hash": "TxUL18HhMx1bFMRzZTS8fPhopY5awi6BvnayWEf/ilE=",
   "Source": "BobaLite",
   "BasePath": "_content/BobaLite",
   "Mode": "Default",
@@ -4175,6 +4175,27 @@
       "OriginalItemSpec": "wwwroot\\images\\Shop\\taro-twist-tea-1-pack.png"
     },
     {
+      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea-12-pack.png",
+      "SourceId": "BobaLite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
+      "BasePath": "_content/BobaLite",
+      "RelativePath": "images/Shop/taro-twist-tea-12-pack#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cu2xmj2scm",
+      "Integrity": "XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Shop\\taro-twist-tea-12-pack.png"
+    },
+    {
       "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea-6-pack.png",
       "SourceId": "BobaLite",
       "SourceType": "Discovered",
@@ -4194,27 +4215,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Shop\\taro-twist-tea-6-pack.png"
-    },
-    {
-      "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea.png",
-      "SourceId": "BobaLite",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\",
-      "BasePath": "_content/BobaLite",
-      "RelativePath": "images/Shop/taro-twist-tea#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "cu2xmj2scm",
-      "Integrity": "XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Shop\\taro-twist-tea.png"
     },
     {
       "Identity": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\index.html",
@@ -24545,6 +24545,88 @@
       ]
     },
     {
+      "Route": "images/Shop/taro-twist-tea-12-pack.cu2xmj2scm.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea-12-pack.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2485937"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 17:22:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cu2xmj2scm"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Shop/taro-twist-tea-12-pack.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc="
+        }
+      ]
+    },
+    {
+      "Route": "images/Shop/taro-twist-tea-12-pack.png",
+      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea-12-pack.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2485937"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 17:22:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc="
+        }
+      ]
+    },
+    {
       "Route": "images/Shop/taro-twist-tea-6-pack.20qbxgtizo.png",
       "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea-6-pack.png",
       "Selectors": [],
@@ -24623,88 +24705,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-nlY3KvcIflK8ooV9W13y33YRoh+GXLid5thlpBR6ETE="
-        }
-      ]
-    },
-    {
-      "Route": "images/Shop/taro-twist-tea.cu2xmj2scm.png",
-      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2485937"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 20 Jul 2025 17:22:07 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "cu2xmj2scm"
-        },
-        {
-          "Name": "label",
-          "Value": "images/Shop/taro-twist-tea.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc="
-        }
-      ]
-    },
-    {
-      "Route": "images/Shop/taro-twist-tea.png",
-      "AssetFile": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\taro-twist-tea.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2485937"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 20 Jul 2025 17:22:07 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-XFG5HfsMTtrPIae4MyDJ3i/bBOKTgyTz/RRMp/peRrc="
         }
       ]
     },
