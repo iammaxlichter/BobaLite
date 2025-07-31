@@ -1,7 +1,11 @@
+// ───── Framework Usings ─────────────────────────────
 using System.ComponentModel.DataAnnotations;
 
 namespace BobaLite.Models
 {
+    /// <summary>
+    /// Represents the data submitted through the contact form.
+    /// </summary>
     public class ContactForm
     {
         [Required(ErrorMessage = "Name is required")]

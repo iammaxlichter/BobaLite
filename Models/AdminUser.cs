@@ -1,8 +1,12 @@
+// ───── Framework Usings ─────────────────────────────
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace BobaLite.Models
 {
+    /// <summary>
+    /// Represents an administrator user for the BobaLite application.
+    /// </summary>
     public class AdminUser
     {
         public int Id { get; set; }

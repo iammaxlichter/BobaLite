@@ -1,12 +1,18 @@
+// ───── Framework Usings ─────────────────────────────
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
-using System.Text;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
+
+// ───── System Usings ────────────────────────────────
+using System.Security.Claims;
 using System.Security.Cryptography;
+using System.Text;
+
+// ───── Project Usings ───────────────────────────────
 using BobaLite.Data;
 using BobaLite.Models;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace BobaLite.Controllers
 {
@@ -15,12 +21,22 @@ namespace BobaLite.Controllers
         private readonly AppDbContext _db;
         private readonly IWebHostEnvironment _env;
 
+        #region Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdminController"/> class.
+        /// </summary>
         public AdminController(AppDbContext db, IWebHostEnvironment env)
         {
             _db = db;
             _env = env;
         }
+        #endregion
 
+        #region GET Methods
+
+        /// <summary>
+        /// Displays the Admin dashboard.
+        /// </summary>
         [HttpGet]
         public IActionResult Index(int? editProductId = null)
         {
@@ -37,6 +53,9 @@ namespace BobaLite.Controllers
             return View(products);
         }
 
+        /// <summary>
+        /// Displays the login page for admin users.
+        /// </summary>
         [HttpGet]
         public IActionResult Login(string? returnUrl = null)
         {
@@ -47,6 +66,13 @@ namespace BobaLite.Controllers
             return View("Index");
         }
 
+        #endregion
+
+        #region POST Methods
+
+        /// <summary>
+        /// Handles admin login.
+        /// </summary>
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password, string? returnUrl)
         {
@@ -66,6 +92,9 @@ namespace BobaLite.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Logs the admin user out.
+        /// </summary>
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
@@ -73,13 +102,9 @@ namespace BobaLite.Controllers
             return RedirectToAction("Login");
         }
 
-        private bool VerifyHash(string password, string storedHash)
-        {
-            using var sha256 = SHA256.Create();
-            var hash = Convert.ToBase64String(sha256.ComputeHash(Encoding.UTF8.GetBytes(password)));
-            return hash == storedHash;
-        }
-
+        /// <summary>
+        /// Toggles product active/inactive status.
+        /// </summary>
         [HttpPost]
         public IActionResult ToggleProductStatus(int id)
         {
@@ -91,6 +116,9 @@ namespace BobaLite.Controllers
             return RedirectToAction("Index", new { editProductId = id });
         }
 
+        /// <summary>
+        /// Updates stock quantity for a product variant.
+        /// </summary>
         [HttpPost]
         public IActionResult UpdateStock(int variantId, int newStock)
         {
@@ -102,6 +130,9 @@ namespace BobaLite.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Updates the name of a product.
+        /// </summary>
         [HttpPost]
         public IActionResult UpdateProductName(int productId, string newName)
         {
@@ -113,16 +144,19 @@ namespace BobaLite.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Saves product changes, including stock, price, and images.
+        /// </summary>
         [HttpPost]
         public async Task<IActionResult> SaveProduct(
-    int productId,
-    string newName,
-    int[] variantIds,
-    int[] newStocks,
-    decimal[] newPrices,
-    IFormFile[] variantImages,
-    int[] categoryIds,
-    string isActive)
+            int productId,
+            string newName,
+            int[] variantIds,
+            int[] newStocks,
+            decimal[] newPrices,
+            IFormFile[] variantImages,
+            int[] categoryIds,
+            string isActive)
         {
             var product = _db.Products
                 .Include(p => p.Variants).ThenInclude(v => v.Images)
@@ -162,23 +196,18 @@ namespace BobaLite.Controllers
                 var uploadedFile = variantImages.ElementAtOrDefault(i);
                 if (uploadedFile != null && uploadedFile.Length > 0)
                 {
-                    // Delete old file if it exists
                     if (!string.IsNullOrEmpty(currentImageUrl))
                     {
                         var oldPath = Path.Combine(_env.WebRootPath, currentImageUrl.TrimStart('/').Replace("/", Path.DirectorySeparatorChar.ToString()));
                         if (System.IO.File.Exists(oldPath))
-                        {
                             System.IO.File.Delete(oldPath);
-                        }
                     }
 
-                    // Create new file with updated name
                     var slugName = newName.ToLower().Replace(" ", "-");
                     var slugAttr = variant.Attributes.ToLower().Replace(" ", "-");
                     var ext = Path.GetExtension(uploadedFile.FileName).ToLower();
                     if (string.IsNullOrEmpty(ext)) ext = ".png";
 
-                    // Use the same naming convention as AddProduct
                     string newFileName = product.Type == "Apparel"
                         ? $"{slugName}.png"
                         : $"{slugName}-{slugAttr}.png";
@@ -190,27 +219,20 @@ namespace BobaLite.Controllers
                     await uploadedFile.CopyToAsync(stream);
 
                     if (currentImage != null)
-                    {
                         currentImage.Url = newUrl;
-                    }
                     else
-                    {
                         variant.Images.Add(new ProductVariantImage { Url = newUrl, SortOrder = 0 });
-                    }
                 }
                 else if (!string.IsNullOrEmpty(currentImageUrl))
                 {
-                    // Only rename if the product name actually changed
                     if (oldName != newName)
                     {
                         var currentFileName = Path.GetFileName(currentImageUrl);
-                        var currentExtension = Path.GetExtension(currentFileName);
                         var oldPath = Path.Combine(_env.WebRootPath, "images", "Shop", currentFileName);
 
                         var newSlug = newName.ToLower().Replace(" ", "-");
                         var attrSlug = variant.Attributes.ToLower().Replace(" ", "-");
 
-                        // Use the same naming convention as AddProduct
                         string renamedFileName = product.Type == "Apparel"
                             ? $"{newSlug}.png"
                             : $"{newSlug}-{attrSlug}.png";
@@ -218,36 +240,19 @@ namespace BobaLite.Controllers
                         var renamedPath = Path.Combine(_env.WebRootPath, "images", "Shop", renamedFileName);
                         var renamedUrl = $"/images/Shop/{renamedFileName}";
 
-                        // Only rename if the names are actually different and source file exists
                         if (currentFileName != renamedFileName && System.IO.File.Exists(oldPath))
                         {
-                            try
-                            {
-                                // Delete target file if it exists to avoid conflicts
-                                if (System.IO.File.Exists(renamedPath))
-                                {
-                                    System.IO.File.Delete(renamedPath);
-                                }
+                            if (System.IO.File.Exists(renamedPath))
+                                System.IO.File.Delete(renamedPath);
 
-                                System.IO.File.Move(oldPath, renamedPath);
-                                currentImage.Url = renamedUrl;
-                            }
-                            catch (Exception ex)
-                            {
-                                System.Diagnostics.Debug.WriteLine($"Failed to rename file: {ex.Message}");
-                                // Don't update the URL if rename failed
-                            }
+                            System.IO.File.Move(oldPath, renamedPath);
+                            currentImage.Url = renamedUrl;
                         }
-                        else if (currentFileName != renamedFileName)
+                        else if (currentFileName != renamedFileName && currentImage != null)
                         {
-                            // File doesn't exist but we should update the URL anyway
-                            if (currentImage != null)
-                            {
-                                currentImage.Url = renamedUrl;
-                            }
+                            currentImage.Url = renamedUrl;
                         }
                     }
-                    // If name didn't change, don't do anything - leave the file and URL as is
                 }
             }
 
@@ -255,6 +260,9 @@ namespace BobaLite.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Adds a new product with its variants and images.
+        /// </summary>
         [HttpPost]
         public async Task<IActionResult> AddProduct(string name, string productType, List<string> variantEnabled, List<int> variantStocks, List<decimal> variantPrices, List<IFormFile> variantImages)
         {
@@ -280,7 +288,7 @@ namespace BobaLite.Controllers
 
                 string fileName = productType == "Apparel"
                     ? $"{slugName}.png"
-                    : $"{slugName}-{attr.ToLower().Replace(" ", "-")}.png";
+                    : $"{slugName}-{slugAttr}.png";
                 string filePath = Path.Combine(uploadPath, fileName);
                 string url = $"/images/Shop/{fileName}";
 
@@ -290,15 +298,13 @@ namespace BobaLite.Controllers
                     await variantImages[i].CopyToAsync(stream);
                 }
 
-                var variant = new ProductVariant
+                newProduct.Variants.Add(new ProductVariant
                 {
                     Attributes = attr,
                     Stock = i < variantStocks.Count ? variantStocks[i] : 0,
                     Price = i < variantPrices.Count ? variantPrices[i] : 0,
                     Images = new List<ProductVariantImage> { new ProductVariantImage { Url = url, SortOrder = 0 } }
-                };
-
-                newProduct.Variants.Add(variant);
+                });
             }
 
             _db.Products.Add(newProduct);
@@ -306,6 +312,9 @@ namespace BobaLite.Controllers
             return RedirectToAction("Index", new { editProductId = newProduct.Id });
         }
 
+        /// <summary>
+        /// Deletes a product and its related data.
+        /// </summary>
         [HttpPost]
         public IActionResult DeleteProduct(int productId)
         {
@@ -322,42 +331,41 @@ namespace BobaLite.Controllers
                 {
                     var physicalPath = Path.Combine(_env.WebRootPath, image.Url.TrimStart('/').Replace("/", Path.DirectorySeparatorChar.ToString()));
                     if (System.IO.File.Exists(physicalPath))
-                    {
                         System.IO.File.Delete(physicalPath);
-                    }
                 }
             }
 
             _db.Variants.RemoveRange(product.Variants);
             _db.ProductCategories.RemoveRange(product.ProductCategories);
             _db.Products.Remove(product);
-
             _db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Adds a new parent category.
+        /// </summary>
         [HttpPost]
         public IActionResult AddParentCategory(string name)
         {
             if (string.IsNullOrWhiteSpace(name)) return RedirectToAction("Index");
 
             var slug = name.ToLower().Replace(" ", "-");
-
             var exists = _db.Categories.Any(c => c.Name == name && c.ParentCategoryId == null);
+
             if (!exists)
             {
-                _db.Categories.Add(new Category
-                {
-                    Name = name,
-                    Slug = slug
-                });
+                _db.Categories.Add(new Category { Name = name, Slug = slug });
                 _db.SaveChanges();
             }
 
             return RedirectToAction("Index");
         }
 
-
+        /// <summary>
+        /// Adds a new child category.
+        /// </summary>
         [HttpPost]
         public IActionResult AddChildCategory(int parentId, string name)
         {
@@ -367,40 +375,29 @@ namespace BobaLite.Controllers
             if (parent == null) return RedirectToAction("Index");
 
             var slug = name.ToLower().Replace(" ", "-");
-
             var exists = _db.Categories.Any(c => c.Name == name && c.ParentCategoryId == parentId);
+
             if (!exists)
             {
-                _db.Categories.Add(new Category
-                {
-                    Name = name,
-                    Slug = slug,
-                    ParentCategoryId = parentId
-                });
+                _db.Categories.Add(new Category { Name = name, Slug = slug, ParentCategoryId = parentId });
                 _db.SaveChanges();
             }
 
             return RedirectToAction("Index");
         }
 
-
+        /// <summary>
+        /// Deletes a category and its related child categories.
+        /// </summary>
         [HttpPost]
         public IActionResult DeleteCategory(int categoryId)
         {
-            var category = _db.Categories
-                .Include(c => c.Children)
-                .FirstOrDefault(c => c.Id == categoryId);
+            var category = _db.Categories.Include(c => c.Children).FirstOrDefault(c => c.Id == categoryId);
+            if (category == null) return RedirectToAction("Index");
 
-            if (category == null)
-                return RedirectToAction("Index");
-
-            // Remove all child categories if this is a parent
             if (category.Children != null && category.Children.Any())
-            {
                 _db.Categories.RemoveRange(category.Children);
-            }
 
-            // Remove all product-category links
             var productLinks = _db.ProductCategories.Where(pc => pc.CategoryId == categoryId).ToList();
             _db.ProductCategories.RemoveRange(productLinks);
 
@@ -410,5 +407,20 @@ namespace BobaLite.Controllers
             return RedirectToAction("Index");
         }
 
+        #endregion
+
+        #region Private Methods
+
+        /// <summary>
+        /// Verifies if a password matches its stored hash.
+        /// </summary>
+        private bool VerifyHash(string password, string storedHash)
+        {
+            using var sha256 = SHA256.Create();
+            var hash = Convert.ToBase64String(sha256.ComputeHash(Encoding.UTF8.GetBytes(password)));
+            return hash == storedHash;
+        }
+
+        #endregion
     }
 }
