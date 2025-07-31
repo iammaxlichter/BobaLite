@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\About\\hero.css",
-      "PackagePath": "staticwebassets\\css\\About\\hero.css"
-    },
-    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\About\\main.css",
       "PackagePath": "staticwebassets\\css\\About\\main.css"
     },
@@ -41,10 +37,6 @@
       "PackagePath": "staticwebassets\\css\\Admin\\products.css"
     },
     {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Careers\\hero.css",
-      "PackagePath": "staticwebassets\\css\\Careers\\hero.css"
-    },
-    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Careers\\main.css",
       "PackagePath": "staticwebassets\\css\\Careers\\main.css"
     },
@@ -63,10 +55,6 @@
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Checkout\\forms.css",
       "PackagePath": "staticwebassets\\css\\Checkout\\forms.css"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Checkout\\hero.css",
-      "PackagePath": "staticwebassets\\css\\Checkout\\hero.css"
     },
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Checkout\\main.css",
@@ -89,16 +77,8 @@
       "PackagePath": "staticwebassets\\css\\Contact\\form.css"
     },
     {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Contact\\hero.css",
-      "PackagePath": "staticwebassets\\css\\Contact\\hero.css"
-    },
-    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Contact\\main.css",
       "PackagePath": "staticwebassets\\css\\Contact\\main.css"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\FAQ\\hero.css",
-      "PackagePath": "staticwebassets\\css\\FAQ\\hero.css"
     },
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\FAQ\\main.css",
@@ -165,16 +145,16 @@
       "PackagePath": "staticwebassets\\css\\Shared\\navbar.css"
     },
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shared\\pageHero.css",
+      "PackagePath": "staticwebassets\\css\\Shared\\pageHero.css"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shop\\filters.css",
       "PackagePath": "staticwebassets\\css\\Shop\\filters.css"
     },
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shop\\grid.css",
       "PackagePath": "staticwebassets\\css\\Shop\\grid.css"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shop\\hero.css",
-      "PackagePath": "staticwebassets\\css\\Shop\\hero.css"
     },
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\css\\Shop\\main.css",

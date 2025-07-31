@@ -1,2 +1,10 @@
 @import url("questions.css");
-@import url("hero.css");
+
+.faq-hero {
+  --hero-bg: linear-gradient(
+    to right,
+    #f4ffe8, 
+    #c0f07d,  
+    #7cb342  
+  );
+}

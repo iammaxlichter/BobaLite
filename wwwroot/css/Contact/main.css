@@ -1,2 +1,8 @@
 @import url("form.css");
-@import url("hero.css");
+
+.contact-hero {
+    --hero-bg: linear-gradient(135deg,
+        #f3d7c4,   
+        #d1a48f
+    );
+}
