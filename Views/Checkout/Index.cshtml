@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="~/css/Checkout/main.css" />
 }
 
+<!-- Hero Banner -->
 <div class="hero-banner checkout-hero">
     <img src="/images/Checkout/bobalite-checkout-hero.png" alt="Hero Image" />
 </div>
 
+<!-- Checkout Flow Partial -->
 @await Html.PartialAsync("_Flow") 
 
 @section Scripts {
-    <script  type="module" src="~/js/Checkout/main.js"></script> 
+    <script type="module" src="~/js/Checkout/main.js"></script> 
 }

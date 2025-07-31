@@ -11,10 +11,8 @@
     <img src="/images/Shop/bobalite-hero.png" alt="Hero Image" />
 </div>
 
-@* ── Filters (needs the full ViewModel) ── *@
+@* Shop partials *@
 @await Html.PartialAsync("_Filters", Model)
-
-@* ── Product grid (needs only the list of Products) ── *@
 @await Html.PartialAsync("_Grid", Model.Products)
 
 @section Scripts {

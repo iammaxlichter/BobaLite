@@ -433,14 +433,6 @@
       "PackagePath": "staticwebassets\\images\\Shop\\taro-twist-tea-6-pack.png"
     },
     {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-homepage.png",
-      "PackagePath": "staticwebassets\\images\\bobalite-homepage.png"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\bobalite-logo.png",
-      "PackagePath": "staticwebassets\\images\\bobalite-logo.png"
-    },
-    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\facebook.png",
       "PackagePath": "staticwebassets\\images\\icons\\facebook.png"
     },

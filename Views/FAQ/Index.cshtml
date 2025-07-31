@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="~/css/FAQ/main.css" />
 }
 
+<!-- Hero Banner -->
 <div class="hero-banner faq-hero">
     <img src="/images/FAQ/bobalite-faq-hero.png" alt="Hero Image" />
 </div>
 
+<!-- FAQ Questions Partial -->
 @await Html.PartialAsync("_Questions") 
 
 @section Scripts {
-    <script  type="module" src="~/js/FAQ/main.js"></script> 
+    <script type="module" src="~/js/FAQ/main.js"></script> 
 }

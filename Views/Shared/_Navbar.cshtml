@@ -1,16 +1,27 @@
+@* 
+  Navbar Partial - main site navigation with desktop and mobile menus, cart and search toggles.
+*@
+
 <nav class="navbar">
+  <!-- Mobile menu toggle button -->
   <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <!-- Logo -->
   <div class="logo">
     <a href="/">
       <img src="/images/Shared/bobalite-logo.png" href="/" alt="BobaLite" />
     </a>
   </div>
+
+  <!-- Desktop navigation links with dropdown menus -->
   <div class="desktop-links links">
     <div class="nav-item">
       <a href="/">Home</a>
     </div>
+
     <div class="nav-item">
       <a href="/Shop">Shop</a>
+      <!-- Shop dropdown submenu -->
       <div class="dropdown">
         <ul>
           <li><a href="/Shop">All Drinks</a></li>
@@ -18,8 +29,10 @@
         </ul>
       </div>
     </div>
+
     <div class="nav-item">
       <a href="/About">About</a>
+      <!-- About dropdown submenu -->
       <div class="dropdown">
         <ul>
           <li><a href="/About">Our Story</a></li>
@@ -27,8 +40,10 @@
         </ul>
       </div>
     </div>
+
     <div class="nav-item sale-item">
       <a class="sales-link">Sale</a>
+      <!-- Sale dropdown submenu -->
       <div class="dropdown">
         <ul>
           <li><a href="/Shop?categories=summer-sale">Summer Sale</a></li>
@@ -36,24 +51,33 @@
       </div>
     </div>
   </div>
+
+  <!-- Icons for cart and search toggles -->
   <div class="icons">
+    <!-- Cart button with badge count -->
     <button id="cart-toggle" class="cart-icon" type="button">
       <img src="/images/icons/shopping-cart.png" alt="Cart" />
       <span id="cart-badge" class="cart-badge">0</span>
     </button>
+
+    <!-- Search button -->
     <button id="search-toggle" class="magnifying-glass" type="button">
       <img src="/images/icons/magnifying-glass.png" alt="Search" />
     </button>
   </div>
   </div>
 
+  <!-- Mobile navigation drawer backdrop -->
   <div class="drawer-backdrop" id="drawer-backdrop"></div>
 
+  <!-- Mobile navigation drawer -->
   <aside class="drawer" id="nav-drawer">
     <div class="drawer-header">
       <a href="/" class="drawer-home">Home</a>
       <button class="drawer-close" id="drawer-close">✕</button>
     </div>
+
+    <!-- Mobile navigation links with expandable submenus -->
     <ul class="drawer-list">
       <li class="drawer-item">
         <div class="drawer-link">
@@ -64,6 +88,7 @@
           <li><a href="/Shop?categories=new-arrivals">New Arrivals</a></li>
         </ul>
       </li>
+
       <li class="drawer-item">
         <div class="drawer-link">
           About <span class="arrow">></span>
@@ -73,6 +98,7 @@
           <li><a href="/Careers">Careers</a></li>
         </ul>
       </li>
+
       <li class="drawer-item">
         <div class="drawer-link drawer-sale-text">
           Sale <span class="arrow">></span>
@@ -84,6 +110,8 @@
     </ul>
   </aside>
 </nav>
+
+<!-- Search drawer panel with input and results -->
 <div id="search-drawer" class="search-drawer">
   <div class="search-input-container">
     <input type="text" id="search-input" class="search-input" placeholder="Search products…" autocomplete="off" />

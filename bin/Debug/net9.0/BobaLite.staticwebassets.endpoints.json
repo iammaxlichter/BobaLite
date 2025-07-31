@@ -11665,7 +11665,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 31 Jul 2025 01:46:03 GMT"
+          "Value": "Thu, 31 Jul 2025 01:46:28 GMT"
         },
         {
           "Name": "Vary",
@@ -11706,7 +11706,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 31 Jul 2025 01:46:03 GMT"
+          "Value": "Thu, 31 Jul 2025 01:46:28 GMT"
         }
       ],
       "EndpointProperties": [
@@ -11747,7 +11747,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 31 Jul 2025 01:46:03 GMT"
+          "Value": "Thu, 31 Jul 2025 01:46:28 GMT"
         },
         {
           "Name": "Vary",
@@ -11802,7 +11802,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 31 Jul 2025 01:46:03 GMT"
+          "Value": "Thu, 31 Jul 2025 01:46:28 GMT"
         },
         {
           "Name": "Vary",
@@ -11851,7 +11851,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 31 Jul 2025 01:46:03 GMT"
+          "Value": "Thu, 31 Jul 2025 01:46:28 GMT"
         }
       ],
       "EndpointProperties": [
@@ -11900,7 +11900,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 31 Jul 2025 01:46:03 GMT"
+          "Value": "Thu, 31 Jul 2025 01:46:28 GMT"
         },
         {
           "Name": "Vary",
@@ -17711,170 +17711,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-nlY3KvcIflK8ooV9W13y33YRoh+GXLid5thlpBR6ETE="
-        }
-      ]
-    },
-    {
-      "Route": "images/bobalite-homepage.i4wpqeu7x0.png",
-      "AssetFile": "images/bobalite-homepage.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1555112"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4mDqAJWi7VEGAtlFeo0QnWX0svINPWFFmpXYuJU/g+A=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 20 Jul 2025 17:22:07 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "i4wpqeu7x0"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-4mDqAJWi7VEGAtlFeo0QnWX0svINPWFFmpXYuJU/g+A="
-        },
-        {
-          "Name": "label",
-          "Value": "images/bobalite-homepage.png"
-        }
-      ]
-    },
-    {
-      "Route": "images/bobalite-homepage.png",
-      "AssetFile": "images/bobalite-homepage.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1555112"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4mDqAJWi7VEGAtlFeo0QnWX0svINPWFFmpXYuJU/g+A=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 20 Jul 2025 17:22:07 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-4mDqAJWi7VEGAtlFeo0QnWX0svINPWFFmpXYuJU/g+A="
-        }
-      ]
-    },
-    {
-      "Route": "images/bobalite-logo.gdvyp869hc.png",
-      "AssetFile": "images/bobalite-logo.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "105872"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"VEyKbkUrmdgJ9jIhJsc1ONflS9ppTcstT/5bjrGj05g=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 20 Jul 2025 17:22:07 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "gdvyp869hc"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-VEyKbkUrmdgJ9jIhJsc1ONflS9ppTcstT/5bjrGj05g="
-        },
-        {
-          "Name": "label",
-          "Value": "images/bobalite-logo.png"
-        }
-      ]
-    },
-    {
-      "Route": "images/bobalite-logo.png",
-      "AssetFile": "images/bobalite-logo.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "105872"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"VEyKbkUrmdgJ9jIhJsc1ONflS9ppTcstT/5bjrGj05g=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 20 Jul 2025 17:22:07 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-VEyKbkUrmdgJ9jIhJsc1ONflS9ppTcstT/5bjrGj05g="
         }
       ]
     },

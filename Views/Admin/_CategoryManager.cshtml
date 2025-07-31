@@ -1,15 +1,19 @@
 @model List<BobaLite.Models.Category>
 
-<section class="admin-categories">
-    <h3>Manage Categories</h3>
+@* 
+    Admin Categories Management View
+    Allows the admin to add parent and child categories,
+    and manage (delete) existing categories in a table format.
+*@
 
-    <!-- Add Parent Category -->
+<section class="admin-categories">
+    <!-- Form for adding a new parent category -->
     <form method="post" action="/Admin/AddParentCategory" class="form-row">
         <input type="text" name="name" placeholder="New parent category name" required />
         <button type="submit" class="add-btn">Add Parent Category</button>
     </form>
 
-    <!-- Add Child Category -->
+    <!-- Form for adding a new child category -->
     <form method="post" action="/Admin/AddChildCategory" class="form-row">
         <select name="parentId" required>
             <option disabled selected>Select parent category</option>
@@ -22,9 +26,7 @@
         <button type="submit" class="add-btn">Add Child Category</button>
     </form>
 
-
-
-
+    <!-- Table listing parent categories and their children with delete options -->
     <table class="admin-table">
         <thead>
             <tr>
@@ -46,7 +48,6 @@
                             </form>
                         </div>
                     </td>
-
                     <td>
                         <div class="category-children">
                             @if (!Model.Any(c => c.ParentCategoryId == parent.Id))
@@ -71,10 +72,8 @@
                             }
                         </div>
                     </td>
-
                 </tr>
             }
         </tbody>
     </table>
-
 </section>

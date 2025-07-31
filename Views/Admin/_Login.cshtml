@@ -2,10 +2,16 @@
     ViewData["Title"] = "Admin Login";
 }
 
+@* 
+    Admin Login Partial
+    Provides a login form for admin users with validation and error display.
+*@
+
 <section class="admin-login">
     <div class="container">
         <h2>Admin Login</h2>
 
+        <!-- Login Form -->
         <form method="post" asp-controller="Admin" asp-action="Login">
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -16,12 +22,13 @@
                 <input id="password" type="password" name="password" required />
             </div>
 
+            <!-- Display error message if login fails -->
             @if (ViewBag.ErrorMessage != null)
             {
                 <p class="error">@ViewBag.ErrorMessage</p>
             }
 
-            <button class=login-btn type="submit">Login</button>
+            <button class="login-btn" type="submit">Login</button>
         </form>
     </div>
 </section>

@@ -1,4 +1,5 @@
 @model BobaLite.Models.Product
+
 @{
     Layout = "_Layout";
 }
@@ -7,9 +8,8 @@
     <link rel="stylesheet" href="~/css/Pdp/details.css" />
 }
 
-@* Just reference the partial by its file name — it lives right next to this view *@
+<!-- PDP Partial -->
 @await Html.PartialAsync("~/Views/Pdp/_Details.cshtml", Model)
-
 
 @section Scripts {
     <script type="module" src="~/js/Pdp/main.js"></script>

@@ -1,40 +1,52 @@
-@* Views/Checkout/_ShippingForm.cshtml *@
+@* 
+    Shipping Form Partial
+    Collects the shipping address and contact details from the customer.
+*@
+
 <h2>Shipping</h2>
 <form id="billing-form">
-  <label>
-    First Name<span class="required">*</span>
-    <input name="firstName" placeholder="e.g. Jane" required />
-  </label>
-  <label>
-    Last Name<span class="required">*</span>
-    <input name="lastName" placeholder="e.g. Doe" required />
-  </label>
-  <label>
-    Address Line 1<span class="required">*</span>
-    <input name="address1" placeholder="Street address, P.O. box, etc." required />
-  </label>
-  <label>
-    Address Line 2
-    <input name="address2" placeholder="Apartment, suite, unit, building, floor, etc." />
-  </label>
-  <label>
-    City<span class="required">*</span>
-    <input name="city" placeholder="City" required />
-  </label>
-  <label>
-    State<span class="required">*</span>
-    <input name="state" placeholder="TX" required />
-  </label>
-  <label>
-    ZIP Code<span class="required">*</span>
-    <input name="zipCode" placeholder="ZIP or postal code" required />
-  </label>
-  <label>
-    Phone<span class="required">*</span>
-    <input type="tel" name="phone" placeholder="(555) 123-4567" required />
-  </label>
-  <label>
-    Email<span class="required">*</span>
-    <input type="email" name="email" placeholder="you@example.com" required />
-  </label>
+
+    <!-- Customer Name -->
+    <label>
+        First Name<span class="required">*</span>
+        <input name="firstName" placeholder="e.g. Jane" required />
+    </label>
+    <label>
+        Last Name<span class="required">*</span>
+        <input name="lastName" placeholder="e.g. Doe" required />
+    </label>
+
+    <!-- Address Lines -->
+    <label>
+        Address Line 1<span class="required">*</span>
+        <input name="address1" placeholder="Street address, P.O. box, etc." required />
+    </label>
+    <label>
+        Address Line 2
+        <input name="address2" placeholder="Apartment, suite, unit, building, floor, etc." />
+    </label>
+
+    <!-- Location Details -->
+    <label>
+        City<span class="required">*</span>
+        <input name="city" placeholder="City" required />
+    </label>
+    <label>
+        State<span class="required">*</span>
+        <input name="state" placeholder="TX" required />
+    </label>
+    <label>
+        ZIP Code<span class="required">*</span>
+        <input name="zipCode" placeholder="ZIP or postal code" required />
+    </label>
+
+    <!-- Contact Info -->
+    <label>
+        Phone<span class="required">*</span>
+        <input type="tel" name="phone" placeholder="(555) 123-4567" required />
+    </label>
+    <label>
+        Email<span class="required">*</span>
+        <input type="email" name="email" placeholder="you@example.com" required />
+    </label>
 </form>
