@@ -53,9 +53,6 @@ namespace BobaLite.Controllers
             try
             {
                 var sb = new StringBuilder();
-                sb.AppendLine("<div style='text-align:center;margin-bottom:20px;'>");
-                sb.AppendLine("<img src='https://bobalite.onrender.com/images/Shared/bobalite-logo.png' alt='BobaLite' style='width:150px;'/>");
-                sb.AppendLine("</div>");
 
                 sb.AppendLine("<h2>Thanks for your order!</h2>");
                 sb.AppendLine("<h3>Order Summary</h3><ul>");
@@ -66,11 +63,7 @@ namespace BobaLite.Controllers
                         : item.Attribute;
 
                     sb.AppendLine("<li style='margin-bottom:10px;'>");
-                    if (!string.IsNullOrWhiteSpace(item.ImageUrl))
-                    {
-                        sb.AppendLine($"<img src='{item.ImageUrl}' alt='{label}' style='width:50px;height:auto;margin-right:10px;vertical-align:middle;'/>");
-                    }
-                    sb.AppendLine($"{item.Quantity} × {label} — ${item.Price * item.Quantity:F2}</li>");
+                    sb.AppendLine($"{item.Quantity} x {label} — ${item.Price * item.Quantity:F2}</li>");
                 }
 
                 sb.AppendLine("</ul>");
