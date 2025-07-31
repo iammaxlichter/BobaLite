@@ -1,11 +1,14 @@
 @import url("team.css");
 @import url("whatwedo.css");
 
+/* ============================
+   About Hero Background
+============================ */
 .about-hero {
   --hero-bg: linear-gradient(
     to right,
-    #fff8e1,   /* pale creamy yellow */
-    #ffebc1,   /* soft gold beige */
-    #ffe8d1    /* warm peachy cream */
+    #fff8e1,
+    #ffebc1,
+    #ffe8d1
   );
 }

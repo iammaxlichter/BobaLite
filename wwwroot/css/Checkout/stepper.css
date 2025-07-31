@@ -1,13 +1,18 @@
-/* Checkout Stepper */
+/* ============================
+   Checkout Flow Container
+============================ */
 .checkout-flow {
   max-width: 600px;
   margin: 4rem auto;
   padding: 2rem 2rem;
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
 }
 
+/* ============================
+   Checkout Steps List
+============================ */
 .checkout-steps {
   list-style: none;
   display: flex;
@@ -16,6 +21,10 @@
   margin: 0 0 2rem;
   counter-reset: step;
 }
+
+/* ============================
+   Checkout Step Items
+============================ */
 .checkout-steps li {
   position: relative;
   flex: 1;
@@ -27,11 +36,16 @@
   border-bottom: 2px solid #ddd;
   transition: color 0.2s, border-color 0.2s;
 }
+
 .checkout-steps li.active {
   color: #333;
   font-weight: bold;
   border-bottom-color: #f25c54;
 }
+
+/* ============================
+   Step Number Circles
+============================ */
 .checkout-steps li::before {
   counter-increment: step;
   content: counter(step);
@@ -49,6 +63,7 @@
   font-size: 0.8rem;
   transition: background 0.2s;
 }
+
 .checkout-steps li.active::before {
   background: #f25c54;
 }

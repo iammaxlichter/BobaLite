@@ -1,14 +1,20 @@
 @import url("search.css");
 
+/* ============================
+   Careers Hero Background
+============================ */
 .careers-hero {
   --hero-bg: linear-gradient(
     to right,
-    #1e3a8a,  /* deep navy */
-    #3b82f6,  /* royal blue */
-    #60a5fa   /* light sky blue */
+    #1e3a8a, /* deep navy */
+    #3b82f6, /* royal blue */
+    #60a5fa  /* light sky blue */
   );
 }
 
-.careers-hero img{
+/* ============================
+   Careers Hero Image
+============================ */
+.careers-hero img {
   margin-bottom: -20px;
 }

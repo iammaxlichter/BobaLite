@@ -1,210 +1,199 @@
-/* layout.css */
-
+/* ============================
+   Body and Container Styles
+============================ */
 body {
-    color: #222;
-    background-color: #fdfdfd;
+  color: #222;
+  background-color: #fdfdfd;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 3rem
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 3rem;
 }
 
-.edit-btn {
-    background: linear-gradient(135deg, #7C3AED, #A855F7);
-    display: inline-block;
-    padding: 0.6rem 1.8rem;
-    color: #fff;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    max-width: fit-content;
+/* ============================
+   Button Styles: Edit, Save, Cancel, Delete
+============================ */
+.edit-btn,
+.save-btn {
+  background: linear-gradient(135deg, #7C3AED, #A855F7);
+  display: inline-block;
+  padding: 0.6rem 1.8rem;
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  max-width: fit-content;
 }
 
-.edit-btn:hover {
-    background: linear-gradient(135deg, #6D28D9, #9333EA);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-
-.save-btn{
-    background: linear-gradient(135deg, #7C3AED, #A855F7);
-    display: inline-block;
-    padding: 0.6rem 1.8rem;
-    color: #fff;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    max-width: fit-content;
-}
-
+.edit-btn:hover,
 .save-btn:hover {
-    background: linear-gradient(135deg, #6D28D9, #9333EA);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-.cancel-btn{
-    margin-top:20px;
-    background: linear-gradient(135deg, #555555, #777777);
-    display: inline-block;
-    padding: 0.6rem 1.8rem;
-    color: #fff;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    max-width: fit-content;
+  background: linear-gradient(135deg, #6D28D9, #9333EA);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.cancel-btn:hover{
-    background: linear-gradient(135deg, #444444, #666666);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+.cancel-btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #555555, #777777);
+  display: inline-block;
+  padding: 0.6rem 1.8rem;
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  max-width: fit-content;
 }
 
-
-.delete-btn {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
-    display: inline-block;
-    padding: 0.6rem 1.8rem;
-    color: #fff;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    max-width: fit-content;
+.cancel-btn:hover {
+  background: linear-gradient(135deg, #444444, #666666);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.delete-btn:hover {
-    background: linear-gradient(135deg, #b91c1c, #991b1b);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
+.delete-btn,
 .delete-btn2 {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
-    display: inline-block;
-    padding: 0.6rem 1.8rem;
-    color: #fff;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    max-width: fit-content;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  display: inline-block;
+  padding: 0.6rem 1.8rem;
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  max-width: fit-content;
+  cursor: pointer;
 }
 
+.delete-btn:hover,
 .delete-btn2:hover {
-    background: linear-gradient(135deg, #b91c1c, #991b1b);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
+
+/* ============================
+   Input and Select Elements
+============================ */
 input,
 select {
-    padding: 0.45rem 0.65rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    margin: 0.3rem 0;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 0.3rem 0;
 }
 
+/* ============================
+   Admin Table Styles
+============================ */
 .admin-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
 }
 
 .admin-table th,
 .admin-table td {
-    border: 1px solid #e1e1e1;
-    padding: 0.75rem;
-    text-align: left;
-    vertical-align: top;
+  border: 1px solid #e1e1e1;
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
 }
+
 .admin-table td {
-    word-wrap: break-word;
-    white-space: normal;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 .admin-table th {
-    background-color: #f4f4f4;
-    font-weight: 600;
+  background-color: #f4f4f4;
+  font-weight: 600;
 }
 
+/* ============================
+   List Styles
+============================ */
 ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 ul li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
+/* ============================
+   Variant Edit Row
+============================ */
 .variant-edit-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
 }
-
 
 .variant-edit-row input[type="number"] {
-    flex: 1; /* Allow inputs to grow and fill available space */
-    min-width: 60px; /* Minimum width to prevent them from getting too small */
-    max-width: 120px; /* Maximum width to prevent them from getting too large */
-    margin: 0; /* remove excess margin */
+  flex: 1;
+  min-width: 60px;
+  max-width: 120px;
+  margin: 0;
 }
 
 .variant-edit-row input[type="file"] {
-    font-size: 0.9rem;
-    margin-top: 0;
+  font-size: 0.9rem;
+  margin-top: 0;
 }
+
+/* ============================
+   Is Active Column Styles
+============================ */
 .is-active-col {
-    text-align: center;
-    vertical-align: middle;
-    padding: 0.75rem; /* match table cell padding */
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.75rem;
 }
 
 .is-active-col input[type="checkbox"] {
-    transform: scale(1.5);
-    display: block;
-    margin: 0 auto;
-    margin-top:20px;
+  transform: scale(1.5);
+  display: block;
+  margin: 20px auto 0;
 }
 
+/* ============================
+   List Item Flex Layout
+============================ */
 li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
+/* ============================
+   Category Header & Children Layout
+============================ */
 .category-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
+
 .category-children {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }

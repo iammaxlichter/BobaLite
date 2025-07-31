@@ -1,418 +1,446 @@
 /* ===========================================================
-   BASE STYLES
+   Base Styles
 =========================================================== */
 .promo-wrapper {
-    width: 100%;
-    background-color: #fdfdfd;
-    padding: 2rem 0;
+  width: 100%;
+  background-color: #fdfdfd;
+  padding: 2rem 0;
 }
 
 .container.promo {
-    max-width: 80vw;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 3rem;
-    position: relative;
-    overflow: hidden;
+  max-width: 80vw;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .slides-container {
-    position: relative;
-    height: 500px;
+  position: relative;
+  height: 500px;
 }
 
 .promo-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    gap: 2rem;
-    align-items: stretch;
-    opacity: 0;
-    transform: translateX(100%);
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+  opacity: 0;
+  transform: translateX(100%);
+  transition:
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ===========================================================
-   BUTTON STYLES
+   Button Styles
 =========================================================== */
 .low-cal,
 .taro-twist,
 .green-tea {
-    display: inline-block;
-    padding: 0.875rem 2rem;
-    color: #fff;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    max-width: fit-content;
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  max-width: fit-content;
 }
 
-.promo-next{
-    color:black;
+.promo-next {
+  color: black;
 }
 
 .low-cal {
-    background: linear-gradient(135deg, #555555, #777777);
+  background: linear-gradient(135deg, #555555, #777777);
 }
 .low-cal:hover {
-    background: linear-gradient(135deg, #444444, #666666);
+  background: linear-gradient(135deg, #444444, #666666);
 }
 
 .taro-twist {
-    background: linear-gradient(135deg, #7C3AED, #A855F7);
+  background: linear-gradient(135deg, #7C3AED, #A855F7);
 }
 .taro-twist:hover {
-    background: linear-gradient(135deg, #6D28D9, #9333EA);
+  background: linear-gradient(135deg, #6D28D9, #9333EA);
 }
 
 .green-tea {
-    background: linear-gradient(135deg, #16A34A, #22C55E);
+  background: linear-gradient(135deg, #16A34A, #22C55E);
 }
 .green-tea:hover {
-    background: linear-gradient(135deg, #15803D, #16A34A);
+  background: linear-gradient(135deg, #15803D, #16A34A);
 }
 
 /* ===========================================================
-   SLIDE ACTIVE STATES
+   Slide Active States
 =========================================================== */
 .promo-slide.active {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
+
 .promo-slide.slide-out-left {
-    opacity: 0;
-    transform: translateX(-100%);
+  opacity: 0;
+  transform: translateX(-100%);
 }
+
 .promo-slide.slide-out-right {
-    opacity: 0;
-    transform: translateX(100%);
+  opacity: 0;
+  transform: translateX(100%);
 }
+
 .promo-slide.slide-in-left {
-    opacity: 1;
-    transform: translateX(0);
-    animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 1;
+  transform: translateX(0);
+  animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
+
 .promo-slide.slide-in-right {
-    opacity: 1;
-    transform: translateX(0);
-    animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 1;
+  transform: translateX(0);
+  animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* ===========================================================
-   KEYFRAMES
+   Keyframes
 =========================================================== */
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
 @keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* ===========================================================
-   TEXT COLUMN
+   Text Column
 =========================================================== */
 .promo-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0;
 }
+
 .promo-copy h2 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    color: #1a1a1a;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #1a1a1a;
 }
+
 .promo-copy p {
-    color: #444;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    font-weight: bold;
+  color: #444;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: bold;
 }
 
 /* ===========================================================
-   BUTTON HOVER
+   Button Hover
 =========================================================== */
 .promo-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* ===========================================================
-   NAVIGATION BUTTONS
+   Navigation Buttons
 =========================================================== */
 .promo-nav {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1rem;
-    margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  margin-bottom: 40px;
 }
+
 .promo-nav button {
-    background: #f1f3f4;
-    border: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    color: #333;
+  background: #f1f3f4;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #333;
 }
+
 .low-cal-nav:hover {
-    background: #555555;
-    color: #fff;
-    transform: scale(1.1);
+  background: #555555;
+  color: #fff;
+  transform: scale(1.1);
 }
 
 .taro-twist-nav:hover {
-    background: #7C3AED;
-    color: #fff;
-    transform: scale(1.1);
+  background: #7C3AED;
+  color: #fff;
+  transform: scale(1.1);
 }
 
 .green-tea-groove-nav:hover {
-    background: #16A34A;
-    color: #fff;
-    transform: scale(1.1);
+  background: #16A34A;
+  color: #fff;
+  transform: scale(1.1);
 }
 
 .promo-nav button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
+
 .promo-counter {
-    min-width: 3ch;
-    text-align: center;
-    font-weight: 500;
-    color: #666;
+  min-width: 3ch;
+  text-align: center;
+  font-weight: 500;
+  color: #666;
 }
 
 /* ===========================================================
-   IMAGE COLUMN
+   Image Column
 =========================================================== */
 .promo-image {
-    flex: 1;
-    text-align: center;
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
 }
+
 .promo-image img {
-    display: block;
-    width: 100%;
-    max-width: 700px;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 20px;
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
 }
 
 /* ===========================================================
-   RESPONSIVE STYLES
+   Responsive Styles
 =========================================================== */
 
 /* Large screens */
 @media (max-width: 992px) {
-    .container.promo {
-        padding: 0 2rem;
-    }
-    .promo-copy h2 {
-        font-size: 2.2rem;
-    }
-    .slides-container {
-        height: 550px;
-        min-height: 550px;
-    }
+  .container.promo {
+    padding: 0 2rem;
+  }
+
+  .promo-copy h2 {
+    font-size: 2.2rem;
+  }
+
+  .slides-container {
+    height: 550px;
+    min-height: 550px;
+  }
 }
 
-/* ===========================================================
-   MOBILE SCALING (Main request!)
-=========================================================== */
+/* MOBILE SCALING (Main request!) */
 @media (max-width: 768px) {
-    .promo-wrapper {
-        padding: 3rem 0;
-    }
+  .promo-wrapper {
+    padding: 3rem 0;
+  }
 
-    .container.promo {
-        padding: 0 1.5rem;
-    }
+  .container.promo {
+    padding: 0 1.5rem;
+  }
 
-    .promo-slide {
-        flex-direction: column;
-        gap: 3rem;
-        padding: 2rem 0;
-        align-items: center;
-        text-align: center;
-    }
+  .promo-slide {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem 0;
+    align-items: center;
+    text-align: center;
+  }
 
-    .slides-container {
-        height: auto;
-        min-height: 750px;
-    }
+  .slides-container {
+    height: auto;
+    min-height: 750px;
+  }
 
-    .promo-text {
-        padding: 0;
-        justify-content: center;
-        gap: 2rem;
-        max-width: 500px;
-    }
+  .promo-text {
+    padding: 0;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 500px;
+  }
 
-    .promo-copy {
-        text-align: center;
-    }
+  .promo-copy {
+    text-align: center;
+  }
 
-    .promo-copy h2 {
-        font-size: 2.25rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.1;
-    }
+  .promo-copy h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
 
-    .promo-copy p {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-        line-height: 1.6;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .promo-copy p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .promo-btn {
-        padding: 1rem 2.5rem;
-        font-size: 0.9rem;
-        margin: 0 auto;
-    }
+  .promo-btn {
+    padding: 1rem 2.5rem;
+    font-size: 0.9rem;
+    margin: 0 auto;
+  }
 
-    .promo-image {
-        order: -1;
-        margin-bottom: 1rem;
-    }
+  .promo-image {
+    order: -1;
+    margin-bottom: 1rem;
+  }
 
-    /* Specific request: Large images for mobile */
-    .promo-image img {
-        max-width: 90vw;
-        height: auto;
-    }
+  .promo-image img {
+    max-width: 90vw;
+    height: auto;
+  }
 
-    .promo-nav {
-        justify-content: center;
-        margin-top: 0;
-    }
+  .promo-nav {
+    justify-content: center;
+    margin-top: 0;
+  }
 
-    .promo-nav button {
-        width: 44px;
-        height: 44px;
-        font-size: 1.8rem;
-    }
+  .promo-nav button {
+    width: 44px;
+    height: 44px;
+    font-size: 1.8rem;
+  }
 }
 
 /* Medium-sized mobile screens */
 @media (max-width: 480px) {
-    .promo-wrapper {
-        padding: 2rem 0;
-    }
-    .container.promo {
-        padding: 0 1rem;
-    }
-    .promo-slide {
-        gap: 2rem;
-        padding: 1.5rem 0;
-    }
-    .slides-container {
-        min-height: 650px;
-    }
-    .promo-copy h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        line-height: 1.2;
-    }
-    .promo-copy p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.5;
-        max-width: 320px;
-    }
-    .promo-btn {
-        padding: 0.875rem 2rem;
-        font-size: 0.85rem;
-    }
-    .promo-image img {
-        max-width: 90vw;
-    }
-    .promo-nav button {
-        width: 40px;
-        height: 40px;
-        font-size: 1.6rem;
-    }
+  .promo-wrapper {
+    padding: 2rem 0;
+  }
+
+  .container.promo {
+    padding: 0 1rem;
+  }
+
+  .promo-slide {
+    gap: 2rem;
+    padding: 1.5rem 0;
+  }
+
+  .slides-container {
+    min-height: 650px;
+  }
+
+  .promo-copy h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .promo-copy p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    max-width: 320px;
+  }
+
+  .promo-btn {
+    padding: 0.875rem 2rem;
+    font-size: 0.85rem;
+  }
+
+  .promo-image img {
+    max-width: 90vw;
+  }
+
+  .promo-nav button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+  }
 }
 
 /* Small mobile screens */
 @media (max-width: 375px) {
-    .promo-copy h2 {
-        font-size: 1.6rem;
-    }
-    .promo-copy p {
-        font-size: 0.95rem;
-        max-width: 280px;
-    }
-    .promo-image img {
-        max-width: 90vw;
-    }
-    .slides-container {
-        min-height: 600px;
-    }
+  .promo-copy h2 {
+    font-size: 1.6rem;
+  }
+
+  .promo-copy p {
+    font-size: 0.95rem;
+    max-width: 280px;
+  }
+
+  .promo-image img {
+    max-width: 90vw;
+  }
+
+  .slides-container {
+    min-height: 600px;
+  }
 }
 
 /* Very tiny screens */
 @media (max-width: 320px) {
-    .promo-slide {
-        gap: 1.5rem;
-        padding: 1rem 0;
-    }
-    .promo-copy h2 {
-        font-size: 1.4rem;
-        margin-bottom: 0.75rem;
-    }
-    .promo-copy p {
-        font-size: 0.9rem;
-        margin-bottom: 1.25rem;
-        max-width: 260px;
-    }
-    .promo-btn {
-        padding: 0.75rem 1.75rem;
-        font-size: 0.8rem;
-    }
-    .promo-image img {
-        max-width: 90vw;
-    }
-    .slides-container {
-        min-height: 550px;
-    }
+  .promo-slide {
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .promo-copy h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .promo-copy p {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    max-width: 260px;
+  }
+
+  .promo-btn {
+    padding: 0.75rem 1.75rem;
+    font-size: 0.8rem;
+  }
+
+  .promo-image img {
+    max-width: 90vw;
+  }
+
+  .slides-container {
+    min-height: 550px;
+  }
 }

@@ -1,4 +1,6 @@
-/* Cart toggle icon */
+/* ============================
+   Cart Toggle Icon
+============================ */
 .cart-icon {
   border: none;
   background: white;
@@ -11,7 +13,9 @@
   display: block;
 }
 
-/* Off-canvas drawer */
+/* ============================
+   Off-Canvas Drawer
+============================ */
 .cart-drawer {
   position: fixed;
   top: 0;
@@ -32,7 +36,9 @@
   transform: translateX(0);
 }
 
-/* Header */
+/* ============================
+   Header
+============================ */
 .cart-header {
   display: flex;
   align-items: center;
@@ -63,7 +69,9 @@
   color: #333;
 }
 
-/* Items list */
+/* ============================
+   Items List
+============================ */
 .cart-items {
   list-style: none;
   margin: 0;
@@ -78,7 +86,9 @@
   padding: 2rem 1rem;
 }
 
-/* Individual item */
+/* ============================
+   Individual Item
+============================ */
 .cart-item {
   display: flex;
   align-items: flex-start;
@@ -90,7 +100,7 @@
   position: relative;
 }
 
-/* Product image */
+/* Product Image */
 .cart-item img {
   width: 60px;
   height: 60px;
@@ -108,16 +118,14 @@
   flex: 1 1 auto;
   min-width: 0;
 }
-
-.cart-item-variant{
-    font-size:12px;
+.cart-item-variant {
+  font-size: 12px;
 }
-
-.cart-item-price{
-    font-size:14px;
+.cart-item-price {
+  font-size: 14px;
 }
-.cart-item-custom{
-  font-size: 14px; 
+.cart-item-custom {
+  font-size: 14px;
   overflow: hidden;
 }
 .cart-item-details > div:first-child {
@@ -131,7 +139,9 @@
   color: #666;
 }
 
-/* Quantity controls */
+/* ============================
+   Quantity Controls
+============================ */
 .cart-item-qty {
   display: flex;
   align-items: center;
@@ -162,19 +172,24 @@
   font-weight: 600;
   font-size: 14px;
 }
-
-.cart-item-actions {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    margin-top: auto;
+.qty-increase:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
-/* Remove button */
+
+/* ============================
+   Item Actions & Remove Button
+============================ */
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: auto;
+}
 .remove-item {
   background: none;
   border: none;
-    margin-left: auto;
-  /* and down to the bottom */
+  margin-left: 0.5rem;
   align-self: flex-end;
   color: #999;
   font-size: 18px;
@@ -182,19 +197,15 @@
   padding: 0.25rem;
   border-radius: 4px;
   transition: background 0.2s, color 0.2s;
-  margin-left: 0.5rem;
-  align-self: flex-end;
 }
 .remove-item:hover {
   background: #fee;
   color: #e74c3c;
 }
-.qty-increase:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
 
-/* Footer */
+/* ============================
+   Footer
+============================ */
 .cart-footer {
   padding: 1rem;
   border-top: 1px solid #eee;

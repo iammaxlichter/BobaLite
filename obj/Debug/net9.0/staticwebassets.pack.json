@@ -453,10 +453,6 @@
       "PackagePath": "staticwebassets\\images\\icons\\twitter.png"
     },
     {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\index.html",
-      "PackagePath": "staticwebassets\\index.html"
-    },
-    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\About\\main.js",
       "PackagePath": "staticwebassets\\js\\About\\main.js"
     },
@@ -579,14 +575,6 @@
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\app.js",
       "PackagePath": "staticwebassets\\js\\app.js"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\footer.html",
-      "PackagePath": "staticwebassets\\partials\\footer.html"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\partials\\navbar.html",
-      "PackagePath": "staticwebassets\\partials\\navbar.html"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BobaLite.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

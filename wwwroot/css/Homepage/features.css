@@ -1,104 +1,104 @@
-/* ==========================================================
-   VARIABLES
-========================================================== */
+/* ============================
+   CSS Variables
+============================ */
 :root {
-    --feature-img-max-width: 85%; /* Increased for a larger image */
-    --feature-item-max-width: 85px; /* Bigger container overall */
-    --feature-item-gap: 8rem; /* Reduced gap between items */
-    --feature-item-text-size: .8rem; /* Larger text */
+  --feature-img-max-width: 85%;
+  --feature-item-max-width: 85px;
+  --feature-item-gap: 8rem;
+  --feature-item-text-size: 0.8rem;
 }
 
-/* ==========================================================
-   WRAPPER
-========================================================== */
+/* ============================
+   Features Wrapper
+============================ */
 .features-wrapper {
-    width: 100%;
-    background-color: #3C3C3C;
-    padding: 4rem 0;
+  width: 100%;
+  background-color: #3C3C3C;
+  padding: 4rem 0;
 }
 
-/* ==========================================================
-   CONTAINER
-========================================================== */
+/* ============================
+   Container
+============================ */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* ==========================================================
-   FEATURES LAYOUT
-========================================================== */
+/* ============================
+   Features Layout
+============================ */
 .features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--feature-item-gap);
-    align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--feature-item-gap);
+  align-items: flex-end;
 }
 
-/* ==========================================================
-   INDIVIDUAL FEATURE
-========================================================== */
+/* ============================
+   Individual Feature Item
+============================ */
 .feature-item {
-    flex: 1 1 150px;
-    max-width: var(--feature-item-max-width);
-    text-align: center;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  flex: 1 1 150px;
+  max-width: var(--feature-item-max-width);
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .feature-item img {
-    display: block;
-    max-width: var(--feature-img-max-width);
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
-    will-change: transform;
+  display: block;
+  max-width: var(--feature-img-max-width);
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  will-change: transform;
 }
+
 .feature-item a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none; 
-    color: inherit; 
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
 }
 
 .feature-item a:hover img {
-    transform: scale(1.1);
-    z-index: 1;
+  transform: scale(1.1);
+  z-index: 1;
 }
 
-
-
-
-/* ==========================================================
-   FEATURE TEXT
-========================================================== */
+/* ============================
+   Feature Text
+============================ */
 .feature-item p {
-    margin: 0;
-    margin-top:10px;
-    font-size: var(--feature-item-text-size);
-    font-weight: bold;
-    color:white;
-    transition: transform 0.3s ease, color 0.3s ease;
+  margin: 10px 0 0 0;
+  font-size: var(--feature-item-text-size);
+  font-weight: bold;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
-
 
 .feature-item a:hover p {
-    transform: scale(1.1);
-    color: #A855F7; /* optional: add a gold tint on hover */
+  transform: scale(1.1);
+  color: #A855F7;
 }
+
+/* ============================
+   Responsive Variables
+============================ */
 @media (max-width: 768px) {
-    :root {
+  :root {
     --feature-img-max-width: 89%;
     --feature-item-max-width: 90px;
     --feature-item-gap: 4.5rem;
-    --feature-item-text-size: 1.rem;
-    }
+    --feature-item-text-size: 1rem;
+  }
 }

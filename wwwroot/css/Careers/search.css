@@ -1,3 +1,6 @@
+/* ============================
+   Careers Search Section
+============================ */
 .careers-search {
   padding-top: 4rem;
   padding-right: 2rem;
@@ -12,11 +15,14 @@
   color: #333;
 }
 
+/* ============================
+   Job Search Form and Inputs
+============================ */
 .job-search-form {
   display: inline-flex;
   max-width: 600px;
   width: 100%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -32,6 +38,13 @@
   outline: none;
 }
 
+.job-search-input::placeholder {
+  font-weight: bold;
+}
+
+/* ============================
+   Job Search Button
+============================ */
 .job-search-btn {
   background-color: #1e3a8a;
   border: none;
@@ -47,17 +60,15 @@
   color: #fff;
 }
 
-
-.job-search-input::placeholder {
-  font-weight: bold;
-}
-
+/* ============================
+   No Jobs Message Section
+============================ */
 .no-jobs {
-  min-height: 50vh;               /* takes up a big chunk of the viewport */
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fdfdfd;      /* light neutral to contrast the hero */
+  background-color: #fdfdfd;
   text-align: center;
   padding: 2rem 2rem;
 }
@@ -69,6 +80,6 @@
 }
 
 .no-jobs p {
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: #666;
 }

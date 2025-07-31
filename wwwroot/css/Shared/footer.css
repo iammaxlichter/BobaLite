@@ -1,5 +1,5 @@
 /* ==========================================================
-   FOOTER BASE
+   Footer Base
 ========================================================== */
 .footer {
   position: relative;
@@ -9,7 +9,7 @@
 }
 
 /* ==========================================================
-   FOOTER CONTAINER
+   Footer Container
 ========================================================== */
 .footer-container {
   max-width: 1200px;
@@ -21,7 +21,7 @@
 }
 
 /* ==========================================================
-   FOOTER COLUMNS
+   Footer Columns
 ========================================================== */
 .footer-col h4 {
   color: #fff;
@@ -45,16 +45,17 @@
 .footer-col a {
   color: #ccc;
   text-decoration: none;
-  font-weight:bold;
+  font-weight: bold;
   transition: color 0.2s, transform 0.2s;
 }
+
 .footer-col a:hover {
   color: #fff;
   transform: translateY(-2px);
 }
 
 /* ==========================================================
-   SOCIAL LINKS
+   Social Links
 ========================================================== */
 .footer-col--social .social-icons {
   display: flex;
@@ -74,7 +75,7 @@
 }
 
 /* ==========================================================
-   FOOTER BOTTOM
+   Footer bottom
 ========================================================== */
 .footer-bottom {
   text-align: center;

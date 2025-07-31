@@ -1,4 +1,6 @@
-/* FAQ Section */
+/* ============================
+   FAQ Section Container
+============================ */
 .faq-section {
   padding: 3rem 2rem;
   max-width: 800px;
@@ -14,7 +16,9 @@
   letter-spacing: 1px;
 }
 
-/* Individual FAQ Items */
+/* ============================
+   Individual FAQ Items
+============================ */
 .faq-item {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
@@ -35,17 +39,20 @@
   color: #555;
 }
 
-/* Contact Section */
+/* ============================
+   FAQ Contact Section
+============================ */
 .faq-contact {
   text-align: center;
   padding: 1rem 0;
-  margin-bottom:3rem;
+  margin-bottom: 3rem;
 }
 
 .faq-contact h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+
 .faq-contact .contact-btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -53,19 +60,18 @@
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
-
-  /* start with no brightness change */
   filter: brightness(1);
   transition: filter 0.3s ease-in-out, transform 0.2s ease;
 }
 
 .faq-contact .contact-btn:hover {
-  /* smoothly brighten by 15% */
   filter: brightness(1.15);
-  /* optional lift effect */
   transform: translateY(-2px);
 }
-/* Responsive Adjustments */
+
+/* ============================
+   Responsive Adjustments
+============================ */
 @media (max-width: 600px) {
   .faq-section {
     padding: 2rem 2rem;

@@ -1,59 +1,72 @@
-
-/* products.css */
-
+/* ============================
+   Admin Products Heading
+============================ */
 .admin-products h3 {
-    font-size: 1.5rem;
-    margin-top:4rem;
-    margin-bottom:0;
+  font-size: 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 0;
 }
 
+/* ============================
+   Add Product Form Container
+============================ */
 .add-product-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    border-radius: 8px;
-    padding:0;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-radius: 8px;
+  padding: 0;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
 }
 
-
-
+/* ============================
+   Add Product Form Children Alignment
+============================ */
 .add-product-form > input[type="text"],
 .add-product-form > select,
 .add-product-form > button {
-    align-self: flex-start; /* Align only the direct children at the top */
+  align-self: flex-start;
 }
 
+/* ============================
+   Add Product Form Button Styling
+============================ */
 .add-product-form button {
-    padding: 0.875rem 2rem;
-    color: #fff;
-    border-radius: 999px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: background 0.3s ease, transform 0.3s ease;
-    text-transform: uppercase;
-    margin-left: auto;
-    max-width: fit-content;
-    background: linear-gradient(135deg, #16A34A, #22C55E);
+  padding: 0.875rem 2rem;
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+  margin-left: auto;
+  max-width: fit-content;
+  background: linear-gradient(135deg, #16A34A, #22C55E);
 }
 
 .add-product-form button:hover {
-    background: linear-gradient(135deg, #15803D, #16A34A);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #15803D, #16A34A);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* ============================
+   Admin Products Table Inputs
+============================ */
 .admin-products table input[type="number"] {
-    margin: 0 0.25rem;
+  margin: 0 0.25rem;
 }
 
 .admin-products input[type="file"] {
-    display: inline-block;
-    font-size: 0.9rem;
+  display: inline-block;
+  font-size: 0.9rem;
 }
 
+/* ============================
+   Font Family for Inputs and Selects
+============================ */
 .add-product-form input[type="text"],
 .add-product-form select,
 .add-product-form option {
@@ -65,12 +78,16 @@
   font-family: 'Poppins', sans-serif !important;
 }
 
+/* ============================
+   Variant File Inputs Layout
+============================ */
 #variantFileInputs label {
-    width: 95px; /* fixed width for consistent alignment */
-    display: inline-block;
+  width: 95px;
+  display: inline-block;
 }
+
 #variantFileInputs div {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }

@@ -1,31 +1,31 @@
-/* ==========================================================
-   VARIABLES
-========================================================== */
+/* ============================
+   CSS Variables
+============================ */
 :root {
-    --hero-image-max-width: 1200px;
+  --hero-image-max-width: 1200px;
 }
 
-/* ==========================================================
-   HERO WRAPPER
-========================================================== */
+/* ============================
+   Hero Wrapper
+============================ */
 .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background: radial-gradient(
-        circle,
-        #d8aaff  30%, /* Lighter Center */
-        #b478ff  100% /* Darker Edges */
-    );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: radial-gradient(
+    circle,
+    #d8aaff 30%,
+    #b478ff 100%
+  );
 }
 
-/* ==========================================================
-   HERO IMAGE
-========================================================== */
+/* ============================
+   Hero Image
+============================ */
 .hero img {
-    display: block;
-    width: 100%;
-    max-width: var(--hero-image-max-width);
-    height: auto;
+  display: block;
+  width: 100%;
+  max-width: var(--hero-image-max-width);
+  height: auto;
 }

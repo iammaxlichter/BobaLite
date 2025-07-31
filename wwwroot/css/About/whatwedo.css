@@ -1,52 +1,64 @@
+/* ============================
+   What We Do Section Container
+============================ */
 .what-we-do {
-    padding: 4rem 2rem;
-    background: #fdfdfd;
-    color: #333;
+  padding: 4rem 2rem;
+  background: #fdfdfd;
+  color: #333;
 }
 
+/* ============================
+   What We Do Grid Layout
+============================ */
 .what-we-do-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
 }
 
+/* ============================
+   Video Thumbnail Container
+============================ */
 .video-thumb {
-    position: relative;
-    width: 400px;
-    max-width: 100%;
-    overflow: hidden;
-    border-radius: 6px;
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
 }
 
-
-
+/* ============================
+   What We Do Text Content
+============================ */
 .what-we-do-text {
-    max-width: 400px;
+  max-width: 400px;
 }
 
 .what-we-do-text h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .what-we-do-text .lead {
-    font-weight: 500;
-    margin-bottom: 1rem;
-    color: #555;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #555;
 }
 
+/* ============================
+   Signatures Section
+============================ */
 .signatures {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .signatures-picture {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
-

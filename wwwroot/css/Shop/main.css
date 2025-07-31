@@ -1,6 +1,9 @@
 @import url("grid.css");
 @import url("filters.css");
 
+/* ============================
+   Shop Hero Background
+============================ */
 .shop-hero {
   --hero-bg: linear-gradient(
     to left,

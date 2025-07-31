@@ -1,4 +1,6 @@
-/* Confirmation Summary Card */
+/* ============================
+   Confirmation Summary Container
+============================ */
 #confirmation-summary {
   background: #fafafa;
   border: 1px solid #eee;
@@ -8,16 +10,22 @@
   color: #333;
 }
 
-/* Section wrapper */
+/* ============================
+   Confirmation Section Wrapper
+============================ */
 .confirm-section {
-  margin: 2rem 0;      /* ↑ from 1.5rem to 2rem on top/bottom */
-}
-.confirm-section:first-child {
-  margin-top: 0;       /* no extra gap before the first section */
+  margin: 2rem 0;
 }
 
+.confirm-section:first-child {
+  margin-top: 0;
+}
+
+/* ============================
+   Confirmation Section Heading
+============================ */
 .confirm-section h4 {
-  margin: 0 0 0.75rem; /* more space under the heading */
+  margin: 0 0 0.75rem;
   font-size: 1rem;
   font-weight: bold;
   color: #333;
@@ -25,24 +33,31 @@
   padding-bottom: 0.25rem;
 }
 
+/* ============================
+   Confirmation Section Content Paragraphs
+============================ */
 .confirm-section-content p {
-  margin: 0.5rem 0;    /* slightly larger vertical gap between lines */
+  margin: 0.5rem 0;
   font-weight: normal;
   font-size: 0.9rem;
   color: #444;
 }
 
-/* Items list layout */
+/* ============================
+   Confirmation Items List Layout
+============================ */
 .confirm-items {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;        /* a little more space between each item */
-  margin-bottom: 1rem; /* gap after items before next section */
+  gap: 1.25rem;
+  margin-bottom: 1rem;
 }
+
 .confirm-item {
   display: flex;
   align-items: center;
 }
+
 .confirm-item-img {
   width: 48px;
   height: 48px;
@@ -50,36 +65,47 @@
   border-radius: 4px;
   margin-right: 1rem;
 }
+
 .confirm-item-details .item-name {
   margin: 0;
   font-weight: normal;
   font-size: 0.95rem;
 }
+
 .confirm-item-details .item-qty-price {
   margin: 0.25rem 0 0;
   font-size: 0.9rem;
   color: #666;
 }
 
-/* Masked card styling */
+/* ============================
+   Masked Card Styling
+============================ */
 .masked {
   font-family: monospace;
 }
 
-/* Total styling */
+/* ============================
+   Total Section Styling
+============================ */
 .total-section {
   text-align: left;
-  margin-top: 4rem;    /* extra gap before total */
+  margin-top: 4rem;
 }
+
 .total-section h4 {
   margin-bottom: 0.5rem;
 }
+
 .total-amount {
   margin: 0;
   font-size: 1.25rem;
   font-weight: bold;
 }
 
-h4{
-    margin-top:2rem;
+/* ============================
+   Global h4 Margin Override
+============================ */
+h4 {
+  margin-top: 2rem;
 }
