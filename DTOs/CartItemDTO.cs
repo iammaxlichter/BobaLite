@@ -8,6 +8,7 @@ namespace BobaLite.DTOs
     {
         public string ProductName { get; set; } = string.Empty;
         public int ProductId { get; set; }
+        public int VariantId    { get; set; }
         public string? Attribute { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }

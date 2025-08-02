@@ -156,7 +156,6 @@ export function initPdp() {
         addBtn.disabled = false;
       }, 1200);
     } catch (err) {
-      console.error('Failed to add to cart:', err);
       addBtn.textContent = 'Error!';
       setTimeout(() => {
         addBtn.textContent = originalText;

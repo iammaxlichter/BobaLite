@@ -122,7 +122,6 @@ export function initCheckoutStepper() {
      * - Updates the Next button whenever form validity changes externally.
      */
     document.addEventListener('formValidationChange', () => {
-        console.log('Form validation change event received');
         updateNextState();
     });
 
@@ -132,12 +131,10 @@ export function initCheckoutStepper() {
      */
     if (shippingForm) {
         shippingForm.addEventListener('input', (e) => {
-            console.log('Billing form input changed:', e.target.name);
             updateNextState();
         });
 
         shippingForm.addEventListener('change', (e) => {
-            console.log('Billing form change:', e.target.name);
             updateNextState();
         });
     }

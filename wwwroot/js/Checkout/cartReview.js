@@ -29,6 +29,7 @@ export async function loadCartReview() {
 
     cartItems = dto.items.map(i => ({
         productId: i.productId,
+        variantId:  i.variantId,
         attribute: i.attribute,
         quantity: i.quantity,
         name: i.productName,

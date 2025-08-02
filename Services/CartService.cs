@@ -54,6 +54,7 @@ namespace BobaLite.Services
 
                 var v = _repo.GetVariant(item.ProductId, item.Attribute)
                     ?? throw new Exception("Variant not found");
+                item.VariantId   = v.Id; 
                 item.UnitPrice = v.Price;
                 item.ImageUrl = v.PrimaryImageUrl;
             }
@@ -111,6 +112,7 @@ namespace BobaLite.Services
                 cart.Items.Add(new CartItemDto
                 {
                     ProductId = productId,
+                    VariantId   = variant.Id,
                     Attribute = attribute,
                     Quantity = qtyToAdd,
                     UnitPrice = unitPrice,

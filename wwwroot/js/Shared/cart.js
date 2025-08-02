@@ -20,6 +20,7 @@ async function refreshCart() {
     const dto = await response.json();
     cart = dto.items.map(item => ({
       id: item.productId,
+      variantId:  item.variantId,
       name: item.productName,
       attribute: item.attribute,
       qty: item.quantity,
@@ -34,7 +35,6 @@ async function refreshCart() {
     
     notifyCheckoutUpdate();
   } catch (err) {
-    console.error('Failed to refresh cart:', err);
   }
 }
 

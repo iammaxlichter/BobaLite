@@ -1,6 +1,7 @@
 // ───── Framework Usings ─────────────────────────────
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 // ───── Project Usings ───────────────────────────────
 using BobaLite.DTOs;
@@ -48,11 +49,17 @@ namespace BobaLite.Controllers
             // ─── Update stock levels ──────────────────────────
             foreach (var item in order.Items)
             {
-                var variant = _db.Variants.Find(item.VariantId);
+                var variant = await _db.Variants
+                    .FirstOrDefaultAsync(v => v.Id == item.VariantId);
+
                 if (variant != null)
+                {
                     variant.Stock = Math.Max(0, variant.Stock - item.Quantity);
+                }
             }
-            _db.SaveChanges();
+
+            await _db.SaveChangesAsync();
+
 
             // ─── Build and send confirmation email ─────────────
             try

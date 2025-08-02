@@ -120,7 +120,7 @@ function isAddressComplete(address) {
 function buildOrderPayload(cartItems, shippingAddress, billingAddress, payData) {
     return {
         items: cartItems.map(i => ({
-            variantId: i.productId || i.id,
+            variantId:   i.variantId,
             attribute: i.attribute || '',
             quantity: i.quantity || 1,
             price: i.price,
