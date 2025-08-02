@@ -13,10 +13,10 @@ namespace BobaLite.Models
 
         [Required]
         [EmailAddress]
-        public string Email { get; set; }
+        public required string Email { get; set; }
 
         [Required]
-        public string PasswordHash { get; set; }
+        public required string PasswordHash { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }

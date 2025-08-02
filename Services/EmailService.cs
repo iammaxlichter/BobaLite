@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-// ───── Third-Party Usings ───────────────────────────
+// ───── Third-Party Usings ───────────────────────
 using SendGrid;
 using SendGrid.Helpers.Mail;
 
@@ -24,7 +24,7 @@ namespace BobaLite.Services
         /// <param name="logger">The logger for recording email activity.</param>
         public EmailService(IConfiguration config, ILogger<EmailService> logger)
         {
-            _apiKey = config["SENDGRID_APIKEY"];
+            _apiKey = config["SENDGRID_APIKEY"] ?? throw new InvalidOperationException("SENDGRID_APIKEY configuration is missing");
             _logger = logger;
         }
 

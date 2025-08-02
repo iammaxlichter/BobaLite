@@ -34,7 +34,7 @@ namespace BobaLite.Services
         /// <summary>
         /// Gets the current session's cart.
         /// </summary>
-        private ISession Session => _http.HttpContext.Session;
+        private ISession Session => _http.HttpContext?.Session ?? throw new InvalidOperationException("HttpContext or Session is not available");
 
         /// <summary>
         /// Retrieves the current cart and refreshes item details (price, images, stock).
@@ -44,11 +44,14 @@ namespace BobaLite.Services
             var json = Session.GetString(SessionKey);
             var dto = string.IsNullOrEmpty(json)
                 ? new CartDto()
-                : JsonSerializer.Deserialize<CartDto>(json)!;
+                : JsonSerializer.Deserialize<CartDto>(json) ?? new CartDto();
 
             // Rehydrate prices and images, clamp stock
             foreach (var item in dto.Items)
             {
+                if (string.IsNullOrEmpty(item.Attribute))
+                    continue;
+
                 var v = _repo.GetVariant(item.ProductId, item.Attribute)
                     ?? throw new Exception("Variant not found");
                 item.UnitPrice = v.Price;
@@ -56,12 +59,14 @@ namespace BobaLite.Services
             }
 
             dto.Items = dto.Items
+                .Where(i => !string.IsNullOrEmpty(i.Attribute))
                 .Select(i =>
                 {
-                    i.Quantity = Math.Min(
-                        i.Quantity,
-                        _repo.GetVariant(i.ProductId, i.Attribute).Stock
-                    );
+                    var variant = _repo.GetVariant(i.ProductId, i.Attribute!);
+                    if (variant != null)
+                    {
+                        i.Quantity = Math.Min(i.Quantity, variant.Stock);
+                    }
                     return i;
                 })
                 .ToList();
@@ -79,11 +84,14 @@ namespace BobaLite.Services
         /// <param name="customText">Optional custom text (e.g., for personalization).</param>
         public void AddItem(int productId, string attribute, int quantity = 1, string? customText = null)
         {
+            if (string.IsNullOrEmpty(attribute))
+                throw new ArgumentException("Attribute cannot be null or empty", nameof(attribute));
+
             var cart = GetCart();
-            
+
             var existing = cart.Items
-                .FirstOrDefault(i => 
-                    i.ProductId == productId && 
+                .FirstOrDefault(i =>
+                    i.ProductId == productId &&
                     i.Attribute == attribute &&
                     string.Equals(i.CustomText, customText, StringComparison.Ordinal));
 
@@ -125,10 +133,13 @@ namespace BobaLite.Services
         /// </summary>
         public void UpdateQuantity(int productId, string attribute, int quantity, string? customText = null)
         {
+            if (string.IsNullOrEmpty(attribute))
+                throw new ArgumentException("Attribute cannot be null or empty", nameof(attribute));
+
             var cart = GetCart();
             var item = cart.Items
-                .FirstOrDefault(i => 
-                    i.ProductId == productId && 
+                .FirstOrDefault(i =>
+                    i.ProductId == productId &&
                     i.Attribute == attribute &&
                     string.Equals(i.CustomText, customText, StringComparison.Ordinal));
 
@@ -154,9 +165,12 @@ namespace BobaLite.Services
         /// </summary>
         public void RemoveItem(int productId, string attribute, string? customText = null)
         {
+            if (string.IsNullOrEmpty(attribute))
+                throw new ArgumentException("Attribute cannot be null or empty", nameof(attribute));
+
             var cart = GetCart();
-            cart.Items.RemoveAll(i => 
-                i.ProductId == productId && 
+            cart.Items.RemoveAll(i =>
+                i.ProductId == productId &&
                 i.Attribute == attribute &&
                 string.Equals(i.CustomText, customText, StringComparison.Ordinal));
             Save(cart);

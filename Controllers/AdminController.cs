@@ -40,7 +40,7 @@ namespace BobaLite.Controllers
         [HttpGet]
         public IActionResult Index(int? editProductId = null)
         {
-            if (!User.Identity.IsAuthenticated)
+            if (User.Identity?.IsAuthenticated != true)
                 return RedirectToAction("Login");
 
             var products = _db.Products
@@ -59,7 +59,7 @@ namespace BobaLite.Controllers
         [HttpGet]
         public IActionResult Login(string? returnUrl = null)
         {
-            if (User.Identity.IsAuthenticated)
+            if (User.Identity?.IsAuthenticated == true)
                 return RedirectToAction("Index");
 
             ViewBag.ReturnUrl = returnUrl;
@@ -204,7 +204,7 @@ namespace BobaLite.Controllers
                     }
 
                     var slugName = newName.ToLower().Replace(" ", "-");
-                    var slugAttr = variant.Attributes.ToLower().Replace(" ", "-");
+                    var slugAttr = variant.Attributes?.ToLower().Replace(" ", "-") ?? "";
                     var ext = Path.GetExtension(uploadedFile.FileName).ToLower();
                     if (string.IsNullOrEmpty(ext)) ext = ".png";
 
@@ -231,7 +231,7 @@ namespace BobaLite.Controllers
                         var oldPath = Path.Combine(_env.WebRootPath, "images", "Shop", currentFileName);
 
                         var newSlug = newName.ToLower().Replace(" ", "-");
-                        var attrSlug = variant.Attributes.ToLower().Replace(" ", "-");
+                        var attrSlug = variant.Attributes?.ToLower().Replace(" ", "-") ?? "";
 
                         string renamedFileName = product.Type == "Apparel"
                             ? $"{newSlug}.png"
@@ -246,7 +246,8 @@ namespace BobaLite.Controllers
                                 System.IO.File.Delete(renamedPath);
 
                             System.IO.File.Move(oldPath, renamedPath);
-                            currentImage.Url = renamedUrl;
+                            if (currentImage != null)
+                                currentImage.Url = renamedUrl;
                         }
                         else if (currentFileName != renamedFileName && currentImage != null)
                         {
@@ -284,7 +285,7 @@ namespace BobaLite.Controllers
             {
                 var attr = variantEnabled[i];
                 var slugName = name.ToLower().Replace(" ", "-");
-                var slugAttr = attr.ToLower().Replace(" ", "-");
+                var slugAttr = attr?.ToLower().Replace(" ", "-") ?? "";
 
                 string fileName = productType == "Apparel"
                     ? $"{slugName}.png"
@@ -292,7 +293,7 @@ namespace BobaLite.Controllers
                 string filePath = Path.Combine(uploadPath, fileName);
                 string url = $"/images/Shop/{fileName}";
 
-                if (i < variantImages.Count && variantImages[i] != null && variantImages[i].Length > 0)
+                if (i < variantImages.Count && variantImages[i] != null && variantImages[i]?.Length > 0)
                 {
                     using var stream = new FileStream(filePath, FileMode.Create);
                     await variantImages[i].CopyToAsync(stream);

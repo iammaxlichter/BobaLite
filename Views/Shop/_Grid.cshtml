@@ -14,6 +14,11 @@
 <section class="product-grid">
   @foreach (var product in Model)
   {
+    if (product?.Variants == null || !product.Variants.Any())
+    {
+        continue;
+    }
+
     var slug = product.Name.ToLowerInvariant().Replace(" ", "-");
     bool isApparel = product.Type == "Apparel";
 
@@ -23,7 +28,10 @@
       {
         V = v,
         RawLabel = v.Attributes,
-        Label = v.Attributes.Contains("-") ? v.Attributes.Split('-')[0] : v.Attributes
+        Label = !string.IsNullOrEmpty(v.Attributes) && v.Attributes.Contains("-") 
+          ? v.Attributes.Split('-')[0] 
+          : v.Attributes ?? string.Empty
+
       })
       .OrderBy(x =>
       {
@@ -39,7 +47,10 @@
       })
       .ToList();
 
-    var firstE = variants.FirstOrDefault(x => x.RawLabel.StartsWith("1-")) ?? variants.First();
+    if (!variants.Any()) { continue; }
+
+    var firstE = variants.FirstOrDefault(x => !string.IsNullOrEmpty(x.RawLabel) && x.RawLabel.StartsWith("1-"))
+    ?? variants.First();
     var stock1 = firstE.V.Stock;
     var cardClass = stock1 == 0 ? "out-of-stock" : (stock1 < lowThreshold ? "low-stock" : "");
 

@@ -2478,8 +2478,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>2k8oaalhdn</Fingerprint>
-      <Integrity>rnz8KdqrQrrq5Nm2H96lIlpoO2QYACFwHfL7mf69ZnI=</Integrity>
+      <Fingerprint>a64ove506s</Fingerprint>
+      <Integrity>IvJRYM7tEWA8p9U0u4fbX+6ZKuDpe5nQKhUJ/fXMNk0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Shared\cart.js'))</OriginalItemSpec>

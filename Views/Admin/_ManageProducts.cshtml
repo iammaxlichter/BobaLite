@@ -83,7 +83,10 @@
                                 <ul style="list-style-type: none; padding-left: 0;">
                                    @{
                                         var categories = (List<BobaLite.Models.Category>)ViewBag.AllCategories;
-                                        var childCategoryIds = new HashSet<int>(categories.Where(c => c.ParentCategoryId != null).Select(c => c.ParentCategoryId.Value));
+                                        var childCategoryIds = new HashSet<int>(
+                                            categories.Where(c => c.ParentCategoryId != null)
+                                                    .Select(c => c.ParentCategoryId!.Value)
+                                        );
                                     }
 
                                     @foreach (var category in categories.Where(c => !childCategoryIds.Contains(c.Id)))

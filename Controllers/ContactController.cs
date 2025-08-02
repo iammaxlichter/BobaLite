@@ -17,7 +17,7 @@ namespace BobaLite.Controllers
 {
     public class ContactController : Controller
     {
-        private readonly string _sendGridKey;
+        private readonly string? _sendGridKey;
         private readonly ILogger<ContactController> _logger;
 
         #region Constructor
@@ -56,6 +56,13 @@ namespace BobaLite.Controllers
         {
             if (!ModelState.IsValid)
                 return View(form);
+
+            if (string.IsNullOrEmpty(_sendGridKey))
+            {
+                _logger.LogError("SendGrid API key is not configured");
+                ModelState.AddModelError(string.Empty, "Email service is not properly configured. Please contact the administrator.");
+                return View(form);
+            }
 
             _logger.LogInformation("Received contact form submission from {Email} ({Name})", form.Email, form.Name);
 
