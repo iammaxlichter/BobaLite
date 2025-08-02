@@ -2,6 +2,19 @@ let cartItems = [];
 let cartTotal = 0;
 
 /**
+ * Initializes the cart review functionality.
+ * Sets up event listeners for cart updates from other parts of the app.
+ */
+export function initCartReview() {
+    window.addEventListener('cartUpdated', (e) => {
+        loadCartReview();
+    });
+    
+    // Initial load
+    loadCartReview();
+}
+
+/**
  * Loads the cart review section, rendering items, total cost, and updating UI state.
  */
 export async function loadCartReview() {

@@ -31,9 +31,21 @@ async function refreshCart() {
 
     updateCartBadge(cart);
     renderCart();
+    
+    notifyCheckoutUpdate();
   } catch (err) {
     console.error('Failed to refresh cart:', err);
   }
+}
+
+/**
+ * Notifies the checkout page that the cart has been updated.
+ * This allows the checkout to refresh its cart review section.
+ */
+function notifyCheckoutUpdate() {
+    window.dispatchEvent(new CustomEvent('cartUpdated', {
+    detail: { cart: cart }
+  }));
 }
 
 /**
@@ -144,6 +156,7 @@ function clearCartLocal() {
   cart = [];
   updateCartBadge(cart);
   renderCart();
+  notifyCheckoutUpdate();
 }
 
 /**

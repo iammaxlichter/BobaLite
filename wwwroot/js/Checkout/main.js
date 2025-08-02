@@ -1,4 +1,4 @@
-import { loadCartReview } from './cartReview.js';
+import { initCartReview } from './cartReview.js';
 import { initShippingForm } from './shippingForm.js';
 import { initPaymentForm } from './paymentForm.js';
 import { initCheckoutStepper } from './stepper.js';
@@ -12,7 +12,7 @@ import { initConfirmation } from './confirmation.js';
  * - Prepares the confirmation panel
  */
 document.addEventListener('DOMContentLoaded', () => {
-  loadCartReview();
+  initCartReview();
   initShippingForm();
   initPaymentForm();
   initCheckoutStepper();
