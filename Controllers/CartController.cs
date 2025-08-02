@@ -35,14 +35,14 @@ namespace BobaLite.Controllers
         [HttpPost("update")]
         public IActionResult Update([FromBody] UpdateCartRequest dto)
         {
-            _cart.UpdateQuantity(dto.ProductId, dto.Attribute, dto.Quantity);
+            _cart.UpdateQuantity(dto.ProductId, dto.Attribute, dto.Quantity, dto.CustomText);
             return NoContent();
         }
 
         [HttpDelete]
         public IActionResult Remove([FromBody] RemoveCartRequest dto)
         {
-            _cart.RemoveItem(dto.ProductId, dto.Attribute);
+            _cart.RemoveItem(dto.ProductId, dto.Attribute, dto.CustomText);
             return NoContent();
         }
 

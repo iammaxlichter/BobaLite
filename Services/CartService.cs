@@ -71,6 +71,7 @@ namespace BobaLite.Services
 
         /// <summary>
         /// Adds an item to the cart or updates its quantity if it already exists.
+        /// Items are considered the same only if ProductId, Attribute, AND CustomText all match.
         /// </summary>
         /// <param name="productId">The product ID.</param>
         /// <param name="attribute">The product variant attribute (e.g., "1-pack").</param>
@@ -79,8 +80,12 @@ namespace BobaLite.Services
         public void AddItem(int productId, string attribute, int quantity = 1, string? customText = null)
         {
             var cart = GetCart();
+            
             var existing = cart.Items
-                .FirstOrDefault(i => i.ProductId == productId && i.Attribute == attribute);
+                .FirstOrDefault(i => 
+                    i.ProductId == productId && 
+                    i.Attribute == attribute &&
+                    string.Equals(i.CustomText, customText, StringComparison.Ordinal));
 
             var variant = _repo.GetVariant(productId, attribute)
                 ?? throw new Exception("Variant not found");
@@ -116,12 +121,16 @@ namespace BobaLite.Services
 
         /// <summary>
         /// Updates the quantity of a specific item in the cart.
+        /// Items are identified by ProductId, Attribute, AND CustomText.
         /// </summary>
-        public void UpdateQuantity(int productId, string attribute, int quantity)
+        public void UpdateQuantity(int productId, string attribute, int quantity, string? customText = null)
         {
             var cart = GetCart();
             var item = cart.Items
-                .FirstOrDefault(i => i.ProductId == productId && i.Attribute == attribute);
+                .FirstOrDefault(i => 
+                    i.ProductId == productId && 
+                    i.Attribute == attribute &&
+                    string.Equals(i.CustomText, customText, StringComparison.Ordinal));
 
             if (item == null) return;
 
@@ -140,12 +149,16 @@ namespace BobaLite.Services
         }
 
         /// <summary>
-        /// Removes an item from the cart.
+        /// Removes a specific item from the cart.
+        /// Items are identified by ProductId, Attribute, AND CustomText.
         /// </summary>
-        public void RemoveItem(int productId, string attribute)
+        public void RemoveItem(int productId, string attribute, string? customText = null)
         {
             var cart = GetCart();
-            cart.Items.RemoveAll(i => i.ProductId == productId && i.Attribute == attribute);
+            cart.Items.RemoveAll(i => 
+                i.ProductId == productId && 
+                i.Attribute == attribute &&
+                string.Equals(i.CustomText, customText, StringComparison.Ordinal));
             Save(cart);
         }
 

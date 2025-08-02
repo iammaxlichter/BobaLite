@@ -32,7 +32,7 @@ async function refreshCart() {
     updateCartBadge(cart);
     renderCart();
   } catch (err) {
-    console.error('refreshCart:', err);
+    console.error('Failed to refresh cart:', err);
   }
 }
 
@@ -70,12 +70,23 @@ async function addItemApi({ id, attribute, quantity = 1, customText = null }) {
  * @param {number} params.id - Product ID
  * @param {string} params.attribute - Variant attribute
  * @param {number} params.qty - New quantity
+ * @param {string|null} [params.customText=null] - Custom text to identify the specific item
  */
-async function updateQtyApi({ id, attribute, qty }) {
+async function updateQtyApi({ id, attribute, qty, customText = null }) {
+  const body = {
+    ProductId: id,
+    Attribute: attribute,
+    Quantity: qty
+  };
+
+  if (customText) {
+    body.CustomText = customText;
+  }
+
   const response = await fetch(`${API_BASE}/update`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ ProductId: id, Attribute: attribute, Quantity: qty })
+    body: JSON.stringify(body)
   });
 
   if (!response.ok) throw new Error('Failed to update quantity');
@@ -86,12 +97,22 @@ async function updateQtyApi({ id, attribute, qty }) {
  * @param {Object} params 
  * @param {number} params.id - Product ID
  * @param {string} params.attribute - Variant attribute
+ * @param {string|null} [params.customText=null] - Custom text to identify the specific item
  */
-async function removeItemApi({ id, attribute }) {
+async function removeItemApi({ id, attribute, customText = null }) {
+  const body = {
+    ProductId: id,
+    Attribute: attribute
+  };
+
+  if (customText) {
+    body.CustomText = customText;
+  }
+
   const response = await fetch(API_BASE, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ ProductId: id, Attribute: attribute })
+    body: JSON.stringify(body)
   });
 
   if (!response.ok) throw new Error('Failed to remove item');
@@ -110,13 +131,8 @@ async function clearCartApi() {
       }
     });
 
-    if (!response.ok) {
-      console.warn('Failed to clear cart on server:', response.status);
-    }
-
     clearCartLocal();
   } catch (err) {
-    console.warn('Error clearing cart:', err);
     clearCartLocal();
   }
 }
@@ -218,20 +234,38 @@ function renderCart() {
     decreaseButton.onclick = async () => {
       const newQty = item.qty - 1;
       if (newQty < 1) {
-        await removeItemApi(item);
+        await removeItemApi({ 
+          id: item.id, 
+          attribute: item.attribute, 
+          customText: item.customText 
+        });
       } else {
-        await updateQtyApi({ ...item, qty: newQty });
+        await updateQtyApi({ 
+          id: item.id, 
+          attribute: item.attribute, 
+          qty: newQty, 
+          customText: item.customText 
+        });
       }
       await refreshCart();
     };
 
     increaseButton.onclick = async () => {
-      await updateQtyApi({ ...item, qty: item.qty + 1 });
+      await updateQtyApi({ 
+        id: item.id, 
+        attribute: item.attribute, 
+        qty: item.qty + 1, 
+        customText: item.customText 
+      });
       await refreshCart();
     };
 
     removeButton.onclick = async () => {
-      await removeItemApi(item);
+      await removeItemApi({ 
+        id: item.id, 
+        attribute: item.attribute, 
+        customText: item.customText 
+      });
       await refreshCart();
     };
 
