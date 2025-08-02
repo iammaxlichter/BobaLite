@@ -433,18 +433,6 @@
       "PackagePath": "staticwebassets\\images\\Shop\\taro-twist-tea-6-pack.png"
     },
     {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\test-1-pack.png",
-      "PackagePath": "staticwebassets\\images\\Shop\\test-1-pack.png"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\test-12-pack.png",
-      "PackagePath": "staticwebassets\\images\\Shop\\test-12-pack.png"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\test-6-pack.png",
-      "PackagePath": "staticwebassets\\images\\Shop\\test-6-pack.png"
-    },
-    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\facebook.png",
       "PackagePath": "staticwebassets\\images\\icons\\facebook.png"
     },
@@ -489,10 +477,6 @@
       "PackagePath": "staticwebassets\\js\\Careers\\search.js"
     },
     {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Checkout\\billingForm.js",
-      "PackagePath": "staticwebassets\\js\\Checkout\\billingForm.js"
-    },
-    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Checkout\\cartReview.js",
       "PackagePath": "staticwebassets\\js\\Checkout\\cartReview.js"
     },
@@ -507,6 +491,10 @@
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Checkout\\paymentForm.js",
       "PackagePath": "staticwebassets\\js\\Checkout\\paymentForm.js"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Checkout\\shippingForm.js",
+      "PackagePath": "staticwebassets\\js\\Checkout\\shippingForm.js"
     },
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Checkout\\stepper.js",

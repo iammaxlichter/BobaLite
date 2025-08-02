@@ -246,8 +246,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>0tvh932vou</Fingerprint>
-      <Integrity>RDD7DNAdiY5ZY4DGmNfjbMtQVIC85Eyv7qI8nNMxC6M=</Integrity>
+      <Fingerprint>qy4znyp2np</Fingerprint>
+      <Integrity>4lIAOFpUwbBVRSKZVTqTnCiyG/FZ0qTg5eIHIWVkaJ8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Checkout\forms.css'))</OriginalItemSpec>
@@ -390,8 +390,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>jy290mk593</Fingerprint>
-      <Integrity>xfCFmegT84Pv7nG5eRs3782JYXd1hF6etwDhX23CDg8=</Integrity>
+      <Fingerprint>33d2agpp9f</Fingerprint>
+      <Integrity>vwjuxNHaABlwVuusOgkQZ7/jLY/Mt7YqeW6CeUVSy2U=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\FAQ\questions.css'))</OriginalItemSpec>
@@ -2034,60 +2034,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Shop\taro-twist-tea-6-pack.png'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Shop\test-1-pack.png'))">
-      <SourceType>Package</SourceType>
-      <SourceId>BobaLite</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/BobaLite</BasePath>
-      <RelativePath>images/Shop/test-1-pack.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>6y0575h7ev</Fingerprint>
-      <Integrity>Dv9pZ9zjlVFA+G4cdXgQjm5osQL042lxXOEVib6Aed4=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Shop\test-1-pack.png'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Shop\test-12-pack.png'))">
-      <SourceType>Package</SourceType>
-      <SourceId>BobaLite</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/BobaLite</BasePath>
-      <RelativePath>images/Shop/test-12-pack.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>q2ixwfz56q</Fingerprint>
-      <Integrity>PvqfUs3pf7j7eMP3bSKSGrMHrK0WSQmi2GURka3OBmI=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Shop\test-12-pack.png'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Shop\test-6-pack.png'))">
-      <SourceType>Package</SourceType>
-      <SourceId>BobaLite</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/BobaLite</BasePath>
-      <RelativePath>images/Shop/test-6-pack.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>b8kwht0482</Fingerprint>
-      <Integrity>lYxHhEBm6qPGTQ0cnCQdQ1nm3txu1oTG8JE+fXGp0Zs=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Shop\test-6-pack.png'))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\About\main.js'))">
       <SourceType>Package</SourceType>
       <SourceId>BobaLite</SourceId>
@@ -2196,24 +2142,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Careers\search.js'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Checkout\billingForm.js'))">
-      <SourceType>Package</SourceType>
-      <SourceId>BobaLite</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/BobaLite</BasePath>
-      <RelativePath>js/Checkout/billingForm.js</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>f9mc07iib5</Fingerprint>
-      <Integrity>sxdSt12DvgpOjG8BoiVrox6tj9s4BLXyptvVOUGOOrg=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Checkout\billingForm.js'))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Checkout\cartReview.js'))">
       <SourceType>Package</SourceType>
       <SourceId>BobaLite</SourceId>
@@ -2244,8 +2172,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>avr36s9ll5</Fingerprint>
-      <Integrity>Kso9iXNRQRvRBSv3DKFzM4EW/Mb2V/bezwfICZwkxkQ=</Integrity>
+      <Fingerprint>j23vjntx2g</Fingerprint>
+      <Integrity>S+DuaGHEXg1AT4I241CKYDQJLNlgESinpkhuK07IWVc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Checkout\confirmation.js'))</OriginalItemSpec>
@@ -2262,8 +2190,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>9l4ligd5k7</Fingerprint>
-      <Integrity>fazhImbcxRk07T75R6grgm6JhpN+HVjv5ChHDlO/Clc=</Integrity>
+      <Fingerprint>013l89avcd</Fingerprint>
+      <Integrity>bNEzDqmhSDGnz0XGwJbB/ky6oEiOrNztdLblPEsfjsw=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Checkout\main.js'))</OriginalItemSpec>
@@ -2286,6 +2214,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Checkout\paymentForm.js'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Checkout\shippingForm.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>BobaLite</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/BobaLite</BasePath>
+      <RelativePath>js/Checkout/shippingForm.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>e030sqs68w</Fingerprint>
+      <Integrity>wmxa7ndbY2KKCMAdOFZ9xxK9a0UMChTsE0lABkdoH7I=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Checkout\shippingForm.js'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Checkout\stepper.js'))">
       <SourceType>Package</SourceType>
       <SourceId>BobaLite</SourceId>
@@ -2298,8 +2244,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>2g39jmr9sp</Fingerprint>
-      <Integrity>TovBzLhSwhincqVdnekb2wzryfkFfST9c2VuOJrL0vY=</Integrity>
+      <Fingerprint>76oafgex1w</Fingerprint>
+      <Integrity>IZhDKyb0UBm2wgQLoN8k/s2+9ucr6t22fDyQ9lCYrVg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Checkout\stepper.js'))</OriginalItemSpec>

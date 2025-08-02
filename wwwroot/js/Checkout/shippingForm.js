@@ -1,8 +1,8 @@
 /**
- * Initializes the billing form by adding phone number formatting and validation handling.
+ * Initializes the shipping form by adding phone number formatting and validation handling.
  */
-export function initBillingForm() {
-    const form = document.getElementById('billing-form');
+export function initShippingForm() {
+    const form = document.getElementById('shipping-form');
     if (!form) return;
 
     const phoneInput = form.querySelector('[name="phone"]');
@@ -24,11 +24,11 @@ export function initBillingForm() {
 }
 
 /**
- * Retrieves and returns billing form data as an object.
- * @returns {Object} Billing data with all form fields.
+ * Retrieves and returns shipping form data as an object.
+ * @returns {Object} Shipping data with all form fields.
  */
-export function getBillingData() {
-    const f = document.getElementById('billing-form');
+export function getShippingData() {
+    const f = document.getElementById('shipping-form');
     if (!f) return {};
 
     return {

@@ -1,7 +1,7 @@
 // wwwroot/js/Checkout/confirmation.js
 
 import { getCartItems } from './cartReview.js';
-import { getBillingData } from './billingForm.js';
+import { getShippingData } from './shippingForm.js';
 import { getPaymentData } from './paymentForm.js';
 import { clearCartApi } from '../Shared/cart.js';
 
@@ -33,7 +33,7 @@ export async function submitOrder() {
         }
 
         const payData = getPaymentData();
-        const shippingAddress = getBillingData();
+        const shippingAddress = getShippingData();
         const billingAddress = payData.useBillingAsShipping ? shippingAddress : payData.billing;
 
         if (!payData.cardNumber || !payData.expiry || !payData.cvc) {
@@ -92,7 +92,7 @@ function renderSummary() {
 
     try {
         const cart = getCartItems();
-        const ship = getBillingData();
+        const ship = getShippingData();
         const pay = getPaymentData();
         const billData = pay.useBillingAsShipping ? ship : pay.billing;
 

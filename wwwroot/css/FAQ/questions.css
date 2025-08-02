@@ -58,6 +58,7 @@
   padding: 0.75rem 1.5rem;
   background: linear-gradient(135deg, #555555, #777777);
   color: #fff;
+  font-weight: bold;
   text-decoration: none;
   border-radius: 4px;
   filter: brightness(1);

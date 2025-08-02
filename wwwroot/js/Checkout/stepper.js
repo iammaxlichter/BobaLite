@@ -15,12 +15,12 @@ export function initCheckoutStepper() {
     const next = document.getElementById('next-step');
     let currentStep = 0;
 
-    const billingForm = document.getElementById('billing-form');
+    const shippingForm = document.getElementById('shipping-form');
     const paymentForm = document.getElementById('payment-form');
 
     /**
      * Updates the "Next" button's enabled/disabled state:
-     * - Step 1: Requires billing form validity.
+     * - Step 1: Requires shipping form validity.
      * - Step 2: Requires payment form validity.
      * - Other steps: Always enabled.
      */
@@ -28,7 +28,7 @@ export function initCheckoutStepper() {
         console.log(`Updating next state for step ${currentStep}`);
 
         if (currentStep === 1) {
-            const isValid = billingForm && billingForm.checkValidity();
+            const isValid = shippingForm && shippingForm.checkValidity();
             console.log(`Billing form valid: ${isValid}`);
             next.disabled = !isValid;
         } else if (currentStep === 2) {
@@ -102,13 +102,13 @@ export function initCheckoutStepper() {
             }
 
             if (currentStep === 1) {
-                if (!billingForm) {
+                if (!shippingForm) {
                     console.error('Billing form not found!');
                     return;
                 }
-                if (!billingForm.checkValidity()) {
+                if (!shippingForm.checkValidity()) {
                     console.log('Billing form invalid, showing validation errors');
-                    billingForm.reportValidity();
+                    shippingForm.reportValidity();
                     return;
                 }
                 console.log('Billing form valid, advancing...');
@@ -146,13 +146,13 @@ export function initCheckoutStepper() {
      * Sets up live validation for the billing form:
      * - Updates the Next button on input and change events.
      */
-    if (billingForm) {
-        billingForm.addEventListener('input', (e) => {
+    if (shippingForm) {
+        shippingForm.addEventListener('input', (e) => {
             console.log('Billing form input changed:', e.target.name);
             updateNextState();
         });
 
-        billingForm.addEventListener('change', (e) => {
+        shippingForm.addEventListener('change', (e) => {
             console.log('Billing form change:', e.target.name);
             updateNextState();
         });

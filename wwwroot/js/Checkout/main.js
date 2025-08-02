@@ -1,5 +1,5 @@
 import { loadCartReview } from './cartReview.js';
-import { initBillingForm } from './billingForm.js';
+import { initShippingForm } from './shippingForm.js';
 import { initPaymentForm } from './paymentForm.js';
 import { initCheckoutStepper } from './stepper.js';
 import { initConfirmation } from './confirmation.js';
@@ -13,7 +13,7 @@ import { initConfirmation } from './confirmation.js';
  */
 document.addEventListener('DOMContentLoaded', () => {
   loadCartReview();
-  initBillingForm();
+  initShippingForm();
   initPaymentForm();
   initCheckoutStepper();
   initConfirmation();
