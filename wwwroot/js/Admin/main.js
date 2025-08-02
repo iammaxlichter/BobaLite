@@ -1,12 +1,9 @@
-import { initNewProductForm } from './newProduct.js';
+import { initNewProductForm, initImageChangeHandler } from './newProduct.js';
 
+/**
+ * Initializes the new product form and image change handlers when the DOM is ready.
+ */
 document.addEventListener('DOMContentLoaded', () => {
-  initNewProductForm();
-});
-
-document.addEventListener('click', e => {
-  if (e.target.matches('.change-img')) {
-    const id = e.target.dataset.for;
-    document.getElementById(id).click();
-  }
+    initNewProductForm();
+    initImageChangeHandler();
 });

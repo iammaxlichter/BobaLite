@@ -1,27 +1,30 @@
 /**
- * Auto‐dismiss alerts after a delay, with an optional fade‐out.
+ * Auto-dismiss alerts after a delay, with an optional fade-out.
+ *
+ * Automatically fades out and removes a matching alert element from the DOM after
+ * a specified timeout period.
  *
  * @param {Object} options
  * @param {string} options.selector      - CSS selector for the alert element.
- * @param {number} options.timeout       - Milliseconds to wait before dismiss.
- * @param {number} options.fadeDuration  - Milliseconds to fade out.
+ * @param {number} options.timeout       - Milliseconds to wait before dismissal.
+ * @param {number} options.fadeDuration  - Milliseconds for fade-out animation.
  */
 export function autoDismissAlert({
-  selector     = '.alert-success',
-  timeout      = 5000,
+  selector = '.alert-success',
+  timeout = 5000,
   fadeDuration = 500,
 } = {}) {
   document.addEventListener('DOMContentLoaded', () => {
-    const alertEl = document.querySelector(selector);
-    if (!alertEl) return;
+    const alertElement = document.querySelector(selector);
+    if (!alertElement) return;
 
     setTimeout(() => {
-      // fade out
-      alertEl.style.transition = `opacity ${fadeDuration}ms ease`;
-      alertEl.style.opacity    = '0';
+      alertElement.style.transition = `opacity ${fadeDuration}ms ease`;
+      alertElement.style.opacity = '0';
 
-      // remove from DOM after fade
-      setTimeout(() => alertEl.remove(), fadeDuration);
+      setTimeout(() => {
+        alertElement.remove();
+      }, fadeDuration);
     }, timeout);
   });
 }

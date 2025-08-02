@@ -433,6 +433,18 @@
       "PackagePath": "staticwebassets\\images\\Shop\\taro-twist-tea-6-pack.png"
     },
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\test-1-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\test-1-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\test-12-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\test-12-pack.png"
+    },
+    {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Shop\\test-6-pack.png",
+      "PackagePath": "staticwebassets\\images\\Shop\\test-6-pack.png"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\facebook.png",
       "PackagePath": "staticwebassets\\images\\icons\\facebook.png"
     },
@@ -571,10 +583,6 @@
     {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\Shop\\main.js",
       "PackagePath": "staticwebassets\\js\\Shop\\main.js"
-    },
-    {
-      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\js\\app.js",
-      "PackagePath": "staticwebassets\\js\\app.js"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BobaLite.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

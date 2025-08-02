@@ -1,12 +1,28 @@
-// wwwroot/js/grid.js
+/**
+ * @fileoverview
+ * Handles product grid interactions, including:
+ *  - Price formatting
+ *  - Attribute switching
+ *  - Stock status updates
+ *  - Add-to-cart animations
+ *  - Product image switching
+ *  - Scroll animations for product cards
+ */
 
-// Import addItem from the cart module
 import { addItemApi, refreshCart } from '../Shared/cart.js';
 
+/**
+ * Formats a price value into a string with two decimal places.
+ * @param {string|number} price - The price to format.
+ * @returns {string} The formatted price.
+ */
 function formatPrice(price) {
   return parseFloat(price).toFixed(2);
 }
 
+/**
+ * Initializes price formatting for all products on page load.
+ */
 export function initPriceFormatting() {
   document.querySelectorAll('.product-card').forEach(card => {
     const priceElement = card.querySelector('.price');
@@ -19,8 +35,12 @@ export function initPriceFormatting() {
   });
 }
 
+/**
+ * Initializes attribute switching functionality.
+ * Updates price, stock, and product image when a user selects a different attribute.
+ */
 export function initAttributeSwitcher() {
-  document.addEventListener('click', function (e) {
+  document.addEventListener('click', e => {
     if (!e.target.classList.contains('attribute-btn')) return;
 
     const btn = e.target;
@@ -34,32 +54,33 @@ export function initAttributeSwitcher() {
     const slug = card.dataset.slug;
     const newAttribute = btn.dataset.attribute;
 
-    // Toggle active state
     attributeBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    // Animate price change
     priceEl.classList.add('updating');
     setTimeout(() => {
       priceEl.textContent = `$${formatPrice(newPrice)}`;
       priceEl.classList.remove('updating');
     }, 150);
 
-    // Update image and cart button
     animateImageChange(canImage, slug, newAttribute);
-    cartIcon.dataset.attribute = btn.dataset.attribute;
-    cartIcon.dataset.price = newPrice; // Update cart button price
+    cartIcon.dataset.attribute = newAttribute;
+    cartIcon.dataset.price = newPrice;
 
-    // Handle stock status
     updateStockStatus(card, newStock, cartIcon);
 
-    // Disable sold-out attribute buttons
     attributeBtns.forEach(b => {
       b.disabled = Number(b.dataset.stock) === 0;
     });
   });
 }
 
+/**
+ * Updates the stock status for a product.
+ * @param {HTMLElement} card - The product card element.
+ * @param {number} stock - The current stock quantity.
+ * @param {HTMLElement} cartIcon - The cart button element.
+ */
 function updateStockStatus(card, stock, cartIcon) {
   const lowThreshold = 10;
   let label = card.querySelector('.stock-label');
@@ -83,6 +104,13 @@ function updateStockStatus(card, stock, cartIcon) {
   }
 }
 
+/**
+ * Updates the stock label and card classes based on stock state.
+ * @param {HTMLElement} card - The product card element.
+ * @param {HTMLElement} label - The stock label element.
+ * @param {string} stockClass - The CSS class for stock state.
+ * @param {string} labelText - The text for the stock label.
+ */
 function updateStockState(card, label, stockClass, labelText) {
   card.classList.remove('out-of-stock', 'low-stock');
 
@@ -106,35 +134,25 @@ function updateStockState(card, label, stockClass, labelText) {
   }
 }
 
+/**
+ * Initializes add-to-cart animations and handles cart updates.
+ */
 export function initAddToCartAnimations() {
-  document.addEventListener('click', async function (e) {
+  document.addEventListener('click', async e => {
     const btn = e.target.closest('.add-cart-icon');
     if (!btn || btn.disabled) return;
 
     const img = btn.querySelector('img');
     const card = btn.closest('.product-card');
 
-    // Get current active attribute button to get the right price
     const activeAttributeBtn = card.querySelector('.attribute-btn.active');
     const currentPrice = activeAttributeBtn ? activeAttributeBtn.dataset.price : btn.dataset.price;
     const currentAttribute = activeAttributeBtn ? activeAttributeBtn.dataset.attribute : btn.dataset.attribute;
     const currentStock = activeAttributeBtn ? activeAttributeBtn.dataset.stock : '0';
 
-    // Check if there's a custom text input in this card (if applicable)
     const customTextInput = card.querySelector('input[name="custom-text"]');
     const customText = customTextInput?.value || null;
 
-    console.log('Adding to cart:', {
-      id: card.dataset.id,
-      name: card.dataset.name,
-      attribute: currentAttribute,
-      price: currentPrice,
-      stock: currentStock,
-      img: card.querySelector('.can-image').src,
-      customText: customText  // Log to verify it's captured
-    });
-
-    // 1) animate icon
     btn.classList.add('pop');
     setTimeout(() => {
       if (img.dataset.check) {
@@ -151,47 +169,39 @@ export function initAddToCartAnimations() {
       }, 1500);
     }, 200);
 
-    // 2) add to cart with customText
     await addItemApi({
       id: Number(card.dataset.id),
       attribute: currentAttribute,
-      quantity: 1,  // Add explicit quantity
-      customText: customText  // Pass the custom text
+      quantity: 1,
+      customText: customText
     });
     await refreshCart();
   });
 }
 
+/**
+ * Animates product image changes based on selected attribute.
+ * @param {HTMLImageElement} imgEl - The image element to update.
+ * @param {string} slug - The product slug for building the image path.
+ * @param {string} attributeNumber - The selected attribute identifier.
+ */
 function animateImageChange(imgEl, slug, attributeNumber) {
   const card = imgEl.closest('.product-card');
   const isApparel = card.dataset.type === 'Apparel';
 
-  let newSrc;
-  if (isApparel) {
-    newSrc = imgEl.src.replace(
-      /\/[^/]+\.png$/,
-      `/${slug}.png`
-    );
-  } else {
-    newSrc = imgEl.src.replace(
-      /\/([^\/]+)-[^-]+-pack\.png$/,
-      `/${slug}-${attributeNumber}.png`
-    );
-  }
+  const newSrc = isApparel
+    ? imgEl.src.replace(/\/[^/]+\.png$/, `/${slug}.png`)
+    : imgEl.src.replace(/\/([^/]+)-[^-]+-pack\.png$/, `/${slug}-${attributeNumber}.png`);
 
   imgEl.classList.add('switching');
 
   const preloadImg = new Image();
-
   preloadImg.onload = () => {
     setTimeout(() => {
       imgEl.src = newSrc;
       imgEl.classList.remove('switching');
       imgEl.classList.add('transitioning');
-
-      setTimeout(() => {
-        imgEl.classList.remove('transitioning');
-      }, 400);
+      setTimeout(() => imgEl.classList.remove('transitioning'), 400);
     }, 100);
   };
 
@@ -201,7 +211,6 @@ function animateImageChange(imgEl, slug, attributeNumber) {
 
   preloadImg.src = newSrc;
 
-  // Fallback timeout
   setTimeout(() => {
     if (imgEl.classList.contains('switching')) {
       imgEl.src = newSrc;
@@ -212,8 +221,11 @@ function animateImageChange(imgEl, slug, attributeNumber) {
   }, 500);
 }
 
+/**
+ * Initializes additional shop enhancements.
+ * Handles lazy-loading image fade-ins and scroll animations for product cards.
+ */
 export function initShopEnhancements() {
-  // Fade in images when loaded
   document.querySelectorAll('.can-image').forEach(img => {
     if (!img.complete) {
       img.style.opacity = 0;
@@ -223,9 +235,8 @@ export function initShopEnhancements() {
     }
   });
 
-  // Animate cards on scroll
   if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
