@@ -38,7 +38,7 @@ namespace BobaLite.Services
         public async Task SendOrderConfirmationEmailAsync(string toEmail, string toName, string htmlBody, string subject)
         {
             var client = new SendGridClient(_apiKey);
-            var from = new EmailAddress("iammaxlichter@gmail.com", "BobaLite");
+            var from = new EmailAddress("drinkbobalite@gmail.com", "BobaLite");
             var to = new EmailAddress(toEmail, toName);
             var msg = MailHelper.CreateSingleEmail(from, to, subject, string.Empty, htmlBody);
 

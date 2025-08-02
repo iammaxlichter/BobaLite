@@ -65,7 +65,7 @@ namespace BobaLite.Controllers
                 await _email.SendOrderConfirmationEmailAsync(recipient, name, html, subject);
                 _logger.LogInformation("Order confirmation email sent to {Email}", recipient);
 
-                await _email.SendOrderConfirmationEmailAsync("iammaxlichter@gmail.com", "BobaLite Admin", html, $"[Copy] {subject}");
+                await _email.SendOrderConfirmationEmailAsync("drinkbobalite@gmail.com", "BobaLite Admin", html, $"[Copy] {subject}");
                 _logger.LogInformation("Order copy email sent to admin");
             }
             catch (Exception ex)

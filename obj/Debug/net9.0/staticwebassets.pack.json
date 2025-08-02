@@ -433,6 +433,10 @@
       "PackagePath": "staticwebassets\\images\\Shop\\taro-twist-tea-6-pack.png"
     },
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\email.png",
+      "PackagePath": "staticwebassets\\images\\icons\\email.png"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\icons\\facebook.png",
       "PackagePath": "staticwebassets\\images\\icons\\facebook.png"
     },

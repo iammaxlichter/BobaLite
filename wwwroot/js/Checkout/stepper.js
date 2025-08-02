@@ -25,22 +25,16 @@ export function initCheckoutStepper() {
      * - Other steps: Always enabled.
      */
     function updateNextState() {
-        console.log(`Updating next state for step ${currentStep}`);
 
         if (currentStep === 1) {
             const isValid = shippingForm && shippingForm.checkValidity();
-            console.log(`Billing form valid: ${isValid}`);
             next.disabled = !isValid;
         } else if (currentStep === 2) {
             const isValid = paymentForm && isPaymentFormValid();
-            console.log(`Payment form valid: ${isValid}`);
             next.disabled = !isValid;
         } else {
-            console.log(`Step ${currentStep}: Next enabled by default`);
             next.disabled = false;
         }
-
-        console.log(`Next button disabled: ${next.disabled}`);
     }
 
     /**
@@ -50,7 +44,6 @@ export function initCheckoutStepper() {
      * - Triggers a custom event for step change.
      */
     function showStep(idx) {
-        console.log(`Showing step ${idx}`);
         currentStep = idx;
 
         panels.forEach((p, i) => (p.style.display = i === idx ? 'block' : 'none'));
@@ -78,7 +71,6 @@ export function initCheckoutStepper() {
      */
     if (prev) {
         prev.addEventListener('click', () => {
-            console.log('Previous button clicked');
             if (currentStep > 0) {
                 showStep(currentStep - 1);
             }
@@ -92,39 +84,31 @@ export function initCheckoutStepper() {
      */
     if (next) {
         next.addEventListener('click', async (e) => {
-            console.log(`Next button clicked on step ${currentStep}`);
             e.preventDefault();
 
             if (currentStep === panels.length - 1) {
-                console.log('Placing order...');
                 await submitOrder();
                 return;
             }
 
             if (currentStep === 1) {
                 if (!shippingForm) {
-                    console.error('Billing form not found!');
                     return;
                 }
                 if (!shippingForm.checkValidity()) {
-                    console.log('Billing form invalid, showing validation errors');
                     shippingForm.reportValidity();
                     return;
                 }
-                console.log('Billing form valid, advancing...');
             }
 
             if (currentStep === 2) {
                 if (!paymentForm) {
-                    console.error('Payment form not found!');
                     return;
                 }
                 if (!isPaymentFormValid()) {
-                    console.log('Payment form invalid, showing validation errors');
                     paymentForm.reportValidity();
                     return;
                 }
-                console.log('Payment form valid, advancing...');
             }
 
             if (currentStep < panels.length - 1) {

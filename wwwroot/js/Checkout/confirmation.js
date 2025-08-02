@@ -68,12 +68,9 @@ export async function submitOrder() {
             if (placeBtn) placeBtn.style.display = 'none';
             if (prevBtn) prevBtn.style.display = 'none';
         } else {
-            const errText = await resp.text().catch(() => 'Unknown error');
-            console.error('Order failed:', resp.status, errText);
             if (summaryEl) summaryEl.innerHTML = '<p class="error-msg">Something went wrong. Please try again.</p>';
         }
     } catch (err) {
-        console.error('Order error:', err);
         if (summaryEl) summaryEl.innerHTML = `<p class="error-msg">Error: ${err.message}</p>`;
     } finally {
         if (btn) {
@@ -102,7 +99,6 @@ function renderSummary() {
         html += renderPayment(pay);
         html += renderTotal(cart);
     } catch (err) {
-        console.error('Error rendering summary:', err);
         html = '<p class="error-msg">Error loading order summary</p>';
     }
 

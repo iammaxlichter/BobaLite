@@ -64,8 +64,8 @@ namespace BobaLite.Controllers
             var htmlBody = BuildHtmlBody(form);
 
             var client = new SendGridClient(_sendGridKey);
-            var from = new EmailAddress("iammaxlichter@gmail.com", "BobaLite");
-            var to = new EmailAddress("iammaxlichter@gmail.com");
+            var from = new EmailAddress("drinkbobalite@gmail.com", "BobaLite");
+            var to = new EmailAddress("drinkbobalite@gmail.com");
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainBody, htmlBody);
 
             _logger.LogInformation("Sending email via SendGrid...");
