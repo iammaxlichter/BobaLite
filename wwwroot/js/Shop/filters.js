@@ -22,13 +22,6 @@ export function initFilterModal() {
 
   filterToggle.addEventListener('click', () => {
     filterModal.classList.add('active');
-
-    if (!document.querySelector('.filter-category.expanded')) {
-      const firstCategory = document.querySelector('.filter-category');
-      if (firstCategory) {
-        firstCategory.classList.add('expanded');
-      }
-    }
   });
 
   closeModal.addEventListener('click', () => {

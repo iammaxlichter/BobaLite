@@ -2532,8 +2532,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>nbth4d8hne</Fingerprint>
-      <Integrity>s0anAybHaO4we0goISznXnUqxniwOV5TmPP5LrPeAz4=</Integrity>
+      <Fingerprint>t556vsh3ut</Fingerprint>
+      <Integrity>X2FKdYIW8DjFrB+RD8AAG4CGTZajNdS4/Y7I7NRvN7E=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Shop\filters.js'))</OriginalItemSpec>
