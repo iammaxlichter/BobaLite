@@ -128,7 +128,12 @@ export function initPdp() {
     }
   }
 
-  variantSelect.addEventListener('change', updatePdp);
+  variantSelect.addEventListener('change', () => {
+  const customTextInput = container.querySelector('input[name="customText"]');
+  if (customTextInput) customTextInput.value = '';
+
+  updatePdp();
+  });
 
   /**
    * Handles the Add to Cart button click.
@@ -148,6 +153,7 @@ export function initPdp() {
       await addItemApi({ id: productId, attribute, quantity, customText });
       await refreshCart();
 
+      if (customTextInput) customTextInput.value = '';
       addBtn.classList.add('success');
       addBtn.textContent = 'Added!';
       setTimeout(() => {
