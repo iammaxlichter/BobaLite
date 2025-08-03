@@ -265,6 +265,10 @@
       "PackagePath": "staticwebassets\\images\\About\\signatures.png"
     },
     {
+      "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\About\\signatures2.png",
+      "PackagePath": "staticwebassets\\images\\About\\signatures2.png"
+    },
+    {
       "Id": "C:\\Users\\semiu\\Documents\\VS Code\\BobaLite\\wwwroot\\images\\Careers\\bobalite-careers-hero.png",
       "PackagePath": "staticwebassets\\images\\Careers\\bobalite-careers-hero.png"
     },
