@@ -1,7 +1,13 @@
-/* Billing & Payment Forms */
+/* ============================
+   Checkout Panel Form Reset
+============================ */
 .checkout-panel form {
   margin: 0;
 }
+
+/* ============================
+   Labels Styling
+============================ */
 .checkout-panel label {
   display: block;
   margin-bottom: 1rem;
@@ -9,58 +15,63 @@
   color: #333;
   font-weight: bold;
 }
+
+/* ============================
+   Inputs Styling
+============================ */
 .checkout-panel input {
   width: 100%;
   padding: 0.5rem;
-  font-size: .8rem;
+  font-size: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   transition: border-color 0.2s;
   font-weight: normal;
 }
+
 .checkout-panel input:focus {
   outline: none;
   border-color: #76C043;
 }
-/* mark required fields */
+
+/* ============================
+   Required Field Asterisk Styling
+============================ */
 .required {
-  color: #e74c3c;      /* red */
+  color: #e74c3c; /* red */
   margin-left: 0.25rem;
 }
 
-/* optional: style placeholder text */
-#billing-form input::placeholder {
+/* ============================
+   Placeholder Styling - Billing Form
+============================ */
+#shipping-form input::placeholder {
   color: #999;
   font-style: italic;
   font-weight: normal;
 }
-/* forms.css */
 
-/* red asterisk */
-.required {
-  color: #e74c3c;
-  margin-left: 0.25rem;
-}
-
-/* placeholder styling */
+/* ============================
+   Placeholder Styling - Payment Form
+============================ */
 #payment-form input::placeholder {
   color: #999;
   font-style: italic;
   font-weight: normal;
 }
 
-
-/* make the “same as shipping” toggle sit flush with the other fields */
+/* ============================
+   "Same as Shipping" Checkbox Layout
+============================ */
 #payment-form .billing-same {
   display: flex;
   align-items: center;
-  margin-top: 1rem;        /* space above, same as your other fields */
+  margin-top: 1rem; 
 }
 
-/* give the box a little breathing room */
 #payment-form .billing-same input[type="checkbox"] {
-  margin: 0 0.5rem 0 0;     /* 0 top/right, 0.5rem right, 0 left */
+  margin: 0 0.5rem 0 0; 
   width: 1rem;
   height: 1rem;
 }

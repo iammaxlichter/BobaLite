@@ -1,6 +1,13 @@
+@* 
+    Careers Search and No Jobs Sections
+    Provides a search form for open roles and displays a message when no jobs are available.
+*@
+
 <section class="careers-search">
   <div class="container">
     <h1>Join the BobaLite Fam</h1>
+    
+    <!-- Job Search Form -->
     <form asp-controller="Careers" asp-action="Index" method="get" class="job-search-form">
       <input type="text" name="q" class="job-search-input" placeholder="Search open roles…" />
       <button type="submit" class="job-search-btn">

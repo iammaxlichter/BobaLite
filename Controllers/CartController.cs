@@ -1,5 +1,9 @@
+// ───── Framework Usings ─────────────────────────────
 using Microsoft.AspNetCore.Mvc;
+
+// ───── Project Usings ───────────────────────────────
 using BobaLite.DTOs;
+using BobaLite.DTOs.Cart;
 using BobaLite.Services;
 
 namespace BobaLite.Controllers
@@ -9,12 +13,18 @@ namespace BobaLite.Controllers
     public class CartController : ControllerBase
     {
         private readonly ICartService _cart;
-        public CartController(ICartService cart) => _cart = cart;
 
+        #region Constructor
+        public CartController(ICartService cart) => _cart = cart;
+        #endregion
+
+        #region GET Methods
         [HttpGet]
         public ActionResult<CartDto> Get() =>
             Ok(_cart.GetCart());
+        #endregion
 
+        #region POST Methods
         [HttpPost("add")]
         public IActionResult Add([FromBody] AddToCartRequest dto)
         {
@@ -25,14 +35,14 @@ namespace BobaLite.Controllers
         [HttpPost("update")]
         public IActionResult Update([FromBody] UpdateCartRequest dto)
         {
-            _cart.UpdateQuantity(dto.ProductId, dto.Attribute, dto.Quantity);
+            _cart.UpdateQuantity(dto.ProductId, dto.Attribute, dto.Quantity, dto.CustomText);
             return NoContent();
         }
 
         [HttpDelete]
         public IActionResult Remove([FromBody] RemoveCartRequest dto)
         {
-            _cart.RemoveItem(dto.ProductId, dto.Attribute);
+            _cart.RemoveItem(dto.ProductId, dto.Attribute, dto.CustomText);
             return NoContent();
         }
 
@@ -42,10 +52,6 @@ namespace BobaLite.Controllers
             _cart.ClearCart();
             return NoContent();
         }
+        #endregion
     }
-
-    // incoming-payload DTOs
-    public record AddToCartRequest(int ProductId, string Attribute, int Quantity, string? CustomText);
-    public record UpdateCartRequest(int ProductId, string Attribute, int Quantity);
-    public record RemoveCartRequest(int ProductId, string Attribute);
 }

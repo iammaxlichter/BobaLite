@@ -1,112 +1,124 @@
 @model BobaLite.ViewModels.ShopViewModel
 
-<!-- Top Filter Bar -->
+@* 
+  Shop Page Filter UI
+  - Top bar shows current product count and active filters with remove buttons.
+  - Filter & Sort button toggles modal with filter options.
+  - Modal displays category groups; each group can have leaf options or be a leaf itself.
+  - Apply button submits selected filters; Reset clears selections.
+*@
+
+<!-- Top Filter Bar with toggle button, product count, and active filters -->
 <div class="filter-bar">
-    <button class="filter-toggle-btn" id="filterToggle">
-        <svg class="filter-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.207A1 1 0 013 6.5V4z"></path>
-        </svg>
-        Filter & Sort
-    </button>
-    <div class="product-count">
-        @Model.Products.Count() product(s)
-    </div>
-    <div class="active-filters">
-        @foreach (var slug in Model.ActiveCategories)
-        {
-            var option = Model.FilterGroups
-                    .SelectMany(g => g.Options)
-                    .FirstOrDefault(o => o.Slug == slug);
+  <button class="filter-toggle-btn" id="filterToggle" aria-label="Toggle filter modal">
+    <svg class="filter-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.207A1 1 0 013 6.5V4z" />
+    </svg>
+    Filter & Sort
+  </button>
 
-            if (option != null)
-                {
-                    var name = option.Name;
-                    <div class="filter-pill">
-                        @name
-                        <a class="remove-btn" href="@Url.Action("Index","Shop", new {
-                            categories = Model.ActiveCategories.Where(s => s != slug)
-                        })">x</a>
-                    </div>
-                }
+  <!-- Display the total count of products -->
+  <div class="product-count">
+    @Model.Products.Count() product(s)
+  </div>
 
-        }
-        @if (Model.ActiveCategories.Any())
-        {
-            <a href="@Url.Action("Index", "Shop")" class="clear-all-btn">Clear all</a>
-        }
-    </div>
+  <!-- Display active filter pills with option to remove each -->
+  <div class="active-filters">
+    @foreach (var slug in Model.ActiveCategories)
+    {
+      var option = Model.FilterGroups
+        .SelectMany(g => g.Options)
+        .FirstOrDefault(o => o.Slug == slug);
 
-    
+      if (option != null)
+      {
+        var name = option.Name;
+        <div class="filter-pill">
+          @name
+          <a class="remove-btn" href="@Url.Action("Index", "Shop", new {
+            categories = Model.ActiveCategories.Where(s => s != slug)
+          })" aria-label="Remove filter @name">x</a>
+        </div>
+      }
+    }
 
+    @* Show Clear All link only if any filters are active *@
+    @if (Model.ActiveCategories.Any())
+    {
+      <a href="@Url.Action("Index", "Shop")" class="clear-all-btn" aria-label="Clear all filters">Clear all</a>
+    }
+  </div>
 </div>
 
-<!-- Filter Modal -->
-<div class="filter-modal" id="filterModal">
-    <div class="filter-modal-content">
-        <div class="filter-modal-header">
-            <h3 class="filter-modal-title">FILTER & SORT</h3>
-            <button class="close-btn" id="closeModal">&times;</button>
-        </div>
-        
-        <form id="filter-form" method="get" action="@Url.Action("Index", "Shop")">
-            <div class="filter-modal-body">
-                @foreach (var group in Model.FilterGroups)
-                {
-                    <div class="filter-category" data-category="@group.Slug">
-                        <button type="button" class="category-header">
-                            @group.Name
-                            <span class="category-arrow">▼</span>
-                        </button>
-                        <div class="category-options">
-                            @if (!group.Options.Any())
-                            {
-                                <!-- Top-level leaf (Summer Sale, Misc) -->
-                                <div class="filter-option">
-                                    <input type="checkbox"
-                                            id="@group.Slug"
-                                            name="categories"
-                                            value="@group.Slug"
-                                            @(Model.ActiveCategories.Contains(group.Slug) ? "checked" : "") />
-                                    <label for="@group.Slug">
-                                        @group.Name
-                                        <span class="filter-count">
-                                            @{
-                                                var gMatch = Model.FilterGroups.FirstOrDefault(g => g.Slug == group.Slug);
-                                                var oMatch = gMatch?.Options.FirstOrDefault(o => o.Slug == group.Slug);
-                                                var count = oMatch?.Count ?? 0;
-                                            }
-                                            (@count)
-                                        </span>
-                                    </label>
-                                    </div>
-                                }
-                            else
-                            {
-                                <!-- Expandable group with leaf options -->
-                                @foreach (var opt in group.Options)
-                                {
-                                <div class="filter-option">
-                                    <input type="checkbox"
-                                        id="@opt.Slug"
-                                        name="categories"
-                                        value="@opt.Slug"
-                                        @(Model.ActiveCategories.Contains(opt.Slug) ? "checked" : "") />
-                                    <label for="@opt.Slug">
-                                    @opt.Name
-                                    <span class="filter-count">(@opt.Count)</span>
-                                    </label>
-                                </div>
-                                }
-                            }
-                        </div>
-                    </div>
-                }
-            </div>
-            
-            <div class="filter-modal-footer">
-                <button type="submit" class="apply-btn">APPLY</button>
-                <button type="button" class="reset-btn" id="resetFilters">Reset</button>
-            </div>
-        </form>
+<!-- Filter Modal dialog for selecting filters -->
+<div class="filter-modal" id="filterModal" role="dialog" aria-modal="true" aria-labelledby="filterModalTitle" hidden>
+  <div class="filter-modal-content">
+    <div class="filter-modal-header">
+      <h3 id="filterModalTitle" class="filter-modal-title">FILTER & SORT</h3>
+      <button class="close-btn" id="closeModal" aria-label="Close filter modal">&times;</button>
     </div>
+
+    <form id="filter-form" method="get" action="@Url.Action("Index", "Shop")" role="form">
+      <div class="filter-modal-body">
+        @foreach (var group in Model.FilterGroups)
+        {
+          <div class="filter-category" data-category="@group.Slug">
+            <button type="button" class="category-header" aria-expanded="false" aria-controls="options-@group.Slug">
+              @group.Name
+              <span class="category-arrow">▼</span>
+            </button>
+
+            <div id="options-@group.Slug" class="category-options" hidden>
+              @if (!group.Options.Any())
+              {
+                @* Leaf category without sub-options *@
+                <div class="filter-option">
+                  <input type="checkbox"
+                    id="@group.Slug"
+                    name="categories"
+                    value="@group.Slug"
+                    @(Model.ActiveCategories.Contains(group.Slug) ? "checked" : "") />
+                  <label for="@group.Slug">
+                    @group.Name
+                    <span class="filter-count">
+                      @{
+                        var gMatch = Model.FilterGroups.FirstOrDefault(g => g.Slug == group.Slug);
+                        var oMatch = gMatch?.Options.FirstOrDefault(o => o.Slug == group.Slug);
+                        var count = oMatch?.Count ?? 0;
+                      }
+                      (@count)
+                    </span>
+                  </label>
+                </div>
+              }
+              else
+              {
+                @* Category group with multiple leaf options *@
+                @foreach (var opt in group.Options)
+                {
+                  <div class="filter-option">
+                    <input type="checkbox"
+                      id="@opt.Slug"
+                      name="categories"
+                      value="@opt.Slug"
+                      @(Model.ActiveCategories.Contains(opt.Slug) ? "checked" : "") />
+                    <label for="@opt.Slug">
+                      @opt.Name
+                      <span class="filter-count">(@opt.Count)</span>
+                    </label>
+                  </div>
+                }
+              }
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="filter-modal-footer">
+        <button type="submit" class="apply-btn">APPLY</button>
+        <button type="button" class="reset-btn" id="resetFilters">Reset</button>
+      </div>
+    </form>
+  </div>
 </div>

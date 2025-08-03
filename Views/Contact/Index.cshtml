@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="~/css/Contact/main.css" />
 }
 
-<div class="contact-hero">
+<!-- Hero Banner -->
+<div class="hero-banner contact-hero">
     <img src="/images/Contact/bobalite-contact-hero.png" alt="Hero Image" />
 </div>
 
+<!-- Contact Form Partial -->
 @await Html.PartialAsync("_Form", Model ?? new ContactForm())
 
 @section Scripts {
     <partial name="_ViewImports" />
-    <script  type="module" src="~/js/Contact/main.js"></script> 
+    <script type="module" src="~/js/Contact/main.js"></script> 
 }

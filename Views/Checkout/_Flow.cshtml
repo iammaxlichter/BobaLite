@@ -1,6 +1,11 @@
-@* Views/Checkout/_Flow.cshtml *@
+@* 
+    Checkout Flow Partial
+    Displays the multi-step checkout process including step indicators, panels for each step,
+    and navigation buttons to move between steps.
+*@
+
 <div class="checkout-flow">
-  <!-- 1) Step indicator -->
+  <!--  Step indicator -->
   <ul class="checkout-steps">
     <li class="active">Review Cart</li>
     <li>Shipping </li>
@@ -8,7 +13,7 @@
     <li>Confirmation</li>
   </ul>
 
-  <!-- 2) Panels for each step (we’ll show/hide via JS) -->
+  <!-- Panels for each step -->
   <div class="checkout-panel" data-step="0">
     @await Html.PartialAsync("_CartReview")
   </div>
@@ -22,7 +27,7 @@
     @await Html.PartialAsync("_Confirmation")
   </div>
 
-  <!-- 3) Prev/Next buttons -->
+  <!-- Prev/Next buttons -->
   <div class="checkout-nav">
     <button id="prev-step" disabled>Previous</button>
     <button id="next-step">Next</button>

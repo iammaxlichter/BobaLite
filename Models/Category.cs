@@ -1,6 +1,11 @@
-// Models/Category.cs
+// ───── Framework Usings ─────────────────────────────
+using System.Collections.Generic;
+
 namespace BobaLite.Models
 {
+    /// <summary>
+    /// Represents a product category in the BobaLite application.
+    /// </summary>
     public class Category
     {
         public int Id { get; set; }
@@ -9,9 +14,6 @@ namespace BobaLite.Models
         public int? ParentCategoryId { get; set; }
         public Category? Parent { get; set; }
         public ICollection<Category> Children { get; set; } = new List<Category>();
-
-        // Many‐to‐many link to Product
-        public ICollection<ProductCategory> ProductCategories { get; set; }
-            = new List<ProductCategory>();
+        public ICollection<ProductCategory> ProductCategories { get; set; } = new List<ProductCategory>();
     }
 }

@@ -1,10 +1,15 @@
 @model IEnumerable<BobaLite.Models.Product>
 
-@{
-    var editId = ViewBag.EditProductId as int?;
-}
+@* 
+    Admin Products Management View
+    - Allows adding new products with variants and images.
+    - Displays a list of products with edit and delete options.
+    - Supports inline editing of selected product details.
+*@
 
 <section class="admin-products">
+
+    <!-- Add Products Form -->
     <h3>Add Products</h3>
     <form method="post" action="/Admin/AddProduct" class="add-product-form" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="New product name" required />
@@ -22,7 +27,7 @@
         <button type="submit">Add Product</button>
     </form>
 
-
+    <!-- Edit Products Table -->
     <h3>Edit Products</h3>
     <table class="admin-table">
         <thead>
@@ -36,6 +41,10 @@
             </tr>
         </thead>
         <tbody>
+            @{
+                var editId = ViewBag.EditProductId as int?;
+            }
+
             @foreach (var product in Model)
             {
                 var isEditing = editId == product.Id;
@@ -46,10 +55,12 @@
                         <form method="post" action="/Admin/SaveProduct" enctype="multipart/form-data">
                             <input type="hidden" name="productId" value="@product.Id" />
 
+                            <!-- Product Name -->
                             <td>
                                 <input type="text" name="newName" value="@product.Name" required style="width: 200px;" />
                             </td>
 
+                            <!-- Variant Stocks, Prices and Image Upload -->
                             <td>
                                 <ul style="list-style-type: none; padding-left: 0;">
                                     @for (int i = 0; i < product.Variants.Count; i++)
@@ -63,22 +74,24 @@
                                             <input type="number" name="newPrices" value="@variant.Price.ToString("0.00")" min="0" step="0.01" />
                                             <input type="file" name="variantImages[]" accept="image/*" />
                                         </li>
-
                                     }
                                 </ul>
                             </td>
 
+                            <!-- Product Categories -->
                             <td>
                                 <ul style="list-style-type: none; padding-left: 0;">
                                    @{
                                         var categories = (List<BobaLite.Models.Category>)ViewBag.AllCategories;
-                                        var childCategoryIds = new HashSet<int>(categories.Where(c => c.ParentCategoryId != null).Select(c => c.ParentCategoryId.Value));
+                                        var childCategoryIds = new HashSet<int>(
+                                            categories.Where(c => c.ParentCategoryId != null)
+                                                    .Select(c => c.ParentCategoryId!.Value)
+                                        );
                                     }
 
                                     @foreach (var category in categories.Where(c => !childCategoryIds.Contains(c.Id)))
                                     {
                                         var isChecked = product.ProductCategories.Any(pc => pc.CategoryId == category.Id);
-
                                         <li>
                                             <label>
                                                 <input type="checkbox" name="categoryIds" value="@category.Id" @(isChecked ? "checked" : "") />
@@ -89,16 +102,18 @@
                                 </ul>
                             </td>
 
-
+                            <!-- Is Active Checkbox -->
                             <td class="is-active-col">
                                 <input type="checkbox" name="isActive" value="true" @(product.IsActive ? "checked" : "") />
                             </td>
 
-
+                            <!-- Save and Cancel -->
                             <td>
-                                <button class=save-btn type="submit">Save</button>
+                                <button class="save-btn" type="submit">Save</button>
                                 <a href="/Admin/Index" class="cancel-btn">Cancel</a>
                             </td>
+
+                            <!-- Delete Product -->
                             <td>
                                 <form method="post" action="/Admin/DeleteProduct"
                                     onsubmit="return confirm('Are you sure you want to delete this product?');"
@@ -109,7 +124,6 @@
                             </td>
                         </form>
                     </tr>
-
                 }
                 else
                 {
@@ -140,14 +154,12 @@
                             </form>
                         </td>
                         <td>
-
                             <form method="post" action="/Admin/DeleteProduct"
                                 onsubmit="return confirm('Are you sure you want to delete this product?');"
                                 style="display:inline;">
                                 <input type="hidden" name="productId" value="@product.Id" />
                                 <button type="submit" class="delete-btn">Delete</button>
                             </form>
-
                         </td>
                     </tr>
                 }

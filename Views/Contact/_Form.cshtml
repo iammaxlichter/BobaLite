@@ -1,3 +1,8 @@
+@* 
+    Contact Form Partial
+    Collects user's name, email, and message with validation and displays success/error feedback.
+*@
+
 @model BobaLite.Models.ContactForm
 
 <div class="contact-form-wrapper">
@@ -6,31 +11,37 @@
     <form id="contact-form" asp-action="Index" asp-controller="Contact" method="post">
         @Html.AntiForgeryToken()
 
+        <!-- Name Input -->
         <div class="form-group">
             <label asp-for="Name"></label>
             <input asp-for="Name" class="form-control" placeholder="Your name" maxlength="50" />
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
 
+        <!-- Email Input -->
         <div class="form-group">
             <label asp-for="Email"></label>
             <input asp-for="Email" class="form-control" placeholder="you@example.com" maxlength="100" />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 
+        <!-- Message Textarea -->
         <div class="form-group">
             <label asp-for="Message"></label>
-            <textarea asp-for="Message" class="form-control" rows="5" placeholder="Type your message…"
-                maxlength="1000"></textarea>
+            <textarea asp-for="Message" class="form-control" rows="5" placeholder="Type your message…" maxlength="1000"></textarea>
             <span asp-validation-for="Message" class="text-danger"></span>
         </div>
 
+        <!-- Submit Button -->
         <button type="submit" class="btn btn-primary">Send Message</button>
 
+        <!-- Success Message -->
         @if (ViewBag.Success != null)
         {
             <div class="alert alert-success">@ViewBag.Success</div>
         }
+
+        <!-- Validation Errors -->
         @if (!ViewData.ModelState.IsValid)
         {
             <div class="alert alert-danger">

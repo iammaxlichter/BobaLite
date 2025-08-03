@@ -1,6 +1,8 @@
-// Models/ProductCategory.cs
 namespace BobaLite.Models
 {
+    /// <summary>
+    /// Represents the many-to-many relationship between a product and a category.
+    /// </summary>
     public class ProductCategory
     {
         public int ProductId { get; set; }

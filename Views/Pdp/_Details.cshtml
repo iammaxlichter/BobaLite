@@ -1,129 +1,139 @@
+@* 
+    Product Details Partial View (PDP)
+    Displays detailed information for a single product, including images, variant selection,
+    pricing, quantity, and optional custom message input.
+    Handles apparel-specific image display and disables sold-out variants appropriately.
+*@
+
 @using System.Globalization
 @model BobaLite.Models.Product
 
 @if (Model?.Variants == null || !Model.Variants.Any())
 {
-  <div class="alert alert-warning">
-    Sorry, we couldn't find any variants for this product.
-  </div>
+    <div class="alert alert-warning">
+        Sorry, we couldn't find any variants for this product.
+    </div>
 }
 else
 {
-  <section id="pdp-container" class="product-pdp container" data-product-id="@Model.Id">
-    <div class="pdp-grid">
-      <!-- LEFT: image gallery -->
-      <div class="pdp-images">
-        @{
-          var firstVariant = Model.Variants.OrderBy(v => v.Id).First();
-          var isApparel = Model.ProductCategories?.Any(pc =>
-              pc.Category?.Slug == "t-shirts" ||
-              pc.Category?.Slug == "hoodies" ||
-              pc.Category?.Slug == "pants" ||
-              pc.Category?.Slug == "shorts"
-          ) == true;
+    <section id="pdp-container" class="product-pdp container" data-product-id="@Model.Id">
+        <div class="pdp-grid">
 
-        }
-        <div class="thumbnails">
-          @if (isApparel)
-          {
-            // Apparel: show only first variant's images
-            foreach (var img in firstVariant.Images.OrderBy(i => i.SortOrder))
-            {
-              <div class="thumb-wrapper">
-                <img class="thumb"
-                     src="@img.Url"
-                     alt="@Model.Name"
-                     data-variant-id="@firstVariant.Id"
-                     data-url="@img.Url" />
-              </div>
-            }
-          }
-          else
-          {
-            // Drinks and others: show all variant images
-            foreach (var variant in Model.Variants)
-            {
-              foreach (var img in variant.Images.OrderBy(i => i.SortOrder))
-              {
-                var isOutOfStock = variant.Stock == 0;
-                <div class="thumb-wrapper @(isOutOfStock ? "disabled-thumb" : "")">
-                  <img class="thumb"
-                       src="@img.Url"
-                       alt="@Model.Name"
-                       data-variant-id="@variant.Id"
-                       data-url="@img.Url"
-                       @(isOutOfStock ? "data-disabled='true'" : "") />
+            @* LEFT COLUMN: Image gallery and zoom *@
+            <div class="pdp-images">
+                @{
+                    var firstVariant = Model.Variants.OrderBy(v => v.Id).First();
+                    var isApparel = Model.ProductCategories?.Any(pc =>
+                        pc.Category?.Slug == "t-shirts" ||
+                        pc.Category?.Slug == "hoodies" ||
+                        pc.Category?.Slug == "pants" ||
+                        pc.Category?.Slug == "shorts"
+                    ) == true;
+                }
+                <div class="thumbnails">
+                    @if (isApparel)
+                    {
+                        @* For apparel, show only first variant images *@
+                        foreach (var img in firstVariant.Images.OrderBy(i => i.SortOrder))
+                        {
+                            <div class="thumb-wrapper">
+                                <img class="thumb"
+                                     src="@img.Url"
+                                     alt="@Model.Name"
+                                     data-variant-id="@firstVariant.Id"
+                                     data-url="@img.Url" />
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        @* For drinks and others, show all variant images, disable sold-out thumbs *@
+                        foreach (var variant in Model.Variants)
+                        {
+                            foreach (var img in variant.Images.OrderBy(i => i.SortOrder))
+                            {
+                                var isOutOfStock = variant.Stock == 0;
+                                <div class="thumb-wrapper @(isOutOfStock ? "disabled-thumb" : "")">
+                                    <img class="thumb"
+                                         src="@img.Url"
+                                         alt="@Model.Name"
+                                         data-variant-id="@variant.Id"
+                                         data-url="@img.Url"
+                                         @(isOutOfStock ? "data-disabled='true'" : "") />
+                                </div>
+                            }
+                        }
+                    }
                 </div>
-              }
-            }
-          }
+
+                @* Main large image with zoom functionality *@
+                <div class="main-image-wrapper zoom-container">
+                    <img id="main-image" src="@firstVariant.PrimaryImageUrl" alt="@Model.Name" />
+                    <div id="zoom-lens"></div>
+                </div>
+            </div>
+
+            @* RIGHT COLUMN: Product information and purchase options *@
+            <div class="pdp-info">
+                <h1>@Model.Name</h1>
+
+                <div class="description">
+                    <p>@Html.Raw(Model.Description?.Replace("\n", "<br/>") ?? "")</p>
+                </div>
+
+                <div class="variant-selector">
+                    <label for="variant-select">Choose option:</label>
+                    <select id="variant-select">
+                        @foreach (var variant in Model.Variants)
+                        {
+                            var isOutOfStock = variant.Stock == 0;
+                            <option value="@variant.Id"
+                                    data-attribute="@variant.Attributes"
+                                    data-price="@variant.Price"
+                                    data-stock="@variant.Stock"
+                                    @(isOutOfStock ? "disabled" : "")>
+                                @variant.Attributes (@variant.Price.ToString("C", CultureInfo.GetCultureInfo("en-US"))) @(isOutOfStock ? " - Sold Out" : "")
+                            </option>
+                        }
+                    </select>
+                </div>
+
+                <div class="price" style="display:none;">
+                    <span id="pdp-price">
+                        @Model.Variants.First().Price.ToString("C", CultureInfo.GetCultureInfo("en-US"))
+                    </span>
+                </div>
+
+                <div class="quantity">
+                    <label for="pdp-quantity">Qty:</label>
+                    <input type="number"
+                           id="pdp-quantity"
+                           value="1"
+                           min="1"
+                           max="@Model.Variants.First().Stock"
+                           step="1"
+                           inputmode="numeric"
+                           pattern="[0-9]*" />
+                </div>
+
+                @* Show custom message input if applicable *@
+                @if (ViewData["ShowCustomText"] as bool? == true)
+                {
+                    <div class="custom-message">
+                        <label for="pdp-custom-text">Custom Message (Optional):</label>
+                        <input type="text"
+                               id="pdp-custom-text"
+                               name="customText"
+                               class="custom-text-input"
+                               maxlength="25"
+                               placeholder="Enter your custom message" />
+                    </div>
+                }
+
+                <button id="pdp-add-to-cart" @(Model.Variants.First().Stock == 0 ? "disabled" : "")>
+                    Add to Cart
+                </button>
+            </div>
         </div>
-        <div class="main-image-wrapper zoom-container">
-          <img id="main-image" src="@firstVariant.PrimaryImageUrl" alt="@Model.Name" />
-          <div id="zoom-lens"></div>
-        </div>
-      </div>
-
-      <!-- RIGHT: product info & purchase -->
-      <div class="pdp-info">
-        <h1>@Model.Name</h1>
-
-        <div class="description">
-          <p>@Html.Raw(Model.Description?.Replace("\n", "<br/>") ?? "")</p>
-        </div>
-
-        <div class="variant-selector">
-          <label for="variant-select">Choose option:</label>
-          <select id="variant-select">
-            @foreach (var variant in Model.Variants)
-            {
-              var isOutOfStock = variant.Stock == 0;
-              <option value="@variant.Id"
-                      data-attribute="@variant.Attributes"
-                      data-price="@variant.Price"
-                      data-stock="@variant.Stock"
-                      @(isOutOfStock ? "disabled" : "")>
-                @variant.Attributes (@variant.Price.ToString("C", CultureInfo.GetCultureInfo("en-US"))) @(isOutOfStock ? " - Sold Out" : "")
-              </option>
-            }
-          </select>
-        </div>
-
-        <div class="price">
-          <span id="pdp-price">
-            @Model.Variants.First().Price.ToString("C", CultureInfo.GetCultureInfo("en-US"))
-          </span>
-        </div>
-
-        <div class="quantity">
-          <label for="pdp-quantity">Qty:</label>
-          <input type="number"
-                 id="pdp-quantity"
-                 value="1"
-                 min="1"
-                 max="@Model.Variants.First().Stock"
-                 step="1"
-                 inputmode="numeric"
-                 pattern="[0-9]*" />
-        </div>
-
-        @if (ViewData["ShowCustomText"] as bool? == true)
-        {
-          <div class="custom-message">
-            <label for="pdp-custom-text">Custom Message (Optional):</label>
-            <input type="text"
-                   id="pdp-custom-text"
-                   name="customText"
-                   class="custom-text-input"
-                   maxlength="25"
-                   placeholder="Enter your custom message" />
-          </div>
-        }
-
-        <button id="pdp-add-to-cart" @(Model.Variants.First().Stock == 0 ? "disabled" : "")>
-          Add to Cart
-        </button>
-      </div>
-    </div>
-  </section>
+    </section>
 }

@@ -6,15 +6,18 @@
     <link rel="stylesheet" href="~/css/Homepage/main.css" />
 }
 
+<!-- Banner with free shipping message -->
 <div id="banner" class="banner">
     <span class="banner-text">FREE SHIPPING on orders $25!</span>
-    <button id="banner-close" class="banner-close">✕</button>
+    <button id="banner-close" class="banner-close" aria-label="Close banner">✕</button>
 </div>
 
+<!-- Hero Image -->
 <div class="hero">
     <img src="/images/Homepage/bobalite-homepage.png" alt="BobaLite hero">
 </div>
 
+<!-- Homepage Sections -->
 @await Html.PartialAsync("_Features")   
 @await Html.PartialAsync("_Promo")      
 @await Html.PartialAsync("_Customize")   

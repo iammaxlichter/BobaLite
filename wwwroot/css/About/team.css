@@ -1,69 +1,89 @@
+/* ============================
+   Team Section Container
+============================ */
 .team-section {
-    padding: 3rem 2rem;
-    background-color: #3C3C3C;
-    text-align: center;
-    color: #fdfdfd;
+  padding: 3rem 2rem;
+  background-color: #3C3C3C;
+  text-align: center;
+  color: #fdfdfd;
 }
 
 .team-section h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: 1px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
+/* ============================
+   Team Introduction Text
+============================ */
 .team-intro {
-    max-width: 600px;
-    margin: 0 auto 2.5rem auto;
-    font-size: 1rem;
-    color: #e7e7e7;
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 1rem;
+  color: #e7e7e7;
 }
 
+/* ============================
+   Team Grid Layout
+============================ */
 .team-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
-.team-pic {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 8px;
-    background-color: #f0f0f0;
-    border: 4px solid #dcdcdc; /* light border */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* soft shadow */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
 
-.team-pic img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Keeps proportions and fills box */
-    display: block;
-}
-
+/* ============================
+   Individual Team Member Card
+============================ */
 .team-member {
-    width: 250px;
+  width: 250px;
 }
 
 .team-member img {
-    width: 100%;
-    border-radius: 4px;
+  width: 100%;
+  border-radius: 4px;
 }
 
 .team-member h4 {
-    margin: 1rem 0 0.25rem 0;
-    font-size: 1.1rem;
-    font-weight: bold;
+  margin: 1rem 0 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .team-member p {
-    font-size: 0.95rem;
-    color: #e9e9e9;
+  font-size: 0.95rem;
+  color: #e9e9e9;
 }
 
-.join-team-cta{
-    padding-bottom:4rem;
+/* ============================
+   Team Picture Container & Image
+============================ */
+.team-pic {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  border: 4px solid #dcdcdc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
+
+.team-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================
+   Join Team Call to Action
+============================ */
+.join-team-cta {
+  padding-bottom: 4rem;
+}
+
 .btn-join-team {
   display: inline-block;
   margin-top: 1rem;

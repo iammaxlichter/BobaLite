@@ -1,4 +1,15 @@
-// navbar.js
+/**
+ * @fileoverview
+ * Handles navbar functionality including:
+ *  - Navbar loading and drawer initialization
+ *  - Search drawer toggle and product search functionality
+ */
+
+let productList = [];
+
+/**
+ * Loads the navbar and initializes the drawer if the navbar container exists.
+ */
 export function loadNavbar() {
   const container = document.getElementById('navbar');
   if (!container) return;
@@ -6,21 +17,28 @@ export function loadNavbar() {
   initDrawer();
 }
 
+/**
+ * Initializes the navigation drawer.
+ * Handles opening, closing, and toggling sub-links within the drawer.
+ */
 export function initDrawer() {
   const toggleBtn = document.getElementById('menu-toggle');
   const drawer = document.getElementById('nav-drawer');
   const backdrop = document.getElementById('drawer-backdrop');
   const closeBtn = document.getElementById('drawer-close');
+
   if (!(toggleBtn && drawer && backdrop && closeBtn)) return;
 
   toggleBtn.addEventListener('click', () => {
     drawer.classList.add('open');
     backdrop.classList.add('active');
   });
+
   closeBtn.addEventListener('click', () => {
     drawer.classList.remove('open');
     backdrop.classList.remove('active');
   });
+
   backdrop.addEventListener('click', () => {
     drawer.classList.remove('open');
     backdrop.classList.remove('active');
@@ -33,19 +51,23 @@ export function initDrawer() {
   });
 }
 
-
-let productList = [];
-
+/**
+ * Initializes the search functionality.
+ * Handles:
+ *  - Opening and closing the search drawer
+ *  - Fetching product data
+ *  - Filtering and rendering search results
+ */
 export function initSearch() {
   const searchToggle = document.getElementById('search-toggle');
   const searchDrawer = document.getElementById('search-drawer');
   const searchInput = document.getElementById('search-input');
   const resultsList = document.getElementById('search-results');
-  document.addEventListener('click', (e) => {
+
+  document.addEventListener('click', e => {
     const drawer = document.getElementById('search-drawer');
     const toggle = document.getElementById('search-toggle');
 
-    // Close if click is outside both the drawer and the toggle button
     if (
       drawer.classList.contains('active') &&
       !drawer.contains(e.target) &&
@@ -54,6 +76,7 @@ export function initSearch() {
       drawer.classList.remove('active');
     }
   });
+
   if (!(searchToggle && searchDrawer && searchInput && resultsList)) return;
 
   searchToggle.addEventListener('click', () => {
@@ -65,7 +88,7 @@ export function initSearch() {
 
   fetch('/api/products/search')
     .then(res => res.json())
-    .then(data => productList = data);
+    .then(data => (productList = data));
 
   searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase().trim();
@@ -83,8 +106,6 @@ export function initSearch() {
         return aStarts - bStarts;
       });
 
-
-
     matches.forEach(product => {
       const li = document.createElement('li');
       li.classList.add('search-result-item');
@@ -99,4 +120,3 @@ export function initSearch() {
     });
   });
 }
-

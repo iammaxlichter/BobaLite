@@ -13,22 +13,26 @@
 {
     <section class="admin-dashboard">
         <div class="container">
+
+            <!-- Logout Form -->
             <form action="/Admin/Logout" method="post">
                 <button type="submit" class="logout-btn">Logout</button>
             </form>
-            
+
             <h2>Welcome, @User.Identity.Name!</h2>
 
-            <!-- Inject other partials here -->
+            <!-- Manage Products Partial -->
             @await Html.PartialAsync("_ManageProducts", Model)
-            @await Html.PartialAsync("_CategoryManager", (List<BobaLite.Models.Category>)ViewBag.AllCategories)
 
+            <!-- Category Manager Partial -->
+            @await Html.PartialAsync("_CategoryManager", (List<BobaLite.Models.Category>)ViewBag.AllCategories)
         
         </div>
     </section>
 }
 else
 {
+    <!-- Show Login Partial if not authenticated -->
     @await Html.PartialAsync("_Login")
 }
 

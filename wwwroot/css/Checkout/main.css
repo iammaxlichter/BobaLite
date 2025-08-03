@@ -1,8 +1,25 @@
-
-@import url("hero.css");
 @import url("stepper.css");
 @import url("cart-review.css");
 @import url("forms.css");
 @import url("navigation.css");
 @import url("confirmation.css");
 @import url("responsive.css");
+
+/* ============================
+   Checkout Hero Background
+============================ */
+.checkout-hero {
+  --hero-bg: linear-gradient(
+    90deg,
+    #f25c54 0%,
+    #2f3e46 50%,
+    #70c1b3 100%
+  );
+}
+
+/* ============================
+   Checkout Hero Image Margin
+============================ */
+.checkout-hero img {
+  margin-bottom: -34px;
+}

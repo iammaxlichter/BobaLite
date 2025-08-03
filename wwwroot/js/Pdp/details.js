@@ -1,5 +1,18 @@
+/**
+ * Product Details Page (PDP) interactions.
+ *
+ * - Handles zoom lens for product images (desktop only).
+ * - Manages variant selection, stock updates, price display, and thumbnails.
+ * - Integrates with the cart API to add items and refresh cart state.
+ * - Updates UI feedback for add-to-cart button.
+ */
+
 import { addItemApi, refreshCart } from '/js/Shared/cart.js';
 
+/**
+ * Initializes the zoom lens feature for the main product image.
+ * - Disabled for touch devices.
+ */
 export function zoomLens() {
   if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
 
@@ -13,6 +26,9 @@ export function zoomLens() {
   container.addEventListener('mouseenter', showLens);
   container.addEventListener('mouseleave', hideLens);
 
+  /**
+   * Displays the zoom lens and prepares background scaling.
+   */
   function showLens() {
     lens.style.visibility = 'visible';
     lens.style.backgroundImage = `url(${mainImage.src})`;
@@ -20,10 +36,17 @@ export function zoomLens() {
     lens.style.backgroundSize = `${mainImage.width * zoomScale}px ${mainImage.height * zoomScale}px`;
   }
 
+  /**
+   * Hides the zoom lens.
+   */
   function hideLens() {
     lens.style.visibility = 'hidden';
   }
 
+  /**
+   * Moves the zoom lens according to mouse position and updates background offset.
+   * @param {MouseEvent} e
+   */
   function moveLens(e) {
     const rect = container.getBoundingClientRect();
     const x = e.clientX - rect.left - lens.offsetWidth / 2;
@@ -43,6 +66,10 @@ export function zoomLens() {
   }
 }
 
+/**
+ * Initializes the Product Details Page (PDP) logic.
+ * - Manages variant selection, pricing, stock, thumbnails, and add-to-cart actions.
+ */
 export function initPdp() {
   const container = document.getElementById('pdp-container');
   if (!container) return;
@@ -57,11 +84,15 @@ export function initPdp() {
 
   if (!variantSelect || !mainImage || !priceEl || !qtyInput || !addBtn) return;
 
+  // Prevent invalid characters in quantity input
   qtyInput.addEventListener('keydown', e => {
     const invalidKeys = ['e', 'E', '+', '-', '.'];
     if (invalidKeys.includes(e.key)) e.preventDefault();
   });
 
+  /**
+   * Updates the PDP UI based on selected variant.
+   */
   function updatePdp() {
     const opt = variantSelect.selectedOptions[0];
     const price = parseFloat(opt.dataset.price) || 0;
@@ -83,7 +114,6 @@ export function initPdp() {
       mainImage.src = newSrc;
       if (lens) lens.style.backgroundImage = `url(${newSrc})`;
 
-      // Re-highlight the matching thumbnail
       container.querySelectorAll('.thumb-wrapper').forEach(wrapper => {
         wrapper.classList.remove('active');
       });
@@ -96,11 +126,18 @@ export function initPdp() {
         }
       }
     }
-
   }
 
-  variantSelect.addEventListener('change', updatePdp);
+  variantSelect.addEventListener('change', () => {
+  const customTextInput = container.querySelector('input[name="customText"]');
+  if (customTextInput) customTextInput.value = '';
 
+  updatePdp();
+  });
+
+  /**
+   * Handles the Add to Cart button click.
+   */
   addBtn.addEventListener('click', async () => {
     const opt = variantSelect.selectedOptions[0];
     const attribute = opt.dataset.attribute || '';
@@ -116,6 +153,7 @@ export function initPdp() {
       await addItemApi({ id: productId, attribute, quantity, customText });
       await refreshCart();
 
+      if (customTextInput) customTextInput.value = '';
       addBtn.classList.add('success');
       addBtn.textContent = 'Added!';
       setTimeout(() => {
@@ -124,7 +162,6 @@ export function initPdp() {
         addBtn.disabled = false;
       }, 1200);
     } catch (err) {
-      console.error('Failed to add to cart:', err);
       addBtn.textContent = 'Error!';
       setTimeout(() => {
         addBtn.textContent = originalText;
@@ -133,10 +170,12 @@ export function initPdp() {
     }
   });
 
-
+  /**
+   * Handles thumbnail click events to update the main image and variant.
+   */
   container.querySelectorAll('.thumb').forEach(thumb => {
     thumb.addEventListener('click', () => {
-      if (thumb.dataset.disabled === 'true') return; 
+      if (thumb.dataset.disabled === 'true') return;
 
       const variantId = thumb.dataset.variantId;
       const imgUrl = thumb.dataset.url;
@@ -156,7 +195,6 @@ export function initPdp() {
       }
     });
   });
-
 
   const firstThumb = container.querySelector('.thumb-wrapper');
   if (firstThumb) firstThumb.classList.add('active');

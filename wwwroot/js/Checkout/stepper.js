@@ -2,6 +2,12 @@
 import { isPaymentFormValid } from './paymentForm.js';
 import { submitOrder } from './confirmation.js';
 
+/**
+ * Initializes the checkout stepper functionality:
+ * - Controls navigation between steps.
+ * - Validates forms at each step.
+ * - Updates button states and triggers order submission.
+ */
 export function initCheckoutStepper() {
     const panels = Array.from(document.querySelectorAll('.checkout-panel'));
     const steps = Array.from(document.querySelectorAll('.checkout-steps li'));
@@ -9,51 +15,41 @@ export function initCheckoutStepper() {
     const next = document.getElementById('next-step');
     let currentStep = 0;
 
-    const billingForm = document.getElementById('billing-form');
+    const shippingForm = document.getElementById('shipping-form');
     const paymentForm = document.getElementById('payment-form');
 
-    /** Enable/disable Next based on which step we're on */
+    /**
+     * Updates the "Next" button's enabled/disabled state:
+     * - Step 1: Requires shipping form validity.
+     * - Step 2: Requires payment form validity.
+     * - Other steps: Always enabled.
+     */
     function updateNextState() {
-        console.log(`Updating next state for step ${currentStep}`); // Debug log
-        
+
         if (currentStep === 1) {
-            // On Shipping & Billing, disable until form is valid
-            const isValid = billingForm && billingForm.checkValidity();
-            console.log(`Billing form valid: ${isValid}`); // Debug log
+            const isValid = shippingForm && shippingForm.checkValidity();
             next.disabled = !isValid;
         } else if (currentStep === 2) {
-            // On Payment, disable until form is valid with custom validation
             const isValid = paymentForm && isPaymentFormValid();
-            console.log(`Payment form valid: ${isValid}`); // Debug log
             next.disabled = !isValid;
         } else {
-            // Otherwise always enabled (cart review and confirmation)
-            console.log(`Step ${currentStep}: Next enabled by default`); // Debug log
             next.disabled = false;
         }
-        
-        console.log(`Next button disabled: ${next.disabled}`); // Debug log
     }
 
-    /** Show the panel at `idx`, update buttons, step indicator, and broadcast event */
+    /**
+     * Displays the panel for the specified step:
+     * - Hides other panels and updates step indicators.
+     * - Updates button labels and states.
+     * - Triggers a custom event for step change.
+     */
     function showStep(idx) {
-        console.log(`Showing step ${idx}`); // Debug log
         currentStep = idx;
-        
-        // Hide all panels, show current one
-        panels.forEach((p, i) => {
-            p.style.display = i === idx ? 'block' : 'none';
-        });
-        
-        // Update step indicators
-        steps.forEach((s, i) => {
-            s.classList.toggle('active', i === idx);
-        });
-        
-        // Update Previous button
+
+        panels.forEach((p, i) => (p.style.display = i === idx ? 'block' : 'none'));
+        steps.forEach((s, i) => s.classList.toggle('active', i === idx));
         prev.disabled = idx === 0;
-        
-        // Update Next/Place Order button
+
         if (idx === panels.length - 1) {
             next.textContent = 'Place Order';
             next.id = 'place-order';
@@ -64,114 +60,89 @@ export function initCheckoutStepper() {
 
         updateNextState();
 
-        // Broadcast that we've moved to a new step (detail.step is zero‑based)
         document.dispatchEvent(new CustomEvent('checkoutStepChange', {
             detail: { step: currentStep }
         }));
     }
 
-    // Previous button handler
+    /**
+     * Handles the Previous button click:
+     * - Moves one step backward if not already at the first step.
+     */
     if (prev) {
         prev.addEventListener('click', () => {
-            console.log('Previous button clicked');
             if (currentStep > 0) {
                 showStep(currentStep - 1);
             }
         });
     }
 
-    // Next button handler
+    /**
+     * Handles the Next button click:
+     * - If at the last step, submits the order.
+     * - Validates forms before advancing.
+     */
     if (next) {
         next.addEventListener('click', async (e) => {
-            console.log(`Next button clicked on step ${currentStep}`);
-            e.preventDefault(); // Prevent any default form submission
-            
-            // If we're on the final step (confirmation), place the order
+            e.preventDefault();
+
             if (currentStep === panels.length - 1) {
-                console.log('Placing order...');
                 await submitOrder();
                 return;
             }
 
-            // Validate current step before advancing
             if (currentStep === 1) {
-                if (!billingForm) {
-                    console.error('Billing form not found!');
+                if (!shippingForm) {
                     return;
                 }
-                if (!billingForm.checkValidity()) {
-                    console.log('Billing form invalid, showing validation errors');
-                    billingForm.reportValidity();
+                if (!shippingForm.checkValidity()) {
+                    shippingForm.reportValidity();
                     return;
                 }
-                console.log('Billing form valid, advancing...');
             }
-            
+
             if (currentStep === 2) {
                 if (!paymentForm) {
-                    console.error('Payment form not found!');
                     return;
                 }
                 if (!isPaymentFormValid()) {
-                    console.log('Payment form invalid, showing validation errors');
                     paymentForm.reportValidity();
                     return;
                 }
-                console.log('Payment form valid, advancing...');
             }
 
-            // Advance to next step
             if (currentStep < panels.length - 1) {
                 showStep(currentStep + 1);
             }
         });
     }
 
-    // Listen for form validation changes
+    /**
+     * Listens for a custom validation change event:
+     * - Updates the Next button whenever form validity changes externally.
+     */
     document.addEventListener('formValidationChange', () => {
-        console.log('Form validation change event received');
         updateNextState();
     });
 
-    // Re‑check validity on input so Next toggles live
-    if (billingForm) {
-        billingForm.addEventListener('input', (e) => {
-            console.log('Billing form input changed:', e.target.name);
+    /**
+     * Sets up live validation for the billing form:
+     * - Updates the Next button on input and change events.
+     */
+    if (shippingForm) {
+        shippingForm.addEventListener('input', (e) => {
             updateNextState();
         });
-        
-        // Also listen for change events (for dropdowns, etc.)
-        billingForm.addEventListener('change', (e) => {
-            console.log('Billing form change:', e.target.name);
+
+        shippingForm.addEventListener('change', (e) => {
             updateNextState();
-        });
-    }
-    
-    if (paymentForm) {
-        // Use a more frequent check for payment form since we have custom validation
-        paymentForm.addEventListener('input', (e) => {
-            console.log('Payment form input changed:', e.target.name);
-            // Small delay to allow formatting to complete
-            setTimeout(updateNextState, 10);
-        });
-        
-        paymentForm.addEventListener('keyup', (e) => {
-            console.log('Payment form keyup:', e.target.name);
-            setTimeout(updateNextState, 10);
-        });
-        
-        paymentForm.addEventListener('change', (e) => {
-            console.log('Payment form change:', e.target.name);
-            setTimeout(updateNextState, 10);
         });
     }
 
-    // Initialize - show first step
-    console.log('Initializing stepper...');
+    /**
+     * Initializes the stepper:
+     * - Shows the first step.
+     * - Logs initial debug information.
+     */
     showStep(0);
-    
-    // Log some debug info
-    console.log(`Found ${panels.length} panels and ${steps.length} steps`);
-    console.log('Billing form:', billingForm);
-    console.log('Payment form:', paymentForm);
 }

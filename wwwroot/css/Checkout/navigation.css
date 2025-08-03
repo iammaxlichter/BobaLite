@@ -1,71 +1,78 @@
-/* Navigation Buttons */
+/* ============================
+   Checkout Navigation Container
+============================ */
 .checkout-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
 }
 
+/* ============================
+   Checkout Navigation Buttons Base
+============================ */
 .checkout-nav button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s, opacity 0.2s;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
 }
 
+/* ============================
+   Previous Step Button
+============================ */
 #prev-step {
-    order: 1; /* Back to the left */
-}
-
-.go-shop-btn {
-    order: 2;
-    font-weight: bold;
-    margin: 0;
-    background: #f0f0f0;
-    color: #333;
-    border: none;
-    border-radius: 4px;
-    padding: 0.75rem 1.5rem;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.go-shop-btn:hover {
-    background: #e0e0e0;
-}
-
-#next-step,
-#place-order {
-    order: 3; /* Back to the right */
-}
-
-#prev-step {
-    background: #f0f0f0;
-    color: #333;
-    font-weight: bold;
+  order: 1;
+  background: #f0f0f0;
+  color: #333;
+  font-weight: bold;
 }
 
 #prev-step:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
+/* ============================
+   Go Shop Button
+============================ */
+.go-shop-btn {
+  order: 2;
+  font-weight: bold;
+  margin: 0;
+  background: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.go-shop-btn:hover {
+  background: #e0e0e0;
+}
+
+/* ============================
+   Next Step & Place Order Buttons
+============================ */
 #next-step,
 #place-order {
-    background: #70c1b3;
-    color: #fff;
-    font-weight: bold;
+  order: 3;
+  background: #70c1b3;
+  color: #fff;
+  font-weight: bold;
 }
 
 #next-step:hover:not(:disabled),
 #place-order:hover:not(:disabled) {
-    background: #5ea79f;
+  background: #5ea79f;
 }
 
 #next-step:disabled,
 #place-order:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  opacity: 0.5;
+  cursor: not-allowed;
 }

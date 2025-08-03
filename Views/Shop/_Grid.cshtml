@@ -1,4 +1,12 @@
 @model IEnumerable<BobaLite.Models.Product>
+
+@* 
+  Product Grid Section
+  - Displays products as cards with image, name, price, and stock info.
+  - Variants are sorted by numeric or size label.
+  - Shows stock labels (Out of Stock / Low stock) and disables buttons accordingly.
+*@
+
 @{
   const int lowThreshold = 10;
 }
@@ -6,84 +14,94 @@
 <section class="product-grid">
   @foreach (var product in Model)
   {
+    if (product?.Variants == null || !product.Variants.Any())
+    {
+        continue;
+    }
+
     var slug = product.Name.ToLowerInvariant().Replace(" ", "-");
     bool isApparel = product.Type == "Apparel";
 
+    // Prepare sorted variant list
     var variants = product.Variants
-    .Select(v => new
-    {
-      V = v,
-      RawLabel = v.Attributes,
-      Label = v.Attributes.Contains("-")
-    ? v.Attributes.Split('-')[0]
-    : v.Attributes
-    })
-    .OrderBy(x =>
-    {
-      if (int.TryParse(x.Label, out var n)) return n;
-      return x.Label switch
+      .Select(v => new
       {
-        "S" => 100,
-        "M" => 101,
-        "L" => 102,
-        "XL" => 103,
-        _ => 999
-      };
-    })
-    .ToList();
+        V = v,
+        RawLabel = v.Attributes,
+        Label = !string.IsNullOrEmpty(v.Attributes) && v.Attributes.Contains("-") 
+          ? v.Attributes.Split('-')[0] 
+          : v.Attributes ?? string.Empty
 
-    var firstE = variants.FirstOrDefault(x => x.RawLabel.StartsWith("1-")) ?? variants.First();
+      })
+      .OrderBy(x =>
+      {
+        if (int.TryParse(x.Label, out var n)) return n;
+        return x.Label switch
+        {
+          "S" => 100,
+          "M" => 101,
+          "L" => 102,
+          "XL" => 103,
+          _ => 999
+        };
+      })
+      .ToList();
+
+    if (!variants.Any()) { continue; }
+
+    var firstE = variants.FirstOrDefault(x => !string.IsNullOrEmpty(x.RawLabel) && x.RawLabel.StartsWith("1-"))
+    ?? variants.First();
     var stock1 = firstE.V.Stock;
     var cardClass = stock1 == 0 ? "out-of-stock" : (stock1 < lowThreshold ? "low-stock" : "");
 
-    <div class="product-card @cardClass" data-id="@product.Id" data-name="@product.Name" data-slug="@slug"
-      data-type="@product.Type">
+  <div class="product-card @cardClass" data-id="@product.Id" data-name="@product.Name" data-slug="@slug"
+    data-type="@product.Type">
 
-      @* Stock label *@
-      @if (stock1 == 0)
+    @* Stock label *@
+    @if (stock1 == 0)
+    {
+      <div class="stock-label">Out of Stock</div>
+    }
+    else if (stock1 < lowThreshold)
+    {
+      <div class="stock-label">Low stock: @stock1 left</div>
+    }
+
+    @* Product image linked to details page *@
+    @{
+      var fileName = isApparel ? $"{slug}.png" : $"{slug}-{firstE.RawLabel}.png";
+    }
+    <a class="image-wrapper" href="/Product/Details/@product.Id">
+      <img class="can-image" src="@Url.Content($"~/images/Shop/{fileName}")" alt="@product.Name" />
+    </a>
+
+    @* Product name linked to details page *@
+    <a href="/Product/Details/@product.Id">
+      <h3>@product.Name</h3>
+    </a>
+
+    @* Price of selected variant *@
+    <p class="price">@firstE.V.Price.ToString("C")</p>
+
+    @* Variant attribute buttons *@
+    <div class="attribute-options">
+      @foreach (var e in variants)
       {
-        <div class="stock-label">Out of Stock</div>
+        var is0 = e.V.Stock == 0;
+        <button class="attribute-btn @(e.Label == firstE.Label ? "active" : "")" data-attribute="@e.RawLabel"
+          data-price="@e.V.Price.ToString("F2")" data-stock="@e.V.Stock" @(is0 ? "disabled" : "")>
+          @e.Label
+        </button>
       }
-      else if (stock1 < lowThreshold)
-      {
-        <div class="stock-label">Low stock: @stock1 left</div>
-      }
-
-      @* Image *@
-      @{
-        var fileName = isApparel
-        ? $"{slug}.png"
-        : $"{slug}-{firstE.RawLabel}.png";
-      }
-
-      <a class="image-wrapper" href="/Product/Details/@product.Id">
-        <img class="can-image" src="@Url.Content($"~/images/Shop/{fileName}")" alt="@product.Name" />
-      </a>
-
-      <a href="/Product/Details/@product.Id">
-        <h3>@product.Name</h3>
-      </a>
-      <p class="price">@firstE.V.Price.ToString("C")</p>
-
-      @* Attribute buttons *@
-      <div class="attribute-options">
-        @foreach (var e in variants)
-        {
-          var is0 = e.V.Stock == 0;
-          <button class="attribute-btn @(e.Label == firstE.Label ? "active" : "")" data-attribute="@e.RawLabel"
-            data-price="@e.V.Price.ToString("F2")" data-stock="@e.V.Stock" @(is0 ? "disabled" : "")>
-            @e.Label
-          </button>
-        }
-      </div>
-
-      @* Add to cart button *@
-      <button class="add-cart-icon" data-attribute="@firstE.RawLabel" data-price="@firstE.V.Price.ToString("F2")"
-        aria-label="Add to cart" @(stock1 == 0 ? "disabled" : "")>
-        <img src="@Url.Content("~/images/Shop/shopping-cart-plus.png")"
-          data-plus="@Url.Content("~/images/Shop/shopping-cart-plus.png")"
-          data-check="@Url.Content("~/images/Shop/shopping-cart-check.png")" alt="" />
-      </button>
     </div>
+
+    @* Add to cart button, disabled if out of stock *@
+    <button class="add-cart-icon" data-attribute="@firstE.RawLabel" data-price="@firstE.V.Price.ToString("F2")"
+      aria-label="Add to cart" @(stock1 == 0 ? "disabled" : "")>
+      <img src="@Url.Content("~/images/Shop/shopping-cart-plus.png")"
+        data-plus="@Url.Content("~/images/Shop/shopping-cart-plus.png")"
+        data-check="@Url.Content("~/images/Shop/shopping-cart-check.png")" alt="" />
+    </button>
+  </div>
   }
 </section>

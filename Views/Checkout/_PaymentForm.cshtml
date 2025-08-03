@@ -1,5 +1,12 @@
+@* 
+    Payment Details Form Partial
+    Collects cardholder info and optionally billing address if different from shipping.
+*@
+
 <h2>Payment Details</h2>
 <form id="payment-form">
+
+    <!-- Cardholder Name Fields -->
     <label>
         Cardholder First Name<span class="required">*</span>
         <input name="cardFirstName" placeholder="e.g. Jane" required />
@@ -8,6 +15,8 @@
         Cardholder Last Name<span class="required">*</span>
         <input name="cardLastName" placeholder="e.g. Doe" required />
     </label>
+
+    <!-- Card Number and Expiry -->
     <label>
         Card Number<span class="required">*</span>
         <input name="cardNumber" placeholder="1234 5678 9012 3456" required />
@@ -16,16 +25,20 @@
         Expiry (MM/YY)<span class="required">*</span>
         <input name="expiry" placeholder="MM/YY" required />
     </label>
+
+    <!-- CVC Code -->
     <label>
         CVC<span class="required">*</span>
         <input name="cvc" placeholder="123" required />
     </label>
 
+    <!-- Billing address toggle -->
     <label class="billing-same">
         <input type="checkbox" id="billing-same" checked>
         Same address as Shipping
     </label>
 
+    <!-- Billing address fields, shown if different from shipping -->
     <div id="billing-address-fields" style="display:none; margin-top:1rem;">
         <label>
             First Name<span class="required">*</span>
@@ -64,5 +77,4 @@
             <input type="email" name="billingEmail" placeholder="you@example.com" />
         </label>
     </div>
-
 </form>

@@ -1,4 +1,6 @@
-/* Responsive tweaks */
+/* ============================
+   Responsive: Checkout Steps (Mobile)
+============================ */
 @media (max-width: 480px) {
   .checkout-steps li::before {
     top: -1.4rem;
@@ -7,19 +9,23 @@
     line-height: 20px;
     font-size: 0.7rem;
   }
+
   .checkout-nav {
     flex-direction: column-reverse;
     gap: 1rem;
   }
+
   .checkout-nav button {
     width: 100%;
   }
 }
-/* Increase container gutters on small screens */
+
+/* ============================
+   Responsive: Checkout Flow Container Padding & Margin
+============================ */
 @media (max-width: 600px) {
   .checkout-flow {
-    /* give it some breathing room on the sides */
-    margin: 2rem 1rem;      /* top/bottom 2rem, left/right 1rem */
-    padding: 2rem 1rem;     /* inner padding: top/bottom 2rem, left/right 1rem */
+    margin: 2rem 1rem;
+    padding: 2rem 1rem;
   }
 }

@@ -1,42 +1,50 @@
-// Controllers/ShopController.cs
+// ───── Framework Usings ─────────────────────────────
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+
+// ───── Project Usings ───────────────────────────────
 using BobaLite.Data;
-using BobaLite.DTOs;
 using BobaLite.Services;
 using BobaLite.ViewModels;
 
 namespace BobaLite.Controllers
 {
+    /// <summary>
+    /// Handles product browsing and filtering in the shop.
+    /// </summary>
     public class ShopController : Controller
     {
         private readonly IProductRepository _products;
-        private readonly ICategoryService   _cats;
+        private readonly ICategoryService _cats;
 
-        public ShopController(
-            IProductRepository products,
-            ICategoryService   cats)
+        #region Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShopController"/> class.
+        /// </summary>
+        public ShopController(IProductRepository products, ICategoryService cats)
         {
             _products = products;
-            _cats     = cats;
+            _cats = cats;
         }
+        #endregion
 
-        // GET /Shop?categories=milk-tea,shorts
+        #region GET Methods
+        /// <summary>
+        /// Displays the shop page with optional category filtering.
+        /// </summary>
+        /// <param name="categories">An array of category slugs to filter products by.</param>
+        /// <returns>The shop view populated with filtered products and filter groups.</returns>
         [HttpGet("/Shop")]
         public IActionResult Index([FromQuery] string[] categories)
         {
-            // 1. Always pull your four groups + leaves for the sidebar
             var groups = _cats.GetFilterGroups();
 
-            // 2. If any leaf slugs were passed, filter; otherwise return all
             var allItems = (categories?.Any() == true)
-                        ? _products.GetByCategorySlugs(categories)
-                        : _products.GetAll();
+                ? _products.GetByCategorySlugs(categories)
+                : _products.GetAll();
 
             var items = allItems.Where(p => p.IsActive).ToList();
 
-
-            // 3. Pack into a ViewModel
             var vm = new ShopViewModel
             {
                 FilterGroups     = groups,
@@ -46,5 +54,6 @@ namespace BobaLite.Controllers
 
             return View(vm);
         }
+        #endregion
     }
 }

@@ -5,27 +5,26 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-    crossorigin="anonymous"
-    />
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+
     <title>BobaLite</title>
 
-    <link rel="icon" href="/Home" type="image/png"href="/images/Shared/bobalite-logo.png">
-    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="/images/Shared/bobalite-logo.png" />
+    <link rel="icon" type="image/png" href="/images/Shared/bobalite-logo.png" />
+
+
     <!-- Styles -->
     <link rel="stylesheet" href="~/css/Shared/main.css" />
-     @RenderSection("Styles", required: false)
-    
+    @RenderSection("Styles", required: false)
+
 </head>
 
 <body>
 
     <!-- Navbar partial -->
-    @await Html.PartialAsync("_Navbar") 
+    @await Html.PartialAsync("_Navbar")
     @await Html.PartialAsync("_Cart")
 
     <!-- Main page -->
@@ -34,11 +33,12 @@
     </main>
 
     <!-- Footer partial -->
-    @await Html.PartialAsync("_Footer") 
+    @await Html.PartialAsync("_Footer")
 
     <!-- Scripts -->
     @RenderSection("Scripts", required: false)
     <script type="module" src="~/js/Shared/main.js"></script>
 
 </body>
+
 </html>

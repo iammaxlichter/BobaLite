@@ -1,123 +1,188 @@
-// wwwroot/js/Shared/cart.js
+/**
+ * cart.js
+ * 
+ * Handles cart state, server synchronization, and UI rendering.
+ * Provides APIs for adding, updating, and removing items, as well as managing the cart drawer.
+ */
 
 const API_BASE = '/api/cart';
-let cart = []; // in-memory mirror of server cart
+let cart = []; 
 
-// ─── API CALLS ─────────────────────────────────────────────
-
-/** Pull the latest cart DTO from server and update our local `cart` */
+/**
+ * Fetches the latest cart data from the server and updates the local cart state.
+ * Renders the updated cart and updates the cart badge.
+ */
 async function refreshCart() {
   try {
-    const resp = await fetch(API_BASE, { method: 'GET' });
-    if (!resp.ok) throw new Error('Failed to fetch cart');
-    const dto = await resp.json();
-    // Map server DTO → our internal shape
-    cart = dto.items.map(i => ({
-      id: i.productId,
-      name: i.productName,
-      attribute: i.attribute,
-      qty: i.quantity,
-      price: i.unitPrice,
-      stock: i.stock ?? Infinity, 
-      img: i.imageUrl,
-      customText: i.customText || null
+    const response = await fetch(API_BASE, { method: 'GET' });
+    if (!response.ok) throw new Error('Failed to fetch cart');
+
+    const dto = await response.json();
+    cart = dto.items.map(item => ({
+      id: item.productId,
+      variantId:  item.variantId,
+      name: item.productName,
+      attribute: item.attribute,
+      qty: item.quantity,
+      price: item.unitPrice,
+      stock: item.stock ?? Infinity,
+      img: item.imageUrl,
+      customText: item.customText || null
     }));
+
     updateCartBadge(cart);
     renderCart();
+    
+    notifyCheckoutUpdate();
   } catch (err) {
-    console.error('refreshCart:', err);
   }
 }
 
-/** Tell server to add 1 of this variant */
+/**
+ * Notifies the checkout page that the cart has been updated.
+ * This allows the checkout to refresh its cart review section.
+ */
+function notifyCheckoutUpdate() {
+    window.dispatchEvent(new CustomEvent('cartUpdated', {
+    detail: { cart: cart }
+  }));
+}
+
+/**
+ * Adds a product variant to the server-side cart.
+ * @param {Object} params 
+ * @param {number} params.id - Product ID
+ * @param {string} params.attribute - Variant attribute
+ * @param {number} [params.quantity=1] - Quantity to add
+ * @param {string|null} [params.customText=null] - Custom text if applicable
+ */
 async function addItemApi({ id, attribute, quantity = 1, customText = null }) {
   const body = {
-    ProductId: id,        // ✅ Changed to PascalCase
-    Attribute: attribute, // ✅ Changed to PascalCase
-    Quantity: quantity,   // ✅ Changed to PascalCase
+    ProductId: id,
+    Attribute: attribute,
+    Quantity: quantity
   };
 
   if (customText) {
-    body.CustomText = customText; // ✅ Changed to PascalCase
+    body.CustomText = customText;
   }
 
-  const resp = await fetch(`${API_BASE}/add`, {
+  const response = await fetch(`${API_BASE}/add`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
   });
 
-  if (!resp.ok) throw new Error('Failed to add item');
+  if (!response.ok) throw new Error('Failed to add item');
 }
 
-/** Tell server to update quantity */
-async function updateQtyApi({ id, attribute, qty }) {
-  const resp = await fetch(`${API_BASE}/update`, {
+/**
+ * Updates the quantity of a specific product variant in the cart.
+ * @param {Object} params 
+ * @param {number} params.id - Product ID
+ * @param {string} params.attribute - Variant attribute
+ * @param {number} params.qty - New quantity
+ * @param {string|null} [params.customText=null] - Custom text to identify the specific item
+ */
+async function updateQtyApi({ id, attribute, qty, customText = null }) {
+  const body = {
+    ProductId: id,
+    Attribute: attribute,
+    Quantity: qty
+  };
+
+  if (customText) {
+    body.CustomText = customText;
+  }
+
+  const response = await fetch(`${API_BASE}/update`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ productId: id, attribute, quantity: qty })
+    body: JSON.stringify(body)
   });
-  if (!resp.ok) throw new Error('Failed to update quantity');
+
+  if (!response.ok) throw new Error('Failed to update quantity');
 }
 
+/**
+ * Removes a specific product variant from the cart.
+ * @param {Object} params 
+ * @param {number} params.id - Product ID
+ * @param {string} params.attribute - Variant attribute
+ * @param {string|null} [params.customText=null] - Custom text to identify the specific item
+ */
+async function removeItemApi({ id, attribute, customText = null }) {
+  const body = {
+    ProductId: id,
+    Attribute: attribute
+  };
 
-/** Tell server to remove this variant entirely */
-async function removeItemApi({ id, attribute }) {
-  const resp = await fetch(API_BASE, {
+  if (customText) {
+    body.CustomText = customText;
+  }
+
+  const response = await fetch(API_BASE, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ productId: id, attribute })
+    body: JSON.stringify(body)
   });
-  if (!resp.ok) throw new Error('Failed to remove item');
+
+  if (!response.ok) throw new Error('Failed to remove item');
 }
 
-/** Clear cart on server and immediately update local state */
+/**
+ * Clears the cart on the server and immediately updates the local state.
+ */
 async function clearCartApi() {
   try {
-    const resp = await fetch('/api/cart/clear', {
+    const response = await fetch('/api/cart/clear', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
     });
-    if (!resp.ok) {
-      console.warn('Failed to clear cart on server:', resp.status);
-    }
-    // Immediately clear local cart regardless of server response
+
     clearCartLocal();
   } catch (err) {
-    console.warn('Error clearing cart:', err);
-    // Still clear local cart even if server request fails
     clearCartLocal();
   }
 }
 
-/** Immediately clear local cart state and update UI */
+/**
+ * Clears the local cart state and updates the UI.
+ */
 function clearCartLocal() {
   cart = [];
   updateCartBadge(cart);
   renderCart();
+  notifyCheckoutUpdate();
 }
 
-// ─── DRAWER INITIALIZATION ─────────────────────────────────
-
+/**
+ * Initializes the cart drawer and binds open/close events.
+ * @param {Object} config 
+ * @param {string} [config.drawerSelector='#cart-drawer'] - Selector for the cart drawer element
+ * @param {string} [config.openBtnSelector='#cart-toggle'] - Selector for the button that opens the cart
+ * @param {string} [config.closeBtnSelector='#cart-close'] - Selector for the button that closes the cart
+ */
 export function initCartDrawer({
   drawerSelector = '#cart-drawer',
   openBtnSelector = '#cart-toggle',
   closeBtnSelector = '#cart-close'
 } = {}) {
   const drawer = document.querySelector(drawerSelector);
-  const openBtn = document.querySelector(openBtnSelector);
-  const closeBtn = document.querySelector(closeBtnSelector);
-  if (!drawer || !openBtn || !closeBtn) return;
+  const openButton = document.querySelector(openBtnSelector);
+  const closeButton = document.querySelector(closeBtnSelector);
 
-  openBtn.addEventListener('click', async () => {
+  if (!drawer || !openButton || !closeButton) return;
+
+  openButton.addEventListener('click', async () => {
     drawer.classList.add('open');
     await refreshCart();
   });
 
-  closeBtn.addEventListener('click', () => {
+  closeButton.addEventListener('click', () => {
     drawer.classList.remove('open');
   });
 
@@ -125,37 +190,38 @@ export function initCartDrawer({
     if (e.target === drawer) drawer.classList.remove('open');
   });
 
-  // bootstrap on page load
   refreshCart();
 }
 
-// ─── RENDERING ──────────────────────────────────────────────
-
+/**
+ * Renders the cart items, updates the total price, and manages quantity controls.
+ */
 function renderCart() {
-  const list = document.getElementById('cart-items');
-  const totalEl = document.getElementById('cart-total');
-  const checkout = document.querySelector('.checkout-btn');
-  if (!list || !totalEl || !checkout) return;
+  const listElement = document.getElementById('cart-items');
+  const totalElement = document.getElementById('cart-total');
+  const checkoutButton = document.querySelector('.checkout-btn');
 
-  list.innerHTML = '';
+  if (!listElement || !totalElement || !checkoutButton) return;
+
+  listElement.innerHTML = '';
   let grandTotal = 0;
 
   if (cart.length === 0) {
-    list.innerHTML = '<li class="empty-cart">Your cart is empty</li>';
-    totalEl.textContent = '$0.00';
-    checkout.disabled = true;
+    listElement.innerHTML = '<li class="empty-cart">Your cart is empty</li>';
+    totalElement.textContent = '$0.00';
+    checkoutButton.disabled = true;
     return;
   }
 
-  checkout.disabled = false;
+  checkoutButton.disabled = false;
 
   cart.forEach(item => {
     const lineTotal = item.price * item.qty;
     grandTotal += lineTotal;
 
-    const li = document.createElement('li');
-    li.className = 'cart-item';
-    li.innerHTML = `
+    const listItem = document.createElement('li');
+    listItem.className = 'cart-item';
+    listItem.innerHTML = `
       <img src="${item.img}" alt="${item.name}" />
       <div class="cart-item-details">
         <div class="cart-item-name">${item.name}</div>
@@ -172,49 +238,70 @@ function renderCart() {
         </div>
       </div>`;
 
-    list.appendChild(li);
+    listElement.appendChild(listItem);
 
-    // wire up the buttons
-    const decBtn = li.querySelector('.qty-decrease');
-    const incBtn = li.querySelector('.qty-increase');
-    const remBtn = li.querySelector('.remove-item');
+    const decreaseButton = listItem.querySelector('.qty-decrease');
+    const increaseButton = listItem.querySelector('.qty-increase');
+    const removeButton = listItem.querySelector('.remove-item');
 
-    decBtn.onclick = async () => {
+    decreaseButton.onclick = async () => {
       const newQty = item.qty - 1;
       if (newQty < 1) {
-        await removeItemApi(item);
+        await removeItemApi({ 
+          id: item.id, 
+          attribute: item.attribute, 
+          customText: item.customText 
+        });
       } else {
-        await updateQtyApi({ ...item, qty: newQty });
+        await updateQtyApi({ 
+          id: item.id, 
+          attribute: item.attribute, 
+          qty: newQty, 
+          customText: item.customText 
+        });
       }
       await refreshCart();
     };
 
-    incBtn.onclick = async () => {
-      await updateQtyApi({ ...item, qty: item.qty + 1 });
+    increaseButton.onclick = async () => {
+      await updateQtyApi({ 
+        id: item.id, 
+        attribute: item.attribute, 
+        qty: item.qty + 1, 
+        customText: item.customText 
+      });
       await refreshCart();
     };
 
-    remBtn.onclick = async () => {
-      await removeItemApi(item);
+    removeButton.onclick = async () => {
+      await removeItemApi({ 
+        id: item.id, 
+        attribute: item.attribute, 
+        customText: item.customText 
+      });
       await refreshCart();
     };
 
-    // optionally disable "+" if at stock cap
     if (item.qty >= item.stock) {
-      incBtn.disabled = true;
+      increaseButton.disabled = true;
     }
   });
 
-  totalEl.textContent = `$${grandTotal.toFixed(2)}`;
+  totalElement.textContent = `$${grandTotal.toFixed(2)}`;
 
-  checkout.onclick = () => {
+  checkoutButton.onclick = () => {
     window.location.href = '/Checkout';
   };
 }
 
+/**
+ * Updates the cart badge with the total quantity of items.
+ * @param {Array} cartItems - List of cart items
+ */
 function updateCartBadge(cartItems) {
   const badge = document.getElementById('cart-badge');
   if (!badge) return;
+
   const totalQty = cartItems.reduce((sum, item) => sum + item.qty, 0);
   badge.textContent = totalQty > 0 ? totalQty : '';
 }

@@ -1,28 +1,26 @@
 // wwwroot/js/Checkout/confirmation.js
 
 import { getCartItems } from './cartReview.js';
-import { getBillingData } from './billingForm.js';
+import { getShippingData } from './shippingForm.js';
 import { getPaymentData } from './paymentForm.js';
 import { clearCartApi } from '../Shared/cart.js';
 
 /**
- * Initializes the confirmation panel: renders the summary when we hit step 4.
- * The stepper handles the "Place Order" button functionality.
+ * Initializes the confirmation panel.
+ * Renders the summary when reaching step 4 of checkout.
  */
 export function initConfirmation() {
     const summaryEl = document.getElementById('confirmation-summary');
     if (!summaryEl) return;
 
     document.addEventListener('checkoutStepChange', e => {
-        // step index 3 === 4th panel === Confirmation
-        if (e.detail.step === 3) {
-            renderSummary();
-        }
+        if (e.detail.step === 3) renderSummary();
     });
 }
 
 /**
- * Handles the order submission - called by the stepper's Place Order button
+ * Submits the order to the server and handles response.
+ * Validates payment, shipping, and billing information before posting.
  */
 export async function submitOrder() {
     const summaryEl = document.getElementById('confirmation-summary');
@@ -35,128 +33,46 @@ export async function submitOrder() {
         }
 
         const payData = getPaymentData();
-        const shippingAddress = getBillingData();
-        const billingAddress = payData.useBillingAsShipping
-            ? shippingAddress
-            : payData.billing;
+        const shippingAddress = getShippingData();
+        const billingAddress = payData.useBillingAsShipping ? shippingAddress : payData.billing;
 
-        // ─── Basic Validation ─────────────────────────────
         if (!payData.cardNumber || !payData.expiry || !payData.cvc) {
             throw new Error('Payment information is incomplete');
         }
-        if (
-            !shippingAddress.firstName ||
-            !shippingAddress.lastName ||
-            !shippingAddress.address1 ||
-            !shippingAddress.city ||
-            !shippingAddress.state ||
-            !shippingAddress.zipCode ||
-            !shippingAddress.phone ||
-            !shippingAddress.email
-        ) {
+        if (!isAddressComplete(shippingAddress)) {
             throw new Error('Shipping address is incomplete');
         }
-        if (!payData.useBillingAsShipping) {
-            if (
-                !billingAddress.firstName ||
-                !billingAddress.lastName ||
-                !billingAddress.address1 ||
-                !billingAddress.city ||
-                !billingAddress.state ||
-                !billingAddress.zipCode ||
-                !billingAddress.phone ||
-                !billingAddress.email
-            ) {
-                throw new Error('Billing address is incomplete');
-            }
+        if (!payData.useBillingAsShipping && !isAddressComplete(billingAddress)) {
+            throw new Error('Billing address is incomplete');
         }
 
-        // ─── Build Order Payload ───────────────────────────
         const cartItems = getCartItems();
-        const order = {
-            items: cartItems.map(i => ({
-                variantId: i.productId || i.id,
-                attribute: i.attribute || '',
-                quantity: i.quantity || 1,
-                price: i.price,
-                productName: i.name,
-                imageUrl: `https://bobalite.onrender.com${i.img}`,
-                customText: i.customText || null // Fixed: ensure customText is properly handled
-            })),
-            ShippingAddress: {
-                FullName: `${shippingAddress.firstName} ${shippingAddress.lastName}`,
-                Address1: shippingAddress.address1,
-                Address2: shippingAddress.address2 || '',
-                City: shippingAddress.city,
-                State: shippingAddress.state,
-                PostalCode: shippingAddress.zipCode,
-                Phone: shippingAddress.phone,
-                Email: shippingAddress.email
-            },
-            BillingAddress: {
-                FullName: `${billingAddress.firstName} ${billingAddress.lastName}`,
-                Address1: billingAddress.address1,
-                Address2: billingAddress.address2 || '',
-                City: billingAddress.city,
-                State: billingAddress.state,
-                PostalCode: billingAddress.zipCode,
-                Phone: billingAddress.phone,
-                Email: billingAddress.email
-            },
-            payment: {
-                cardFirstName: payData.cardFirstName,
-                cardLastName: payData.cardLastName,
-                cardNumber: payData.cardNumber.replace(/\s/g, ''),
-                expiry: payData.expiry,
-                cvc: payData.cvc
-            }
-        };
+        const order = buildOrderPayload(cartItems, shippingAddress, billingAddress, payData);
 
-        console.log('ORDER PAYLOAD:', JSON.stringify(order, null, 2));
-        if (summaryEl) {
-            summaryEl.textContent = 'Sending order…';
-        }
+        if (summaryEl) summaryEl.textContent = 'Sending order…';
 
         const resp = await fetch('/api/checkout', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify(order)
         });
 
         if (resp.ok) {
-            await resp.json().catch(() => { });
-
-            // FIRST: Clear the cart immediately (both server and local)
+            await resp.json().catch(() => {});
             await clearCartApi();
 
-            // THEN: Show success message and hide buttons
             summaryEl.innerHTML = '<p class="success-msg">Thank you! Your order was received. You will be receiving a confirmation email in the next couple of minutes!</p>';
-            console.log('Order successful');
 
             const placeBtn = document.getElementById('place-order');
             const prevBtn = document.getElementById('prev-step');
             if (placeBtn) placeBtn.style.display = 'none';
             if (prevBtn) prevBtn.style.display = 'none';
-
-            return;
         } else {
-            const errText = await resp.text().catch(() => 'Unknown error');
-            console.error('Order failed:', resp.status, errText);
-            if (summaryEl) {
-                summaryEl.innerHTML = '<p class="error-msg">Something went wrong. Please try again.</p>';
-            }
+            if (summaryEl) summaryEl.innerHTML = '<p class="error-msg">Something went wrong. Please try again.</p>';
         }
-
     } catch (err) {
-        console.error('Order error:', err);
-        if (summaryEl) {
-            summaryEl.innerHTML = `<p class="error-msg">Error: ${err.message}</p>`;
-        }
+        if (summaryEl) summaryEl.innerHTML = `<p class="error-msg">Error: ${err.message}</p>`;
     } finally {
-        // restore button
         if (btn) {
             btn.disabled = false;
             btn.textContent = 'Place Order';
@@ -165,79 +81,137 @@ export async function submitOrder() {
 }
 
 /**
- * Renders the summary of items, shipping, (optional) billing, payment, and total.
+ * Renders the summary of items, shipping, billing (if different), payment, and total cost.
  */
 function renderSummary() {
     const summaryEl = document.getElementById('confirmation-summary');
     let html = '';
+
     try {
         const cart = getCartItems();
-        const ship = getBillingData();
+        const ship = getShippingData();
         const pay = getPaymentData();
         const billData = pay.useBillingAsShipping ? ship : pay.billing;
 
-        // Items
-        html += '<div class="confirm-section"><h4>Items</h4><div class="confirm-items">';
-        cart.forEach(i => {
-            html += `
-        <div class="confirm-item">
-          <img src="${i.img || '/images/placeholder.jpg'}"
-               alt="${i.name || 'Item'}"
-               class="confirm-item-img"/>
-          <div class="confirm-item-details">
-            <p class="item-name">
-              ${i.name || 'Product'}${i.attribute ? ` (${i.attribute})` : ''}
-            </p>
-            <p class="item-qty-price">
-              x ${i.quantity || 1} — $${((i.price || 0) * (i.quantity || 1)).toFixed(2)}
-            </p>
-            ${(i.customText && i.customText.trim()) ? `<p class="item-custom">Message: ${i.customText}</p>` : ''}
-          </div>
-        </div>`;
-        });
-        html += '</div></div>';
-
-        // Shipping
-        html += '<div class="confirm-section"><h4>Shipping</h4><div class="confirm-section-content">';
-        html += `<p>${ship.firstName} ${ship.lastName}</p>`;
-        html += `<p>${ship.address1}</p>`;
-        if (ship.address2) html += `<p>${ship.address2}</p>`;
-        html += `<p>${ship.city}, ${ship.state} ${ship.zipCode}</p>`;
-        html += `<p>${ship.phone}</p>`;
-        html += `<p>${ship.email}</p>`;
-        html += '</div></div>';
-
-        // Billing (if different)
-        if (!pay.useBillingAsShipping) {
-            html += '<div class="confirm-section"><h4>Billing</h4><div class="confirm-section-content">';
-            html += `<p>${billData.firstName} ${billData.lastName}</p>`;
-            html += `<p>${billData.address1}</p>`;
-            if (billData.address2) html += `<p>${billData.address2}</p>`;
-            html += `<p>${billData.city}, ${billData.state} ${billData.zipCode}</p>`;
-            html += `<p>${billData.phone}</p>`;
-            html += `<p>${billData.email}</p>`;
-            html += '</div></div>';
-        }
-
-        // Payment
-        const digits = pay.cardNumber.replace(/\D/g, '').slice(-4);
-        html += '<div class="confirm-section"><h4>Payment</h4><div class="confirm-section-content">';
-        html += `<p>Name: ${pay.cardFirstName} ${pay.cardLastName}</p>`;
-        html += `<p>Card: <span class="masked">•••• •••• •••• ${digits}</span></p>`;
-        html += `<p>Expires: ${pay.expiry}</p>`;
-        html += '</div></div>';
-
-
-        // Total
-        const total = cart.reduce((sum, i) => sum + ((i.price || 0) * (i.quantity || 1)), 0);
-        html += '<div class="confirm-section total-section">';
-        html += `<h4>Total</h4><p class="total-amount">$${total.toFixed(2)}</p>`;
-        html += '</div>';
-
+        html += renderItems(cart);
+        html += renderAddress('Shipping', ship);
+        if (!pay.useBillingAsShipping) html += renderAddress('Billing', billData);
+        html += renderPayment(pay);
+        html += renderTotal(cart);
     } catch (err) {
-        console.error('Error rendering summary:', err);
         html = '<p class="error-msg">Error loading order summary</p>';
     }
 
     summaryEl.innerHTML = html;
+}
+
+/**
+ * Checks if an address object has all required fields.
+ */
+function isAddressComplete(address) {
+    return address.firstName && address.lastName && address.address1 &&
+           address.city && address.state && address.zipCode &&
+           address.phone && address.email;
+}
+
+/**
+ * Builds the order payload to be sent to the server.
+ */
+function buildOrderPayload(cartItems, shippingAddress, billingAddress, payData) {
+    return {
+        items: cartItems.map(i => ({
+            variantId:   i.variantId,
+            attribute: i.attribute || '',
+            quantity: i.quantity || 1,
+            price: i.price,
+            productName: i.name,
+            imageUrl: `https://bobalite.onrender.com${i.img}`,
+            customText: i.customText || null
+        })),
+        ShippingAddress: formatAddress(shippingAddress),
+        BillingAddress: formatAddress(billingAddress),
+        payment: {
+            cardFirstName: payData.cardFirstName,
+            cardLastName: payData.cardLastName,
+            cardNumber: payData.cardNumber.replace(/\s/g, ''),
+            expiry: payData.expiry,
+            cvc: payData.cvc
+        }
+    };
+}
+
+/**
+ * Formats an address object for the order payload.
+ */
+function formatAddress(addr) {
+    return {
+        FullName: `${addr.firstName} ${addr.lastName}`,
+        Address1: addr.address1,
+        Address2: addr.address2 || '',
+        City: addr.city,
+        State: addr.state,
+        PostalCode: addr.zipCode,
+        Phone: addr.phone,
+        Email: addr.email
+    };
+}
+
+/**
+ * Renders the items section of the confirmation summary.
+ */
+function renderItems(cart) {
+    let html = '<div class="confirm-section"><h4>Items</h4><div class="confirm-items">';
+    cart.forEach(i => {
+        html += `
+            <div class="confirm-item">
+                <img src="${i.img || '/images/placeholder.jpg'}" alt="${i.name || 'Item'}" class="confirm-item-img"/>
+                <div class="confirm-item-details">
+                    <p class="item-name">${i.name || 'Product'}${i.attribute ? ` (${i.attribute})` : ''}</p>
+                    <p class="item-qty-price">x ${i.quantity || 1} — $${((i.price || 0) * (i.quantity || 1)).toFixed(2)}</p>
+                    ${(i.customText && i.customText.trim()) ? `<p class="item-custom">Message: ${i.customText}</p>` : ''}
+                </div>
+            </div>`;
+    });
+    html += '</div></div>';
+    return html;
+}
+
+/**
+ * Renders an address section (Shipping or Billing).
+ */
+function renderAddress(title, data) {
+    let html = `<div class="confirm-section"><h4>${title}</h4><div class="confirm-section-content">`;
+    html += `<p>${data.firstName} ${data.lastName}</p>`;
+    html += `<p>${data.address1}</p>`;
+    if (data.address2) html += `<p>${data.address2}</p>`;
+    html += `<p>${data.city}, ${data.state} ${data.zipCode}</p>`;
+    html += `<p>${data.phone}</p>`;
+    html += `<p>${data.email}</p>`;
+    html += '</div></div>';
+    return html;
+}
+
+/**
+ * Renders the payment section of the confirmation summary.
+ */
+function renderPayment(pay) {
+    const digits = pay.cardNumber.replace(/\D/g, '').slice(-4);
+    return `
+        <div class="confirm-section"><h4>Payment</h4><div class="confirm-section-content">
+            <p>Name: ${pay.cardFirstName} ${pay.cardLastName}</p>
+            <p>Card: <span class="masked">•••• •••• •••• ${digits}</span></p>
+            <p>Expires: ${pay.expiry}</p>
+        </div></div>`;
+}
+
+/**
+ * Renders the total cost section of the confirmation summary.
+ */
+function renderTotal(cart) {
+    const total = cart.reduce((sum, i) => sum + ((i.price || 0) * (i.quantity || 1)), 0);
+    return `
+        <div class="confirm-section total-section">
+            <h4>Total</h4>
+            <p class="total-amount">$${total.toFixed(2)}</p>
+        </div>`;
 }

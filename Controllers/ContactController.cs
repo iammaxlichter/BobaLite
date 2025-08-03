@@ -1,39 +1,55 @@
+// ───── Framework Usings ─────────────────────────────
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using SendGrid;
-using SendGrid.Helpers.Mail;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+
+// ───── External Usings ──────────────────────────────
+using SendGrid;
+using SendGrid.Helpers.Mail;
+
+// ───── Project Usings ───────────────────────────────
 using BobaLite.Models;
 
 namespace BobaLite.Controllers
 {
     public class ContactController : Controller
     {
-        private readonly string _sendGridKey;
+        private readonly string? _sendGridKey;
         private readonly ILogger<ContactController> _logger;
 
+        #region Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContactController"/> class.
+        /// </summary>
         public ContactController(IConfiguration config, ILogger<ContactController> logger)
         {
             _sendGridKey = config["SENDGRID_APIKEY"];
-            _logger      = logger;
+            _logger = logger;
         }
+        #endregion
 
-        // GET /Contact
+        #region GET Methods
+        /// <summary>
+        /// Displays the contact form page.
+        /// </summary>
         [HttpGet("/Contact")]
         public IActionResult Index()
         {
-            // Show one‑time success message if present
+            // Show one-time success message if present
             if (TempData["Success"] is string msg)
-            {
                 ViewBag.Success = msg;
-            }
+
             return View();
         }
+        #endregion
 
-        // POST /Contact
+        #region POST Methods
+        /// <summary>
+        /// Processes the contact form submission and sends an email via SendGrid.
+        /// </summary>
         [HttpPost("/Contact")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index([FromForm] ContactForm form)
@@ -41,32 +57,23 @@ namespace BobaLite.Controllers
             if (!ModelState.IsValid)
                 return View(form);
 
-            _logger.LogInformation("Received contact form submission from {Email} ({Name})",
-                form.Email, form.Name);
+            if (string.IsNullOrEmpty(_sendGridKey))
+            {
+                _logger.LogError("SendGrid API key is not configured");
+                ModelState.AddModelError(string.Empty, "Email service is not properly configured. Please contact the administrator.");
+                return View(form);
+            }
 
-            // Build the plaintext and HTML bodies
+            _logger.LogInformation("Received contact form submission from {Email} ({Name})", form.Email, form.Name);
+
             var subject = $"[BobaLite] New Contact from {form.Name}";
-            var plain = new StringBuilder()
-                .AppendLine($"Name: {form.Name}")
-                .AppendLine($"Email: {form.Email}")
-                .AppendLine()
-                .AppendLine("Message:")
-                .AppendLine(form.Message)
-                .ToString();
+            var plainBody = BuildPlainTextBody(form);
+            var htmlBody = BuildHtmlBody(form);
 
-            var html = new StringBuilder()
-                .AppendLine("<h2>New Contact Form Submission</h2>")
-                .AppendLine($"<p><strong>Name:</strong> {form.Name}</p>")
-                .AppendLine($"<p><strong>Email:</strong> {form.Email}</p>")
-                .AppendLine("<p><strong>Message:</strong></p>")
-                .AppendLine($"<p>{form.Message.Replace("\n", "<br/>")}</p>")
-                .ToString();
-
-            // Send with SendGrid
             var client = new SendGridClient(_sendGridKey);
-            var from   = new EmailAddress("iammaxlichter@gmail.com", "BobaLite");
-            var to     = new EmailAddress("iammaxlichter@gmail.com");
-            var msg    = MailHelper.CreateSingleEmail(from, to, subject, plain, html);
+            var from = new EmailAddress("drinkbobalite@gmail.com", "BobaLite");
+            var to = new EmailAddress("drinkbobalite@gmail.com");
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainBody, htmlBody);
 
             _logger.LogInformation("Sending email via SendGrid...");
             var resp = await client.SendEmailAsync(msg);
@@ -75,18 +82,44 @@ namespace BobaLite.Controllers
             if (resp.StatusCode == HttpStatusCode.Accepted)
             {
                 _logger.LogInformation("Contact email sent successfully.");
-                // Store success message, then redirect (Post‑Redirect‑Get)
                 TempData["Success"] = "Thanks! We got your message.";
                 return RedirectToAction(nameof(Index));
             }
-            else
-            {
-                _logger.LogError("Failed to send contact email. Status: {StatusCode}",
-                    resp.StatusCode);
-                ModelState.AddModelError(string.Empty,
-                    "Oops—something went wrong. Please try again later.");
-                return View(form);
-            }
+
+            _logger.LogError("Failed to send contact email. Status: {StatusCode}", resp.StatusCode);
+            ModelState.AddModelError(string.Empty, "Oops—something went wrong. Please try again later.");
+            return View(form);
         }
+        #endregion
+
+        #region Private Helpers
+        /// <summary>
+        /// Builds the plaintext email body for the contact submission.
+        /// </summary>
+        private string BuildPlainTextBody(ContactForm form)
+        {
+            return new StringBuilder()
+                .AppendLine($"Name: {form.Name}")
+                .AppendLine($"Email: {form.Email}")
+                .AppendLine()
+                .AppendLine("Message:")
+                .AppendLine(form.Message)
+                .ToString();
+        }
+
+        /// <summary>
+        /// Builds the HTML email body for the contact submission.
+        /// </summary>
+        private string BuildHtmlBody(ContactForm form)
+        {
+            return new StringBuilder()
+                .AppendLine("<h2>New Contact Form Submission</h2>")
+                .AppendLine($"<p><strong>Name:</strong> {form.Name}</p>")
+                .AppendLine($"<p><strong>Email:</strong> {form.Email}</p>")
+                .AppendLine("<p><strong>Message:</strong></p>")
+                .AppendLine($"<p>{form.Message.Replace("\n", "<br/>")}</p>")
+                .ToString();
+        }
+        #endregion
     }
 }
