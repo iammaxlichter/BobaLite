@@ -10,7 +10,7 @@ BobaLite is a passion project built to bring delicious, low-calorie boba tea to 
 - **C#** – Application logic  
 - **Entity Framework Core** – Database access  
 - **SQLite** – Local data storage  
-- **HTML, CSS, JavaScript** – Frontend interface and interactivity  
+- **Razor (CSHTML), CSS, JavaScript** – Frontend interface and interactivity  
 - **Docker** – Containerization  
 - **Render** – Cloud hosting & CI/CD pipeline  
 - **Twilio SendGrid** – Email sending service
